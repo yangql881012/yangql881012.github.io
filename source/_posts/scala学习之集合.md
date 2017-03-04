@@ -1,7 +1,7 @@
 ---
-title: scala学习之集合
-date: 2017-02-01 00:54:59
-tags: scala，基础
+title: class与Case class的区别
+date: 2017-03-03 00:54:59
+tags: case class
 categories: scala
 ---
 1.在scala中定义类是用关键字class

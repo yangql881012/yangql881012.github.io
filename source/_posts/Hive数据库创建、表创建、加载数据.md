@@ -12,6 +12,7 @@ CREATE DATABASE|SCHEMA [IF NOT EXISTS] <database name>
 with dbproperties(key=value,key=value)
 ```
 在这里，IF NOT EXISTS是一个可选子句，通知用户已经存在相同名称的数据库。执行创建一个名为pactera数据库：
+<!-- more -->
 ```
 CREATE DATABASE IF NOT EXISTS pactera with dbproperties('creator'='yangql','date'='2017-02-28');
 ```
