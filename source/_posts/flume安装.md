@@ -2,6 +2,7 @@
 title: flume安装
 date: 2017-03-09 20:54:59
 tags: flume
+toc: true
 categories: flume
 ---
 1.解压重命名  

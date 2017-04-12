@@ -2,6 +2,7 @@
 title: hadoop2-hdfs-垃圾箱简介
 date: 2016-11-13 09:09:59
 tags: Hadoop2，垃圾箱
+toc: true
 categories: Hadoop
 ---
 hdfs为每一个用户创建一个回收站：

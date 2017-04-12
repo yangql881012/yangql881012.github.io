@@ -1,7 +1,8 @@
 ---
 title: Spark-CentOS6下搭建spark-2.1.0-bin-hadoop2.7.md
 date: 2017-02-13 10:54:59
-tags: Spark2.1,hadoop2.7
+tags: Spark2.1,hadoop2.
+toc: true
 categories: Spark
 ---
 ## 1.环境信息 ##

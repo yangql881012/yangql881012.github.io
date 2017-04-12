@@ -2,6 +2,7 @@
 title: kafka安装
 date: 2017-03-09 00:54:59
 tags: kafka
+toc: true
 categories: kafka
 ---
 1.解压重命名

@@ -2,6 +2,7 @@
 title: scala学习之泛型-上边界-下边界
 date: 2017-02-10 16:54:59
 tags: 泛型，上边界，下边界
+toc: true
 categories: scala
 ---
 1.Scala的类，函数，方法都可以是泛型  

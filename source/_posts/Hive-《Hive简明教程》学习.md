@@ -2,6 +2,7 @@
 title: Hive-《Hive简明教程》学习
 date: 2017-03-02 08:54:59
 tags: Hive
+toc: true
 categories: Hive
 ---
 ## 1.Hive介绍 ##

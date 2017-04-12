@@ -2,6 +2,7 @@
 title: 虚拟机NetworkAdapter三种方式的区别
 date: 2016/12/30 6:52:31
 tags: VMare
+toc: true
 categories: 工具
 ---
 Vmware在安装时默认安装了两块虚拟网卡，VMnet1和VMnet8，另外还有VMnet0。这些虚拟网卡的配置都是由Vmware虚拟机自动生成的，一般来说不需要用户自行设置。

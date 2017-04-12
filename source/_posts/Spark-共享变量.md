@@ -2,6 +2,7 @@
 title: Spark 共享变量
 date: 2017-03-29 08:54:59
 tags: Spark
+toc: true
 categories: Spark
 ---
 ## 共享变量概念 ##

@@ -2,6 +2,7 @@
 title: class与Case class的区别
 date: 2017-03-03 17:54:59
 tags: case class
+toc: true
 categories: scala
 ---
 在Scala中存在case class，它其实就是一个普通的class。但是它又和普通的class略有区别，如下：

@@ -2,6 +2,7 @@
 title: Spark-配置HistoryServer
 date: 2017-02-17 09:54:59
 tags: HistoryServer
+toc: true
 categories: Spark
 ---
 ## 1.为什么要有HistoryServer ##

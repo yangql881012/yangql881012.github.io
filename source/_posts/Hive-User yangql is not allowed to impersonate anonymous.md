@@ -2,6 +2,7 @@
 title: User yangql is not allowed to impersonate anonymous
 date: 2017-02-26 15:54:59
 tags: beeline
+toc: true
 categories: Hive
 ---
 使用HiveServer2 and Beeline模式运行时，启动好HiveServer后运行

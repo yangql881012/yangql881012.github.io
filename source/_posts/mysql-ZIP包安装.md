@@ -2,6 +2,7 @@
 title: mysql-ZIP包安装
 date: 2017-03/11 14:52:31
 tags: mysql
+toc: true
 categories: mysql
 ---
 1.先将dos目录改成mysql的bin目录

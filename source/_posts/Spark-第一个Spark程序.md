@@ -2,6 +2,7 @@
 title: Spark-第一个Spark程序
 date: 2017-02-15 10:54:59
 tags: Spark
+toc: true
 categories: Spark
 ---
 利用Scala语言编写第一个Spark程序，并分别在本地和Spark集群正常运行，主要有以下几个步骤。  

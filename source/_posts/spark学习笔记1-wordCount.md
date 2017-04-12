@@ -2,6 +2,7 @@
 title: spark学习笔记1-wordCount
 date: 2017-03-10 10:54:59
 tags: wordCount
+toc: true
 categories: Spark
 ---
 ## 1.第一步 ##

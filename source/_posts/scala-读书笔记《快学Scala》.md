@@ -2,6 +2,7 @@
 title: 快学Scala
 date: 2017-03-28 10:54:59
 tags: scala
+toc: true
 categories: 读书笔记
 ---
 ### 1.可变参数列表 ###

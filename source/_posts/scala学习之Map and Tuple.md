@@ -1,7 +1,8 @@
 ---
 title: scala学习之Map and Tuple
 date: 2017-02-02 00:54:59
-tags: scala,Map,Tuple
+tags: scala,Map,
+toc: true
 categories: scala
 ---
 1.默认情况下Map构造的是不可变集合，里面的内容不能修改，一旦修改就变成新的Map，原有的Map保持不变。

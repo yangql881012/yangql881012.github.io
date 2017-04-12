@@ -2,6 +2,7 @@
 title: Linux下MySQL安装
 date: 2017-01-19 12:04:31
 tags: Linux,MySQL
+toc: true
 categories: MySQL
 ---
 ## 1.MySQL相关介绍 ##

@@ -2,6 +2,7 @@
 title: scala集合
 date: 2017-03-03 00:54:59
 tags: 集合
+toc: true
 categories: scala
 ---
 数组是一种可变的、可索引的数据集合。在Scala中用Array[T]的形式来表示Java中的数组形式 T[]。以下介绍各种集合操作方法。

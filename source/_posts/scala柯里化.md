@@ -2,6 +2,7 @@
 title: 柯里化
 date: 2017-03-30 00:54:59
 tags: 柯里化
+toc: true
 categories: scala
 ---
 ## 概念 ##

@@ -2,6 +2,7 @@
 title: scala学习之集合函数式编程
 date: 2017-02-10 13:54:59
 tags: 函数式编程
+toc: true
 categories: scala
 ---
 1.在scala中，Iterable是公共的方法   	，Iterable要求继承者实现一些公共的方法。

@@ -2,6 +2,7 @@
 title: hadoop-RedHat5.4-64bit编译安装hadoop2.5.1.md
 date: 2017-01-09 00:54:59
 tags: Hadoop,源码编译
+toc: true
 categories: Hadoop
 ---
 ## 1 环境 ##

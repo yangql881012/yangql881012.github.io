@@ -2,6 +2,7 @@
 title: Spark SQL on hive配置和实战
 date: 2017-03-04 08:54:59
 tags: Spark SQL
+toc: true
 categories: Spark
 ---
 ## 1.安装配置Hive ##在Spark SQL下 ##

@@ -2,6 +2,7 @@
 title: Hive安装
 date: 2017-02-25 12:54:59
 tags: Hive
+toc: true
 categories: Hive
 ---
 ## 1.Hive介绍 ##

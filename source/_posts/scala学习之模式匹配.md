@@ -2,6 +2,7 @@
 title: scala学习之模式匹配
 date: 2017-02-10 00:54:59
 tags: 模式匹配
+toc: true
 categories: scala
 ---
 1.样本类：添加了case的类便是样本类。这种修饰符可以让Scala编译器自动为这个类添加一些语法上的便捷设定。如下：  

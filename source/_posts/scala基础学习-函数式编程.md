@@ -2,6 +2,7 @@
 title: scala基础学习-函数式编程
 date: 2017-02-09 23:54:59
 tags: 函数式编程
+toc: true
 categories: scala
 ---
 1.函数可以直接赋值给变量

@@ -2,6 +2,7 @@
 title: scala跳出循环的3中方法
 date: 2017-03-29 11:54:59
 tags: 跳出循环
+toc: true
 categories: scala
 ---
 Java里经常会用到continue和break，Scala里并没有这俩个语法。介绍三种跳出循环的方式,使用boolean变量、使用return、使用Breaks对象的break方法
