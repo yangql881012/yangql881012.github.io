@@ -1,9 +1,9 @@
 ---
 title: Spark 工作原理及RDD
 date: 2017-04-10 08:54:59
-tags: RDD
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 Spark是一种开源的分布式并行计算框架，Spark拥有Hadoop Mapreduce计算框架的优点。但是与Hadoop Mapreduce最大的不同就是：Hadoop Mapreduce分为两个阶段，map 和 reduce，两个阶段完了，就完了，在一个作业里能做的事情很少。而Spark是基于内存迭代计算的，可以分为N个阶段，一个阶段完了可以继续下一阶段的处理，而且Spark作业的中间结果可以保存到内存中，不用再频繁去HDFS或其它数据源读取数据。
 <!-- more -->

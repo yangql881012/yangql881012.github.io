@@ -1,9 +1,9 @@
 ---
 title: Spark-Zookeeper实现HA
 date: 2017-02-16 22:54:59
-tags: zooKeeper，HA
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 ![image](Spark-Zookeeper实现HA/spark-HA.jpg)
 

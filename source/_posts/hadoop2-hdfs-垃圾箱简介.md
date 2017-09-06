@@ -1,9 +1,9 @@
 ---
-title: hadoop2-hdfs-垃圾箱简介
+title: Hadoop2-hdfs-垃圾箱简介
 date: 2016-11-13 09:09:59
-tags: Hadoop2，垃圾箱
+tags: Hadoop
 toc: true
-categories: Hadoop
+categories: 大数据技术
 ---
 hdfs为每一个用户创建一个回收站：
 目录： /user/用户名/.Trash/ 每一个被用户通过shell删除的文件/目录

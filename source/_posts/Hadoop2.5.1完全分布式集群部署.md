@@ -3,7 +3,7 @@ title: Hadoop2.5.1完全分布式集群部署
 date: 2017/01/03
 tags: Hadoop
 toc: true
-categories: Hadoop
+categories: 大数据技术
 ---
 ## 1 部署所需软件 ##
 - 操作系统：rhel-server-5.4-x86_64-dvd.iso

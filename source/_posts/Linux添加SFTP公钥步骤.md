@@ -1,9 +1,9 @@
 ---
 title: Linux添加SFTP公钥步骤
 date: 2017/01/01
-tags: 免密钥
+tags: Linux
 toc: true
-categories: Linux
+categories: 大数据技术
 ---
 1.首先需要在目录(/home/yangql)创建.ssh文件夹
 

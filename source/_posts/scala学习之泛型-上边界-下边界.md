@@ -1,9 +1,9 @@
 ---
-title: scala学习之泛型-上边界-下边界
+title: Scala学习之泛型-上边界-下边界
 date: 2017-02-10 16:54:59
-tags: 泛型，上边界，下边界
+tags: Scala
 toc: true
-categories: scala
+categories: 大数据技术
 ---
 1.Scala的类，函数，方法都可以是泛型  
 2.上边界 "<:"表达了泛型的类型必须是某种类型或者其子类，是对类型的限定   

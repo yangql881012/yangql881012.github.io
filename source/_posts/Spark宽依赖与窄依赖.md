@@ -1,9 +1,9 @@
 ---
 title: Spark宽依赖与窄依赖
 date: 2017-04-11 22:25:59
-tags: 宽依赖与窄依赖
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 Spark中RDD的高效与DAG（有向无环图）有很大的关系，在DAG调度中需要对计算的过程划分Stage，划分的依据就是RDD之间的依赖关系。RDD之间的依赖关系分为两种，宽依赖(wide dependency/shuffle dependency)和窄依赖（narrow dependency）
 <!-- more -->

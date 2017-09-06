@@ -1,9 +1,9 @@
 ---
 title: SparkSQL之根据不同数据来源创建DataFrame
 date: 2017-04-01 08:54:59
-tags: DataFrame
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 ## 1. 介绍 ##
 本文主要介绍根据不同数据来源创建DataFrame，主要有JDBC数据源，Hive数据源，JSON数据源，Parquet数据源。

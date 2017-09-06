@@ -1,9 +1,9 @@
 ---
 title: Spark SQL性能优化
 date: 2017-03-17 08:54:59
-tags:
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 ## Spark SQL 性能优化的一些建议：##
 1. 在` SQLContext.setConf()`中设置shuffle过程中的并行度，`spark.sql.shuffle.partitions`

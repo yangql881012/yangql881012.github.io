@@ -3,7 +3,7 @@ title: Hive安装
 date: 2017-02-25 12:54:59
 tags: Hive
 toc: true
-categories: Hive
+categories: 大数据技术
 ---
 ## 1.Hive介绍 ##
 - 在Hadoop生态圈中属于数据仓库的角色。Hive能够管理Hadoop中的数据，同时可以查询Hadoop中的数据。它提供了一系列的工具，可以用来进行数据提取转化加载（ETL），这是一种可以存储、查询和分析存储在Hadoop中的大规模数据的机制。

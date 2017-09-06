@@ -3,7 +3,7 @@ title: Spark-配置HistoryServer
 date: 2017-02-17 09:54:59
 tags: HistoryServer
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 ## 1.为什么要有HistoryServer ##
 以standalone运行模式为例，在运行Spark Application的时候，Spark会提供一个WEBUI列出应用程序的运行时信息；但该WEBUI随着Application的完成(成功/失败)而关闭，也就是说，Spark Application运行完(成功/失败)后，将无法查看Application的历史记录；

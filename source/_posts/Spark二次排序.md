@@ -1,9 +1,9 @@
 ---
 title: Spark二次排序
 date: 2017-04-03 08:54:59
-tags: 二次排序
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 Spark `sortByKey`只针对单个字段，如果要对多个字段进行排序，就只能自己单独实现一个排序类。关键点：
 - 继承`Ordered[T]`接口

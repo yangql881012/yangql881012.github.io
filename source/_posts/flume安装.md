@@ -1,9 +1,9 @@
 ---
-title: flume安装
+title: Flume安装
 date: 2017-03-09 20:54:59
-tags: flume
+tags: Flume
 toc: true
-categories: flume
+categories: 大数据技术
 ---
 1.解压重命名  
 ```

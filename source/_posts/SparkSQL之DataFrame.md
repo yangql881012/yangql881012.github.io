@@ -1,9 +1,9 @@
 ---
 title: SparkSQL之DataFrame
 date: 2017-03-15 08:54:59
-tags: DataFrame
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 ## 1.DataFrame相关概念 ##
 - Spark SQL是Spark中一个处理结构化数据的模块。它提供了被称为DataFrames的编程抽象，并能作为一个分布式的SQL查询引擎

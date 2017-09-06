@@ -1,9 +1,9 @@
 ---
 title: 柯里化
 date: 2017-03-30 00:54:59
-tags: 柯里化
+tags: Scala
 toc: true
-categories: scala
+categories: 大数据技术
 ---
 ## 概念 ##
 柯里化(Currying)指的是将原来接受两个参数的函数变成新的接受一个参数的函数的过程。新的函数返回一个以原有第二个参数为参数的函数。

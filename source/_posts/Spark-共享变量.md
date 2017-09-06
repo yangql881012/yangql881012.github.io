@@ -3,7 +3,7 @@ title: Spark 共享变量
 date: 2017-03-29 08:54:59
 tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 ## 共享变量概念 ##
 默认情况下，如果在一个算子中使用到了一个外部变量，那么这个变量值会被拷贝到每个task任务中。此时每个task都只能操作自己的那份变量副本。如果多个task想要共享变量，这种情况是做不到的。  

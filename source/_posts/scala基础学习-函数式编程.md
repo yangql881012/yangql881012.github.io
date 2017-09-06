@@ -1,9 +1,9 @@
 ---
-title: scala基础学习-函数式编程
+title: Scala基础学习-函数式编程
 date: 2017-02-09 23:54:59
-tags: 函数式编程
+tags: Scala
 toc: true
-categories: scala
+categories: 大数据技术
 ---
 1.函数可以直接赋值给变量
 2.函数更常用的方式是匿名函数，定义的时候只需要说明输入参数的类型和函数体，如果要使用可以赋值给一个变量(其实是val常量)

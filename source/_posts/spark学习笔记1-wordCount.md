@@ -1,9 +1,9 @@
 ---
 title: spark学习笔记1-wordCount
 date: 2017-03-10 10:54:59
-tags: wordCount
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 ## 1.第一步 ##
 创建SparkConf对象，设置Spark应用的配置信息，使用setMaster()可以设置Spark应用程序要连接的Spark集群的master节点的url，如果设置为"local"则代表在本地运行。

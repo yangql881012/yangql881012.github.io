@@ -1,8 +1,8 @@
 ---
 title: 用Hexo-nexT-GitHub搭建个人博客
 date: 2016-11-11 09:09:59
-tags: hexo,nexT,GitHub
-categories: 工具
+tags: Hexo
+categories: 个人管理
 ---
 ## 第一章 安装Git工具 ##
 下载GitHub for Windows,直接点击安装，安装完成后，可以看到“Git Shell”和“GitHub”，"Git Shell"用于命令行模式，“GitHub”桌面版。下面介绍一些常用命令：

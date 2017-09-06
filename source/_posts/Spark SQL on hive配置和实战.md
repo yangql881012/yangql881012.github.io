@@ -1,9 +1,9 @@
 ---
 title: Spark SQL on hive配置和实战
 date: 2017-03-04 08:54:59
-tags: Spark SQL
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 ## 1.安装配置Hive ##在Spark SQL下 ##
 安装配置Hive并将元数据保存到数据库Mysql中，详见文档{% post_link Hive安装 Hive安装%}

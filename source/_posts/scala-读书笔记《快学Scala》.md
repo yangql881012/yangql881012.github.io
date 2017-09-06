@@ -1,9 +1,9 @@
 ---
 title: 快学Scala
 date: 2017-03-28 10:54:59
-tags: scala
+tags: Scala
 toc: true
-categories: 读书笔记
+categories: 大数据技术
 ---
 ### 1.可变参数列表 ###
 ```

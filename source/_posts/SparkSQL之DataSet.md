@@ -1,9 +1,9 @@
 ---
 title: SparkSQL之DataSet
 date: 2017-04-01 14:54:59
-tags: DataSet
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 ## DataSet介绍 ##
 DataSet是一个分布式数据集，从Spark 1.6开始引入，它集合了RDD API中的很多优点（强类型，lambda表达式），以及SparkSQL的优点（优化后的执行引擎）。DataSet可以通过JVM object来创建，然后通过transformation类的算子来进行操作。    

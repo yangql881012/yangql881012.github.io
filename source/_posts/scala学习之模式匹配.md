@@ -1,9 +1,9 @@
 ---
-title: scala学习之模式匹配
+title: Scala学习之模式匹配
 date: 2017-02-10 00:54:59
-tags: 模式匹配
+tags: Scala
 toc: true
-categories: scala
+categories: 大数据技术
 ---
 1.样本类：添加了case的类便是样本类。这种修饰符可以让Scala编译器自动为这个类添加一些语法上的便捷设定。如下：  
 2.添加与类名一致的工厂方法。也就是说，可以写成Var("x")来构造Var对象。  

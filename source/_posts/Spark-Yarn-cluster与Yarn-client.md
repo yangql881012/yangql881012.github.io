@@ -1,9 +1,9 @@
 ---
 title: Spark-Yarn-cluster与Yarn-client
 date: 2017-02-16 22:54:59
-tags: Yarn-cluster，Yarn-
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 在Spark中，有Yarn-Client和Yarn-Cluster两种模式可以运行在Yarn上，通常情况下Yarn-cluster适用于生产环境，而Yarn-Cluster更适用于交互，调试模式，以下是它们的区别
 <!-- more -->

@@ -1,9 +1,9 @@
 ---
 title: Spark性能并行度
 date: 2017-04-06 08:54:59
-tags: 性能调优
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 ## 1. Spark的并行度 ##
 spark作业中，各个stage的task的数量，代表了spark作业在各个阶段stage的并行度！当分配完所能分配的最大资源了，然后对应资源去调节程序的并行度，如果并行度没有与资源相匹配，那么导致你分配下去的资源都浪费掉了。同时并行运行，还可以让每个task要处理的数量变少。合理设置并行度，可以充分利用集群资源，减少个task处理数据量，而增加性能加快运行速度。

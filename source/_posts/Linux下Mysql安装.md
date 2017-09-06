@@ -1,9 +1,9 @@
 ---
 title: Linux下MySQL安装
 date: 2017-01-19 12:04:31
-tags: Linux,MySQL
+tags: MySQL
 toc: true
-categories: MySQL
+categories: 大数据技术
 ---
 ## 1.MySQL相关介绍 ##
 MySQL是一个关系型数据库管理系统，由瑞典MySQL AB公司开发，目前属于Oracle公司。MySQL是一种关联数据库管理系统，关联数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性。MySQL的SQL语言是用于访问数据库的最常用标准化语言。MySQL软件采用了双授权政策，它分为社区版和商业版，由于其体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，一般中小型网站的开发都选择MySQL作为网站数据库。在Linux上安装mysql数据库，我们可以去其官网上下载mysql数据库的rpm包，http://dev.mysql.com/downloads/mysql/5.6.html#downloads。
@@ -67,6 +67,7 @@ rsyslog7-mysql.x86_64                       7.4.10-5.el6                base
 
 ## 4.MySQL数据库的初始化及相关配置 ##
 我们在安装完mysql数据库以后，会发现会多出一个mysqld的服务，这个就是咱们的数据库服务，我们通过输入 `service mysqld start` 命令就可以启动我们的mysql服务。注意：如果我们是第一次启动mysql服务，mysql服务器首先会进行初始化的配置，如：
+
 ```
 [root@hadoop01 ~]# service mysqld start
 
@@ -134,7 +135,7 @@ mysqld         	0:off	1:off	2:on	3:on	4:on	5:on	6:off
 
 为root用户设置密码
 ```
-[root@hadoop01 ~]# mysqladmin -u root password 'root'　　// 通过该命令给root账号设置密码为 root
+[root@hadoop01 ~]# mysqladmin -u root password 'root123'　　// 通过该命令给root账号设置密码为 root123
 
 ```
 登录
@@ -193,9 +194,5 @@ Query OK, 1 row affected (0.00 sec)
 
 ```  
 -  /var/log MySQL数据库的日志输出存放位置  
-
-
-因为我们的mysql数据库是可以通过网络访问的，并不是一个单机版数据库，其中使用的协议是 tcp/ip 协议，我们都知道mysql数据库绑定的端口号是 3306 ，所以我们可以通过 netstat -anp 命令来查看一下，Linux系统是否在监听 3306 这个端口号：
-```
-
+因为我们的mysql数据库是可以通过网络访问的，并不是一个单机版数据库，其中使用的协议是 tcp/ip 协议，我们都知道mysql数据库绑定的端口号是 3306 ，所以我们可以通过 netstat -anp 命令来查看一下，Linux系统是否在监听 3306 这个端口号
 ```

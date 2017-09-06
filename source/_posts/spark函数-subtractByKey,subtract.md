@@ -1,9 +1,9 @@
 ---
 title: spark函数-subtractByKey,subtract
 date: 2017-03-21 10:55:59
-tags: wordCount
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 ## subtractByKey ##
 RDD1.subtractByKey(RDD2):返回一个新的RDD，内容是：RDD1 key中存在的，RDD2 key中不存在的

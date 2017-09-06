@@ -1,9 +1,9 @@
 ---
-title: scala的Symbol类型
+title: Scala的Symbol类型
 date: 2017-03-29 20:54:59
-tags: Symbol
+tags: Scala
 toc: true
-categories: scala
+categories: 大数据技术
 ---
 相比较于String类型，Symbol类型有两个比较明显的特点:节省内存和快速比较
 ## String的intern ##

@@ -1,9 +1,9 @@
 ---
 title: Spark两种提交方式Yarn-client and Yarn-cluster
 date: 2017-04-12 10:54:59
-tags: Yarn-clien,Yarn-cluster
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 Spark支持三种集群部署方式(Standalone,Mesos,Yarn),其中Master服务(Spark Standalone,Mesos Master,Yarn ResourceManager)决定哪些应用可以运行，在那个节点上运行，以及什么时候运行。Slave服务（Yarn NodeManager）运行在每个节点上，节点控制着Executor进程，同时监控作业的运行状态以及资源的消耗。Spark运行在Yarn上，有两种模式，Yarn-Client和Yarn-Cluster。通常情况下，Yarn-Cluster用于生产环境，Yarn-Client用于交互、调试。
 <!-- more -->

@@ -1,9 +1,9 @@
 ---
 title: Task未序列化(Task not serializable)问题分析及解决
 date: 2017-04-03 09:54:59
-tags: serializable
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 在Spark程序中，在map等算子内部使用了外部定义的变量和函数，从而引发Task未序列化问题。其中最普遍的是当引用了某个类的成员函数或变量时，会导致这个类的所有成员（整个类）都需要支持序列化。虽然许多情形下，类使用了`extends Serializable`声明支持序列化，但是由于某些字段不支持序列化，仍然会导致整个类序列化时出现问题，最终导致出现Task未序列化问题。
 出现如下错误如下：

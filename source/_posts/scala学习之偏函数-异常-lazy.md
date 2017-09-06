@@ -1,9 +1,9 @@
 ---
-title: scala学习之偏函数-异常-lazy
+title: Scala学习之偏函数-异常-lazy
 date: 2017-02-11 16:54:59
-tags: 偏函数,异常,lazy
+tags: Scala
 toc: true
-categories: scala
+categories: 大数据技术
 ---
 偏函数：当函数有多个参数，而在使用该函数时不想提供所有参数（比如函数有3个参数），只提供0~2个参数，此时得到的函数便是偏函数。  
 

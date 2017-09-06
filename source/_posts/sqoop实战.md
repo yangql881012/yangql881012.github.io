@@ -1,9 +1,9 @@
 ---
 title: sqoop实战
 date: 2017-01-23 00:54:59
-tags: sqoop
+tags: Sqoop
 toc: true
-categories: sqoop
+categories: 大数据技术
 ---
 sqoop连接mysql数据库，讲数据库表中数据导出到HDFS。
 <!-- more -->

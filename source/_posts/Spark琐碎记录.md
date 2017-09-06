@@ -1,9 +1,9 @@
 ---
 title: Spark琐碎记录
 date: 2017-04-03 08:54:59
-tags: 琐碎记录
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 本文主要针对Spark一些特性记录，随时保持更新
 <!-- more -->

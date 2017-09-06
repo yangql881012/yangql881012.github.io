@@ -1,9 +1,9 @@
 ---
 title: SparkSQL RDD转换DataFrame方法
 date: 2017-03-31 08:54:59
-tags: DataFrame
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 DataFrame可以创建临时视图，DataFrame相当于关系数据库上的一个表，我们可以利用DataFrame的这个特性，使用SQL语句进行一系列的操作。将SparkRDD转化为DataFram主要有两种方式。第一：通过反射的方式将RDD转换为DataFrame，第二：通过编程的方式将RDD转换为DataFrame
 <!-- more -->

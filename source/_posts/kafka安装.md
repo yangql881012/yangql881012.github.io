@@ -1,9 +1,9 @@
 ---
-title: kafka安装
+title: Kafka安装
 date: 2017-03-09 00:54:59
-tags: kafka
+tags: Kafka
 toc: true
-categories: kafka
+categories: 大数据技术
 ---
 1.解压重命名
 ```

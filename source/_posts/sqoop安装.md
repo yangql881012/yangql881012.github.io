@@ -1,9 +1,9 @@
 ---
-title: sqoop安装
+title: Sqoop安装
 date: 2017-01-18 00:54:59
-tags: sqoop
+tags: Sqoop
 toc: true
-categories: sqoop
+categories: 大数据技术
 ---
 Sqoop是SQL to Hadoop的缩写，主要作用在于在结构的数据存储(关系型数据库)与Hadoop之间进行数据双向交换。也就是说，Sqoop可以将关系数据库(如MySQL,Oracel等)的数据导入Hadoop的HDFS、Hive中，也可以将HDFS、Hive的数据导出到关系数据库中。Sqoop充分利用了Hadoop的优点，整个导入都是由MapReduce计算框架实现并行化，非常高效。
 <!-- more -->

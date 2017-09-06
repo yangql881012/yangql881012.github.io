@@ -3,7 +3,7 @@ title: Spark-第一个Spark程序
 date: 2017-02-15 10:54:59
 tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 利用Scala语言编写第一个Spark程序，并分别在本地和Spark集群正常运行，主要有以下几个步骤。  
 1 创建Spark的配置对象SparkConf，设置Spark的运行时信息，例如说通过色图Master来设置程序要链接到的集群的Master的URL，如果设置为local，则为本地运行。  

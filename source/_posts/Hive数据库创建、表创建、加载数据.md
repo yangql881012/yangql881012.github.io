@@ -1,9 +1,9 @@
 ---
 title: Hive数据库创建、表创建、加载数据
 date: 2017-02-28 12:54:59
-tags: 数据库，表，数据加载
+tags: Hive
 toc: true
-categories: Hive
+categories: 大数据技术
 ---
 ## 1.数据库 ##
 ### 1.1.创建数据库 ###

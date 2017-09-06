@@ -1,9 +1,9 @@
 ---
-title: scala学习之集合函数式编程
+title: Scala学习之集合函数式编程
 date: 2017-02-10 13:54:59
-tags: 函数式编程
+tags: Scala
 toc: true
-categories: scala
+categories: 大数据技术
 ---
 1.在scala中，Iterable是公共的方法   	，Iterable要求继承者实现一些公共的方法。
 2.Array是一个非常基础的数据结构，不属于scala集合体系。  

@@ -3,7 +3,7 @@ title: Hive-《Hive简明教程》学习
 date: 2017-03-02 08:54:59
 tags: Hive
 toc: true
-categories: Hive
+categories: 大数据技术
 ---
 ## 1.Hive介绍 ##
 Hive是Facebook为了解决海量日志数据的分析而开发的。是一种用SQL来协助读写、管理存储在分布式存储系统上的大数据集的数据仓库软件，主要有以下几个特点:

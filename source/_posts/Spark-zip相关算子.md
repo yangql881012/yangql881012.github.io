@@ -1,9 +1,9 @@
 ---
 title: Spark-zip相关算子
 date: 2017-03-29 15:54:59
-tags: zip
+tags: Spark
 toc: true
-categories: Spark
+categories: 大数据技术
 ---
 ## zip 算子 ##
 zip函数用于将两个RDD组合成key/value形式的RDD，这里默认两个RDD的数量(partitions)以及元素数量都相同，否则将抛出异常` java.lang.IllegalArgumentException: Can't zip RDDs with unequal numbers of partitions:`
