@@ -163,6 +163,73 @@
 
 <article class="post">
     
+        <div class="post-media">
+            <a href="/2017/03/29/Spark-共享变量20190524/">
+                <img class="img-ajax" src="/img/loading.gif" data-src="/2017/03/29/Spark-共享变量20190524/Spark-共享变量/共享变量原理.jpg" alt="Spark 共享变量">
+            </a>
+        </div>
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/2017/03/29/Spark-共享变量20190524/">Spark 共享变量</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2017年03月29日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                共享变量概念默认情况下，如果在一个算子中使用到了一个外部变量，那么这个变量值会被拷贝到每个task任务中。此时每个task都只能操作自己的那份变量副本。如果多个task想要共享变量，这种情况是做不到的。Spark为此提供了两种共享变量，一种是BroadCast Variable(广播变量)，另一种是Accumulator（累加变量）。BroadCast会将使用到的变量，仅仅为每个节点拷贝一份，而不是为每个task拷贝一个副本，这样做的好处是优化性能，减少网络传输以及内存消耗。SparkContext.broadCast()方法创建广播变量。用value()方法读取值。Accumulator则可以让多个task共同操作一个变量，变量可以进行累加操作…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Spark" title="Spark">
+                        Spark
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/2017/03/29/Spark-共享变量20190524/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
     <div class="post-content">
         <div class="post-head home-post-head">
             <h1 class="post-title">
@@ -726,67 +793,6 @@ DataFrame能通过广泛的数据源构建，比如：结构化数据文件，Hi
 </article>
 
 
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2017/03/04/Spark-SQL-on-hive配置和实战20190524/">Spark SQL on hive配置和实战</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2017年03月04日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                1.安装配置Hive ##在Spark SQL下安装配置Hive并将元数据保存到数据库Mysql中，详见文档…
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/技术">
-            技术
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/Spark" title="Spark">
-                        Spark
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
-</div>
-
-            </div>
-
-            <div class="post-permalink">
-                <a href="/2017/03/04/Spark-SQL-on-hive配置和实战20190524/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
 
 
     <nav class="pagination" role="navigation">
@@ -870,7 +876,7 @@ DataFrame能通过广泛的数据源构建，比如：结构化数据文件，Hi
         
     <div class="widget">
         <h3 class="title">分类</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/"><i class="fa" aria-hidden="true">技术</i></a><span class="category-list-count">93</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据分析/"><i class="fa" aria-hidden="true">数据分析</i></a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/"><i class="fa" aria-hidden="true">读书</i></a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/金融业务/"><i class="fa" aria-hidden="true">金融业务</i></a><span class="category-list-count">3</span></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/"><i class="fa" aria-hidden="true">技术</i></a><span class="category-list-count">93</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据分析/"><i class="fa" aria-hidden="true">数据分析</i></a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/"><i class="fa" aria-hidden="true">读书</i></a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/金融业务/"><i class="fa" aria-hidden="true">金融业务</i></a><span class="category-list-count">4</span></li></ul>
     </div>
 
 
@@ -878,7 +884,7 @@ DataFrame能通过广泛的数据源构建，比如：结构化数据文件，Hi
         
     <div class="widget">
         <h3 class="title">归档</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/"><i class="fa" aria-hidden="true">2019年05月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/"><i class="fa" aria-hidden="true">2019年02月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/"><i class="fa" aria-hidden="true">2019年01月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">2018年07月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/"><i class="fa" aria-hidden="true">2017年10月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/"><i class="fa" aria-hidden="true">2017年09月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/"><i class="fa" aria-hidden="true">2017年07月</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/"><i class="fa" aria-hidden="true">2017年06月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/"><i class="fa" aria-hidden="true">2017年05月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/"><i class="fa" aria-hidden="true">2017年04月</i></a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">2017年03月</i></a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">2017年02月</i></a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">2017年01月</i></a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/"><i class="fa" aria-hidden="true">2016年12月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/"><i class="fa" aria-hidden="true">2016年11月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/"><i class="fa" aria-hidden="true">2015年05月</i></a><span class="archive-list-count">1</span></li></ul>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/"><i class="fa" aria-hidden="true">2019年05月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/"><i class="fa" aria-hidden="true">2019年02月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/"><i class="fa" aria-hidden="true">2019年01月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">2018年07月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/"><i class="fa" aria-hidden="true">2017年10月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/"><i class="fa" aria-hidden="true">2017年09月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/"><i class="fa" aria-hidden="true">2017年07月</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/"><i class="fa" aria-hidden="true">2017年06月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/"><i class="fa" aria-hidden="true">2017年05月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/"><i class="fa" aria-hidden="true">2017年04月</i></a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">2017年03月</i></a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">2017年02月</i></a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">2017年01月</i></a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/"><i class="fa" aria-hidden="true">2016年12月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/"><i class="fa" aria-hidden="true">2016年11月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/"><i class="fa" aria-hidden="true">2015年05月</i></a><span class="archive-list-count">1</span></li></ul>
     </div>
 
 
@@ -900,7 +906,7 @@ DataFrame能通过广泛的数据源构建，比如：结构化数据文件，Hi
     <h3 class="title">标签云</h3>
     <div class="content tag-cloud">
         
-            <a href="/tags/Elasticsearch/" style="font-size: 11.11px;">Elasticsearch</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Hadoop/" style="font-size: 14.44px;">Hadoop</a> <a href="/tags/Hbase/" style="font-size: 12.22px;">Hbase</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/HistoryServer/" style="font-size: 10px;">HistoryServer</a> <a href="/tags/Hive/" style="font-size: 17.78px;">Hive</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/Phoenix/" style="font-size: 10px;">Phoenix</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/Scala/" style="font-size: 18.89px;">Scala</a> <a href="/tags/Spark/" style="font-size: 20px;">Spark</a> <a href="/tags/Sqoop/" style="font-size: 11.11px;">Sqoop</a> <a href="/tags/VMare/" style="font-size: 10px;">VMare</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/个人管理/" style="font-size: 15.56px;">个人管理</a> <a href="/tags/大数据场景学习/" style="font-size: 12.22px;">大数据场景学习</a> <a href="/tags/数据仓库/" style="font-size: 11.11px;">数据仓库</a> <a href="/tags/数据分析/" style="font-size: 10px;">数据分析</a> <a href="/tags/月结月策/" style="font-size: 11.11px;">月结月策</a> <a href="/tags/计划与实现/" style="font-size: 10px;">计划与实现</a> <a href="/tags/读书笔记/" style="font-size: 12.22px;">读书笔记</a> <a href="/tags/银行/" style="font-size: 10px;">银行</a> <a href="/tags/银行业务/" style="font-size: 11.11px;">银行业务</a> <a href="/tags/高等数学/" style="font-size: 16.67px;">高等数学</a>
+            <a href="/tags/Elasticsearch/" style="font-size: 11.11px;">Elasticsearch</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Hadoop/" style="font-size: 14.44px;">Hadoop</a> <a href="/tags/Hbase/" style="font-size: 12.22px;">Hbase</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/HistoryServer/" style="font-size: 10px;">HistoryServer</a> <a href="/tags/Hive/" style="font-size: 17.78px;">Hive</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/Phoenix/" style="font-size: 10px;">Phoenix</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/Scala/" style="font-size: 18.89px;">Scala</a> <a href="/tags/Spark/" style="font-size: 20px;">Spark</a> <a href="/tags/Sqoop/" style="font-size: 11.11px;">Sqoop</a> <a href="/tags/VMare/" style="font-size: 10px;">VMare</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/个人管理/" style="font-size: 15.56px;">个人管理</a> <a href="/tags/大数据场景学习/" style="font-size: 12.22px;">大数据场景学习</a> <a href="/tags/数据仓库/" style="font-size: 11.11px;">数据仓库</a> <a href="/tags/数据分析/" style="font-size: 10px;">数据分析</a> <a href="/tags/月结月策/" style="font-size: 11.11px;">月结月策</a> <a href="/tags/计划与实现/" style="font-size: 10px;">计划与实现</a> <a href="/tags/读书笔记/" style="font-size: 12.22px;">读书笔记</a> <a href="/tags/银行/" style="font-size: 10px;">银行</a> <a href="/tags/银行业务/" style="font-size: 12.22px;">银行业务</a> <a href="/tags/高等数学/" style="font-size: 16.67px;">高等数学</a>
         
     </div>
   </div>
