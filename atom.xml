@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>不圆的石头</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://qioinglong.top/"/>
+  <updated>2019-05-28T05:17:22.225Z</updated>
+  <id>http://qioinglong.top/</id>
+  
+  <author>
+    <name>不圆的石头</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>智慧银行网点</title>
+    <link href="http://qioinglong.top/2019/05/27/%E9%93%B6%E8%A1%8C-%E6%99%BA%E6%85%A7%E9%93%B6%E8%A1%8C%E7%BD%91%E7%82%B9/"/>
+    <id>http://qioinglong.top/2019/05/27/银行-智慧银行网点/</id>
+    <published>2019-05-26T16:00:00.000Z</published>
+    <updated>2019-05-28T05:17:22.225Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-什么是智慧银行网点"><a href="#1-什么是智慧银行网点" class="headerlink" title="1.什么是智慧银行网点"></a>1.什么是智慧银行网点</h1><p>智慧银行是一场理念、策略、流程的变革和实践，依托创新科技(智能设备数字媒体、人机交互等技术)推进金融新服务、新产品、新运营和业务模式创新。主要包含以下几个方面：<br><a id="more"></a> </p><p><img src="/2019/05/27/银行-智慧银行网点/智慧银行网点.png" alt="智慧银行网点"></p><h2 id="1-1-身份识别智能化"><a href="#1-1-身份识别智能化" class="headerlink" title="1.1.身份识别智能化"></a>1.1.身份识别智能化</h2><ol><li>通过人脸识别、人证比对作为落实客户身份实名制的重要手段，解决柜面难于核实、疏于核实的问题；</li><li>将人脸识别作为柜员身份核实方式，解决柜员身份识别问题；</li><li>在满足监管要求的前提下，探索将人脸识别作为账户支取方式，即可实现刷脸取款。</li></ol><h2 id="1-2-业务办理场景化"><a href="#1-2-业务办理场景化" class="headerlink" title="1.2.业务办理场景化"></a>1.2.业务办理场景化</h2><ol><li>整合柜面系统，统一系统入口，一次身份认证，实现单点登录。</li><li>重构业务流程，以交易场景为导向，以固化流程为目标，实现业务办理一次身份认证、一次签名、一张综合业务凭证。</li><li>引入智能柜员机，通过业务模式向“自助+协助”转型，提升业务处理效率和网点服务能力。</li></ol><h2 id="1-3-业务凭证无纸化"><a href="#1-3-业务凭证无纸化" class="headerlink" title="1.3.业务凭证无纸化"></a>1.3.业务凭证无纸化</h2><ol><li>通过柜外清设备进行电子签名或指纹签名，实现签字凭证无纸化，即解决部分老年客户不会写字的问题，又杜绝了柜员办理业务一手清。</li><li>通过用电子印章替代柜面实物印章，在解决印章违规使用、管理不善的同时，实现盖章凭证无纸化。</li><li>辅以电子签章功能，通过电子签章验证码，实现业务场景可追溯性，并增强凭证的合法性效力。</li></ol><h2 id="1-4-数据联动协同化"><a href="#1-4-数据联动协同化" class="headerlink" title="1.4.数据联动协同化"></a>1.4.数据联动协同化</h2><ol><li>线上线下渠道协同，实现线下网点对线上业务的落地承接。</li><li>支持对现有行内行外、有人无人设备的统一接入，实现机具设备间数据联动共享，解决系统、机具孤岛的问题。</li><li>统一信息发布，实现各类营销信息、产品功能、业务通知等在各渠道、各终端的统一发布。</li><li>支持设备接入的多样性，通过建立准入标准，更能灵活兼顾统一性和行特色化需求。</li></ol><h2 id="1-5-营销风控数据化"><a href="#1-5-营销风控数据化" class="headerlink" title="1.5.营销风控数据化"></a>1.5.营销风控数据化</h2><ol><li>通过大数据运用，全方位向大堂经理展示客户视图、客户画像，通过重要信息的及时推送，为厅堂精准营销创造条件。</li><li>通过对各个服务终端交易数据、客户行为数据以及柜员操作数据进行采集。根据交易行为特点，结合监管要求和内外部案件风险特征，分别建立指标模型进行大数据分析，实现对外部客户行为风险的有效识别预警、内部柜员操作风险的监测阻断。</li></ol><h2 id="1-6-运营管理工具化"><a href="#1-6-运营管理工具化" class="headerlink" title="1.6.运营管理工具化"></a>1.6.运营管理工具化</h2><ol><li>按照案例特征化、特征指标化、指标模型化的思路，建立运营监测指标模型，包括业务量指标、员工履职指标、现金重空指标、差错指标、反洗钱监测指标等进行集中运营监测。</li><li>支持日常运营线上管理，实现省级、行（社）级对不同纬度的信息管理，如柜员基础信息、违规积分、轮岗、现场和非现场检查、重要账户核对等。</li><li>通过构建管理驾驶舱，为分析决策提供依据。</li></ol><h2 id="1-7-为什么需要智慧银行网点"><a href="#1-7-为什么需要智慧银行网点" class="headerlink" title="1.7.为什么需要智慧银行网点"></a>1.7.为什么需要智慧银行网点</h2><p>面对同业竞争白热化、金融科技飞速发展、客户快速迁徙等的内外夹击，顺应网点轻型化、智能化、小型化发展趋势，加快推进智慧银行网点转型，以提升网点效能、优化资源配置、增强竞争力迫在眉睫。而目前网点普通存在以下的问题：</p><ol><li>运营能将低，员工，网点分布不合理，经济效益差。</li><li>体验差，客户等待时间长，业务办理流程复杂，渠道不协同。</li><li>案件频发，客户与员工身份识别不到位，还在利用靠人、靠制度来防范风险。</li></ol><p>实施智能银行网点后，将会从以下几个方面改善目前存在的问题。</p><ol><li>风险控制将从弱工具、弱流程、弱制度方式向强工具、强流程、弱制度的转变。将有效减少冒用他人身份证开户、冒名贷款、私下客户存款等案件的发生。</li><li>运营成本将从高成本、高能耗、低盗用向低成本、低能耗、高效转变，大幅降低网点的业务服务成本。</li><li>整合业务场景、零散的系统孤岛、零散的交易方式等，提升服务效率。</li><li>人力资源的流动，机具的灵活调配，现金的管理等运营模式将会得到显著的提高。</li></ol><h1 id="2-智慧网点方案"><a href="#2-智慧网点方案" class="headerlink" title="2.智慧网点方案"></a>2.智慧网点方案</h1><p>智慧银行网点要根据客户群体的不同以及网点位置进行差异化部署，主要部署方案有以下几种。</p><div class="table-container"><table><thead><tr><th style="text-align:center">网点分类</th><th style="text-align:center">客户定位</th><th style="text-align:center">功能布局</th><th style="text-align:center">服务模式</th></tr></thead><tbody><tr><td style="text-align:center">旗舰网点</td><td style="text-align:center">城区、商业中心的客户</td><td style="text-align:center">高柜区、低柜区、产品体验区、理财区、自助服务区</td><td style="text-align:center">人工+自助、智能+协助、代客+自营、洽谈+体验、线上+线下</td></tr><tr><td style="text-align:center">中型网点</td><td style="text-align:center">城郊、居民社区的客户</td><td style="text-align:center">高柜区、自助服务区</td><td style="text-align:center">人工+自助、智能+协助、洽谈+体验、线上+线下</td></tr><tr><td style="text-align:center">轻型网点</td><td style="text-align:center">乡镇、村民聚集点的客户</td><td style="text-align:center">高柜区、自助服务区</td><td style="text-align:center">人工+自助、智能+协助、线上+线下</td></tr></tbody></table></div><p>智能设备类型</p><ol><li>智能柜员机：主要用于办理非现金业务，比如开户、转账汇款、账户激活、挂失解挂、账户签约等，还可以直接申领各类银行卡/u-key等产品的机具</li><li>智能pad：主要用于办理非现金业务以及不涉及介质领取的业务。</li><li>厅堂手持pad：用于现场管理、业务审核、客户识别以及营销支持。</li><li>柜外清设备：集密码输入、电子签名、指纹采集、语音提示、场景抓拍以及信息交互等功能于一体的柜外服务终端。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;1-什么是智慧银行网点&quot;&gt;&lt;a href=&quot;#1-什么是智慧银行网点&quot; class=&quot;headerlink&quot; title=&quot;1.什么是智慧银行网点&quot;&gt;&lt;/a&gt;1.什么是智慧银行网点&lt;/h1&gt;&lt;p&gt;智慧银行是一场理念、策略、流程的变革和实践，依托创新科技(智能设备数字媒体、人机交互等技术)推进金融新服务、新产品、新运营和业务模式创新。主要包含以下几个方面：&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="金融业务" scheme="http://qioinglong.top/categories/%E9%87%91%E8%9E%8D%E4%B8%9A%E5%8A%A1/"/>
+    
+    
+      <category term="银行业务" scheme="http://qioinglong.top/tags/%E9%93%B6%E8%A1%8C%E4%B8%9A%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高等数学_微分</title>
+    <link href="http://qioinglong.top/2019/02/21/20190213_%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E5%BE%AE%E5%88%862019022220190222/"/>
+    <id>http://qioinglong.top/2019/02/21/20190213_高等数学_微分2019022220190222/</id>
+    <published>2019-02-20T22:52:31.000Z</published>
+    <updated>2019-02-22T07:14:56.092Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-微分的定义"><a href="#1-微分的定义" class="headerlink" title="1. 微分的定义"></a>1. 微分的定义</h2><p>设函数 y=f(x) 在某区间内有定义，$x_0$ 及 $x_0 + \Delta x$ 在这区间内，如果函数的增量</p><script type="math/tex; mode=display">\Delta y = f(x_0 + \Delta x) - f(x_0)</script><p>可表示为</p><script type="math/tex; mode=display">\Delta y = A\Delta x + O(\Delta x)</script><p>其中 A是不依赖于 $\Delta x$的常数,那么称函数y=f(x)在点 x0 是可微的，而 $A\Delta x$ 叫做函数 y=f(x) 在点 x0 相应于自变量增量 $\Delta x$ 的微分，记作 dy ，即</p><script type="math/tex; mode=display">dy =  A \Delta x</script><p>函数 f(x)在点 x0 可微 $\Leftarrow\Rightarrow$ 函数f(x)在点 x0 可导，且当函数f(x)在点 x0 可微时，其微分一定是</p><script type="math/tex; mode=display">dy = f'(x_0) \Delta x</script><ol><li>y=f(x) 在任意点 x 的微分称为函数的微分，记作 dy 或 df(x)  ,即 $dy=f’(x)\Delta x$</li><li>把自变量的增量 $\Delta x$称为自变量的微分，记作 dx ，即 $dx=\Delta x$<script type="math/tex; mode=display">dy=f'(x)dx  \frac{dy}{dx}=f'(x)</script></li><li>导数又称为“微商”</li><li>由 $dy=f’(x)dx$ ,求函数的微分dy:求出导数f’(x),再乘以dx</li></ol><h2 id="2-复合函数的微分法则"><a href="#2-复合函数的微分法则" class="headerlink" title="2. 复合函数的微分法则"></a>2. 复合函数的微分法则</h2><p>设y=f(u)及u=g(x)都可导，则y=f[g(x)]的微分为</p><script type="math/tex; mode=display">dy=f'(u)g'(x)dx</script><p>另外  g’(x)dx=du<br>所以</p><script type="math/tex; mode=display">dy=f'(u)du</script><p>无论u 是自变量还是中间变量，微分形式 $dy=f’(u)du$ 保持不变，这一性质称为微分形式的不变性</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-微分的定义&quot;&gt;&lt;a href=&quot;#1-微分的定义&quot; class=&quot;headerlink&quot; title=&quot;1. 微分的定义&quot;&gt;&lt;/a&gt;1. 微分的定义&lt;/h2&gt;&lt;p&gt;设函数 y=f(x) 在某区间内有定义，$x_0$ 及 $x_0 + \Delta x$ 在这区
+      
+    
+    </summary>
+    
+      <category term="数据分析" scheme="http://qioinglong.top/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="高等数学" scheme="http://qioinglong.top/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高等数学_导数</title>
+    <link href="http://qioinglong.top/2019/02/20/20190213_%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E5%AF%BC%E6%95%B02019022120190221/"/>
+    <id>http://qioinglong.top/2019/02/20/20190213_高等数学_导数2019022120190221/</id>
+    <published>2019-02-19T22:52:31.000Z</published>
+    <updated>2019-02-21T08:47:28.132Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-导数的定义"><a href="#1-导数的定义" class="headerlink" title="1. 导数的定义"></a>1. 导数的定义</h2><p>设函数y=f(x)在点$x_0$的某个邻域内有定义，当自变量 x在$x_0$处取得增量 $\Delta x$ ($x_0$ + $\Delta x$ 仍在该邻域内)时，因变量 y 相应地取得增量</p><script type="math/tex; mode=display">\Delta y=f(x_0 + \Delta x) - f(x_0)</script><p>若 $\displaystyle \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$ 存在，则称函数 y =f(x) 在点 $x_0$处可导<br>并称该极限为y=f(x)在点 $x_0$ 处的导数,记为 $f’(x_0)$,</p><script type="math/tex; mode=display">f'(x_0)=\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} =\lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}</script><script type="math/tex; mode=display">y'|_{x=x_0},\frac{dy}{dx}|_{x=x_0}或\frac{df(x)}{dx}|_{x=x_0}</script><p>函数在点$x_0$处可导(具有导数和导数存在)</p><ol><li>左导数与右导数统称为单侧导数.</li><li>函数 f ( x ) 在点 x0 处可导的充分必要条件是左导数 $f’_-(x_0)$ 和右导数 $f’_+(x_0)$ 都存在且相等</li><li>如果函数 f  (x ) 在开区间(a,b)内可导, $f’_+(a)$ $f’_-(b)$ 都存在，那么就称 f  (x )在闭区间[a,b]内可导</li><li>过切点 A 且与切线垂直的直线叫做曲线y=f(x)在点 A 处的法线</li><li>切线方程<script type="math/tex; mode=display">y-y_0=f'(x_0)(x-x_0)</script></li><li>法线方程<script type="math/tex; mode=display">y-y_0=-\frac{1}{f'(x_0)}(x-x_0) (且f'(x_0) \neq 0)</script></li><li>如果y=f(x)在点 x0 处的导数为无穷大,这时y=f(x)的割线以垂直于 x 轴的直线 x =x0 为极限位置,即y=f(x)在点 A 处具有垂直于 x 轴的切线 x=x0,其法线方程为y=y0</li><li>若y=f(x)在点x0处可导，则f(x)在点x0处连续</li><li>若y=f(x)在点x0处连续，但f(x)在点x0处不一定可导</li></ol><h2 id="2-函数的和、差、积、商的求导法测"><a href="#2-函数的和、差、积、商的求导法测" class="headerlink" title="2. 函数的和、差、积、商的求导法测"></a>2. 函数的和、差、积、商的求导法测</h2><p>如果函数u=u(x)和v=v(x)都在点x可导，那么他们的和、差、积、商（除分母为0的点外）都在店x可导，且：</p><ol><li>$(u \pm v)’ = u’ \pm v’$</li><li>$(uv)’=u’v+uv’$</li><li>$(\frac{u}{v})’=\frac{u’v-uv’}{v^2}(v(x) \neq 0)$</li></ol><h2 id="3-反函数的求导法则"><a href="#3-反函数的求导法则" class="headerlink" title="3.反函数的求导法则"></a>3.反函数的求导法则</h2><p>设函数 $x=f(y)$ 在区间 $I_y$ 内单调、 可导,且 $f’(y) \neq 0$ ,则其反函数 $y=f^{-1}(x)$ 在区间 $I_x={x|x=f(y), y \in I_y}$ 内也可导，且：</p><script type="math/tex; mode=display">[f^{-1}(x)]'=\frac{1}{f'(y)} 或 \frac{dy}{dx}=\frac{1}{\frac{dx}{dy}}</script><p>反函数的导数是直接函数导数的倒数</p><h2 id="4-复合函数的求导法则"><a href="#4-复合函数的求导法则" class="headerlink" title="4. 复合函数的求导法则"></a>4. 复合函数的求导法则</h2><p>设 $u=g(x)$ 在点x可导，而 $y=f(u)$ 在点 $u=g(x)$ 可导，那么复合函数 $y=f[g(x)]$ 在点x可导，且:</p><script type="math/tex; mode=display">\frac{dy}{dx}=f'(u).g'(x)或\frac{dy}{dx}=\frac{dy}{du}.\frac{du}{dx}</script><h2 id="5-导数实例"><a href="#5-导数实例" class="headerlink" title="5. 导数实例　"></a>5. 导数实例　</h2><ol><li>$(C)’=0$</li><li>$(x^u)’=ux^{u-1}$</li><li>$(a^x)’=a^xlna$</li><li>$(e^x)’=e^x$</li><li>$(log_ax)’=\frac{1}{xlna}$</li><li>$(lnx)’=\frac{1}{x}$</li><li>$(sinx)’=cosx$</li><li>$(cosx)’=-sinx$</li><li>$[cu(x)]’=cu’(x)$</li><li>$(tanx)’=sec^2x$</li><li>$(cotx)’=-\frac{1}{sin^2x}=-csc^2x$</li><li>$(secx)’=secxtanx$</li><li>$(cscx)’=-cscxcotx$</li><li>$(arcsinx)’=\frac{1}{\sqrt{1-x^2}}$</li><li>$(arccosx)’=-\frac{1}{\sqrt{1-x^2}}$</li><li>$(arctanx)’=\frac{1}{1+x^2}$</li><li>$(arccotx)’=-\frac{1}{1+x^2}$</li></ol><h2 id="6-高阶导数"><a href="#6-高阶导数" class="headerlink" title="6. 高阶导数"></a>6. 高阶导数</h2><p>一般地,函数 $y=f(x)$ 的导数 $y’=f’(x)$ 仍然是x的函数，我们把 $y’=f’(x)$ 的导数叫做函数   $y=f(x)$ 的二阶导数，记作 $y’’或\frac{d^2y}{dx^2}$</p><script type="math/tex; mode=display">y''=(y')' 或 \frac{d^2y}{dx^2}=\frac{d}{dx}(\frac{dy}{dx})</script><p>把y=f(x)的导数f’(x)叫做函数y=f(x)的一阶导数，y’’二阶导数…二阶及二阶以上的导数均称为高阶导数，函数y=f(x)具有n阶导数，也称为函数f(x)为n阶可导。</p><ol><li>$(e^x)^{(n)}=e^x$</li><li>$(cosx)^{(n)}=cos(x+\frac{n\pi}{2})$</li><li>$(sinx)^{(n)}=sin(x+\frac{n\pi}{2})$</li><li>$(x^u)^{(n)}=u(u-1)(u-2)…(u-n+1)x^{u-n}$</li><li>$(x^n)^{(n)}=n!$</li><li>$(x^n)^{(n+1)}=0$</li><li>$(\frac{1}{x+a})^{n}=\frac{(-1)^nn!}{(x+a)^{n+1}}$</li><li>$[ln(x+b)]^{(n)}=(\frac{1}{x+b})^{(n-1)}$</li></ol><p>如果函数u=u(x)和v=v(x)都在点 x具有 n阶导数，那么它们的和、差也在点 x具有 n阶导数，且</p><script type="math/tex; mode=display">(u\pm v)^{(n)} = u^{(n)} \pm v^{(n)}</script><h2 id="7-莱布尼兹公式"><a href="#7-莱布尼兹公式" class="headerlink" title="7. 莱布尼兹公式"></a>7. 莱布尼兹公式</h2><p>若f(x)、g(x)具有n阶导数，则</p><script type="math/tex; mode=display">[f(x).g(x)]^{(n)} = f^{(n)}g+C_n^1f^{(n-1)}g'+...C_n^kf^{(n-k)}g^{(k)}+...fg^{(n)}</script><p>其中 $C_n^k=\frac{n(n-1)…(n-k+1)}{k!}$</p><h2 id="8-隐函数的导数"><a href="#8-隐函数的导数" class="headerlink" title="8. 隐函数的导数"></a>8. 隐函数的导数</h2><p>如果变量x和y满足一个方程F(x,y)=0,在一定条件下，当 x 取某区间的任一值时，相应地总有满足此方程的唯一的 y 值存在，那么就说方程F(x,y)=0在该区间内确定了一个隐函数,把一个隐函数化成显函数，叫做隐函数的显化。<br>隐函数导数的方法：<br>一般地，方程F(x,y)=0确定y=f(x),取得F[x,y(x)]=0;在F[x,y(x)]=0两边对x求导即得隐函数的导数.<br>对数求导法：对数求导法就是先在 y = f(x) 的两边取对数，然后求出 y 的导数.</p><h2 id="9-由参数方程所确定的函数的导数"><a href="#9-由参数方程所确定的函数的导数" class="headerlink" title="9. 由参数方程所确定的函数的导数"></a>9. 由参数方程所确定的函数的导数</h2><p>一般地，若参数方程</p><script type="math/tex; mode=display">\begin{cases}x=\phi(t) \\y=\psi(t)\end{cases}</script><p>确定 y 与 x 的函数关系，则称此函数关系所表达的函数为由参数方程所确定的函数。<br>求导方法：</p><script type="math/tex; mode=display">\frac{dy}{dx}=\frac{dy}{dt}.\frac{dt}{dx}=\frac{dy}{dt}\frac{1}{\frac{dx}{dt}}=\frac{\psi'(t)}{\phi'(t)}</script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-导数的定义&quot;&gt;&lt;a href=&quot;#1-导数的定义&quot; class=&quot;headerlink&quot; title=&quot;1. 导数的定义&quot;&gt;&lt;/a&gt;1. 导数的定义&lt;/h2&gt;&lt;p&gt;设函数y=f(x)在点$x_0$的某个邻域内有定义，当自变量 x在$x_0$处取得增量 $\De
+      
+    
+    </summary>
+    
+      <category term="数据分析" scheme="http://qioinglong.top/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="高等数学" scheme="http://qioinglong.top/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高等数学_函数的连续性与间断点</title>
+    <link href="http://qioinglong.top/2019/02/13/20190213_%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%80%A7%E4%B8%8E%E9%97%B4%E6%96%AD%E7%82%B92019022120190221/"/>
+    <id>http://qioinglong.top/2019/02/13/20190213_高等数学_函数的连续性与间断点2019022120190221/</id>
+    <published>2019-02-13T02:52:31.000Z</published>
+    <updated>2019-02-21T05:17:48.362Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-函数的连续性"><a href="#1-函数的连续性" class="headerlink" title="1. 函数的连续性"></a>1. 函数的连续性</h2><blockquote><p>定义：设函数 y =f (x)在点 $x_0$的某个邻域内有定义，如果</p><script type="math/tex; mode=display">\lim_{\Delta x \to 0} \Delta y =  \lim_{\Delta x \to 0}[f(x_0+\Delta x)-f(x_0)] =0</script><p>则称函数y=f(x)在点$x_0$连续</p><p>定义：设函数 y =f (x)在点 $x_0$的某个邻域内有定义，如果</p><script type="math/tex; mode=display">\lim_{x \to x_0} f(x) = f(x_0)</script><p>则称函数y=f(x)在点$x_0$连续</p></blockquote><p>在区间上每一点都连续的函数，叫做在该区间上的连续函数，或者说函数在该区间上连续.如果区间包含端点，那么函数在右端点连续是指左连续，在左端点连续是指右连续。</p><h2 id="2-连续函数的四则运算的连续性"><a href="#2-连续函数的四则运算的连续性" class="headerlink" title="2.连续函数的四则运算的连续性"></a>2.连续函数的四则运算的连续性</h2><blockquote><p>若函数f(x)、g(x)在点 $x_0$ 处连续,则$f(x) \pm g(x)$ , $f(x).g(x)$ , $\frac {f(x)}{g(x)}(g(x)\neq0)$在点 $x_0$ 处连续</p><p>若函数y=f(x)在区间$I_x$上单调增加(或单调减少）且连续,则它的反函数$x=\phi (x)$ 也在对应的区间<script type="math/tex">I_y ={y|y=f(x),x \in I_x}</script>上单调增加（或单调减少）且连续</p><p>一切初等函数在其定义区间内都是连续的。</p></blockquote><h2 id="3-函数的间断点"><a href="#3-函数的间断点" class="headerlink" title="3. 函数的间断点"></a>3. 函数的间断点</h2><p>假设函数 f (x) 在点 $x_0$ 的某去心邻域内有定义,如果函数 f (x) 有下列三种情形之一：<br>（1）在 x= $x_0$ 处没有定义；<br>（2）虽然在 x= $x_0$ 处有定义，但 $\displaystyle\lim_{x \to x_0}f(x)$ 不存在；<br>（3）虽然在 x= $x_0$ 处有定义， $\displaystyle\lim_{x \to x_0}f(x)$ 存在；</p><script type="math/tex; mode=display">\displaystyle\lim_{x \to x_0}f(x) \neq f(x_0)</script><p> 则称函数 f (x) 在点 $x_0$  为不连续；  </p><p> 点  $x_0$ 称为 f (x)  的不连续点，或间断点.  </p><p> 若$f(x_0^+)$ 与 $f(x_0^-)$$存在，称为第一类间断点，否则称为第二类间断点。</p><p> 第一类间断点中 $f(x_0^+) = f(x_0^-)$,则称$x=x_0$为函数f(x)的可去间断点，如果不等则为跳跃间断点</p><h2 id="4-闭区间上连续函数的性质"><a href="#4-闭区间上连续函数的性质" class="headerlink" title="4. 闭区间上连续函数的性质"></a>4. 闭区间上连续函数的性质</h2><p> 如果函数f(x)在开区间 (a,b)内连续，且在左端点 a 右连续,在右端点b左连续,则称函数f(x)在闭区间[a,b]上连续</p><h3 id="4-1-最大值最小值定理与有界性定理"><a href="#4-1-最大值最小值定理与有界性定理" class="headerlink" title="4.1 最大值最小值定理与有界性定理"></a>4.1 最大值最小值定理与有界性定理</h3><p> 设函数f(x)在区间 I 上有定义，如果存在$x_0 \in I$使得对任何$x \in I$,均有</p><script type="math/tex; mode=display">f(x) \leq f(x_0) (f(x) \geq f(x_0))</script><p> 则称f($x_0$)是函数f(x)在区间 I 上的最大值（最小值）,如果一个函数的最大值与最小值相等， 则该函数<br>一定是常数函数.</p><h3 id="4-2-零点定理与介质定理"><a href="#4-2-零点定理与介质定理" class="headerlink" title="4.2 零点定理与介质定理"></a>4.2 零点定理与介质定理</h3><blockquote><p>方程f(x)=0的根称作函数f(x)的零点</p></blockquote><p>零点定理：<br>设函数f(x)在闭区间[a,b]上连续，且f(a).f(b)&lt;0,则至少存在一点$$\xi \in (a,b)$,使得$f(\xi)=0$</p><p>介质定理：<br>设函数f(x)在闭区间[a,b]上连续，则对于 f(a) 与 f(b) 之间的任何一个数C,在开区间(a,b)内至少存在一点<script type="math/tex">\xi</script>,使得$f(\xi)=C$</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-函数的连续性&quot;&gt;&lt;a href=&quot;#1-函数的连续性&quot; class=&quot;headerlink&quot; title=&quot;1. 函数的连续性&quot;&gt;&lt;/a&gt;1. 函数的连续性&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;定义：设函数 y =f (x)在点 $x_0$的某个邻域内有定
+      
+    
+    </summary>
+    
+      <category term="数据分析" scheme="http://qioinglong.top/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="高等数学" scheme="http://qioinglong.top/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高等数学_无穷小的比较</title>
+    <link href="http://qioinglong.top/2019/01/27/20190127_%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E6%97%A0%E7%A9%B7%E5%B0%8F%E7%9A%84%E6%AF%94%E8%BE%832019021520190215/"/>
+    <id>http://qioinglong.top/2019/01/27/20190127_高等数学_无穷小的比较2019021520190215/</id>
+    <published>2019-01-27T06:52:31.000Z</published>
+    <updated>2019-02-15T01:48:00.368Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-无穷小的定义"><a href="#1-无穷小的定义" class="headerlink" title="1.无穷小的定义"></a>1.无穷小的定义</h2><blockquote><p>设$\alpha , \beta$ 是同一自变量变化过程中的无穷小，且 $\alpha \neq 0 , \lim \frac{\beta}{\alpha}$ 表示这一变换过程中的极限。</p><ol><li>如果 $\lim \frac{\beta}{\alpha} = 0$,则称 $\beta$ 是比$\alpha$高阶的无穷小，记作$\beta = \omicron(\alpha)$</li><li>如果 $\lim \frac{\beta}{\alpha} = \infty$,则称 $\beta$ 是比$\alpha$低阶的无穷小</li><li>如果 $\lim \frac{\beta}{\alpha} = c \neq 0$,则称 $\beta$与$\alpha$同阶无穷小</li><li>如果 $\lim \frac{\beta}{\alpha} = 1 $,则称 $\beta$与$\alpha$等价无穷小,记作$\alpha $~$ \beta$</li><li>如果 $\lim \frac{\beta}{\alpha^k} = c \neq 0$ k&gt;0,则称 $\beta$是关于$\alpha$的k阶无穷小</li><li>重要等价无穷小<br>$sinx$ ~ x<br>$tanx$ ~ x<br>$arcsinx$ ~ x<br>$arctanx$ ~ x<br>$1-cosx$ ~ $\frac{x^2}{2}$<br>$\sqrt[n]{1+x} - 1$ ~ $\frac{1}{n}x$<br>当$x \rightarrow 0$<br>ln(1+x) ~ x<br>$e^x -1$ ~ x<br>$(1+x)^a -1$ ~ ax<br>对于形如$u(x)^{v(x)}(u(x)&gt;0,u(x)\neq1)$的幂指函数，如果limu(x)=a&gt;0,limv(x)=b&gt;0,那么<script type="math/tex; mode=display">limu(x)^{v(x)}=a^b</script></li></ol></blockquote><h2 id="2-等价无穷小的性质"><a href="#2-等价无穷小的性质" class="headerlink" title="2. 等价无穷小的性质"></a>2. 等价无穷小的性质</h2><ol><li>$\alpha$ ~ $\beta$的充分必要条件是$\beta =  \alpha + \omicron(\alpha)$</li><li>$\alpha$ ~ $\alpha^{‘}$,$\beta$ ~ $\beta^{‘}$,且$\lim \frac{\beta^{‘}}{\alpha^{‘}}$存在，则<br>$\lim \frac{\beta}{\alpha}$ = $\lim \frac{\beta^{‘}}{\alpha^{‘}}$</li><li>在利用等价无穷小代换求极限时，只有对所求极限中相乘或相除的因式才能用等价无穷小来代替，而对极限中相加或相减的部分则不能随意来代替。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-无穷小的定义&quot;&gt;&lt;a href=&quot;#1-无穷小的定义&quot; class=&quot;headerlink&quot; title=&quot;1.无穷小的定义&quot;&gt;&lt;/a&gt;1.无穷小的定义&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;设$\alpha , \beta$ 是同一自变量变化过程中的无穷小
+      
+    
+    </summary>
+    
+      <category term="数据分析" scheme="http://qioinglong.top/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="高等数学" scheme="http://qioinglong.top/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高等数学_极限的运算法则</title>
+    <link href="http://qioinglong.top/2019/01/27/20190127_%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E6%9E%81%E9%99%90%E7%9A%84%E8%BF%90%E7%AE%97%E6%B3%95%E5%88%992019012720190127/"/>
+    <id>http://qioinglong.top/2019/01/27/20190127_高等数学_极限的运算法则2019012720190127/</id>
+    <published>2019-01-27T02:52:31.000Z</published>
+    <updated>2019-01-27T07:18:16.495Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-极限运算法则"><a href="#1-极限运算法则" class="headerlink" title="1.极限运算法则"></a>1.极限运算法则</h2><ol><li>有限个无穷小的和是无穷小。</li><li>有界函数与无穷小的乘积是无穷小。(这里函数的有界性只要求在无穷小的自变量变化<br>范围内成立)</li><li>常数与无穷小的乘积是无穷小.</li><li>有限个无穷小的乘积是无穷小.</li><li>无穷小的和、差积仍是无穷小.</li><li>如果 $ \lim f(x) = A  $ , $ \lim g(x) = B  $  那么<br>$ \lim[f(x) \pm g(x) ] = lim f(x) \pm lim g(x) = A \pm B $<br>$ \lim[f(x) \cdot g(x) ] = lim f(x) \cdot lim g(x) = A \cdot B $<br>$ \lim \frac{f(x)}{g(x)} = \frac{lim f(x)}{ lim g(x)}= \frac {A} {B} (B\neq0) $<br>$ \lim[cf(x)] = c \lim f(x) =cA (c为常数)$<br>$ \lim[f(x)]^n = [\lim f(x)]^n = A^n(n为正整数)$</li><li>$f(x)=\frac{P(x)}{Q(x)}$,其中P(X)，Q(x)为多项式，则当$Q(x_0) \neq 0$,有<script type="math/tex; mode=display">\lim_{x \to x_0} f(x) = \frac { \lim_{x \to x_0 } P(x)}{\lim_{x \to x_0} Q(x)}= \frac{P(x_0)}{Q(x_0)}=f(x_0)</script>当$Q(x_0)=0$时，则商的极限的运算法则不能应用。</li><li>当$a_0 \neq 0,b_0 \neq 0,m和n为非负整数时$<script type="math/tex; mode=display">\lim_{x \rightarrow \infty}\frac{a_0x^m+a_1x^{m-1}+...+a_m}{b_0x^n+b_1x^{n-1}+...+b_n}=\begin{cases}\frac{a_0}{b_0},& n=m \\0,& n>m \\\infty ,& n<m\end{cases}</script><h2 id="2-极限存在准则"><a href="#2-极限存在准则" class="headerlink" title="2.极限存在准则"></a>2.极限存在准则</h2><h3 id="2-1-夹逼准则"><a href="#2-1-夹逼准则" class="headerlink" title="2.1. 夹逼准则"></a>2.1. 夹逼准则</h3></li><li><p>定义</p><blockquote><p>设数列{x_n} 、 {y_n} 及 {z_n} 满足(<code>对函数f(x),g(x),h(x)同样适用</code>)：<br>(1)存在某个正整数 $n_0$ ，当 $n &gt; n_0 $ 时，有</p><script type="math/tex; mode=display">y_n \leq x_n \leq z_n</script><p>(2)$\displaystyle \lim_{n \rightarrow \infty } y_n = a $,$\displaystyle \lim_{n \rightarrow \infty } z_n = a $<br>则$\displaystyle\lim_{n \rightarrow \infty} x_n 存在且$$\displaystyle\lim_{n \rightarrow \infty} x_n =a$</p></blockquote></li><li><p>重要极限<br>$ \displaystyle \lim_{x \rightarrow 0} \frac{sinx}{x} =1 $<br>$ \displaystyle \lim_{x \rightarrow 0} cosx=1 $<br>$ \displaystyle \lim_{x \rightarrow 0} \frac{tanx}{x} =1 $<br>$ \displaystyle \lim_{x \rightarrow 0} \frac{arcsinx}{x} =1 $<br>$ \displaystyle \lim_{x \rightarrow 0} \frac{arctanx}{x} =1 $</p><h3 id="2-1-单调有界数列收敛准则"><a href="#2-1-单调有界数列收敛准则" class="headerlink" title="2.1. 单调有界数列收敛准则"></a>2.1. 单调有界数列收敛准则</h3></li><li><p>定义</p><blockquote><p>如果数列{x_n}满足$x_1 \leq x2 \leq … \leq x_n \leq …$,则称该数列是单调增加的,如果数列${x_n}$满足$x_1 \geq x2 \geq … \geq x_n \geq …$,则称该数列是单调减少的,单调增加或单调减少的数列统称单调数列。</p></blockquote></li><li><p>单调有界数列必有极限。</p></li><li>若数列{x_n}单调增加且存在上界，则该数列必有极限；若数列{x_n}单调减少且存在下界，则该数列也必有极限。</li><li>收敛数列必有界，但有界数列却未必收敛。</li><li>如果数列不仅有界，且是单调的，则该数列必收敛。</li><li>重要极限<br>$\displaystyle \lim_{x \rightarrow \infty} (1 + \frac{1}{x})^x = e$<br>$\displaystyle \lim_{x \rightarrow 0} (1 + x)^{\frac {1}{x}} = e$<br>$\displaystyle \lim_{x \rightarrow \infty} (1 - \frac{1}{x})^x = \frac {1}{e}$</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-极限运算法则&quot;&gt;&lt;a href=&quot;#1-极限运算法则&quot; class=&quot;headerlink&quot; title=&quot;1.极限运算法则&quot;&gt;&lt;/a&gt;1.极限运算法则&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;有限个无穷小的和是无穷小。&lt;/li&gt;
+&lt;li&gt;有界函数与无穷小的乘积是无穷小。(
+      
+    
+    </summary>
+    
+      <category term="数据分析" scheme="http://qioinglong.top/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="高等数学" scheme="http://qioinglong.top/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高等数学_无穷小与无穷大</title>
+    <link href="http://qioinglong.top/2019/01/27/20190127_%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E6%97%A0%E7%A9%B7%E5%B0%8F%E4%B8%8E%E6%97%A0%E7%A9%B7%E5%A4%A72019012720190127/"/>
+    <id>http://qioinglong.top/2019/01/27/20190127_高等数学_无穷小与无穷大2019012720190127/</id>
+    <published>2019-01-26T22:52:31.000Z</published>
+    <updated>2019-01-27T02:56:48.386Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-无穷小"><a href="#1-无穷小" class="headerlink" title="1. 无穷小"></a>1. 无穷小</h2><ol><li><p>定义</p><blockquote><p>如果 f (x)  当 $ x \rightarrow 0 或 (x \rightarrow \infty )$时的极限为零，则称  f (x) 为当$ x \rightarrow 0（或 x \rightarrow \infty ）$时的无穷小<br>特别地，以零为极限的{$x_n$}也称为$n \rightarrow \infty $时的无穷小</p></blockquote></li><li><p>除了常数 0 是无穷小， 其他任何常数， 即便是这个数的绝对值很小很小，都不是无穷小</p></li><li>无穷小是以零为极限的函数</li><li>在自变量 x 的同一变化过程中， 函数f (x) 有极限 A 的充分必要条件是<br><script type="math/tex">f(x) = A + \alpha(x)</script> 其中$\alpha(x)$是无穷小<h2 id="2-无穷大"><a href="#2-无穷大" class="headerlink" title="2 无穷大"></a>2 无穷大</h2></li><li><p>定义</p><blockquote><p>如果函数f(x) 当 $ x \rightarrow x_0 或 (x \rightarrow \infty )$时,其绝对值 |f(x)|无限增大,则称函数f(x)为$ x \rightarrow x_0 或 (x \rightarrow \infty )$时的无穷大。</p></blockquote></li><li><p>如果 <script type="math/tex">\lim_{x \rightarrow x_0^-} f(x) = \infty 或 \lim_{x \rightarrow x_0^+} f(x) = \infty</script><br>则直线x=$x_0$是函数y=f(x)的图形的铅直渐近线</p></li><li>在自变量 x 的同一变化过程中，如果 f(x) 是无穷大,则$\frac{1}{f(x)}$是无穷小；如果 f(x) 是无穷小，且 $ f(x) \neq 0$,则$\frac{1}{f(x)}$是无穷大</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-无穷小&quot;&gt;&lt;a href=&quot;#1-无穷小&quot; class=&quot;headerlink&quot; title=&quot;1. 无穷小&quot;&gt;&lt;/a&gt;1. 无穷小&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;定义&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果 f (x)  当 $ x \rightar
+      
+    
+    </summary>
+    
+      <category term="数据分析" scheme="http://qioinglong.top/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="高等数学" scheme="http://qioinglong.top/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高等数学_初等函数</title>
+    <link href="http://qioinglong.top/2019/01/26/20190126_%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E5%88%9D%E7%AD%89%E5%87%BD%E6%95%B02019012620190126/"/>
+    <id>http://qioinglong.top/2019/01/26/20190126_高等数学_初等函数2019012620190126/</id>
+    <published>2019-01-26T02:52:31.000Z</published>
+    <updated>2019-01-26T09:52:29.901Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-基本初等函数"><a href="#1-基本初等函数" class="headerlink" title="1. 基本初等函数"></a>1. 基本初等函数</h1><h2 id="1-1-幂函数"><a href="#1-1-幂函数" class="headerlink" title="1.1 幂函数"></a>1.1 幂函数</h2><script type="math/tex; mode=display">y=x^a (a \in R)</script><h2 id="1-2-指数函数"><a href="#1-2-指数函数" class="headerlink" title="1.2 指数函数"></a>1.2 指数函数</h2><script type="math/tex; mode=display">y=a^x (a>0,a \neq 1)</script><h2 id="1-3-对数函数"><a href="#1-3-对数函数" class="headerlink" title="1.3 对数函数"></a>1.3 对数函数</h2><script type="math/tex; mode=display">y=log_a x (a>0,a \neq 1)</script><p>当 a =e  时， 记作 $y=lnx$</p><h2 id="1-4-三角函数"><a href="#1-4-三角函数" class="headerlink" title="1.4 三角函数"></a>1.4 三角函数</h2><p>y=sinx<br>y=cosx<br>y=tanx<br>y=cotx<br>y=sex=$ \frac{1}{cosx} $<br>y=cscx=$ \frac{1}{sinx} $</p><h2 id="1-5-反三角函数"><a href="#1-5-反三角函数" class="headerlink" title="1.5 反三角函数"></a>1.5 反三角函数</h2><p>y=arcsinx<br>y=arccosx<br>y=arctanx<br>y=arccotx</p><h1 id="2-初等函数"><a href="#2-初等函数" class="headerlink" title="2. 初等函数"></a>2. 初等函数</h1><p>由常数和基本初等函数(<code>幂函数,指数函数,对数函数,三角函数,反三角函数</code>)经过有限次的四则运算和有限次的函数复合步骤所构成的并可用一个式子<br>表示的函数，称为初等函数。<br>$y=sin^2x$<br>$y=arcsinx^2 + ln2x$</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-基本初等函数&quot;&gt;&lt;a href=&quot;#1-基本初等函数&quot; class=&quot;headerlink&quot; title=&quot;1. 基本初等函数&quot;&gt;&lt;/a&gt;1. 基本初等函数&lt;/h1&gt;&lt;h2 id=&quot;1-1-幂函数&quot;&gt;&lt;a href=&quot;#1-1-幂函数&quot; class=&quot;head
+      
+    
+    </summary>
+    
+      <category term="数据分析" scheme="http://qioinglong.top/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="高等数学" scheme="http://qioinglong.top/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高等数学_函数与极限笔记</title>
+    <link href="http://qioinglong.top/2019/01/26/20190126_%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90%E7%AC%94%E8%AE%B02019012720190127/"/>
+    <id>http://qioinglong.top/2019/01/26/20190126_高等数学_函数与极限笔记2019012720190127/</id>
+    <published>2019-01-25T22:52:31.000Z</published>
+    <updated>2019-01-27T07:18:16.490Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-函数概念"><a href="#1-函数概念" class="headerlink" title="1. 函数概念"></a>1. 函数概念</h2><p>设数集 $D \subset R$ , 如果对 D 中每个数 x ，变量y 按照一定法则在 R 中有唯一确定的数值与之对应，<br>则称 y 是 x 的函数,记为</p><blockquote><p>y = f(x), $x \subset D$    </p></blockquote><p>其中 x 称为自变量, y 称为因变量, D 称为定义域，记作$D_f$ ,即 $D_f$ = D,函数值 f(x) 的全体所构成的集合称为函数 f 的值域,$R_f$或f(D),即</p><blockquote><p>$R_f$ = f(D) = {y|y=f(x),$x \subset D$}</p></blockquote><h2 id="2-函数的特性"><a href="#2-函数的特性" class="headerlink" title="2.函数的特性"></a>2.函数的特性</h2><ol><li>函数的有界性<blockquote><p>设函数 f(x) 的定义域为 D ，数集 $X \subset D$,如果存在数 K1，使得对任一 $x \subset X$ ，都有 $f (x) \leq K_1$,则称函数 f (x) 在 X 上有上界，而 K1 称为函数 f (x)在 X 上的一个上界.如果存在数 K2 ，使得对任一$X \subset D$ ，都有 $f (x) \geq K_2$, ，则称函数 f (x) 在 X 上有下界，而 K2 称为函数f (x)在 X 上的一个下界.如果存在正数 M ，使得对任一 $X \subset D$ ，都有 $|f (x)| \leq M $ ，则称函数 f (x) 在 X 上有界如果这样的 M 不存在，则称函数 f (x)在 X 上无界．<br>y=sinx在($ -\infty , +\infty $)有界<br>y=tanx在{$- \frac{\pi}{2} , \frac{\pi}{2}$}无界<br><img src="/2019/01/26/20190126_高等数学_函数与极限笔记2019012720190127/20190126_高等数学_函数与极限笔记/20190126_高等数学_函数与极限笔记1-74318c9d.png" alt=""><br><img src="/2019/01/26/20190126_高等数学_函数与极限笔记2019012720190127/assets/20190126_高等数学_函数与极限笔记-3b6c607f.md" alt=""></p></blockquote></li><li><p>函数的单调性</p><blockquote><p>设函数 f(x)的定义域为 D ，区间 $I \subset D $ ，如果对于区间 I 内的任意两点 x1及 x2，当 $x_1 \leq x_2 $时，恒有 $f(x_1) &lt; f(x_2)$ ，则称函数 f(x)在区间 I 内是单调增加的；<br>如果对于区间 I 内的任意两点 $x_1及 x_2 $，当 $x_1 &lt; x_2  $ 时，<br>恒有 $ f(x_1) &gt;f(x_2) $,则称函数 f x   在区间 I 内是单调减少的.<br>单调增加或单调减少的函数统称为单调函数</p></blockquote></li><li><p>函数的奇偶性</p><blockquote><p>设函数 f(x) 的定义域 D 关于原点对称，如果对于任一 $x \subset D$  ，<br>f( -x ) = -f( x )<br>恒成立，则称 f(x) 为奇函数；<br>如 果 对 于 任 一 $x \subset D$  ，<br>f( x ) = f( -x )<br>恒成立，则称 f( x ) 为偶函数.</p><font color="red">注：奇函数关于原点对称，偶函数关于Y轴对称</font></blockquote></li><li>函数的周期性<blockquote><p>设函数 f( x )的定义域为 D ，如果存在一个正数T ，使得对于任一 $x  \subset D $ 有 $x + T \subset D $ ，且<br>f (x + T) = f ( x ) 恒成立，<br>则称 f ( x )为周期函数， T 称为函数f ( x ) 的周期．</p></blockquote></li></ol><font color="red">&emsp;1. 通常我们说的周期函数的周期是指最小正周期.  比如，函数 sin x ， cos x 都是以 2π 为周期的周期函数，     函数 tan x 是以 π 为周期的周期函数.<br>&emsp; 2. 并非所有函数都有最小正周期．</font><h2 id="3-数列的极限"><a href="#3-数列的极限" class="headerlink" title="3. 数列的极限"></a>3. 数列的极限</h2><ol><li><p>数列的定义</p><blockquote><p>如果按照某一法则，对每个正整数 n ，对应着一个确定的实数 $x_n$ ，这些实数 $x_n$按照下标 n从小到大排列得到的一个序列</p><script type="math/tex; mode=display">x_1,x_2,x_3,... x_n ...</script><p>就叫做数列，简记为${x_n}$．数列中的每一个数叫做数列的项，第 n 项 ${x_n}$称之为数列的一般项或通项.</p></blockquote></li><li><p>极限的定义</p><blockquote><p>设{$x_n$} 为一数列，如果存在常数 a ，对于任意给定的正数 $\epsilon$ ，总存在着一个正整数 N ，使得对于n &gt; N  时的一切 n ，不等式 |$ x_n -a $| &lt; $\epsilon$ 均成立，则称常数 a 是数列 {$x_n$}的极限，或者称数列{$x_n$} 收敛于 a记作 <script type="math/tex">\displaystyle \lim_{n \to \infty} x_n = a 或者 x_n \rightarrow a (n \rightarrow \infty)</script><br>如果上述 a 不存在，则称数列{$x_n$}没有极限，或者说数列{$x_n$}是发散的，也说$\displaystyle \lim_{n \to \infty} x_n $不存在.</p></blockquote></li><li><p>收敛数列的性质</p><ol><li>极限的唯一性，如果数列是收敛的，那么它的极限值唯一</li><li>收敛数列的有界性,如果数列收敛，那么数列一定有界（如果数列无界，那么数列发散，数列有界未必收敛）</li><li>收敛数列的保号性,极限值与函数值具有一致保号性</li><li>如果数列{$x_n$} 收敛于 a ，则它的任一子数列也收敛，且其极限也为 a .若数列{$x_n$} 的某个子列发散或某两个子列收敛于两个不同的极限，则该数列{$x_n$}必发散.</li></ol></li></ol><h2 id="4-函数的极限"><a href="#4-函数的极限" class="headerlink" title="4. 函数的极限"></a>4. 函数的极限</h2><ol><li><p>函数极限的定义</p><blockquote><p>设函数 f(x)在点 $x_0$ 的某一去心邻域内,有定义，如果存在常数 A ，$\forall      \varepsilon &gt;0  , \exist \delta&gt;0 $,当 0&lt;|$x-x_0$| &lt; $ \delta $时，有$|f(x)-A| &lt; \varepsilon $,那么常数 A 称为函数 f(x) 当 $x \rightarrow x_0 $时的极限，记作:</p><script type="math/tex; mode=display">\lim_{n \to x_0} f(x) =A  或者 f(x) \rightarrow A (当x \rightarrow x_0)</script></blockquote></li><li><p>$x \rightarrow x_0 $时函数 f(x) 有没有极限与f(x)在$x=x_0$处是否有定义无关</p></li><li>右极限和左极限统称为单侧极限</li><li>如果$f(x_0^+) 、f(x_0^-) $中有一个不存在，或两个虽存在但不相等， 则<br><script type="math/tex">\lim_{x \to x_0} f(x)</script>不存在。</li><li>函数极限的性质<ol><li>函数极限的唯一性</li><li>函数极限的局部有界性</li><li>函数极限的局部保号性</li></ol></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-函数概念&quot;&gt;&lt;a href=&quot;#1-函数概念&quot; class=&quot;headerlink&quot; title=&quot;1. 函数概念&quot;&gt;&lt;/a&gt;1. 函数概念&lt;/h2&gt;&lt;p&gt;设数集 $D \subset R$ , 如果对 D 中每个数 x ，变量y 按照一定法则在 R 中有唯一
+      
+    
+    </summary>
+    
+      <category term="数据分析" scheme="http://qioinglong.top/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="高等数学" scheme="http://qioinglong.top/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高等数学_函数与极限笔记</title>
+    <link href="http://qioinglong.top/2019/01/26/assets20190520/20190126_%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6_%E5%87%BD%E6%95%B0%E4%B8%8E%E6%9E%81%E9%99%90%E7%AC%94%E8%AE%B0-3b6c607f/"/>
+    <id>http://qioinglong.top/2019/01/26/assets20190520/20190126_高等数学_函数与极限笔记-3b6c607f/</id>
+    <published>2019-01-25T22:52:31.000Z</published>
+    <updated>2019-01-26T13:30:28.908Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-函数概念"><a href="#1-函数概念" class="headerlink" title="1. 函数概念"></a>1. 函数概念</h2><p>设数集 $D \subset R$ , 如果对 D 中每个数 x ，变量y 按照一定法则在 R 中有唯一确定的数值与之对应，<br>则称 y 是 x 的函数,记为</p><blockquote><p>y = f(x), $x \subset D$    </p></blockquote><p>其中 x 称为自变量, y 称为因变量, D 称为定义域，记作$D_f$ ,即 $D_f$ = D,函数值 f(x) 的全体所构成的集合称为函数 f 的值域,$R_f$或f(D),即</p><blockquote><p>$R_f$ = f(D) = {y|y=f(x),$x \subset D$}</p></blockquote><h2 id="2-函数的特性"><a href="#2-函数的特性" class="headerlink" title="2.函数的特性"></a>2.函数的特性</h2><ol><li><p>函数的有界性</p><blockquote><p>设函数 f(x) 的定义域为 D ，数集 $X \subset D$,如果存在数 K1，使得对任一 $x \subset X$ ，都有 $f (x) \leq K_1$,则称函数 f (x) 在 X 上有上界，而 K1 称为函数 f (x)在 X 上的一个上界.如果存在数 K2 ，使得对任一$X \subset D$ ，都有 $f (x) \geq K_2$, ，则称函数 f (x) 在 X 上有下界，而 K2 称为函数f (x)在 X 上的一个下界.如果存在正数 M ，使得对任一 $X \subset D$ ，都有 $|f (x)| \leq M $ ，则称函数 f (x) 在 X 上有界如果这样的 M 不存在，则称函数 f (x)在 X 上无界．<br>y=sinx在($ -\infty , +\infty $)有界<br>y=tanx在{$- \frac{\pi}{2} , \frac{\pi}{2}$}无界<br><img src="/2019/01/26/assets20190520/20190126_高等数学_函数与极限笔记-3b6c607f/20190126_高等数学_函数与极限笔记/20190126_高等数学_函数与极限笔记1-74318c9d.png" alt=""></p></blockquote></li><li><p>函数的单调性</p><blockquote><p>设函数 f(x)的定义域为 D ，区间 $I \subset D $ ，如果对于区间 I 内的任意两点 x1及 x2，当 $x_1 \leq x_2 $时，恒有 $f(x_1) &lt; f(x_2)$ ，则称函数 f(x)在区间 I 内是单调增加的；<br>如果对于区间 I 内的任意两点 $x_1及 x_2 $，当 $x_1 &lt; x_2  $ 时，<br>恒有 $ f(x_1) &gt;f(x_2) $,则称函数 f x   在区间 I 内是单调减少的.<br>单调增加或单调减少的函数统称为单调函数</p></blockquote></li><li><p>函数的奇偶性</p><blockquote><p>设函数 f(x) 的定义域 D 关于原点对称，如果对于任一 $x \subset D$  ，<br>f( -x ) = -f( x )<br>恒成立，则称 f(x) 为奇函数；<br>如 果 对 于 任 一 $x \subset D$  ，<br>f( x ) = f( -x )<br>恒成立，则称 f( x ) 为偶函数.</p><font color="red">注：奇函数关于原点对称，偶函数关于Y轴对称</font></blockquote></li><li>函数的周期性<blockquote><p>设函数 f( x )的定义域为 D ，如果存在一个正数T ，使得对于任一 $x  \subset D $ 有 $x + T \subset D $ ，且<br>f (x + T) = f ( x ) 恒成立，<br>则称 f ( x )为周期函数， T 称为函数f ( x ) 的周期．</p></blockquote></li></ol><font color="red">&emsp;1. 通常我们说的周期函数的周期是指最小正周期.  比如，函数 sin x ， cos x 都是以 2π 为周期的周期函数，     函数 tan x 是以 π 为周期的周期函数.<br>&emsp; 2. 并非所有函数都有最小正周期．</font>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-函数概念&quot;&gt;&lt;a href=&quot;#1-函数概念&quot; class=&quot;headerlink&quot; title=&quot;1. 函数概念&quot;&gt;&lt;/a&gt;1. 函数概念&lt;/h2&gt;&lt;p&gt;设数集 $D \subset R$ , 如果对 D 中每个数 x ，变量y 按照一定法则在 R 中有唯一
+      
+    
+    </summary>
+    
+      <category term="数据分析" scheme="http://qioinglong.top/categories/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/"/>
+    
+    
+      <category term="高等数学" scheme="http://qioinglong.top/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>秘密读书笔记</title>
+    <link href="http://qioinglong.top/2019/01/25/20190125_%E7%A7%98%E5%AF%86%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B020190524/"/>
+    <id>http://qioinglong.top/2019/01/25/20190125_秘密读书笔记20190524/</id>
+    <published>2019-01-25T04:52:31.000Z</published>
+    <updated>2019-05-24T04:39:13.338Z</updated>
+    
+    <content type="html"><![CDATA[<p>如果人生可以重来，你会选择怎样的方式过完自己的一生。</p><p>我们都渴望成为别人的样子，却最不想成为自己，30岁的时候，我给自己许下成为最好自己的愿望，认真度过每一天，认真做好每件事，无关权利，无关荣誉，只是对自己微小的回应。</p><p>秘密是看过的最不像推理的推理小说，全书以一种最平淡，最真实的文字描述了一个不可思议的故事。</p><blockquote><p>如果今天我打破了这个规矩，那以后我还会打破第二、第三个规矩，这样下去人生将一步步走向失败。我之前的人生就是这种活法的典型。结果呢，虽然从小学到大专，我在可以称之为学校的地方待了14年，到头来却没有掌握一项能够赖以生存的技能。我再也不想重走老路了，打死我也不想再产生一次同样的懊悔了。</p><p>世界上真的有许多精彩的事物。有很多东西，比如能让你感到幸福的东西、能改变你世界观的东西等等，都不需要花很多钱就能得到。你说，我以前怎么就没注意到呢？</p><p>爱一个人，就应该让她幸福。</p><p>可我呢，到现在还一直把自己当成你的丈夫，心里一直想着不能背叛你。我没有花过心，没有考虑过再婚的事。你上小学时那个桥本老师不错吧？我也很喜欢她，甚至想过和她交往。但是最终怎样呢？还不是连电话都没给她打过？你知道这是为什么吗？因为我不想背叛你！因为我想到我是你的丈夫！</p><p>谁都想象个小孩子般，偶尔做做傻事，旁人却不会允许你这样做。比如有人会说，你已经快当爸爸了，要好好振作啊!或是你已经做爷爷了，应该要稳重一点。要是你对他们说:不，我只是一个平凡的男人!他们绝不会认同你你。有了孩子，你就是父亲;有了孙子，你就是爷爷了。你是逃脱不了现实的。所以，这时候你只能思考，该扮演哪种父亲、爷爷。</p></blockquote><p>总觉得直子很自私，可是谁又能理解她心中的痛，心中的苦呢！选择中充满了无奈，幸福快乐的活下去才是最好的选择吧！</p><p>让心爱的幸福就好，可是面对夜深人静时候孤寂，吃饭一个人，快乐一个人，悲伤一个人时，又有几个人能真正做到让心爱的人幸福呢？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;如果人生可以重来，你会选择怎样的方式过完自己的一生。&lt;/p&gt;
+&lt;p&gt;我们都渴望成为别人的样子，却最不想成为自己，30岁的时候，我给自己许下成为最好自己的愿望，认真度过每一天，认真做好每件事，无关权利，无关荣誉，只是对自己微小的回应。&lt;/p&gt;
+&lt;p&gt;秘密是看过的最不像推理的推
+      
+    
+    </summary>
+    
+      <category term="读书" scheme="http://qioinglong.top/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+      <category term="读书笔记" scheme="http://qioinglong.top/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1984读书笔记</title>
+    <link href="http://qioinglong.top/2019/01/25/20190125_1984%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B020190524/"/>
+    <id>http://qioinglong.top/2019/01/25/20190125_1984读书笔记20190524/</id>
+    <published>2019-01-24T22:52:31.000Z</published>
+    <updated>2019-05-24T04:39:13.308Z</updated>
+    
+    <content type="html"><![CDATA[<p>很压抑的一本书，断断续续读了很久，终于把它读完。2019年的今天，你依然会震撼它丰富的寓意和深刻的政治远见，可惜奥威尔1950年就去世了……</p><p>这是一个最好的时代，也是一个最坏的时代，而你只能跟随时代的潮流，不断向前。你总觉得书中的一切那么遥远，但又那么近在眼前，仿佛一切一切的场景都能与生活一一映射，这才是最可怕的地方。</p><blockquote><p>战争即和平，自由即奴役，无知即力量。</p><p>栗树荫下，我出卖你，你出卖我。</p><p>历史不是一面镜子，而是黑板上的记号，可以随时擦去，随时填补。更为可怕的是，一旦涂改了，你找不到证据去证明这是篡改历史的行为。</p><p>一切都消失在迷雾中了。过去给抹掉了，而抹掉本身又被遗忘了，谎言便变成了真话。</p></blockquote><p>最后101房间更是用每个人心底最恐惧的事物来施虐从而丧失一切美好，包括忠诚，信任和爱意，剩下的只有麻木，丑陋不堪。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;很压抑的一本书，断断续续读了很久，终于把它读完。2019年的今天，你依然会震撼它丰富的寓意和深刻的政治远见，可惜奥威尔1950年就去世了……&lt;/p&gt;
+&lt;p&gt;这是一个最好的时代，也是一个最坏的时代，而你只能跟随时代的潮流，不断向前。你总觉得书中的一切那么遥远，但又那么近在眼前
+      
+    
+    </summary>
+    
+      <category term="读书" scheme="http://qioinglong.top/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+      <category term="读书笔记" scheme="http://qioinglong.top/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>markdown语法</title>
+    <link href="http://qioinglong.top/2019/01/21/20190121_markdown%E8%AF%AD%E6%B3%9520190524/"/>
+    <id>http://qioinglong.top/2019/01/21/20190121_markdown语法20190524/</id>
+    <published>2019-01-21T12:00:59.000Z</published>
+    <updated>2019-05-24T04:59:12.111Z</updated>
+    
+    <content type="html"><![CDATA[<p>markdown语法大全，记录，以备查询<br><a id="more"></a></p><h1 id="1-基本语法"><a href="#1-基本语法" class="headerlink" title="1. 基本语法"></a>1. 基本语法</h1><h2 id="1-1-标题"><a href="#1-1-标题" class="headerlink" title="1.1. 标题"></a>1.1. 标题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一级标题 #</span><br><span class="line">## 二级标题 ##</span><br><span class="line">### 三级标题 ###</span><br><span class="line">#### 四级标题 ####</span><br><span class="line">##### 五级标题 #####</span><br><span class="line">###### 六级标题 ######</span><br></pre></td></tr></table></figure><h2 id="1-2-字体"><a href="#1-2-字体" class="headerlink" title="1.2. 字体"></a>1.2. 字体</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**加粗的文字**</span><br><span class="line">*倾斜的文字*</span><br><span class="line">***斜体加粗的文字***</span><br><span class="line">~~加删除线的文~~</span><br></pre></td></tr></table></figure><h2 id="1-3-引用"><a href="#1-3-引用" class="headerlink" title="1.3. 引用"></a>1.3. 引用</h2><p>在引用的文字前加&gt;即可。引用也可以嵌套，如加两个&gt;&gt;三个&gt;&gt;&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;引用的内容</span><br><span class="line">&gt;&gt;引用的内容</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;引用的内容</span><br></pre></td></tr></table></figure></p><h2 id="1-4-分割线"><a href="#1-4-分割线" class="headerlink" title="1.4. 分割线"></a>1.4. 分割线</h2><p>三个或者三个以上的 - 或者 * 都可以。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">----</span><br><span class="line">***</span><br><span class="line">*****</span><br></pre></td></tr></table></figure></p><h2 id="1-5-图片"><a href="#1-5-图片" class="headerlink" title="1.5. 图片"></a>1.5. 图片</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![图片alt](图片地址 &apos;&apos;图片title&apos;&apos;)</span><br><span class="line"></span><br><span class="line">图片alt就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加</span><br></pre></td></tr></table></figure><h2 id="1-6-超链接"><a href="#1-6-超链接" class="headerlink" title="1.6. 超链接"></a>1.6. 超链接</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[超链接名](超链接地址 &quot;超链接title&quot;)</span><br><span class="line">title可加可不加</span><br></pre></td></tr></table></figure><h2 id="1-7-列表"><a href="#1-7-列表" class="headerlink" title="1.7. 列表"></a>1.7. 列表</h2><p>无序列表,无序列表用 - + * 任何一种都可以<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 列表内容</span><br><span class="line">+ 列表内容</span><br><span class="line">* 列表内容</span><br><span class="line">注意：- + * 跟内容之间都要有一个空格</span><br></pre></td></tr></table></figure></p><p>有序列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.列表内容</span><br><span class="line">2.列表内容</span><br><span class="line">3.列表内容</span><br><span class="line">注意：序号跟内容之间要有空格</span><br></pre></td></tr></table></figure></p><p>列表嵌套,上一级和下一级之间敲三个空格即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 一级</span><br><span class="line">   - 二级</span><br><span class="line">      - 三级</span><br></pre></td></tr></table></figure></p><h2 id="1-8-表格"><a href="#1-8-表格" class="headerlink" title="1.8. 表格"></a>1.8. 表格</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">表头|表头|表头</span><br><span class="line">---|:--:|---:</span><br><span class="line">内容|内容|内容</span><br><span class="line">内容|内容|内容</span><br><span class="line"></span><br><span class="line">第二行分割表头和内容。</span><br><span class="line">- 有一个就行，为了对齐，多加了几个</span><br><span class="line">文字默认居左</span><br><span class="line">-两边加：表示文字居中</span><br><span class="line">-右边加：表示文字居右</span><br><span class="line">注：原生的语法两边都要用 | 包起来。</span><br></pre></td></tr></table></figure><h2 id="1-9-代码"><a href="#1-9-代码" class="headerlink" title="1.9. 代码"></a>1.9. 代码</h2><p>单行代码：代码之间分别用一个反引号包起来<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">``</span><br></pre></td></tr></table></figure></p><p>代码块：代码之间分别用三个反引号包起来，且两边的反引号单独占一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(```)</span><br><span class="line">  代码...</span><br><span class="line">  代码...</span><br><span class="line">  代码...</span><br><span class="line">(```)</span><br><span class="line">为了防止转译，前后三个反引号处加了小括号</span><br></pre></td></tr></table></figure></p><h1 id="2-数学"><a href="#2-数学" class="headerlink" title="2. 数学"></a>2. 数学</h1><h2 id="2-1-行内与独行"><a href="#2-1-行内与独行" class="headerlink" title="2.1 行内与独行"></a>2.1 行内与独行</h2><ol><li>行内公式：将公式插入到本行内，符号：<code>$公式内容$，例：$xyz$</code><br>$xyz$</li><li>独行公式：将公式插入到新的一行内，并且居中，符号：<code>$$公式内容$$，例：$$xyz$$</code><script type="math/tex; mode=display">xyz</script><h2 id="2-2-上标、下标与组合"><a href="#2-2-上标、下标与组合" class="headerlink" title="2.2 上标、下标与组合"></a>2.2 上标、下标与组合</h2></li><li>上标符号，符号：<code>^，例：$x^2$</code><br>$x^2$</li><li>下标符号，符号：<code>_，例：$x_2$</code><br>$x_2$</li><li>组合符号，符号：<code>{}，例：${16}_{8}O{2+}_{2}$</code><br>${20}_{8}O{2+}_{2}$<h2 id="2-3-汉字、字体与格式"><a href="#2-3-汉字、字体与格式" class="headerlink" title="2.3 汉字、字体与格式"></a>2.3 汉字、字体与格式</h2></li><li>汉字形式，符号：<code>\mbox{}，例：$V_{\mbox{开始}}$</code><br>$V_{\mbox{开始}}$</li><li>字体控制，符号：<code>\displaystyle，例：$\displaystyle \frac{x+y}{y+z}$</code><br>$\displaystyle \frac{x+y}{y+z}$</li><li>字体控制，符号：<code>\displaystyle，例：$\displaystyle \frac{x+y}{y+z}$</code><br>$\displaystyle \frac{x+y}{y+z}$</li><li>下划线符号，符号：<code>\underline，例：$\underline{x+y}$</code><br>$\underline{x+y}$</li><li>标签，符号<code>\tag{数字}，例：$\tag{11}$</code><br>$\tag{11}$</li><li>上大括号，符号：<code>\overbrace{算式}，例：$\overbrace{a+b+c+d}^{2.0}$</code><br>$\overbrace{a+b+c+d}^{2.0}$</li><li>下大括号，符号：<code>\underbrace{算式}，例    ：$a+\underbrace{b+c}_{1.0}+d$</code><br>$a+\underbrace{b+c}_{1.0}+d$</li><li>上位符号，符号：<code>\stacrel{上位符号}{基位符号}，例：$\vec{x}\stackrel{\mathrm{def}}{=}{x_1,\dots,x_n}$</code><br>$\vec{x}\stackrel{\mathrm{def}}{=}{x_1,\dots,x_n}$<h2 id="2-4-占位符"><a href="#2-4-占位符" class="headerlink" title="2.4 占位符"></a>2.4 占位符</h2></li><li>两个quad空格，符号：<code>\qquad，例：$x \qquad y$</code><br>$x \qquad y$</li><li>quad空格，符号：<code>\quad，例：$x \quad y$</code><br>$x \quad y$</li><li>大空格，符号<code>\，例：$x \  y$</code><br>$x \  y$</li><li>中空格，符号<code>\:，例：$x \: y$</code><br>$x \: y$</li><li>小空格，符号<code>\,，例：$x \, y$</code><br>$x \, y$</li><li>没有空格，符号<code>，例：$xy$</code><br>$xy$</li><li>紧贴，符号<code>\!，例：$x \! y$</code><br>$x ! y$</li></ol><h2 id="2-5-定界符与组合"><a href="#2-5-定界符与组合" class="headerlink" title="2.5 定界符与组合"></a>2.5 定界符与组合</h2><ol><li>括号，符号：<code>（）\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)，例：$（）\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)$</code><br>$（）\big(\big) \Big(\Big) \bigg(\bigg) \Bigg(\Bigg)$</li><li>中括号，符号：<code>[]，例：$[x+y]$</code><br>$[x+y]$</li><li>大括号，符号：<code>\{ \}，例：${x+y}$</code><br>${x+y}$</li><li>自适应括号，符号：<code>\left \right，例：$\left(x\right)$，$\left(x{yz}\right)$</code><br>$\left(x\right)$，$\left(x{yz}\right)$</li><li>组合公式，符号：`{上位公式 \choose 下位公式}，例：${n+1 \choose k}={n \choose k}+{n \choose k-1}$’<br>${n+1 \choose k}={n \choose k}+{n \choose k-1}$</li><li>组合公式，符号：<code>{上位公式 \atop 下位公式}，例：$\sum_{k_0,k_1,\ldots&gt;0 \atop k_0+k_1+\cdots=n}A_{k_0}A_{k_1}\cdots$</code><br>$\sum_{k_0,k_1,\ldots&gt;0 \atop k_0+k_1+\cdots=n}A_{k_0}A_{k_1}\cdots$</li></ol><h2 id="2-6-四则运算"><a href="#2-6-四则运算" class="headerlink" title="2.6 四则运算"></a>2.6 四则运算</h2><ol><li>加法运算，符号：<code>+，例：$x+y=z$</code><br>$x+y=z$</li><li>减法运算，符号：<code>-，例：$x-y=z$</code><br>$x-y=z$</li><li>加减运算，符号：<code>\pm，例：$x \pm y=z$</code><br>$x \pm y=z$</li><li>减甲运算，符号：<code>\mp，例：$x \mp y=z$</code><br>$x \mp y=z$</li><li>乘法运算，符号：<code>\times，例：$x \times y=z$</code><br>$x \times y=z$</li><li>点乘运算，符号：<code>\cdot，例：$x \cdot y=z$</code><br>$x \cdot y=z$</li><li>星乘运算，符号：<code>\ast，例：$x \ast y=z$</code><br>$x \ast y=z$</li><li>除法运算，符号：<code>\div，例：$x \div y=z$</code><br>$x \div y=z$</li><li>斜法运算，符号：<code>/，例：$x/y=z$</code><br>$x/y=z$</li><li>分式表示，符号：<code>\frac{分子}{分母}，例：$\frac{x+y}{y+z}$</code><br>$\frac{x+y}{y+z}$</li><li>分式表示，符号：<code>{分子} \voer {分母}，例：${x+y} \over {y+z}$</code><br>${x+y} \over {y+z}$</li><li>绝对值表示，符号：<code>||，例：$|x+y|$</code><br>$|x+y|$</li></ol><h2 id="2-7-高级运算"><a href="#2-7-高级运算" class="headerlink" title="2.7 高级运算"></a>2.7 高级运算</h2><ol><li>平均数运算，符号：<code>\overline{算式}，例：$\overline{xyz}$</code><br>$\overline{xyz}$</li><li>开二次方运算，符号：<code>\sqrt，例：$\sqrt x$</code><br>$\sqrt x$</li><li>开方运算，符号：<code>\sqrt[开方数]{被开方数}，例：$\sqrt[3]{x+y}$</code><br>$\sqrt[3]{x+y}$</li><li>对数运算，符号：<code>\log，例：$\log(x)$</code><br>$\log(x)$</li><li>极限运算，符号：<code>\lim，例：$\lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</code><br>$\lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</li><li>极限运算，符号：<code>\displaystyle \lim，例：$\displaystyle \lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</code><br>$\displaystyle \lim^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</li><li>求和运算，符号：<code>\sum，例：$\sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</code><br>$\sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</li><li>求和运算，符号：<code>\displaystyle \sum，例：$\displaystyle \sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</code><br>$\displaystyle \sum^{x \to \infty}_{y \to 0}{\frac{x}{y}}$</li><li>积分运算，符号：<code>\int，例：$\int^{\infty}_{0}{xdx}$</code><br>$\int^{\infty}_{0}{xdx}$</li><li>积分运算，符号：<code>\displaystyle \int，例：$\displaystyle \int^{\infty}_{0}{xdx}$</code><br>$\displaystyle \int^{\infty}_{0}{xdx}$</li><li>微分运算，符号：<code>\partial，例：$\frac{\partial x}{\partial y}$</code><br>$\frac{\partial x}{\partial y}$</li><li>矩阵表示，符号：<code>\begin{matrix} \end{matrix}，例：$\left[ \begin{matrix} 1 &amp;2 &amp;\cdots &amp;4\5 &amp;6 &amp;\cdots &amp;8\\vdots &amp;\vdots &amp;\ddots &amp;\vdots\13 &amp;14 &amp;\cdots &amp;16\end{matrix} \right]$</code><br>$\left[ \begin{matrix} 1 &amp;2 &amp;\cdots &amp;4\5 &amp;6 &amp;\cdots &amp;8\\vdots &amp;\vdots &amp;\ddots &amp;\vdots\13 &amp;14 &amp;\cdots &amp;16\end{matrix} \right]$</li></ol><h2 id="2-8-逻辑运算"><a href="#2-8-逻辑运算" class="headerlink" title="2.8 逻辑运算"></a>2.8 逻辑运算</h2><ol><li>等于运算，符号：<code>=，例：$x+y=z$</code><br>$x+y=z$</li><li>大于运算，符号：<code>&gt;，例：$x+y&gt;z$</code><br>$x+y&gt;z$</li><li>小于运算，符号：<code>&lt;，例：$x+y&lt;z$</code><br>$x+y&lt;z$</li><li>大于等于运算，符号：<code>\geq，例：$x+y \geq z$</code><br>$x+y \geq z$</li><li>小于等于运算，符号：<code>\leq，例：$x+y \leq z$</code><br>$x+y \leq z$</li><li>不等于运算，符号：<code>\neq，例：$x+y \neq z$</code><br>$x+y \neq z$</li><li>不大于等于运算，符号：<code>\ngeq，例：$x+y \ngeq z$</code><br>$x+y \ngeq z$</li><li>不大于等于运算，符号：<code>\not\geq，例：$x+y \not\geq z$</code><br>$x+y \not\geq z$</li><li>不小于等于运算，符号：<code>\nleq，例：$x+y \nleq z$</code><br>$x+y \nleq z$</li><li>不小于等于运算，符号：<code>\not\leq，例：$x+y \not\leq z$</code><br>$x+y \not\leq z$</li><li>约等于运算，符号：<code>\approx，例：$x+y \approx z$</code><br>$x+y \approx z$</li><li>恒定等于运算，符号：<code>\equiv，例：$x+y \equiv z$</code><br>$x+y \equiv z$</li></ol><h2 id="2-9-集合运算"><a href="#2-9-集合运算" class="headerlink" title="2.9 集合运算"></a>2.9 集合运算</h2><ol><li>属于运算，符号：<code>\in，例：$x \in y$</code><br>$x \in y$</li><li>不属于运算，符号：<code>\notin，例：$x \notin y$</code><br>$x \notin y$</li><li>不属于运算，符号：<code>\not\in，例：$x \not\in y$</code><br>$x \not\in y$</li><li>子集运算，符号：<code>\subset，例：$x \subset y$</code><br>$x \subset y$</li><li>子集运算，符号：<code>\supset，例：$x \supset y$</code><br>$x \supset y$</li><li>真子集运算，符号：<code>\subseteq，例：$x \subseteq y$</code><br>$x \subseteq y$</li><li>非真子集运算，符号：<code>\subsetneq，例：$x \subsetneq y$</code><br>$x \subsetneq y$</li><li>真子集运算，符号：<code>\supseteq，例：$x \supseteq y$</code><br>$x \supseteq y$</li><li>非真子集运算，符号：<code>\supsetneq，例：$x \supsetneq y$</code><br>$x \supsetneq y$</li><li>非子集运算，符号：<code>\not\subset，例：$x \not\subset y$</code><br>$x \not\subset y$</li><li>非子集运算，符号：<code>\not\supset，例：$x \not\supset y$</code><br>$x \not\supset y$</li><li>并集运算，符号：<code>\cup，例：$x \cup y$</code><br>$x \cup y$</li><li>交集运算，符号：<code>\cap，例：$x \cap y$</code><br>$x \cap y$</li><li>差集运算，符号：<code>\setminus，例：$x \setminus y$</code><br>$x \setminus y$</li><li>同或运算，符号：<code>\bigodot，例：$x \bigodot y$</code><br>$x \bigodot y$</li><li>同与运算，符号：<code>\bigotimes，例：$x \bigotimes y$</code><br>$x \bigotimes y$</li><li>实数集合，符号：<code>\mathbb{R}，例：$\mathbb{R}$</code><br>$\mathbb{R}$</li><li>自然数集合，符号：<code>\mathbb{Z}，例：$\mathbb{Z}$</code><br>$\mathbb{Z}$</li><li>空集，符号：<code>\emptyset，例：$\emptyset$</code><br>$\emptyset$</li></ol><h2 id="2-10-数学符号"><a href="#2-10-数学符号" class="headerlink" title="2.10 数学符号"></a>2.10 数学符号</h2><ol><li>无穷，符号：<code>\infty，如：$\infty$</code><br>$\infty$</li><li>虚数，符号：<code>\imath，如：$\imath$</code><br>$\imath$</li><li>虚数，符号：<code>\jmath，如：$\jmath$</code><br>$\jmath$</li><li>数学符号，符号\hat{a}，如：$\hat{a}$`<br>$\hat{a}$</li><li>数学符号，符号\check{a}，如：$\check{a}$`<br>$\check{a}$</li><li>数学符号，符号\breve{a}，如：$\breve{a}$`<br>$\breve{a}$</li><li>数学符号，符号\tilde{a}，如：$\tilde{a}$`<br>$\tilde{a}$</li><li>数学符号，符号\bar{a}，如：$\bar{a}$`<br>$\bar{a}$</li><li>矢量符号，符号\vec{a}，如：$\vec{a}$`<br>$\vec{a}$</li><li>数学符号，符号\acute{a}，如：$\acute{a}$`<br>$\acute{a}$</li><li>数学符号，符号\grave{a}，如：$\grave{a}$`<br>$\grave{a}$</li><li>数学符号，符号\mathring{a}，如：$\mathring{a}$`<br>$\mathring{a}$</li><li>一阶导数符号，符号\dot{a}，如：$\dot{a}$`<br>$\dot{a}$</li><li>二阶导数符号，符号\ddot{a}，如：$\ddot{a}$`<br>$\ddot{a}$</li><li>上箭头，符号：<code>\uparrow，如：$\uparrow$</code><br>$\uparrow$</li><li>上箭头，符号：<code>\Uparrow，如：$\Uparrow$</code><br>$\Uparrow$</li><li>下箭头，符号：<code>\downarrow，如：$\downarrow$</code><br>$\downarrow$</li><li>下箭头，符号：<code>\Downarrow，如：$\Downarrow$</code><br>$\Downarrow$</li><li>左箭头，符号：<code>\leftarrow，如：$\leftarrow$</code><br>$\leftarrow$</li><li>左箭头，符号：<code>\Leftarrow，如：$\Leftarrow$</code><br>$\Leftarrow$</li><li>右箭头，符号：<code>\rightarrow，如：$\rightarrow$</code><br>$\rightarrow$</li><li>右箭头，符号：<code>\Rightarrow，如：$\Rightarrow$</code><br>$\Rightarrow$</li><li>底端对齐的省略号，符号：<code>\ldots，如：$1,2,\ldots,n$</code><br>$1,2,\ldots,n$</li><li>中线对齐的省略号，符号：<code>\cdots，如：$x_1^2 + x_2^2 + \cdots + x_n^2$</code><br>$x_1^2 + x_2^2 + \cdots + x_n^2$</li><li>竖直对齐的省略号，符号：<code>\vdots，如：$\vdots$</code><br>$\vdots$</li><li>斜对齐的省略号，符号：<code>\ddots，如：$\ddots$</code><br>$\ddots$</li></ol><h2 id="2-11-希腊字母"><a href="#2-11-希腊字母" class="headerlink" title="2.11 希腊字母"></a>2.11 希腊字母</h2><div class="table-container"><table><thead><tr><th>字母</th><th style="text-align:center">实现</th><th style="text-align:center">字母</th><th style="text-align:center">实现</th></tr></thead><tbody><tr><td>A</td><td style="text-align:center">A</td><td style="text-align:center">α</td><td style="text-align:center">\alpha</td></tr><tr><td>B</td><td style="text-align:center">B</td><td style="text-align:center">β</td><td style="text-align:center">\beta</td></tr><tr><td>Γ</td><td style="text-align:center">\Gamma</td><td style="text-align:center">γ</td><td style="text-align:center">\gamma</td></tr><tr><td>Δ</td><td style="text-align:center">\Delta</td><td style="text-align:center">δ</td><td style="text-align:center">\delta</td></tr><tr><td>E</td><td style="text-align:center">E</td><td style="text-align:center">ϵ</td><td style="text-align:center">\epsilon</td></tr><tr><td>Z</td><td style="text-align:center">Z</td><td style="text-align:center">ε</td><td style="text-align:center">\varepsilon</td></tr><tr><td>H</td><td style="text-align:center">H</td><td style="text-align:center">ζ</td><td style="text-align:center">\zeta</td></tr><tr><td>Θ</td><td style="text-align:center">\Theta</td><td style="text-align:center">η</td><td style="text-align:center">\eta</td></tr><tr><td>I</td><td style="text-align:center">I</td><td style="text-align:center">θ</td><td style="text-align:center">\theta</td></tr><tr><td>K</td><td style="text-align:center">K</td><td style="text-align:center">ι</td><td style="text-align:center">\iota</td></tr><tr><td>Λ</td><td style="text-align:center">\Lambda</td><td style="text-align:center">κ</td><td style="text-align:center">\kappa</td></tr><tr><td>M</td><td style="text-align:center">M</td><td style="text-align:center">λ</td><td style="text-align:center">\lambda</td></tr><tr><td>N</td><td style="text-align:center">N</td><td style="text-align:center">μ</td><td style="text-align:center">\mu</td></tr><tr><td>Ξ</td><td style="text-align:center">\Xi</td><td style="text-align:center">ν</td><td style="text-align:center">\nu</td></tr><tr><td>O</td><td style="text-align:center">O</td><td style="text-align:center">ξ</td><td style="text-align:center">\xi</td></tr><tr><td>Π</td><td style="text-align:center">\Pi</td><td style="text-align:center">ο</td><td style="text-align:center">\omicron</td></tr><tr><td>P</td><td style="text-align:center">P</td><td style="text-align:center">π</td><td style="text-align:center">\pi</td></tr><tr><td>Σ</td><td style="text-align:center">\Sigma</td><td style="text-align:center">ρ</td><td style="text-align:center">\rho</td></tr><tr><td>T</td><td style="text-align:center">T</td><td style="text-align:center">σ</td><td style="text-align:center">\sigma</td></tr><tr><td>Υ</td><td style="text-align:center">\Upsilon</td><td style="text-align:center">τ</td><td style="text-align:center">\tau</td></tr><tr><td>Φ</td><td style="text-align:center">\Phi</td><td style="text-align:center">υ</td><td style="text-align:center">\upsilon</td></tr><tr><td>X</td><td style="text-align:center">X</td><td style="text-align:center">ϕ</td><td style="text-align:center">\phi</td></tr><tr><td>Ψ</td><td style="text-align:center">\Psi</td><td style="text-align:center">ϖ</td><td style="text-align:center">\varpi</td></tr><tr><td>Ω</td><td style="text-align:center">\Omega</td><td style="text-align:center">χ</td><td style="text-align:center">\chi</td></tr><tr><td>Ω</td><td style="text-align:center">\varOmega</td><td style="text-align:center">ψ</td><td style="text-align:center">\psi</td></tr><tr><td>斜体在输入前加var    Υ</td><td style="text-align:center">　\varUpsilon</td><td style="text-align:center">ω</td><td style="text-align:center">\omega</td></tr><tr><td>∀</td><td style="text-align:center">\forall</td><td style="text-align:center">∃</td><td style="text-align:center">\exists</td></tr></tbody></table></div><h2 id="2-12-其它"><a href="#2-12-其它" class="headerlink" title="2.12 其它"></a>2.12 其它</h2><h3 id="2-12-1-首行缩进方法"><a href="#2-12-1-首行缩进方法" class="headerlink" title="2.12.1 首行缩进方法"></a>2.12.1 首行缩进方法</h3><ol><li>一个空格大小的表示,半角空格(En Space)：<code>&amp;ensp;或&amp;#8194;</code>，此时只要在相应需要缩进的段落前加上 4个 如上的标记即可，注意要带上分号。</li><li>两个空格的大小表示,全角空格( Em Space)<code>&amp;emsp;或&amp;#8195;</code>，同理，使用2个即可缩进2个汉字，推荐使用该方式。</li><li>不换行空格(No-Break Space)：<code>&amp;nbsp;或&amp;#160</code>;，使用4个&#160;即可。</li></ol><h3 id="2-12-2-颜色，字体"><a href="#2-12-2-颜色，字体" class="headerlink" title="2.12.2 颜色，字体"></a>2.12.2 颜色，字体</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;font face=&quot;黑体&quot;&gt;黑体字&lt;/font&gt;</span><br><span class="line">&lt;font face=&quot;微软雅黑&quot;&gt;微软雅黑&lt;/font&gt;</span><br><span class="line">&lt;font face=&quot;STCAIYUN&quot;&gt;华文彩云&lt;/font&gt;</span><br><span class="line">&lt;font color=#0099ff size=7 face=&quot;黑体&quot;&gt;color=#0099ff size=72 face=&quot;黑体&quot;&lt;/font&gt;</span><br><span class="line">&lt;font color=#00ffff size=72&gt;color=#00ffff&lt;/font&gt;</span><br><span class="line">&lt;font color=gray size=72&gt;color=gray&lt;/font&gt;</span><br></pre></td></tr></table></figure><h3 id="2-12-3-大括号右多行赋值"><a href="#2-12-3-大括号右多行赋值" class="headerlink" title="2.12.3 大括号右多行赋值 "></a>2.12.3 大括号右多行赋值 </h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&amp;用来对齐</span><br><span class="line">$$P(x|Pa_x)=\begin&#123;cases&#125;</span><br><span class="line">1, &amp; x=f(Pa_&#123;x&#125;)\\</span><br><span class="line">0, &amp; other\ values</span><br><span class="line">\end&#123;cases&#125;$$</span><br></pre></td></tr></table></figure><script type="math/tex; mode=display">P(x|Pa_x)=\begin{cases}        1, & x=f(Pa_{x})\\        0, & other\ values    \end{cases}</script>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;markdown语法大全，记录，以备查询&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术" scheme="http://qioinglong.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="markdown" scheme="http://qioinglong.top/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>曾国藩家书读书笔记-1</title>
+    <link href="http://qioinglong.top/2019/01/19/20190119_%E6%9B%BE%E5%9B%BD%E8%97%A9%E5%AE%B6%E4%B9%A6%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0-120190524/"/>
+    <id>http://qioinglong.top/2019/01/19/20190119_曾国藩家书读书笔记-120190524/</id>
+    <published>2019-01-19T12:00:59.000Z</published>
+    <updated>2019-05-24T04:39:13.277Z</updated>
+    
+    <content type="html"><![CDATA[<p>开始看曾国藩家书，很久没有读文言文了，读起来还是有点吃力，很多字不认识，不认识…….<br>原计划一个月读完上下两本，现在改变注意了，慢慢读，慢慢体会，今年能读完就行。<br>家书嘛，有很多琐碎之事，读起来有时候确实有点乏味，不过字里行间是对修身养性的见解，对家庭父母的敬意，对兄弟的教导爱护，有很多值得学习和借鉴的地方。</p><blockquote><p>用功譬如掘井，与其多掘数井而皆不及泉，何若老守一井，力求及泉而用之不竭乎。<br>求业之精，别无他法，曰专而已。<br>万不可以兼营并鹜，兼营则必无一所能矣。<br>不必人人皆能记也，但记一人，则恍如其人;不必事事皆能记也，但记一事，则恍如亲其事。</p></blockquote><p>这些对我触动挺大，以前以为多学点总没坏事，现今才觉得，学得多不如学得精，所以今年给自己定下的目标就是学习数据分析，其它的暂时不折腾。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;开始看曾国藩家书，很久没有读文言文了，读起来还是有点吃力，很多字不认识，不认识…….&lt;br&gt;原计划一个月读完上下两本，现在改变注意了，慢慢读，慢慢体会，今年能读完就行。&lt;br&gt;家书嘛，有很多琐碎之事，读起来有时候确实有点乏味，不过字里行间是对修身养性的见解，对家庭父母的敬意
+      
+    
+    </summary>
+    
+      <category term="读书" scheme="http://qioinglong.top/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+      <category term="读书笔记" scheme="http://qioinglong.top/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>银行业务</title>
+    <link href="http://qioinglong.top/2019/01/18/%E9%93%B6%E8%A1%8C%E4%B8%9A%E5%8A%A120190524/"/>
+    <id>http://qioinglong.top/2019/01/18/银行业务20190524/</id>
+    <published>2019-01-17T22:52:31.000Z</published>
+    <updated>2019-05-24T04:46:48.577Z</updated>
+    
+    <content type="html"><![CDATA[<p>银行业务</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;银行业务&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="金融业务" scheme="http://qioinglong.top/categories/%E9%87%91%E8%9E%8D%E4%B8%9A%E5%8A%A1/"/>
+    
+    
+      <category term="银行业务" scheme="http://qioinglong.top/tags/%E9%93%B6%E8%A1%8C%E4%B8%9A%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2019年需要完成的事情</title>
+    <link href="http://qioinglong.top/2019/01/09/20190119_2019%E5%B9%B4%E9%9C%80%E8%A6%81%E5%AE%8C%E6%88%90%E7%9A%84%E4%BA%8B%E6%83%8520190524/"/>
+    <id>http://qioinglong.top/2019/01/09/20190119_2019年需要完成的事情20190524/</id>
+    <published>2019-01-09T12:00:59.000Z</published>
+    <updated>2019-05-24T04:39:13.231Z</updated>
+    
+    <content type="html"><![CDATA[<p>2019年要完成的事情：</p><ol><li>学习数据分析入门</li><li>重新学习高等数学、线性代数、概率与统计</li><li>完成跑步1000公里</li><li>瘦身到65KG</li><li>学会弹简单的吉它</li><li>去华山或者峨眉旅游一次</li><li>读三本儿童教育的书籍</li><li>完成25本关于传记、小说、历史、哲学阅读</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;2019年要完成的事情：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;学习数据分析入门&lt;/li&gt;
+&lt;li&gt;重新学习高等数学、线性代数、概率与统计&lt;/li&gt;
+&lt;li&gt;完成跑步1000公里&lt;/li&gt;
+&lt;li&gt;瘦身到65KG&lt;/li&gt;
+&lt;li&gt;学会弹简单的吉它&lt;/li&gt;
+&lt;li&gt;去华山或者峨眉旅游
+      
+    
+    </summary>
+    
+      <category term="读书" scheme="http://qioinglong.top/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+      <category term="计划与实现" scheme="http://qioinglong.top/tags/%E8%AE%A1%E5%88%92%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2018年07月-月结月策</title>
+    <link href="http://qioinglong.top/2018/07/29/2018%E5%B9%B407%E6%9C%88-%E6%9C%88%E7%BB%93%E6%9C%88%E7%AD%9620190524/"/>
+    <id>http://qioinglong.top/2018/07/29/2018年07月-月结月策20190524/</id>
+    <published>2018-07-28T22:52:31.000Z</published>
+    <updated>2019-05-24T04:39:13.206Z</updated>
+    
+    <content type="html"><![CDATA[<p>太久没有静下心来想想自己需要什么。<br>本月参与了Teradata数据仓库迁移，从原来的旧机器迁移到新机器上。看起来是一件很简单的事情，真正做起来涉及到很多的细节，主要有以下几点：</p><ol><li>需求的讨论（软件、硬件、网络、程序以及数据验证）</li><li>Teradata数据库一体机安装</li><li>数据库网络配置，与原有旧机器采用万兆网直连</li><li>ETL服务器安装，批量时序验证</li><li>数据库初始化</li><li>数据迁移（冷数据迁移，增量数据迁移以及数据合并）</li><li>数据验证（count统计验证，抽样验证，关键指标验证）</li><li>数据迁移影响性分析</li></ol><p>在项目执行过程中，出现最多的问题是，项目组成员部分操作没有文档落地，当引以为戒。要做到凡事有据可依，有记录可查。数据迁移并不复杂，主要是一个比较精细的活，需要我们把每一步都想清楚。</p><p>本月停止了CPA的学习，认真分析了自己目前的现状，考CPA并不是最紧急的事情。<br>本月完成阅读：</p><ol><li>原则</li><li>可怕的两岁</li></ol><p>下月开始，系统化学习数据分析的课程。<br>预计完成以下几本书的阅读：</p><ol><li>儿童心理学</li><li>大数据之路（阿里巴巴）</li><li>策略的思维</li><li>深入浅出数据分析</li><li>谁说菜鸟不会数据分析</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;太久没有静下心来想想自己需要什么。&lt;br&gt;本月参与了Teradata数据仓库迁移，从原来的旧机器迁移到新机器上。看起来是一件很简单的事情，真正做起来涉及到很多的细节，主要有以下几点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;需求的讨论（软件、硬件、网络、程序以及数据验证）&lt;/li&gt;
+&lt;l
+      
+    
+    </summary>
+    
+      <category term="读书" scheme="http://qioinglong.top/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+      <category term="个人管理" scheme="http://qioinglong.top/tags/%E4%B8%AA%E4%BA%BA%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>月结月策_201710</title>
+    <link href="http://qioinglong.top/2017/10/31/%E6%9C%88%E7%BB%93%E6%9C%88%E7%AD%96_20171020190524/"/>
+    <id>http://qioinglong.top/2017/10/31/月结月策_20171020190524/</id>
+    <published>2017-10-31T00:54:59.000Z</published>
+    <updated>2019-05-24T04:39:13.451Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2017/10/31/月结月策_20171020190524/月结月策_201710/timg.jpg" alt=""><br><a id="more"></a><br>10月份荒废了太多，无论是读书、学习、工作还是运动，都没有很好的坚持下去。国庆长假后，就开始变得什么东西都不想学习的状态，陪孩子玩、看电视、睡觉。更让自己吃惊的时候，8月到9月两个月得时间里体重增长了6斤，完全失去了控制。控诉一下自己这个月得不满：  </p><ol><li>读书完全没有章法，没有计划，想起来就读一下，想不起来就看电视，睡觉。勉强完成了，却没有进行认真总结，思考，跟没有读没什么区别。</li><li>运动完全搁置，说到底就是懒懒懒。</li><li>工作还是得过且过的样子，之前还想着学习一些新东西，看看有没有好的机会。现在好像变得越来越不想动了。</li><li>又在纠结那些让人烦心的事情，明明已经过去了，还是不肯放过自己。</li></ol><p>总结：  </p><ol><li>放纵自己是要付出代价的。</li><li>认真对待生活生活才能也好的状态反馈你。</li><li>与其花费金钱让孩子进好的学校，不如认真充实自己，陪孩子一起成长。</li><li>行合一，将知识转化为行动，将行动转化为习惯。</li><li>计划不执行，就永远只是计划。</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/2017/10/31/月结月策_20171020190524/月结月策_201710/timg.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="读书" scheme="http://qioinglong.top/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+      <category term="月结月策" scheme="http://qioinglong.top/tags/%E6%9C%88%E7%BB%93%E6%9C%88%E7%AD%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>活出生命的意义-弗兰克尔</title>
+    <link href="http://qioinglong.top/2017/10/30/%E6%B4%BB%E5%87%BA%E7%94%9F%E5%91%BD%E7%9A%84%E6%84%8F%E4%B9%89-%E5%BC%97%E5%85%B0%E5%85%8B%E5%B0%9420190524/"/>
+    <id>http://qioinglong.top/2017/10/30/活出生命的意义-弗兰克尔20190524/</id>
+    <published>2017-10-30T06:52:31.000Z</published>
+    <updated>2019-05-24T04:39:13.394Z</updated>
+    
+    <content type="html"><![CDATA[<p>一个故事，一个理论。前半部分故事很精彩，后面的理论对于非心理专业的我来说看得不是很懂。总体来说，活着，就要寻找自己存在的价值、目标。有了目标才能活下去，好好的活下去。</p><p>曾经很着迷，活着到底有什么意义，苦苦寻求而不得，17岁之前，只为了努力读书，走出大山。十七岁后，就突然没有了确切的目标。大学时为了好面子，跨专业学习化学、考研化学、学习日语，浪费了很多的时间，到最后啥也没干成。如果当时自己能多想一下，多想想自己人生的意义，活着的意义，那也许今天也就有不一样的自己。弗兰克尔说，人生不同的阶段，赖以寄托精神的意义不同，诚然信也。</p><p>近一年，对生活失去了信心，就算孩子已经出生，待在自己身边，我还是未能觉得生活有了多大的变化，还是不能找到我究竟要做什么，要成为什么样的人，活着的意义。所以看到这本书时，心底感触挺深，给予我的不仅仅是精神上的震撼，也是实际行动中指导。从此为了坚守自己活着的意义，努力过好每一天，让每时每刻都有意义。</p><p>“人对待一切事情，不论是生死攸关还是日常琐事-积极的态度有助于我们成就生命的意义”。<br>从记事到现在，我一直是这样一个人：消极、自卑、不愿意麻烦别人、能不做的事情就不做、别人能替自己完成的事情自己绝不插手。导致现在的自己非常敏感，别人的一句话，生后中的一件小事，也会像影子一样跟着自己很久，直到另外一件事情替代之前的事情。说得真好啊，生死也好，日常吃饭睡觉也好，不管大大小小的事情，我都希望自己可以乐观的对待。相信自己会把乐观的心态传递给周围的人。</p><p>“不经历深刻的痛苦就无法体会生命的意义”<br>任何事，只有自己经历过，才会深有体会。但无论经历何种苦难，何种不容易，请不要丢失善良和对生活的热爱。</p><p>我们真正需要的，是生活态度上的根本转换。我们需要了解自身，而且需要说服那些绝望的人：我们期望生活给予什么并不重要，重要的是生活对我们有什么期望。我们不应该再问生活的意义是什么，而因该像那些每时每刻都被生活质问的人那样去思考自身。我们回答不是说与想，而是采取正确的行动，生命意味着承担和接受所有的挑战，完成自己应该完成的任务这一绝大责任</p><p>对自己未来丧失信心的犯人，注定要走向毁灭。由于他对未来失去了信念，他也就丧失了对精神的把握。他自甘堕落，成为行尸走肉、</p><p>不要只想着成功——你越想成功，就越容易失败。成功就像幸福一样，可遇而不可求。它是一种自然而然的产物，是一个人无意识地投身于某一伟大的事业时产生的衍生品，或者是为他人奉献时的副产品。幸福总会降临的，成功也同样：常常是无心插柳柳成荫。我希望你们的一切行为服从良心，并用知识去实现它。总有一天你会发现，当然是相当长的时间之后——注意，我说的是很长一段时间后！——正是由于这种不关注，成功将降临于你</p><p>尼采说过：“知道为什么而活的人，便能生存。</p><p>一本非常不错的书。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一个故事，一个理论。前半部分故事很精彩，后面的理论对于非心理专业的我来说看得不是很懂。总体来说，活着，就要寻找自己存在的价值、目标。有了目标才能活下去，好好的活下去。&lt;/p&gt;
+&lt;p&gt;曾经很着迷，活着到底有什么意义，苦苦寻求而不得，17岁之前，只为了努力读书，走出大山。十七岁
+      
+    
+    </summary>
+    
+      <category term="读书" scheme="http://qioinglong.top/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+      <category term="个人管理" scheme="http://qioinglong.top/tags/%E4%B8%AA%E4%BA%BA%E7%AE%A1%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据仓库数据集成算法</title>
+    <link href="http://qioinglong.top/2017/09/07/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E6%95%B0%E6%8D%AE%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%9520190524/"/>
+    <id>http://qioinglong.top/2017/09/07/数据仓库数据集成算法20190524/</id>
+    <published>2017-09-07T00:54:59.000Z</published>
+    <updated>2019-05-24T04:59:16.775Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-数据仓库数据集成"><a href="#1-数据仓库数据集成" class="headerlink" title="1.数据仓库数据集成"></a>1.数据仓库数据集成</h2><p>数据仓库将源系统数据抽取到ODS或者ODS提供数据给数据仓库后，需要将不同来源的数据根据业务需求集成在同一模型中。总体来说，集成算法与ODS算法基本相同，区别在于集成时当日数据来源并不是唯一的。从模型上来说，大体分为历史表模型，当前表模型，流水表模型，特殊数据模型将根据业务需求特殊加载。</p><h2 id="2-历史表数据加载算法"><a href="#2-历史表数据加载算法" class="headerlink" title="2.历史表数据加载算法"></a>2.历史表数据加载算法</h2><p>历史表指当源系统数据被删除（物理删除或逻辑删除）或者失效后，数据仓库不会将数据物理删除，只将数据的结束日期闭链，从而保证将源系统数据变化的过程保留下来。基本加载算法如下：</p><ul><li><p>先根据映射将源数据加载到临时表ND(可能多个源)  </p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO $&#123;ND&#125;( $COLS )</span><br><span class="line">SELECT $COLS</span><br><span class="line">FROM $&#123;SRC_DB&#125;.$&#123;SRC_TBNAME&#125;</span><br><span class="line">;</span><br></pre></td></tr></table></figure></li><li><p>得到目标表上日有效数据OD</p><ul><li><p>全量：获取上日全部有效数据</p>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO OD</span><br><span class="line">SELECT * FROM $&#123;DB&#125;.$&#123;TBNAME&#125;</span><br><span class="line">WHERE $&#123;HT_E_DT&#125; &gt; $&#123;TX_DATE&#125;   </span><br><span class="line">AND   $&#123;HT_S_DT&#125; &lt;= $&#123;TX_DATE&#125;</span><br><span class="line">;</span><br></pre></td></tr></table></figure></li><li><p>增量：获取上日主键在ND中的有效数据</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO OD</span><br><span class="line">SELECT * FROM $&#123;DB&#125;.$&#123;TBNAME&#125;</span><br><span class="line">WHERE ($PRI_KEY_NAME) IN (SELECT $PRI_KEY_NAME FROM $&#123;ND&#125;)</span><br><span class="line">AND $&#123;HT_E_DT&#125; &gt; $&#123;TX_DATE&#125;   </span><br><span class="line">AND $&#123;HT_S_DT&#125; &lt;= $&#123;TX_DATE&#125;</span><br></pre></td></tr></table></figure></li></ul></li><li><p>产生需要插入的数据wt_i（当日数据不在昨日数据中）</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO WT_I(</span><br><span class="line">        $COLS</span><br><span class="line">       ,$&#123;HT_S_DT&#125;</span><br><span class="line">       ,$&#123;HT_E_DT&#125;</span><br><span class="line">       ,DATA_DT )</span><br><span class="line">    SELECT</span><br><span class="line">        $COLS</span><br><span class="line">       ,$TX_DATE</span><br><span class="line">       ,$MAX_DT</span><br><span class="line">       ,$TX_DATE</span><br><span class="line">    FROM $&#123;ND&#125;</span><br><span class="line">    WHERE ($COLS_NOT_NULL)</span><br><span class="line">      NOT IN (SELECT $COLS_NOT_NULL</span><br><span class="line">              FROM OD)</span><br><span class="line">    ;</span><br></pre></td></tr></table></figure></li><li><p>产生关链数据(昨日数据不在当日数据中,源系统已经失效数据)，并将数据加在到临时表WT_U中</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO WT_U(</span><br><span class="line">     $COLS</span><br><span class="line">    ,$&#123;HT_S_DT&#125;</span><br><span class="line">    ,$&#123;HT_E_DT&#125;</span><br><span class="line">    ,DATA_DT )</span><br><span class="line">SELECT</span><br><span class="line">     $COLS</span><br><span class="line">    ,$&#123;HT_S_DT&#125;</span><br><span class="line">    ,$&#123;TX_DATE&#125;</span><br><span class="line">    ,DATA_DT</span><br><span class="line">FROM OD</span><br><span class="line">WHERE ( $COLS_NOT_NULL )</span><br><span class="line">  NOT IN (SELECT $COLS_NOT_NULL</span><br><span class="line">          FROM $&#123;ND&#125;)</span><br><span class="line">;</span><br></pre></td></tr></table></figure></li><li><p>根据wt_u表将目标表的数据关链</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">UPDATE  $&#123;DB&#125;.$&#123;TBNAME&#125;</span><br><span class="line">SET     $&#123;HT_E_DT&#125; =$&#123;TX_DATE&#125;</span><br><span class="line">WHERE   ($COLS_NOT_NULL) IN (SELECT $COLS_NOT_NULL FROM WT_U)</span><br><span class="line">AND ($PRI_KEY_NAME) IN (SELECT $PRI_KEY_NAME FROM $&#123;ND&#125;)</span><br><span class="line">AND $&#123;HT_E_DT&#125; &gt; $&#123;TX_DATE&#125;   </span><br><span class="line">AND $&#123;HT_S_DT&#125; &lt;= $&#123;TX_DATE&#125;</span><br><span class="line">;</span><br></pre></td></tr></table></figure></li><li><p>根据wt_i表将新增的数据和变化的数据插入到目标表<br>包含两部分数据：上日数据存在但属性值变化的、新增数据</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO $&#123;DB&#125;.$&#123;TBNAME&#125;(</span><br><span class="line">     $COLS</span><br><span class="line">    ,$&#123;HT_S_DT&#125;</span><br><span class="line">    ,$&#123;HT_E_DT&#125;</span><br><span class="line">    ,DATA_DT)</span><br><span class="line">SELECT</span><br><span class="line">     $COLS</span><br><span class="line">    ,$&#123;HT_S_DT&#125;</span><br><span class="line">    ,$&#123;HT_E_DT&#125;</span><br><span class="line">    ,DATA_DT</span><br><span class="line">FROM WT_I;</span><br></pre></td></tr></table></figure></li></ul><h2 id="3-流水表数据加载算法"><a href="#3-流水表数据加载算法" class="headerlink" title="3.流水表数据加载算法"></a>3.流水表数据加载算法</h2><p>通常流水表只保留在ODS层，但某些流水数据可能来源于多个源系统，为了后续数据使用方便，也将多个来源的流水表集成到一起。</p><ul><li><p>删除数据日期为当日的数据，目的是支持重跑</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  DELETE FROM $&#123;DB&#125;.$&#123;TBNAME&#125;</span><br><span class="line">  WHERE Data_Dt = $DATA_DT</span><br><span class="line">;</span><br></pre></td></tr></table></figure></li><li><p>将源表数据按照映射插入到目标表</p><ul><li>可以先将数据加载到临时表ND，再从ND插入目标表</li><li>也可以直接从源表将数据插入到目标表 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO $&#123;DB&#125;.$&#123;TBNAME&#125;(</span><br><span class="line">     $COLS</span><br><span class="line">    ,DATA_DT)</span><br><span class="line">SELECT</span><br><span class="line">     $COLS</span><br><span class="line">    ,DATA_DT</span><br><span class="line">FROM $&#123;SRC_DB&#125;.$&#123;SRC_TABLENAME&#125;;</span><br></pre></td></tr></table></figure></li></ul></li></ul><h2 id="4-当前表数据加载算法"><a href="#4-当前表数据加载算法" class="headerlink" title="4.当前表数据加载算法"></a>4.当前表数据加载算法</h2><p>当前表是指只保留最新的数据，源系统失效或者删除（物理删除或逻辑删除）的数据，在数据仓库集成的时候，不再保留，直接物理删除。当前表只保留有效的数据。算法与历史表基本相同(只是wt_u是直接删除，而不是关链)</p><ul><li><p>先根据映射将源数据加载到临时表ND</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO $&#123;ND&#125;( $COLS )</span><br><span class="line">SELECT $COLS</span><br><span class="line">FROM $&#123;SRC_DB&#125;.$&#123;SRC_TBNAME&#125;</span><br><span class="line">;</span><br></pre></td></tr></table></figure></li><li><p>得到目标表上日有效数据OD</p><ul><li><p>全量：获取上日全部有效数据</p>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO OD</span><br><span class="line">SELECT * FROM $&#123;DB&#125;.$&#123;TBNAME&#125;</span><br><span class="line">WHERE $&#123;HT_E_DT&#125; &gt; $&#123;TX_DATE&#125;   </span><br><span class="line">AND   $&#123;HT_S_DT&#125; &lt;= $&#123;TX_DATE&#125;</span><br><span class="line">;</span><br></pre></td></tr></table></figure></li><li><p>增量：获取上日主键在ND中的有效数据</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO OD</span><br><span class="line">SELECT * FROM $&#123;DB&#125;.$&#123;TBNAME&#125;</span><br><span class="line">WHERE ($PRI_KEY_NAME) IN (SELECT $PRI_KEY_NAME FROM $&#123;ND&#125;)</span><br><span class="line">AND $&#123;HT_E_DT&#125; &gt; $&#123;TX_DATE&#125;   </span><br><span class="line">AND $&#123;HT_S_DT&#125; &lt;= $&#123;TX_DATE&#125;</span><br></pre></td></tr></table></figure></li></ul></li><li><p>产生需要插入的数据wt_i（当日数据不在昨日数据中）</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO WT_I(</span><br><span class="line">        $COLS</span><br><span class="line">       ,$&#123;HT_S_DT&#125;</span><br><span class="line">       ,$&#123;HT_E_DT&#125;</span><br><span class="line">       ,DATA_DT )</span><br><span class="line">    SELECT</span><br><span class="line">        $COLS</span><br><span class="line">       ,$TX_DATE</span><br><span class="line">       ,$MAX_DT</span><br><span class="line">       ,$TX_DATE</span><br><span class="line">    FROM $&#123;ND&#125;</span><br><span class="line">    WHERE ($COLS_NOT_NULL)</span><br><span class="line">      NOT IN (SELECT $COLS_NOT_NULL</span><br><span class="line">              FROM OD)</span><br><span class="line">    ;</span><br></pre></td></tr></table></figure></li><li><p>产生关链数据(昨日数据不在当日数据中,源系统已经失效数据)，并将数据加在到临时表WT_U中</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO WT_U(</span><br><span class="line">     $COLS</span><br><span class="line">    ,$&#123;HT_S_DT&#125;</span><br><span class="line">    ,$&#123;HT_E_DT&#125;</span><br><span class="line">    ,DATA_DT )</span><br><span class="line">SELECT</span><br><span class="line">     $COLS</span><br><span class="line">    ,$&#123;HT_S_DT&#125;</span><br><span class="line">    ,$&#123;TX_DATE&#125;</span><br><span class="line">    ,DATA_DT</span><br><span class="line">FROM OD</span><br><span class="line">WHERE ( $COLS_NOT_NULL )</span><br><span class="line">  NOT IN (SELECT $COLS_NOT_NULL</span><br><span class="line">          FROM $&#123;ND&#125;)</span><br><span class="line">;</span><br></pre></td></tr></table></figure></li><li><p>根据wt_u表将目标表的数据删除</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   DELETE T1</span><br><span class="line">  FROM $&#123;DB&#125;.$&#123;TABLENAME&#125; T1</span><br><span class="line">      ,wt_u T2</span><br><span class="line"> WHERE T1.PK1 = T2.PK2</span><br><span class="line">;</span><br></pre></td></tr></table></figure></li><li><p>根据wt_i表将新增的数据和变化的数据插入到目标表<br>包含两部分数据：上日数据存在但属性值变化的、新增数据</p>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO $&#123;DB&#125;.$&#123;TBNAME&#125;(</span><br><span class="line">     $COLS</span><br><span class="line">    ,$&#123;HT_S_DT&#125;</span><br><span class="line">    ,$&#123;HT_E_DT&#125;</span><br><span class="line">    ,DATA_DT)</span><br><span class="line">SELECT</span><br><span class="line">     $COLS</span><br><span class="line">    ,$&#123;HT_S_DT&#125;</span><br><span class="line">    ,$&#123;HT_E_DT&#125;</span><br><span class="line">    ,DATA_DT</span><br><span class="line">FROM WT_I;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-数据仓库数据集成&quot;&gt;&lt;a href=&quot;#1-数据仓库数据集成&quot; class=&quot;headerlink&quot; title=&quot;1.数据仓库数据集成&quot;&gt;&lt;/a&gt;1.数据仓库数据集成&lt;/h2&gt;&lt;p&gt;数据仓库将源系统数据抽取到ODS或者ODS提供数据给数据仓库后，需要将不同来
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://qioinglong.top/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="数据仓库" scheme="http://qioinglong.top/tags/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/"/>
+    
+  </entry>
+  
+</feed>

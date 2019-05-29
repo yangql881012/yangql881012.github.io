@@ -1,0 +1,428 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Hive权限控制 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Hive权限控制">
+            
+	            Hive权限控制
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Hive" title="Hive">
+                        Hive
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/02/25</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>822</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>目前hive支持简单的权限管理，默认情况下是不开启，这样所有的用户都具有相同的权限，同时也是超级管理员，也就对hive中的所有表都有查看和改动的权利。Hive本身也不提供创建用户组和用户的命令,Hive用户组和用户即Linux用户组和用户，和hadoop一样，本身不提供用户组和用户管理，只做权限控制。<br><a id="more"></a></p>
+<h2 id="1-启用权限控制"><a href="#1-启用权限控制" class="headerlink" title="1.启用权限控制"></a>1.启用权限控制</h2><p>开启启身份认证后，任何用户必须被grant privilege才能对实体进行操作。在hive-site.xml文件中进行相应的配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">&lt;name&gt;hive.security.authorization.enabled&lt;/name&gt;</span><br><span class="line">&lt;value&gt;true&lt;/value&gt;</span><br><span class="line">&lt;description&gt;enable or disable the hive clientauthorization&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">&lt;name&gt;hive.security.authorization.createtable.owner.grants&lt;/name&gt;</span><br><span class="line">&lt;value&gt;ALL&lt;/value&gt;</span><br><span class="line">&lt;description&gt;the privileges automatically granted to the ownerwhenever a table gets created. An example like &quot;select,drop&quot; willgrant select and drop privilege to the owner of the table&lt;/description&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-角色管理"><a href="#2-角色管理" class="headerlink" title="2.角色管理"></a>2.角色管理</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">--创建和删除角色  </span><br><span class="line">create role role_name;  </span><br><span class="line">drop role role_name;  </span><br><span class="line">--展示所有roles  </span><br><span class="line">show roles  </span><br><span class="line">--赋予角色权限  </span><br><span class="line">grant select on database db_name to role role_name;    </span><br><span class="line">grant select on [table] t_name to role role_name;    </span><br><span class="line">--查看角色权限  </span><br><span class="line">show grant role role_name on database db_name;   </span><br><span class="line">show grant role role_name on [table] t_name;   </span><br><span class="line">--角色赋予用户  </span><br><span class="line">grant role role_name to user user_name  </span><br><span class="line">--回收角色权限  </span><br><span class="line">revoke select on database db_name from role role_name;  </span><br><span class="line">revoke select on [table] t_name from role role_name;  </span><br><span class="line">--查看某个用户所有角色  </span><br><span class="line">show role grant user user_name;</span><br></pre></td></tr></table></figure>
+<h2 id="3-HIVE支持的权限"><a href="#3-HIVE支持的权限" class="headerlink" title="3.HIVE支持的权限"></a>3.HIVE支持的权限</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>权限名称</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ALL</td>
+<td>所有权限</td>
+</tr>
+<tr>
+<td>ALTER</td>
+<td>允许修改元数据（modify metadata data of object）—-表信息数据</td>
+</tr>
+<tr>
+<td>UPDATE</td>
+<td>允许修改物理数据（modify physical data of object）—-实际数据</td>
+</tr>
+<tr>
+<td>CREATE</td>
+<td>允许进行Create操作</td>
+</tr>
+<tr>
+<td>DROP</td>
+<td>允许进行DROP操作</td>
+</tr>
+<tr>
+<td>INDEX</td>
+<td>允许建索引（目前还没有实现）</td>
+</tr>
+<tr>
+<td>LOCK</td>
+<td>当出现并发的使用允许用户进行LOCK和UNLOCK操作</td>
+</tr>
+<tr>
+<td>SELECT</td>
+<td>允许用户进行SELECT操作</td>
+</tr>
+<tr>
+<td>SHOW_DATABASE</td>
+<td>允许用户查看可用的数据库</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="4-与角色相关的表"><a href="#4-与角色相关的表" class="headerlink" title="4.与角色相关的表"></a>4.与角色相关的表</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>表名</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Db_privs</td>
+<td>记录了User/Role在DB上的权限</td>
+</tr>
+<tr>
+<td>Tbl_privs</td>
+<td>记录了User/Role在table上的权限</td>
+</tr>
+<tr>
+<td>Tbl_col_privs</td>
+<td>记录了User/Role在table column上的权限</td>
+</tr>
+<tr>
+<td>Roles</td>
+<td>记录了所有创建的role</td>
+</tr>
+<tr>
+<td>Role_map</td>
+<td>记录了User与Role的对应关系</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="5-配置超级管理员"><a href="#5-配置超级管理员" class="headerlink" title="5.配置超级管理员"></a>5.配置超级管理员</h2><p>为限制任何用户都可以进行Grant/Revoke操作，提高安全控制，需事先Hive的超级管理员。在hive-site.xml中添加hive.semantic.analyzer.hook配置，并实现自己的权限控制类HiveAdmin。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;hive.semantic.analyzer.hook&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;com.hive.HiveAdmin&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br></pre></td></tr></table></figure></p>
+<p>com.hive.HiveAdmin类代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">package com.bigdata.hive;  </span><br><span class="line">import org.apache.hadoop.hive.ql.parse.ASTNode;  </span><br><span class="line">import org.apache.hadoop.hive.ql.parse.AbstractSemanticAnalyzerHook;  </span><br><span class="line">import org.apache.hadoop.hive.ql.parse.HiveParser;  </span><br><span class="line">import org.apache.hadoop.hive.ql.parse.HiveSemanticAnalyzerHookContext;  </span><br><span class="line">import org.apache.hadoop.hive.ql.parse.SemanticException;  </span><br><span class="line">import org.apache.hadoop.hive.ql.session.SessionState;  </span><br><span class="line">public class  HiveAdmin extends AbstractSemanticAnalyzerHook &#123;  </span><br><span class="line">private static String[] admin = &#123;&quot;admin&quot;, &quot;root&quot;,&quot;yangql&quot;&#125;;  </span><br><span class="line"></span><br><span class="line">@Override  </span><br><span class="line">public ASTNode preAnalyze(HiveSemanticAnalyzerHookContext context,ASTNode ast) throws SemanticException &#123;  </span><br><span class="line">		switch (ast.getToken().getType()) &#123;  </span><br><span class="line">				case HiveParser.TOK_CREATEDATABASE:  </span><br><span class="line">				case HiveParser.TOK_DROPDATABASE:  </span><br><span class="line">				case HiveParser.TOK_CREATEROLE:  </span><br><span class="line">				case HiveParser.TOK_DROPROLE:  </span><br><span class="line">				case HiveParser.TOK_GRANT:  </span><br><span class="line">				case HiveParser.TOK_REVOKE:  </span><br><span class="line">				case HiveParser.TOK_GRANT_ROLE:  </span><br><span class="line">				case HiveParser.TOK_REVOKE_ROLE:  </span><br><span class="line">						    String userName = null;  </span><br><span class="line">						    if (SessionState.get() != null&amp;&amp;SessionState.get().getAuthenticator() != null)&#123;  </span><br><span class="line">						        userName=SessionState.get().getAuthenticator().getUserName();  </span><br><span class="line">						    &#125;  </span><br><span class="line">						    if (!admin[0].equalsIgnoreCase(userName) &amp;&amp; !admin[1].equalsIgnoreCase(userName)) &#123;  </span><br><span class="line">						        throw new SemanticException(userName + &quot; can&apos;t use ADMIN options, except &quot;   </span><br><span class="line">						                            + admin[0]+&quot;,&quot;+admin[1] +&quot;.&quot;);  </span><br><span class="line">						    &#125;         </span><br><span class="line">						    break;  </span><br><span class="line">			  default:break;  </span><br><span class="line">&#125;  </span><br><span class="line">    return ast;  </span><br><span class="line">    &#125;  </span><br><span class="line">public static void main(String[] args) throws SemanticException &#123;  </span><br><span class="line">    String[] admin = &#123;&quot;admin&quot;, &quot;root&quot;&#125;;  </span><br><span class="line">    String userName = &quot;root&quot;;  </span><br><span class="line">    for(String tmp: admin)&#123;  </span><br><span class="line">        System.out.println(tmp);  </span><br><span class="line">        if (!tmp.equalsIgnoreCase(userName)) &#123;  </span><br><span class="line">            throw new SemanticException(userName + &quot; can&apos;t use ADMIN options, except &quot;   </span><br><span class="line">                                + admin[0]+&quot;,&quot;+admin[1] +&quot;.&quot;);  </span><br><span class="line">        &#125;         </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="6-Hive-权限管理流程总结"><a href="#6-Hive-权限管理流程总结" class="headerlink" title="6.Hive 权限管理流程总结"></a>6.Hive 权限管理流程总结</h2><ul>
+<li>创建超级管理员</li>
+<li>新建linux用户组和用户，也可以在既定用户组下建用户，赋予用户hive目录权限</li>
+<li>超级管理员进入hive，授权新建用户组和用户的操作权限</li>
+<li>客户端可以通过新建用户名和密码连接到hive执行授权内的动作</li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/02/25/Hive安装20190524/" class="pre-post btn btn-default" title="Hive安装">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Hive安装</span>
+        </a>
+    
+    
+        <a href="/2017/02/24/Spark-学习笔记-120190524/" class="next-post btn btn-default" title="Spark-学习笔记-1">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Spark-学习笔记-1</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-启用权限控制"><span class="toc-text">1.启用权限控制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-角色管理"><span class="toc-text">2.角色管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-HIVE支持的权限"><span class="toc-text">3.HIVE支持的权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-与角色相关的表"><span class="toc-text">4.与角色相关的表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-配置超级管理员"><span class="toc-text">5.配置超级管理员</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-Hive-权限管理流程总结"><span class="toc-text">6.Hive 权限管理流程总结</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

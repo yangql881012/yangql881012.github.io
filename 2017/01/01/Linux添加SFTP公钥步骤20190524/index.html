@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Linux添加SFTP公钥步骤 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Linux添加SFTP公钥步骤">
+            
+	            Linux添加SFTP公钥步骤
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Linux" title="Linux">
+                        Linux
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/01/01</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>878</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>1.首先需要在目录(/home/yangql)创建.ssh文件夹</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 ~]$ mkdir .ssh</span><br></pre></td></tr></table></figure>
+<p>2.在客户端生成公钥和私钥<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 ~]$ cd .ssh</span><br><span class="line">[yangql@hadoop01 .ssh]$ ssh-keygen -t rsa</span><br></pre></td></tr></table></figure></p>
+<p>执行创建密钥对命令(一路回车)，直至完成公钥与私钥生成。<br><a id="more"></a><br>3.把.ssh目录下的公钥文件：/home/yangql/.ssh/id_rsa.pub文件传输到服务器上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 .ssh]$ scp /home/yangql/id_rsa.pub yangql@hadoop02</span><br></pre></td></tr></table></figure></p>
+<p>注: hadoop01（对应IP192.168.1.231）<br>    hadoop02（对应IP192.168.1.232）</p>
+<p>4、检查服务器（hadoop02）权限 /home/yangql/ 必须是755</p>
+<p>5.公钥拷贝到authorized_keys(第一次添加时将公钥重命名为authorized_keys)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 .ssh]$ cp id_rsa.pub authorized_keys</span><br></pre></td></tr></table></figure></p>
+<p>如果已经存在authorized_keys文件，执行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 .ssh]$ cat id_rsa.pub &gt;&gt; /home/dxpt/.ssh/authorized_keys</span><br></pre></td></tr></table></figure></p>
+<p>6.公钥文件的权限必须是644<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 .ssh]$  chmod 644 authorized_keys</span><br></pre></td></tr></table></figure></p>
+<p>7.客户端ssh验证(如果不需要输入密码则公钥设置成功,只有第一次连接需要输入YES确认：)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop02 home]$ sftp yangql@hadoop02</span><br><span class="line">Connecting to hadoop02...</span><br><span class="line">sftp&gt;</span><br></pre></td></tr></table></figure></p>
+<p>8.验证通过后，则可通过免密传输文件</p>
+<p>注意事项：</p>
+<ul>
+<li>权限：如果配置完对等信任公钥，仍提示输入密码或者访问拒绝，则需要查看服务器的目录权限是否正确，家目录权限755，.ssh目录权限是755,authorized_keys文件权限是644</li>
+<li>备份：authorized_keys不能出现空格等不是公钥的信息，否则公钥文件就会失效，每次附加新公钥时，养成变更前备份的好习惯</li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/01/03/Hadoop2.5.1完全分布式集群部署20190524/" class="pre-post btn btn-default" title="Hadoop2.5.1完全分布式集群部署">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Hadoop2.5.1完全分布式集群部署</span>
+        </a>
+    
+    
+        <a href="/2016/12/30/虚拟机NetworkAdapter三种方式的区别20190524/" class="next-post btn btn-default" title="虚拟机NetworkAdapter三种方式的区别">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">虚拟机NetworkAdapter三种方式的区别</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <p>暂无目录</p>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

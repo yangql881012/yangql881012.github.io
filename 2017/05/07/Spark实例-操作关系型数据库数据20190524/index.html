@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Spark实例-操作关系型数据库数据 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Spark实例-操作关系型数据库数据">
+            
+	            Spark实例-操作关系型数据库数据
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Spark" title="Spark">
+                        Spark
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/07</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>751</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>Spark操作关系型数据库数据，此处为MYSQL数据库。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">package com.spark.sql</span><br><span class="line">import org.apache.spark.sql.SQLContext</span><br><span class="line">import org.apache.spark.sql.Row</span><br><span class="line">import org.apache.spark.sql.types._</span><br><span class="line">import org.apache.spark.&#123;SparkConf, SparkContext&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line">  * Created by Administrator on 2017/3/12.</span><br><span class="line">  */</span><br><span class="line">object JDBCDataSrc extends  App&#123;</span><br><span class="line">  val conf = new SparkConf()</span><br><span class="line">    .setMaster(&quot;local&quot;)</span><br><span class="line">    .setAppName(&quot;JDBCDataSrc&quot;)</span><br><span class="line">  val sc = new SparkContext(conf)</span><br><span class="line">  val sqlContext=new SQLContext(sc)</span><br><span class="line">  import sqlContext.implicits._</span><br><span class="line">  val url=&quot;jdbc:mysql://localhost:3306/sparkpro&quot;</span><br><span class="line">  val userName=&quot;root&quot;</span><br><span class="line">  val password=&quot;root&quot;</span><br><span class="line">  //创建Dataframe</span><br><span class="line">  val studenInfoDF=sqlContext.read.format(&quot;jdbc&quot;).options(Map(</span><br><span class="line">    &quot;url&quot;-&gt;url,</span><br><span class="line">    &quot;dbtable&quot;-&gt;&quot;student_info&quot;,</span><br><span class="line">    &quot;user&quot;-&gt;userName,</span><br><span class="line">    &quot;password&quot;-&gt;password</span><br><span class="line">  )).load()</span><br><span class="line">  studenInfoDF.show()</span><br><span class="line"></span><br><span class="line">  //创建Dataframe</span><br><span class="line">  val studentScoreDF=sqlContext.read.format(&quot;jdbc&quot;).options(Map(</span><br><span class="line">    &quot;url&quot;-&gt;url,</span><br><span class="line">    &quot;dbtable&quot;-&gt;&quot;student_score&quot;,</span><br><span class="line">    &quot;user&quot;-&gt;userName,</span><br><span class="line">    &quot;password&quot;-&gt;password</span><br><span class="line">  )).load()</span><br><span class="line">  //studentScoreDF 转换为RDD，并过滤出分数大于80分的学生</span><br><span class="line">  val goodStudentRDD=studentScoreDF.rdd.filter(row=&gt;(row.getAs[Int](&quot;score&quot;)&gt;=80))</span><br><span class="line"> // for (elem &lt;- goodStudentRDD.collect()) &#123;</span><br><span class="line"> //   print(elem)</span><br><span class="line"> // &#125;</span><br><span class="line"></span><br><span class="line">  //a RDD for studenfInfo</span><br><span class="line">  val studenInfoRDD=studenInfoDF.rdd.map(row=&gt;(row.getAs[String](&quot;name&quot;),row.getAs[Int](&quot;age&quot;)))</span><br><span class="line">    .join(goodStudentRDD.map(row=&gt;(row.getAs[String](&quot;name&quot;),row.getAs[Int](&quot;score&quot;))))</span><br><span class="line">  val studenInfoRowRDD=studenInfoRDD.map(row=&gt;Row(row._1,row._2._1.toString.toLong,row._2._2.toString.toLong))</span><br><span class="line">  //studenInfoRDD.foreach(println)</span><br><span class="line">  //将RDD转化为DataFrame</span><br><span class="line">   val studentStruct=StructType(Array(</span><br><span class="line">    StructField(&quot;name&quot;,StringType,true),</span><br><span class="line">    StructField(&quot;age&quot;,LongType,true),</span><br><span class="line">    StructField(&quot;score&quot;,LongType,true)</span><br><span class="line">  ))</span><br><span class="line">  val studentStructDF=sqlContext.createDataFrame(studenInfoRowRDD,studentStruct)</span><br><span class="line">  studentStructDF.write.saveAsTable(&quot;good_student&quot;)</span><br><span class="line">  //将数据插入到数据库中</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/05/07/Spark实例-Parquet元数据合并20190524/" class="pre-post btn btn-default" title="Parquet元数据合并">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Parquet元数据合并</span>
+        </a>
+    
+    
+        <a href="/2017/05/07/Spark实例-操作Hive数据20190524/" class="next-post btn btn-default" title="Spark实例-操作Hive数据">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Spark实例-操作Hive数据</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <p>暂无目录</p>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Spark-DataSet学习 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Spark-DataSet学习">
+            
+	            Spark-DataSet学习
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Spark" title="Spark">
+                        Spark
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/09</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>749</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-DataSet相关概念"><a href="#1-DataSet相关概念" class="headerlink" title="1.DataSet相关概念"></a>1.DataSet相关概念</h2><p>Dataset是一个分布式的数据集。Dataset是Spark 1.6开始新引入的一个接口，它结合了RDD API的很多优点（包括强类型，支持lambda表达式等），以及Spark SQL的优点（优化后的执行引擎）。Dataset可以通过JVM对象来构造，然后通过transformation类算子（map，flatMap，filter等）来进行操作。Scala和Java的API中支持Dataset，但是Python不支持Dataset API。不过因为Python语言本身的天然动态特性，Dataset API的不少feature本身就已经具备了（比如可以通过row.columnName来直接获取某一行的某个字段）。R语言的情况跟Python也很类似。</p>
+<p>Dataframe就是按列组织的Dataset。在逻辑概念上，可以大概认为Dataframe等同于关系型数据库中的表，或者是Python/R语言中的data frame，但是在底层做了大量的优化。Dataframe可以通过很多方式来构造：比如结构化的数据文件，Hive表，数据库，已有的RDD。Scala，Java，Python，R等语言都支持Dataframe。在Scala API中，Dataframe就是Dataset[Row]的类型别名。在Java中，需要使用Dataset<row>来代表一个Dataframe。<br><a id="more"></a></row></p>
+<h2 id="2-DataSet操作"><a href="#2-DataSet操作" class="headerlink" title="2.DataSet操作"></a>2.DataSet操作</h2><ul>
+<li>collect：将分布式存储在集群上的分布式数据集（比如dataset），中的所有数据都获取到driver端来</li>
+<li>first：获取数据集中的第一条数据</li>
+<li>persist()/cache():持久化，如果要对一个dataset重复计算两次的话，那么建议先对这个dataset进行持久化再进行操作，避免重复计算</li>
+<li>createTempView(“employee”)</li>
+<li>explain():答应执行计划，dataframe/dataset，比如执行了一个sql语句获取的dataframe，实际上内部包含一个logical plan，逻辑执行计划，设计执行的时候，首先会通过底层的catalyst optimizer，生成物理执行计划，比如说会做一些优化，比如push filter，还会通过whole-stage code generation技术去自动化生成代码，提升执行性能</li>
+<li>DataSet.write.save：将数据保存到指定目录</li>
+<li>printSchema()：打印结构</li>
+<li><p>将DataFrame转化为DataSet</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">case class Employee(name: String, age: Long, depId: Long, gender: String, salary: Long)</span><br><span class="line">val employeeDS=employee.as[Employee]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>coalesce和repartition:都是用来重新定义分区的,区别在于：coalesce，只能用于减少分区数量，而且可以选择不发生shuffle,repartiton，可以增加分区，也可以减少分区，必须会发生shuffle，相当于是进行了一次重分区操作</p>
+</li>
+<li><p>distinct和dropDuplicates:都是用来进行去重的,distinct，是根据每一条数据，进行完整内容的比对和去重, dropDuplicates，可以根据指定的字段进行去重</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val employeeDistinct=employeeDS.distinct()</span><br><span class="line"> employeeDistinct.show()</span><br><span class="line"> val employeeDropDup=employeeDS.dropDuplicates(Seq(&quot;name&quot;))</span><br><span class="line"> employeeDropDup.show()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>except：获取在当前dataset中有，但是在另外一个dataset中没有的元素</p>
+</li>
+<li>filter：根据我们自己的逻辑，如果返回true，那么就保留该元素，否则就过滤掉该元素</li>
+<li><p>intersect：获取两个数据集的交集</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">employeeDS.except(employeeDS2).show()</span><br><span class="line">employeeDS.intersect(employeeDS2).show()</span><br><span class="line">employeeDS.filter(employee=&gt;employee.age&gt;35).show()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>map：将数据集中的每条数据都做一个映射，返回一条新数据</p>
+</li>
+<li>flatMap：数据集中的每条数据都可以返回多条数据</li>
+<li><p>mapPartitions：一次性对一个partition中的数据进行处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">employeeDS.map(employee=&gt;(</span><br><span class="line">  employee.name,employee.salary,employee.salary+1000</span><br><span class="line">)).show()</span><br><span class="line">employeeDS.flatMap(employee=&gt;Seq(</span><br><span class="line">    (employee.name,employee.salary,employee.salary+1000),</span><br><span class="line">    (employee.name,employee.salary,employee.salary+2000)</span><br><span class="line">    )).show()</span><br><span class="line">employeeDS.mapPartitions(employee=&gt;&#123;</span><br><span class="line">  val result=scala.collection.mutable.ArrayBuffer[(String,Long,Long)]()</span><br><span class="line">  while(employee.hasNext)&#123;</span><br><span class="line">    var temp=employee.next()</span><br><span class="line">    result += ((temp.name,temp.salary,temp.salary+5000))</span><br><span class="line">  &#125;</span><br><span class="line">  result.iterator</span><br><span class="line">&#125;).show()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>joinWith,两个DataSet关联，指定关联条件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">employee.joinWith(department, $&quot;deptId&quot; === $&quot;id&quot;).show()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sort：排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">employeeDS.sort($&quot;salary&quot;.desc).show()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>randomSplit/sample</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val employeeDSArr=employeeDS.randomSplit(Array(3,10,20))</span><br><span class="line">employeeDSArr.foreach(ds=&gt;ds.show())</span><br><span class="line">employeeDS.sample(false, 0.3).show()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>groupBy/agg/avg/sum/max/min/count/countDistinct</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">employee</span><br><span class="line">    .join(department, $&quot;depId&quot; === $&quot;id&quot;)  </span><br><span class="line">    .groupBy(department(&quot;name&quot;))</span><br><span class="line">    .agg(avg(employee(&quot;salary&quot;)), sum(employee(&quot;salary&quot;)), max(employee(&quot;salary&quot;)), min(employee(&quot;salary&quot;)), count(employee(&quot;name&quot;)), countDistinct(employee(&quot;name&quot;)))</span><br><span class="line">    .show()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>collect_list/collect_set:collect_list就是将一个分组内，指定字段的值都收集到一起，不去重,collect_set，同上，但是唯一的区别是，会去重</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">[1,WrappedArray(Leo, Jack),WrappedArray(Jack, Leo)]</span><br><span class="line">[3,WrappedArray(Tom, Kattie),WrappedArray(Tom, Kattie)]</span><br><span class="line">[2,WrappedArray(Marry, Jen, Jen),WrappedArray(Marry, Jen)]</span><br><span class="line">*/</span><br><span class="line">     employee.groupBy(employee(&quot;depId&quot;))</span><br><span class="line">     .agg(collect_list(employee(&quot;name&quot;)),collect_set(employee(&quot;name&quot;)))</span><br><span class="line">     .collect()</span><br><span class="line">     .foreach(println)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/05/10/Scala内部类与外部类及内部类作用域20190524/" class="pre-post btn btn-default" title="Scala内部类与外部类及内部类作用域">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Scala内部类与外部类及内部类作用域</span>
+        </a>
+    
+    
+        <a href="/2017/05/08/spark实例-DataSet之统计部门员工平均薪资和平均年龄20190524/" class="next-post btn btn-default" title="spark实例-DataSet之统计部门员工平均薪资和平均年龄">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">spark实例-DataSet之统计部门员工平均薪资和平均年龄</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-DataSet相关概念"><span class="toc-text">1.DataSet相关概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DataSet操作"><span class="toc-text">2.DataSet操作</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

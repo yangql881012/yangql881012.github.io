@@ -1,0 +1,1162 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Hive函数总结 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Hive函数总结">
+            
+	            Hive函数总结
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Hive" title="Hive">
+                        Hive
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/06/14</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>713</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>Hive提供了包括数学函数，类型转换函数，条件函数，字符函数，聚合函数，表生成函数等的内置函数。<br><a id="more"></a></p>
+<h2 id="1-数学函数"><a href="#1-数学函数" class="headerlink" title="1.数学函数"></a>1.数学函数</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>round(DOUBLE a)</td>
+<td>DOUBLE</td>
+<td>返回对a四舍五入的BIGINT值</td>
+</tr>
+<tr>
+<td>round(DOUBLE a, INT d)</td>
+<td>DOUBLE</td>
+<td>返回DOUBLE型,保留d位小数的DOUBLE型的近似值</td>
+</tr>
+<tr>
+<td>bround(DOUBLE a)</td>
+<td>DOUBLE</td>
+<td>银行家舍入法（1~4：舍，6~9：进，5-&gt;前位数是偶：舍，5-&gt;前位数是奇：进）</td>
+</tr>
+<tr>
+<td>bround(DOUBLE a, INT d)</td>
+<td>DOUBLE</td>
+<td>银行家舍入法,保留d位小数</td>
+</tr>
+<tr>
+<td>floor(DOUBLE a)</td>
+<td>BIGINT</td>
+<td>向下取整，最数轴上最接近要求的值的左边的值  如：6.10-&gt;6   -3.4-&gt;-4</td>
+</tr>
+<tr>
+<td>ceil(DOUBLE a), ceiling(DOUBLE a)</td>
+<td>BIGINT</td>
+<td>求其不小于小给定实数的最小整数如：ceil(6) = ceil(6.1)= ceil(6.9) = 7</td>
+</tr>
+<tr>
+<td>rand(), rand(INT seed)</td>
+<td>DOUBLE</td>
+<td>每行返回一个DOUBLE型随机数,seed是随机因子</td>
+</tr>
+<tr>
+<td>exp(DOUBLE a), exp(DECIMAL a)</td>
+<td>DOUBLE</td>
+<td>返回e的a幂次方， a可为小数</td>
+</tr>
+<tr>
+<td>n(DOUBLE a), ln(DECIMAL a)</td>
+<td>DOUBLE</td>
+<td>以自然数为底d的对数，a可为小数</td>
+</tr>
+<tr>
+<td>log10(DOUBLE a), log10(DECIMAL a)</td>
+<td>DOUBLE</td>
+<td>以10为底d的对数，a可为小数</td>
+</tr>
+<tr>
+<td>log2(DOUBLE a), log2(DECIMAL a)</td>
+<td>DOUBLE</td>
+<td>以2为底数d的对数，a可为小数</td>
+</tr>
+<tr>
+<td>log(DOUBLE base, DOUBLE a)/log(DECIMAL base, DECIMAL a)</td>
+<td>DOUBLE</td>
+<td>以base为底的对数，base 与 a都是DOUBLE类型</td>
+</tr>
+<tr>
+<td>pow(DOUBLE a, DOUBLE p)/ power(DOUBLE a, DOUBLE p)</td>
+<td>DOUBLE</td>
+<td>计算a的p次幂ap</td>
+</tr>
+<tr>
+<td>sqrt(DOUBLE a), sqrt(DECIMAL a)</td>
+<td>DOUBLE</td>
+<td>计算a的平方根</td>
+</tr>
+<tr>
+<td>bin(BIGINT a)</td>
+<td>STRING</td>
+<td>计算a的二进制STRING类型，a为BIGINT类型</td>
+</tr>
+<tr>
+<td>hex(BIGINT a) hex(STRING a) hex(BINARY a)</td>
+<td>STRING</td>
+<td>计算十六进制</td>
+</tr>
+<tr>
+<td>unhex(STRING a)</td>
+<td>BINARY</td>
+<td>hex的逆方法</td>
+</tr>
+<tr>
+<td>conv(BIGINT num, INT from_base, INT to_base), conv(STRING num, INT from_base, INT to_base)</td>
+<td>STRING</td>
+<td>将BIGINT/STRING类型的num从from_base进制转换成to_base进制</td>
+</tr>
+<tr>
+<td>pmod(INT a, INT b), pmod(DOUBLE a, DOUBLE b)</td>
+<td>INT or DOUBLE</td>
+<td>a对b取模</td>
+</tr>
+<tr>
+<td>sin(DOUBLE a), sin(DECIMAL a)</td>
+<td>DOUBLE</td>
+<td>求a的正弦值</td>
+</tr>
+<tr>
+<td>asin(DOUBLE a), asin(DECIMAL a)</td>
+<td>DOUBLE</td>
+<td>求d的反正弦值</td>
+</tr>
+<tr>
+<td>cos(DOUBLE a), cos(DECIMAL a)</td>
+<td>DOUBLE</td>
+<td>求余弦值</td>
+</tr>
+<tr>
+<td>acos(DOUBLE a), acos(DECIMAL a)</td>
+<td>DOUBLE</td>
+<td>求反余弦值</td>
+</tr>
+<tr>
+<td>tan(DOUBLE a), tan(DECIMAL a)</td>
+<td>DOUBLE</td>
+<td>求正切值</td>
+</tr>
+<tr>
+<td>atan(DOUBLE a), atan(DECIMAL a)</td>
+<td>DOUBLE</td>
+<td>求反正切值</td>
+</tr>
+<tr>
+<td>degrees(DOUBLE a), degrees(DECIMAL a)</td>
+<td>DOUBLE</td>
+<td>奖弧度值转换角度值</td>
+</tr>
+<tr>
+<td>radians(DOUBLE a), radians(DOUBLE a)</td>
+<td>DOUBLE</td>
+<td>将角度值转换成弧度值</td>
+</tr>
+<tr>
+<td>positive(INT a), positive(DOUBLE a)</td>
+<td>INT or DOUBLE</td>
+<td>返回a</td>
+</tr>
+<tr>
+<td>negative(INT a), negative(DOUBLE a)</td>
+<td>INT or DOUBLE</td>
+<td>返回a的相反数</td>
+</tr>
+<tr>
+<td>sign(DOUBLE a), sign(DECIMAL a)</td>
+<td>DOUBLE or INT</td>
+<td>如果a是正数则返回1.0，是负数则返回-1.0，否则返回0.0</td>
+</tr>
+<tr>
+<td>e()</td>
+<td>DOUBLE</td>
+<td>数学常数e</td>
+</tr>
+<tr>
+<td>pi()</td>
+<td>DOUBLE</td>
+<td>数学常数pi</td>
+</tr>
+<tr>
+<td>factorial(INT a)</td>
+<td>BIGINT</td>
+<td>求a的阶乘</td>
+</tr>
+<tr>
+<td>cbrt(DOUBLE a)</td>
+<td>DOUBLE</td>
+<td>求a的立方根</td>
+</tr>
+<tr>
+<td>shiftleft(TINYINT/SMALLINT/INT a, INT b)/shiftleft(BIGINT a, INT?b)</td>
+<td>INT/BIGINT</td>
+<td>按位左移</td>
+</tr>
+<tr>
+<td>shiftright(TINYINT/SMALLINT/INT a, INTb)/shiftright(BIGINT a, INT?b)</td>
+<td>INT/BIGINT</td>
+<td>按拉右移</td>
+</tr>
+<tr>
+<td>shiftrightunsigned(TINYINT/SMALLINT/INTa, INT b),/shiftrightunsigned(BIGINT a, INT b)</td>
+<td>INT/BIGINT</td>
+<td>无符号按位右移（&lt;&lt;&lt;）</td>
+</tr>
+<tr>
+<td>greatest(T v1, T v2, …)</td>
+<td>T</td>
+<td>求最大值</td>
+</tr>
+<tr>
+<td>least(T v1, T v2, …)</td>
+<td>T</td>
+<td>求最小值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="2-集合函数"><a href="#2-集合函数" class="headerlink" title="2.集合函数"></a>2.集合函数</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>size(Map<k.v>)</k.v></td>
+<td>int</td>
+<td>求map的长度</td>
+</tr>
+<tr>
+<td>size(Array<t>)</t></td>
+<td>int</td>
+<td>求数组的长度</td>
+</tr>
+<tr>
+<td>map_keys(Map<k.v>)</k.v></td>
+<td>array<k></k></td>
+<td>返回map中的所有key</td>
+</tr>
+<tr>
+<td>map_values(Map<k.v>)</k.v></td>
+<td>array<v></v></td>
+<td>返回map中的所有value</td>
+</tr>
+<tr>
+<td>array_contains(Array<t>, value)</t></td>
+<td>boolean</td>
+<td>如该数组Array<t>包含value返回true。，否则返回false</t></td>
+</tr>
+<tr>
+<td>sort_array(Array<t>)</t></td>
+<td>array</td>
+<td>按自然顺序对数组进行排序并返回</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="3-类型转换函数"><a href="#3-类型转换函数" class="headerlink" title="3.类型转换函数"></a>3.类型转换函数</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>binary(string/binary)</td>
+<td>binary</td>
+<td>将输入的值转换成二进制</td>
+</tr>
+<tr>
+<td>cast(expr as <type>)</type></td>
+<td>Expected “=” to follow “type”</td>
+<td>将expr转换成type类型 如：cast(“1” as BIGINT) 将字符串1转换成了BIGINT类型，如果转换失败将返回NULL</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="4-日期函数"><a href="#4-日期函数" class="headerlink" title="4.日期函数"></a>4.日期函数</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from_unixtime(bigint unixtime[, string format])</td>
+<td>string</td>
+<td>将时间的秒值转换成format格式（format可为“yyyy-MM-dd hh:mm:ss”,“yyyy-MM-dd hh”,“yyyy-MM-dd hh:mm”等等）如from_unixtime(1250111000,”yyyy-MM-dd”) 得到2009-03-12</td>
+</tr>
+<tr>
+<td>unix_timestamp()</td>
+<td>bigint</td>
+<td>获取本地时区下的时间戳</td>
+</tr>
+<tr>
+<td>unix_timestamp(string date)</td>
+<td>bigint</td>
+<td>将格式为yyyy-MM-dd HH:mm:ss的时间字符串转换成时间戳  如unix_timestamp(‘2009-03-20 11:30:01’) = 1237573801</td>
+</tr>
+<tr>
+<td>unix_timestamp(string date, string pattern)</td>
+<td>bigint</td>
+<td>将指定时间字符串格式字符串转换成Unix时间戳，如果格式不对返回0 如：unix_timestamp(‘2009-03-20’, ‘yyyy-MM-dd’) = 1237532400</td>
+</tr>
+<tr>
+<td>to_date(string timestamp)</td>
+<td>string</td>
+<td>返回时间字符串的日期部分</td>
+</tr>
+<tr>
+<td>year(string date)</td>
+<td>int</td>
+<td>返回时间字符串的年份部分</td>
+</tr>
+<tr>
+<td>quarter(date/timestamp/string)</td>
+<td>int</td>
+<td>返回当前时间属性哪个季度 如quarter(‘2015-04-08’) = 2</td>
+</tr>
+<tr>
+<td>month(string date)</td>
+<td>int</td>
+<td>返回时间字符串的月份部分</td>
+</tr>
+<tr>
+<td>day(string date) dayofmonth(date)</td>
+<td>int</td>
+<td>返回时间字符串的天</td>
+</tr>
+<tr>
+<td>hour(string date)</td>
+<td>int</td>
+<td>返回时间字符串的小时</td>
+</tr>
+<tr>
+<td>minute(string date)</td>
+<td>int</td>
+<td>返回时间字符串的分钟</td>
+</tr>
+<tr>
+<td>second(string date)</td>
+<td>int</td>
+<td>返回时间字符串的秒</td>
+</tr>
+<tr>
+<td>weekofyear(string date)</td>
+<td>int</td>
+<td>返回时间字符串位于一年中的第几个周内  如weekofyear(“1970-11-01 00:00:00”) = 44, weekofyear(“1970-11-01”) = 44</td>
+</tr>
+<tr>
+<td>datediff(string enddate, string startdate)</td>
+<td>int</td>
+<td>计算开始时间startdate到结束时间enddate相差的天数</td>
+</tr>
+<tr>
+<td>date_add(string startdate, int days)</td>
+<td>string</td>
+<td>从开始时间startdate加上days</td>
+</tr>
+<tr>
+<td>date_sub(string startdate, int days)</td>
+<td>string</td>
+<td>从开始时间startdate减去days</td>
+</tr>
+<tr>
+<td>from_utc_timestamp(timestamp, string timezone)</td>
+<td>timestamp</td>
+<td>如果给定的时间戳并非UTC，则将其转化成指定的时区下时间戳</td>
+</tr>
+<tr>
+<td>to_utc_timestamp(timestamp, string timezone)</td>
+<td>timestamp</td>
+<td>如果给定的时间戳指定的时区下时间戳，则将其转化成UTC下的时间戳</td>
+</tr>
+<tr>
+<td>current_date</td>
+<td>date</td>
+<td>返回当前时间日期</td>
+</tr>
+<tr>
+<td>current_timestamp</td>
+<td>timestamp</td>
+<td>返回当前时间戳</td>
+</tr>
+<tr>
+<td>add_months(string start_date, int num_months)</td>
+<td>string</td>
+<td>返回当前时间下再增加num_months个月的日期</td>
+</tr>
+<tr>
+<td>last_day(string date)</td>
+<td>string</td>
+<td>返回这个月的最后一天的日期，忽略时分秒部分（HH:mm:ss）</td>
+</tr>
+<tr>
+<td>next_day(string start_date, string day_of_week)</td>
+<td>string</td>
+<td>返回当前时间的下一个星期X所对应的日期 如：next_day(‘2015-01-14’, ‘TU’) = 2015-01-20  以2015-01-14为开始时间，其下一个星期二所对应的日期为2015-01-20</td>
+</tr>
+<tr>
+<td>trunc(string date, string format)</td>
+<td>string</td>
+<td>返回时间的最开始年份或月份  如trunc(“2016-06-26”,“MM”)=2016-06-01  trunc(“2016-06-26”,“YY”)=2016-01-01   注意所支持的格式为MONTH/MON/MM, YEAR/YYYY/YY</td>
+</tr>
+<tr>
+<td>months_between(date1, date2)</td>
+<td>double</td>
+<td>返回date1与date2之间相差的月份，如date1&gt;date2，则返回正，如果date1&lt;date2,则返回负，否则返回0.0  如：months_between(‘1997-02-28 10:30:00’, ‘1996-10-30’) = 3.94959677  1997-02-28 10:30:00与1996-10-30相差3.94959677个月</td>
+</tr>
+<tr>
+<td>date_format(date/timestamp/string ts, string fmt)</td>
+<td>string</td>
+<td>按指定格式返回时间date 如：date_format(“2016-06-22”,”MM-dd”)=06-22</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="5-条件函数"><a href="#5-条件函数" class="headerlink" title="5.条件函数"></a>5.条件函数</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>if(boolean testCondition, T valueTrue, T valueFalseOrNull)</td>
+<td>T</td>
+<td>如果testCondition 为true就返回valueTrue,否则返回valueFalseOrNull ，（valueTrue，valueFalseOrNull为泛型） </td>
+</tr>
+<tr>
+<td>nvl(T value, T default_value)</td>
+<td>T</td>
+<td>如果value值为NULL就返回default_value,否则返回value</td>
+</tr>
+<tr>
+<td>COALESCE(T v1, T v2, …)</td>
+<td>T</td>
+<td>返回第一非null的值，如果全部都为NULL就返回NULL  如：COALESCE (NULL,44,55)=44/strong&gt;</td>
+</tr>
+<tr>
+<td>CASE a WHEN b THEN c [WHEN d THEN e]* [ELSE f] END</td>
+<td>T</td>
+<td>如果a=b就返回c,a=d就返回e，否则返回f  如CASE 4 WHEN 5  THEN 5 WHEN 4 THEN 4 ELSE 3 END 将返回4</td>
+</tr>
+<tr>
+<td>CASE WHEN a THEN b [WHEN c THEN d]* [ELSE e] END</td>
+<td>T</td>
+<td>如果a=ture就返回b,c= ture就返回d，否则返回e  如：CASE WHEN  5&gt;0  THEN 5 WHEN 4&gt;0 THEN 4 ELSE 0 END 将返回5；CASE WHEN  5&lt;0  THEN 5 WHEN 4&lt;0 THEN 4 ELSE 0 END 将返回0</td>
+</tr>
+<tr>
+<td>isnull( a )</td>
+<td>boolean</td>
+<td>如果a为null就返回true，否则返回false</td>
+</tr>
+<tr>
+<td>isnotnull ( a )</td>
+<td>boolean</td>
+<td>如果a为非null就返回true，否则返回false</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="6-字符函数"><a href="#6-字符函数" class="headerlink" title="6.字符函数"></a>6.字符函数</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ascii(string str)</td>
+<td>int</td>
+<td>返回str中首个ASCII字符串的整数值</td>
+</tr>
+<tr>
+<td>base64(binary bin)</td>
+<td>string</td>
+<td>将二进制bin转换成64位的字符串</td>
+</tr>
+<tr>
+<td>concat(string/binary A, string/binary B…)</td>
+<td>string</td>
+<td>对二进制字节码或字符串按次序进行拼接</td>
+</tr>
+<tr>
+<td>context_ngrams(array<array<string>&gt;, array<string>, int K, int pf)</string></array<string></td>
+<td>array<struct<string,double>&gt;</struct<string,double></td>
+<td>与ngram类似，但context_ngram()允许你预算指定上下文(数组)来去查找子序列，具体看StatisticsAndDataMining(这里的解释更易懂)</td>
+</tr>
+<tr>
+<td>concat_ws(string SEP, string A, string B…)</td>
+<td>string</td>
+<td>与concat()类似，但使用指定的分隔符喜进行分隔</td>
+</tr>
+<tr>
+<td>concat_ws(string SEP, array<string>)</string></td>
+<td>string</td>
+<td>拼接Array中的元素并用指定分隔符进行分隔</td>
+</tr>
+<tr>
+<td>decode(binary bin, string charset)</td>
+<td>string</td>
+<td>使用指定的字符集charset将二进制值bin解码成字符串，支持的字符集有：’US-ASCII’, ‘ISO-8859-1’, ‘UTF-8’, ‘UTF-16BE’, ‘UTF-16LE’, ‘UTF-16’，如果任意输入参数为NULL都将返回NULL</td>
+</tr>
+<tr>
+<td>encode(string src, string charset)</td>
+<td>binary</td>
+<td>使用指定的字符集charset将字符串编码成二进制值，支持的字符集有：’US-ASCII’, ‘ISO-8859-1’, ‘UTF-8’, ‘UTF-16BE’, ‘UTF-16LE’, ‘UTF-16’，如果任一输入参数为NULL都将返回NULL</td>
+</tr>
+<tr>
+<td>find_in_set(string str, string strList)</td>
+<td>int</td>
+<td>返回以逗号分隔的字符串中str出现的位置，如果参数str为逗号或查找失败将返回0，如果任一参数为NULL将返回NULL回</td>
+</tr>
+<tr>
+<td>format_number(number x, int d)</td>
+<td>string</td>
+<td>将数值X转换成”#,###,###.##”格式字符串，并保留d位小数，如果d为0，将进行四舍五入且不保留小数</td>
+</tr>
+<tr>
+<td>get_json_object(string json_string, string path)</td>
+<td>string</td>
+<td>从指定路径上的JSON字符串抽取出JSON对象，并返回这个对象的JSON格式，如果输入的JSON是非法的将返回NULL,注意此路径上JSON字符串只能由数字 字母 下划线组成且不能有大写字母和特殊字符，且key不能由数字开头，这是由于Hive对列名的限制</td>
+</tr>
+<tr>
+<td>in_file(string str, string filename)</td>
+<td>boolean</td>
+<td>如果文件名为filename的文件中有一行数据与字符串str匹配成功就返回true</td>
+</tr>
+<tr>
+<td>instr(string str, string substr)</td>
+<td>int</td>
+<td>查找字符串str中子字符串substr出现的位置，如果查找失败将返回0，如果任一参数为Null将返回null，注意位置为从1开始的</td>
+</tr>
+<tr>
+<td>length(string A)</td>
+<td>int</td>
+<td>返回字符串的长度</td>
+</tr>
+<tr>
+<td>locate(string substr, string str[, int pos])</td>
+<td>int</td>
+<td>查找字符串str中的pos位置后字符串substr第一次出现的位置</td>
+</tr>
+<tr>
+<td>lower(string A) lcase(string A)</td>
+<td>string</td>
+<td>将字符串A的所有字母转换成小写字母</td>
+</tr>
+<tr>
+<td>lpad(string str, int len, string pad)</td>
+<td>string</td>
+<td>从左边开始对字符串str使用字符串pad填充，最终len长度为止，如果字符串str本身长度比len大的话，将去掉多余的部分</td>
+</tr>
+<tr>
+<td>ltrim(string A)</td>
+<td>string</td>
+<td>去掉字符串A前面的空格</td>
+</tr>
+<tr>
+<td>ngrams(array<array<string>&gt;, int N, int K, int pf)</array<string></td>
+<td>array<struct<string,double>&gt;</struct<string,double></td>
+<td>返回出现次数TOP K的的子序列,n表示子序列的长度，具体看StatisticsAndDataMining (这里的解释更易懂)</td>
+</tr>
+<tr>
+<td>parse_url(string urlString, string partToExtract [, string keyToExtract])</td>
+<td>string</td>
+<td>返回从URL中抽取指定部分的内容，参数url是URL字符串，而参数partToExtract是要抽取的部分，这个参数包含(HOST, PATH, QUERY, REF, PROTOCOL, AUTHORITY, FILE, and USERINFO,例如：parse_url(‘<a href="http://facebook.com/path1/p.php?k1=v1&amp;k2=v2#Ref1" target="_blank" rel="noopener">http://facebook.com/path1/p.php?k1=v1&amp;k2=v2#Ref1</a>‘, ‘HOST’) =’facebook.com’，如果参数partToExtract值为QUERY则必须指定第三个参数key  如：parse_url(‘<a href="http://facebook.com/path1/p.php?k1=v1&amp;k2=v2#Ref1" target="_blank" rel="noopener">http://facebook.com/path1/p.php?k1=v1&amp;k2=v2#Ref1</a>‘, ‘QUERY’, ‘k1’) =‘v1’</td>
+</tr>
+<tr>
+<td>printf(String format, Obj… args)</td>
+<td>string</td>
+<td>按照printf风格格式输出字符串</td>
+</tr>
+<tr>
+<td>regexp_extract(string subject, string pattern, int index)</td>
+<td>string</td>
+<td>抽取字符串subject中符合正则表达式pattern的第index个部分的子字符串，注意些预定义字符的使用，如第二个参数如果使用’\s’将被匹配到s,’\\s’才是匹配空格</td>
+</tr>
+<tr>
+<td>regexp_replace(string INITIAL_STRING, string PATTERN, string REPLACEMENT)</td>
+<td>string</td>
+<td>按照Java正则表达式PATTERN将字符串INTIAL_STRING中符合条件的部分成REPLACEMENT所指定的字符串，如里REPLACEMENT这空的话，抽符合正则的部分将被去掉  如：regexp_replace(“foobar”, “oo/ar”, “”) = ‘fb.’ 注意些预定义字符的使用，如第二个参数如果使用’\s’将被匹配到s,’\\s’才是匹配空格</td>
+</tr>
+<tr>
+<td>repeat(string str, int n)</td>
+<td>string</td>
+<td>重复输出n次字符串str</td>
+</tr>
+<tr>
+<td>reverse(string A)</td>
+<td>string</td>
+<td>反转字符串</td>
+</tr>
+<tr>
+<td>rpad(string str, int len, string pad)</td>
+<td>string</td>
+<td>从右边开始对字符串str使用字符串pad填充，最终len长度为止，如果字符串str本身长度比len大的话，将去掉多余的部分</td>
+</tr>
+<tr>
+<td>rtrim(string A)</td>
+<td>string</td>
+<td>去掉字符串后面出现的空格</td>
+</tr>
+<tr>
+<td>sentences(string str, string lang, string locale)</td>
+<td>array<array<string>&gt;</array<string></td>
+<td>字符串str将被转换成单词数组，如：sentences(‘Hello there! How are you?’) =( (“Hello”, “there”), (“How”, “are”, “you”) )</td>
+</tr>
+<tr>
+<td>space(int n)</td>
+<td>string</td>
+<td>返回n个空格</td>
+</tr>
+<tr>
+<td>split(string str, string pat)</td>
+<td>array</td>
+<td>按照正则表达式pat来分割字符串str,并将分割后的数组字符串的形式返回</td>
+</tr>
+<tr>
+<td>str_to_map(text[, delimiter1, delimiter2])</td>
+<td>map<string,string></string,string></td>
+<td>将字符串str按照指定分隔符转换成Map，第一个参数是需要转换字符串，第二个参数是键值对之间的分隔符，默认为逗号;第三个参数是键值之间的分隔符，默认为”=”</td>
+</tr>
+<tr>
+<td>substr(string/binary A, int start) substring(string/binary A, int start)</td>
+<td>string</td>
+<td>对于字符串A,从start位置开始截取字符串并返回</td>
+</tr>
+<tr>
+<td>substr(string/binary A, int start, int len) substring(string/binary A, int start, int len)</td>
+<td>string</td>
+<td>对于二进制/字符串A,从start位置开始截取长度为length的字符串并返回</td>
+</tr>
+<tr>
+<td>substring_index(string A, string delim, int count)</td>
+<td>string</td>
+<td>截取第count分隔符之前的字符串，如count为正则从左边开始截取，如果为负则从右边开始截取</td>
+</tr>
+<tr>
+<td>translate(string/char/varchar input, string/char/varchar from, string/char/varchar to)</td>
+<td>string</td>
+<td>将input出现在from中的字符串替换成to中的字符串 如：translate(“MOBIN”,”BIN”,”M”)=”MOM”</td>
+</tr>
+<tr>
+<td>trim(string A)</td>
+<td>string</td>
+<td>将字符串A前后出现的空格去掉</td>
+</tr>
+<tr>
+<td>unbase64(string str)</td>
+<td>binary</td>
+<td>将64位的字符串转换二进制值</td>
+</tr>
+<tr>
+<td>upper(string A) ucase(string A)</td>
+<td>string</td>
+<td>将字符串A中的字母转换成大写字母</td>
+</tr>
+<tr>
+<td>initcap(string A)</td>
+<td>string</td>
+<td>将字符串A转换第一个字母大写其余字母的字符串</td>
+</tr>
+<tr>
+<td>levenshtein(string A, string B)</td>
+<td>int</td>
+<td>计算两个字符串之间的差异大小  如：levenshtein(‘kitten’, ‘sitting’) = 3</td>
+</tr>
+<tr>
+<td>soundex(string A)</td>
+<td>string</td>
+<td>将普通字符串转换成soundex字符串</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="7-聚合函数"><a href="#7-聚合函数" class="headerlink" title="7.聚合函数"></a>7.聚合函数</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>count(*), count(expr), count(DISTINCT expr[, expr…])</td>
+<td>INT</td>
+<td>统计总行数</td>
+</tr>
+<tr>
+<td>sum(col), sum(DISTINCT col)</td>
+<td>DOUBLE</td>
+<td>sum(col),表示求指定列的和，sum(DISTINCT col)表示求去重后的列的和</td>
+</tr>
+<tr>
+<td>avg(col), avg(DISTINCT col)</td>
+<td>DOUBLE</td>
+<td>avg(col),表示求指定列的平均值，avg(DISTINCT col)表示求去重后的列的平均值</td>
+</tr>
+<tr>
+<td>min(col)</td>
+<td>DOUBLE</td>
+<td>求指定列的最小值</td>
+</tr>
+<tr>
+<td>max(col)</td>
+<td>DOUBLE</td>
+<td>求指定列的最大值</td>
+</tr>
+<tr>
+<td>variance(col), var_pop(col)</td>
+<td>DOUBLE</td>
+<td>求指定列数值的方差</td>
+</tr>
+<tr>
+<td>var_samp(col)</td>
+<td>DOUBLE</td>
+<td>求指定列数值的样本方差</td>
+</tr>
+<tr>
+<td>stddev_pop(col)</td>
+<td>DOUBLE</td>
+<td>求指定列数值的标准偏差</td>
+</tr>
+<tr>
+<td>stddev_samp(col)</td>
+<td>DOUBLE</td>
+<td>求指定列数值的样本标准偏差</td>
+</tr>
+<tr>
+<td>covar_pop(col1, col2)</td>
+<td>DOUBLE</td>
+<td>求指定列数值的协方差</td>
+</tr>
+<tr>
+<td>covar_samp(col1, col2)</td>
+<td>DOUBLE</td>
+<td>求指定列数值的样本协方差</td>
+</tr>
+<tr>
+<td>corr(col1, col2)</td>
+<td>DOUBLE</td>
+<td>返回两列数值的相关系数</td>
+</tr>
+<tr>
+<td>percentile(BIGINT col, p)</td>
+<td>DOUBLE</td>
+<td>返回col的p%分位数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="8-表生成函数"><a href="#8-表生成函数" class="headerlink" title="8.表生成函数"></a>8.表生成函数</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>返回类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>explode(array<type> a)</type></td>
+<td>Array Type</td>
+<td>对于a中的每个元素，将生成一行且包含该元素</td>
+</tr>
+<tr>
+<td>explode(ARRAY)</td>
+<td>N rows</td>
+<td>每行对应数组中的一个元素</td>
+</tr>
+<tr>
+<td>explode(MAP)</td>
+<td>N rows</td>
+<td>每行对应每个map键-值，其中一个字段是map的键，另一个字段是map的值</td>
+</tr>
+<tr>
+<td>posexplode(ARRAY)</td>
+<td>N rows</td>
+<td>与explode类似，不同的是还返回各元素在数组中的位置</td>
+</tr>
+<tr>
+<td>stack(INT n, v_1, v_2, …, v_k)</td>
+<td>N rows</td>
+<td>把M列转换成N行，每行有M/N个字段，其中n必须是个常数</td>
+</tr>
+<tr>
+<td>json_tuple(jsonStr, k1, k2, …)</td>
+<td>tuple</td>
+<td>从一个JSON字符串中获取多个键并作为一个元组返回，与get_json_object不同的是此函数能一次获取多个键值</td>
+</tr>
+<tr>
+<td>parse_url_tuple(url, p1, p2, …)</td>
+<td>tuple</td>
+<td>返回从URL中抽取指定N部分的内容，参数url是URL字符串，而参数p1,p2,….是要抽取的部分，这个参数包含HOST, PATH, QUERY, REF, PROTOCOL, AUTHORITY, FILE, USERINFO, QUERY:<key></key></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="9-示例代码"><a href="#9-示例代码" class="headerlink" title="9.示例代码"></a>9.示例代码</h2><p>创建表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table table1(A string, B string ,C string)  </span><br><span class="line">ROW FORMAT SERDE &apos;org.apache.hadoop.hive.contrib.serde2.MultiDelimitSerDe&apos;  </span><br><span class="line">WITH SERDEPROPERTIES (&quot;field.delim&quot;=&quot;@|@&quot;)  </span><br><span class="line">STORED AS TEXTFILE  </span><br><span class="line">tblproperties(&apos;creator&apos;=&apos;yangql&apos;,&apos;created_at&apos;=&apos;2017-05-24&apos;)  ;</span><br></pre></td></tr></table></figure></p>
+<p>—数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">190@|@1030,1031,1032,1033,1190@|@select id</span><br><span class="line">191@|@1030,1031,1032,1033,1190@|@select id</span><br></pre></td></tr></table></figure></p>
+<p>—加载数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">load data local inpath &apos;/home/yangql/proc/hive/testData.txt&apos; into table table1;</span><br></pre></td></tr></table></figure></p>
+<p>—查询<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hive (test)&gt; select * from table1;</span><br><span class="line">OK</span><br><span class="line">table1.a	table1.b	table1.c</span><br><span class="line">190	1030,1031,1032,1033,1190	select id</span><br><span class="line">191	1030,1031,1032,1033,1190	select id</span><br><span class="line">Time taken: 0.072 seconds, Fetched: 2 row(s)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>lateral view:lateral view用于和split、explode等UDTF一起使用的，能将一行数据拆分成多行数据，在此基础上可以对拆分的数据进行聚合，lateral view首先为原始表的每行调用UDTF，UDTF会把一行拆分成一行或者多行，lateral view在把结果组合，产生一个支持别名表的虚拟表。<br>执行过程是先执行from到 as cloumn的列过程，在执行select 和where后边的语句；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">hive (test)&gt; select t1.a,t2.b,t1.b,t1.c from table1 t1 lateral view explode(split(t1.b,&apos;,&apos;)) t2 as b;</span><br><span class="line">OK</span><br><span class="line">t1.a	t2.b	t1.b	t1.c</span><br><span class="line">190	1030	1030,1031,1032,1033,1190	select id</span><br><span class="line">190	1031	1030,1031,1032,1033,1190	select id</span><br><span class="line">190	1032	1030,1031,1032,1033,1190	select id</span><br><span class="line">190	1033	1030,1031,1032,1033,1190	select id</span><br><span class="line">190	1190	1030,1031,1032,1033,1190	select id</span><br><span class="line">191	1030	1030,1031,1032,1033,1190	select id</span><br><span class="line">191	1031	1030,1031,1032,1033,1190	select id</span><br><span class="line">191	1032	1030,1031,1032,1033,1190	select id</span><br><span class="line">191	1033	1030,1031,1032,1033,1190	select id</span><br><span class="line">191	1190	1030,1031,1032,1033,1190	select id</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>explode</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">hive (test)&gt; select explode(split(b,&apos;,&apos;)) from table1;</span><br><span class="line">OK</span><br><span class="line">col</span><br><span class="line">1030</span><br><span class="line">1031</span><br><span class="line">1032</span><br><span class="line">1033</span><br><span class="line">1190</span><br><span class="line">1030</span><br><span class="line">1031</span><br><span class="line">1032</span><br><span class="line">1033</span><br><span class="line">1190</span><br><span class="line">Time taken: 0.073 seconds, Fetched: 10 row(s)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>posexplode</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">hive (test)&gt; select posexplode(split(b,&apos;,&apos;)) from table1;</span><br><span class="line">OK</span><br><span class="line">pos	val</span><br><span class="line">0	1030</span><br><span class="line">1	1031</span><br><span class="line">2	1032</span><br><span class="line">3	1033</span><br><span class="line">4	1190</span><br><span class="line">0	1030</span><br><span class="line">1	1031</span><br><span class="line">2	1032</span><br><span class="line">3	1033</span><br><span class="line">4	1190</span><br><span class="line">Time taken: 0.077 seconds, Fetched: 10 row(s)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/06/15/Hive表创建，数据加载，数据导出20190524/" class="pre-post btn btn-default" title="Hive表创建，数据加载，数据导出">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Hive表创建，数据加载，数据导出</span>
+        </a>
+    
+    
+        <a href="/2017/06/06/Hive整合HBase20190524/" class="next-post btn btn-default" title="Hive整合HBase">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Hive整合HBase</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-数学函数"><span class="toc-text">1.数学函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-集合函数"><span class="toc-text">2.集合函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-类型转换函数"><span class="toc-text">3.类型转换函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-日期函数"><span class="toc-text">4.日期函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-条件函数"><span class="toc-text">5.条件函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-字符函数"><span class="toc-text">6.字符函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-聚合函数"><span class="toc-text">7.聚合函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-表生成函数"><span class="toc-text">8.表生成函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-示例代码"><span class="toc-text">9.示例代码</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

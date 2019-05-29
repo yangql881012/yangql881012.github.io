@@ -1,0 +1,442 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>快学Scala | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="快学Scala">
+            
+	            快学Scala
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Scala" title="Scala">
+                        Scala
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/03/28</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>791</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h3 id="1-可变参数列表"><a href="#1-可变参数列表" class="headerlink" title="1.可变参数列表"></a>1.可变参数列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//定义一个函数,可变长度参数</span><br><span class="line">  def sum(args:Int*):Int=&#123;</span><br><span class="line">    var result = 0</span><br><span class="line">    for(arg &lt;- args)&#123;</span><br><span class="line">      result += arg</span><br><span class="line">    &#125;</span><br><span class="line">    result</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><code>val s = sum(1 to 5)</code>//错误<br>如果sum函数被调用时传入的是单个参数，那么该参数就应该是单个整数，而不是一个整数区间。解决这个问题的办法就是告诉编译器你希望这个参数被当作参数序列处理<br>正确的做法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val s =sum(1 to 5:_*)</span><br><span class="line">```  </span><br><span class="line">在递归调用中，用`_*`将其转化为参数序列</span><br></pre></td></tr></table></figure></p>
+<p>  //递归调用<br>  def recursiveSum(args:Int<em>):Int={<br>    if(args.length==0) 0<br>    else args.head + recursiveSum(args.tail:_</em>)<br>  }<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 2.过程 ###</span><br><span class="line">scala对于不返回值得函数有特殊的表示方法，如果函数提包含在括号中，但是前面没有=号，那么返回值就是Unit类型，这样的函数被称为过程。  </span><br><span class="line">打印------------</span><br></pre></td></tr></table></figure></p>
+<p>println(“-“ * 10)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### 3.懒值 ###</span><br></pre></td></tr></table></figure></p>
+<p>lazy val wordCount=Source.fromFile(“D:/test.txt”).mkString<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">如果程序从不访问变量wordCount,那么文件永远不会被打开，懒值对于开销较大的初始化语句十分有用。</span><br><span class="line">### 4.异常 ###</span><br><span class="line">throw 表达式有特殊的类型Nothing，在if/else 表达式中，如果一个分支的类型是Nothing，if/else表达式的类型就是另一个分支的类型。</span><br><span class="line"></span><br><span class="line">## 2.数组 ##</span><br><span class="line">不可变数组使用Array  </span><br><span class="line">可变数组使用ArrayBuffer</span><br></pre></td></tr></table></figure></p>
+<p> val arrayBuffer =ArrayBuffer<a href="1,2">Int</a><br>  arrayBuffer += 3<br>  val array=Array(4,5,6)<br>  arrayBuffer ++= array<br>  arrayBuffer.trimEnd(3)<br>  println(arrayBuffer.mkString(“,”))</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">+=:在尾端添加元素  </span><br><span class="line">++=：追加集合  </span><br><span class="line">trimEnd(n):移除最后的n个元素  </span><br><span class="line">toArray:转化为数组  </span><br><span class="line">toBuffer():转化为数组缓冲  </span><br><span class="line">0 to n:[0,n]  </span><br><span class="line">0 until n:[0,n)  </span><br><span class="line">0 until(n,2):每两个元素一跳  </span><br><span class="line">(0 until n).reverse</span><br><span class="line"></span><br><span class="line">### 1.数组转化 ###</span><br><span class="line">数组转化并不会修改原始数组，而是会产生一个全新的数组  </span><br><span class="line">使用for 推导式</span><br></pre></td></tr></table></figure>
+<p>  val a = Array(1,2,3,4)<br>  val result = for(item &lt;- a) yield item*2<br>  println(result.mkString(“,”))<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### 2.数组守卫 ###</span><br></pre></td></tr></table></figure></p>
+<p>for(elem &lt;- a if elem % 2 ==0 ) yield elem * 2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">array.sum  </span><br><span class="line">array.min  </span><br><span class="line">array.max  </span><br><span class="line">println(a.sorted)  //升序  </span><br><span class="line">println(a.sortWith(_&lt;_))//升序  </span><br><span class="line">println(a.sortWith(_&gt;_))//降序  </span><br><span class="line"></span><br><span class="line">### 3.多维数组 ###</span><br></pre></td></tr></table></figure></p>
+<p> val matrix = Array.ofDim<a href="3,4">Double</a><br> matrix(2)(1)=42<br> println(matrix(2)(1))<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 映射 ##</span><br></pre></td></tr></table></figure></p>
+<p>val scores=Map(“key1”-&gt;”values”,”key2”-&gt;”value2”)<br>val scores =Map((key1,value1),(key2,value2))<br>//获取值<br>scores(“key1”)<br>contains//判断是否含有某个元素<br>scores.getOrElse(“key1”,”0”)//如果没有，就取默认值<br>//如果可变<br>score(“bog”)=”bog”//如果存在就更新，不存在就新增<br>+=：添加多个关系<br>-=：移除某个键和对应的值<br>迭代映射<br>for((k,v) &lt;- map)<br>map.keySet:获取key<br>map.values:获取值<br>反转键和值:<br>for((k,v)&lt;-map) yield(v,k)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">### 元组 ###</span><br><span class="line">val tuple=（1，2,3）</span><br><span class="line">元组访问:tuple._1 tuple._2 tuple._3  </span><br><span class="line">使用模式匹配来获取元组的组员，  </span><br><span class="line">val (first,second,third) = tuple</span><br><span class="line">如果不需要某个值，可以在不需要的部件上使用`_` val (first,second,_)=tuple  </span><br><span class="line">println(&quot;New YourK&quot;.partition(_.isUpper)):  </span><br><span class="line">partition():返回元组（满足条件，不满足条件）</span><br><span class="line"></span><br><span class="line">使用元组的好处就是可以将多个值绑在一起进行处理，可以使用zip来处理。</span><br></pre></td></tr></table></figure></p>
+<p>  val array=Array(“key1”,”key2”,”key3”)<br>  val count=Array(1,2,3)<br>  val paris =array.zip(count)<br>  for((k,v) &lt;- paris) println(k + “ “ + v)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">## 类 ##</span><br><span class="line">1.定义一个类时，定义一个公有变量是，默认生成JVM类时，变量为私有，getter setter方法是公有的。定义私有变量时，变量，getter setter方法都是私有的。getter</span><br><span class="line">setter 分别叫做age age_=</span><br></pre></td></tr></table></figure></p>
+<p>class Person {<br>  private var privateage=0<br>  def age=privateage<br>  def age_=(newAge:Int){<br>    privateage=newAge<br>  }<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">2.如果字段是私有的，则getter and setter 方法也是私有的  </span><br><span class="line">3.如果字段是val的，则只有getter方法生成  </span><br><span class="line">4.如果你不需要任何getter setter方法，可以将字段声明为`private[this]`  </span><br><span class="line">5.如果定义方法没有(),则在调用时，也不能加()  </span><br><span class="line">6.方法可以访问该类所有对象的私有字段</span><br></pre></td></tr></table></figure></p>
+<p>class Counter{<br>  private var value =0<br>  def isLess(other:Counter) = value &lt; other.value//other同样也是Counter对像<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7.pirvate[this] 限制只能是当前对象才能访问</span><br></pre></td></tr></table></figure></p>
+<p>class Counter1{<br>  private[this] var value =0<br>  def isLess(other:Counter1) = value &lt; other.value//错误，只能访问当前对象<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">8.private[类名]修饰符可以定义仅有指定的类的方法可以访问给定的字段，这里的类名必须是当前定义的类，或者是包含该类的外部类。</span><br></pre></td></tr></table></figure></p>
+<p>class Counter1{<br>  private[Counter1] var value =0<br>  def isLess(other:Counter1) = value &lt; other.value//错误，只能访问当前对象<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">9.Bean属性，生成getXXX,setXX形式的方法，在属性前面加上`@BeanPropery`</span><br></pre></td></tr></table></figure></p>
+<p>import scala.beans.BeanProperty<br>class Persons{<br>  @BeanProperty var name:String=”default”<br>}<br>//生成四个方法<br>1.name:String<br>2.name_=(newValue:String):Unit<br>3.getName():String<br>4.setName(newValue:String):Unit<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">![image](E:\03_学习资料\06_IT学习\02_编程语言\07_Scala\scala字段生成方法.png)</span><br><span class="line">10.辅助构造器,</span><br><span class="line">- 辅助构造器的名称为this</span><br><span class="line">- 每一个辅助构造器都必须以一个对先前已经定义的其它辅助构造器或者主构造器开始。</span><br></pre></td></tr></table></figure></p>
+<p> class Person {<br>   var age=0<br>   var name =””</p>
+<p>  def this(name:String){//一个辅助构造器<br>    this()//调用柱构造器<br>    this.name=name<br>  }<br>  def this(name:String,age:Int){//另外一个辅助构造器<br>    this()//也可以是 this(name)<br>    this.name=name<br>    this.age=age<br>  }<br>}<br>//==============================================<br>package com.scala.base</p>
+<p>object TestClass extends App{<br>  val p1 = new Person()//主辅助器<br>  val p2 = new Person(“test”,1)//第一个辅助器<br>  val p3 = new Person(“test”)//第二个辅助器<br>  println(p1.name + “ “ + p1.age)<br>  println(p2.name + “ “ + p2.age)<br>  println(p3.name + “ “ + p3.age)<br>}<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> 11.主构造器</span><br><span class="line"> - 每个类都有主构造器，主构造器并不以this方法定义。而是: class Person(val name:String,val age:Int)</span><br><span class="line"> - 针对主构造器参数生成的字段和方法</span><br><span class="line"></span><br><span class="line"> |柱构造器参数|生成的字段和方法|</span><br><span class="line">|---|---|</span><br><span class="line">name:Stirng|对象私有字段，如果没有方法使用name，那么就没有这个字段</span><br><span class="line">private val/var name:String|私有字段，私有的getter setter</span><br><span class="line">val/var name:String|私有字段，公有的getter setter</span><br><span class="line">@BeanPropery val/var name:String|私有字段，JavaBean版本的setter getter</span><br><span class="line"></span><br><span class="line">- class peroson private(val id:Int):主构造器变为私有</span><br><span class="line"></span><br><span class="line">## 对象 ##</span><br><span class="line">1.对象的作用(object)</span><br><span class="line">- 作为存放工具函数或者常量的地方</span><br><span class="line">- 高效地共享单个不可变实例</span><br><span class="line">- 需要用单个实例来协调某个服务</span><br><span class="line">2.伴生对象，类的伴生对象可以被访问，但并不在作用域中，</span><br><span class="line">3.枚举</span><br></pre></td></tr></table></figure></p>
+<p>object TrafficLightColor extends Enumeration{<br>  //val red,yello,green = Value<br>  val red = Value(0,”Red”)<br>  val yellow = Value(1,”yellow”)<br>  val green = Value(2,”green”)<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">object TestClass extends App&#123;</span><br><span class="line">  println(TrafficLightColor.red)</span><br><span class="line">  println(TrafficLightColor.yellow)</span><br><span class="line">  for(c &lt;- TrafficLightColor.values)&#123;</span><br><span class="line">    println(c.id + &quot; &quot; + c)</span><br><span class="line">  &#125;</span><br><span class="line">  println(TrafficLightColor(0))</span><br><span class="line">  println(TrafficLightColor.withName(&quot;green&quot;))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><ul>
+<li>extends关键字，继承类。</li>
+<li>final 修饰类时，类不能被扩展<br>1.类型检查和转化</li>
+<li>isInstanceOf:测试某个对象是否属于某个特定的类</li>
+<li>asInstanceOf:将引用转化为子类的引用</li>
+<li>p.getClass=classOf(类名) ：测试P指向的是某个对象但不是其子类。</li>
+<li>抽象类:abstract,在子类中重写抽象方法时，不需要使用override关键字</li>
+<li>val 定义完了 引用对象的地址就不会变了</li>
+<li><p>def 定义后 每调用一次就会被重新执行一次</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">abstract class Person0322(val name:String)&#123;</span><br><span class="line">  def id:Int //没有方法体，这是一个抽象方法</span><br><span class="line">&#125;</span><br><span class="line">class Employee0322(name:String) extends Person0322(name)&#123;</span><br><span class="line">  def id = name.hashCode()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>抽象字段：没有初始值的字段</p>
+</li>
+<li><p>匿名类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  val alien = new Person(&quot;Fred&quot;)&#123;</span><br><span class="line">  def greeting=&quot;dddddd&quot; + name</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提前定义：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Ant extends &#123;</span><br><span class="line">    override val range=2</span><br><span class="line">&#125; with Animal</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="文件及正则表达式"><a href="#文件及正则表达式" class="headerlink" title="文件及正则表达式"></a>文件及正则表达式</h2><p>1.scala.io.Source.fromFile(“文件名”,”字符编码”)<br>Source.fromURL<br>source.fromString</p>
+<ul>
+<li><p>读取二进制文件：scala没有提供，需要使用java的类库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">val file = new File(fileNmae)</span><br><span class="line">val in = new FileInputStream(file)</span><br><span class="line">val bytes = new Array[Byte](file.length.toInt)</span><br><span class="line">in.read(bytes)</span><br><span class="line">in.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>写入文件使用java PrintWriter</p>
+</li>
+<li><p>序列化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@SerialVersionUID(42L) class Counter extends Serializable&#123;</span><br><span class="line">  private var value =0</span><br><span class="line">  def isLess(other:Counter) = value &lt; other.value//other同样也是Counter对像</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sys.process提供用于与shell交互。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import sys.process._</span><br><span class="line">&quot;ls -al ..&quot; ! //返回上层目录的所有文件 !!两个感叹号是字符串形式返回</span><br><span class="line">&quot;ls -al ..&quot; #| &quot;grep xxx&quot; ! //#|管道</span><br><span class="line">#&gt;重定向</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>正则表达式类：scala.util.matching.Regex</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> import scala.util.matching.Regex</span><br><span class="line">  val numPattern=&quot;[0-9]+&quot;.r</span><br><span class="line">  for(matching &lt;- numPattern.findAllIn(&quot;dsafdsa sa33 333&quot;))&#123;//匹配所有</span><br><span class="line">    println(matching)</span><br><span class="line">  &#125;</span><br><span class="line">  //转成数组</span><br><span class="line">  val array=numPattern.findAllIn(&quot;dd321 &quot;).toArray</span><br><span class="line">  //匹配收个</span><br><span class="line">  val matchfirst=numPattern.findFirstIn(&quot;dasfda asf3&quot;)</span><br><span class="line">  //检查开始时候匹配</span><br><span class="line">  val firstmatch=numPattern.findPrefixOf(&quot;&quot;)</span><br><span class="line">  //替换</span><br><span class="line">  numPattern.replaceAllIn(&quot;&quot;, &quot;&quot;)</span><br><span class="line">  numPattern.replaceFirstIn(&quot;&quot;, &quot;&quot;)</span><br><span class="line">  //正则表达式组</span><br><span class="line">  val numGroupPatter=&quot;([0-9]+) ([a-z]+)&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="特质"><a href="#特质" class="headerlink" title="特质"></a>特质</h2><ul>
+<li>特质可以同时拥有抽象方法和具体方法，不需要将方法声明为abstract,未被实现的方法默认就是抽象的</li>
+<li>继承多个特质时，使用with语句</li>
+<li>scala只能有一个超类，但是可以有多个特质</li>
+<li><p>子类实现特质的方法时，不需要写override</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package com.scala.base</span><br><span class="line"></span><br><span class="line">trait Logger &#123;</span><br><span class="line">  def log(msg:String) //这是一个抽象方法。没有实现</span><br><span class="line">&#125;</span><br><span class="line">package com.scala.base</span><br><span class="line"></span><br><span class="line">class ConsoleLogger extends Logger&#123;</span><br><span class="line">  def log(msg:String)&#123; //不需要写override</span><br><span class="line">    println(msg)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>特质可以带部分实现，带有特质的对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val test=new Account with ConsoleLogger</span><br><span class="line">test.log(&quot;test&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>继承多个特质时，特质从最后一个开始处理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val acct1 = new Account  with TimestampLogger with shorterLogger</span><br><span class="line">val acct2 = new Account  with shorterLogger with TimestampLogger</span><br><span class="line">acct1.log(&quot;acct1&quot;)</span><br><span class="line">acct1.log(&quot;acct2&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在特质中重新抽象方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">trait Logger &#123;</span><br><span class="line">  def log(msg:String) //这是一个抽象方法。没有实现</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">trait TimestampLogger extends Logger&#123;</span><br><span class="line">  println(&quot;TimestampLogger&quot;)</span><br><span class="line">  abstract override def log(msg:String)&#123;//scala 认为TimestampLogger是抽象的，必须要混入一个具体log方法，所以必须要加上abstrat 和 override关键字</span><br><span class="line">    super.log(new java.util.Date() + &quot; &quot; +msg)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当作富接口使用的特质</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">trait Logger &#123;</span><br><span class="line">  def log(msg:String) //这是一个抽象方法。没有实现</span><br><span class="line">  def info(msg:String)&#123;log(&quot;info &quot;+ msg)&#125;</span><br><span class="line">  def warn(msg:String)&#123;log(&quot;warn&quot; + msg)&#125;</span><br><span class="line">  def error(msg:String)&#123;log(&quot;error&quot; + msg)&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>特质中的字段可以是具体的，也可以是抽象的，如果你给出了初始值，那么字段就是具体的。任何通过这种方式混入的字段都会自动成为该类自己的字段，特质中未被初始化的字段在子类中必须重写</p>
+</li>
+<li><p>特质不能有构造器参数，每个特质都有一个无参数的构造器（缺少构造器参数是特质与类之间唯一的技术差别）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//提前定义</span><br><span class="line">val acc = new &#123;</span><br><span class="line">val filenmae =&quot;file.txt&quot;</span><br><span class="line"></span><br><span class="line">&#125;with SavingAccount with FileLogger</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>自身类型：当特质以如下代码开始定义时， this:类型=&gt;,它便只能被混入指定类型的子类</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def mulOne(x:Int)=(y:Int)=&gt;&#123;</span><br><span class="line">  x*y</span><br><span class="line">&#125;</span><br><span class="line">println(mulOne(7)(8))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><p>val fun = ceil _ //( _ 将fun方法转化为函数 )</p>
+<ul>
+<li>柯里化：将原来接受两个参数的函数变成新的接受一个参数的函数过程，新的函数返回一个以原有第二个参数作为参数的类型</li>
+<li>unioin【|/++】 intersect【&amp;】 diff【&amp;~/—】</li>
+<li><ul>
+<li>一般而言，+用于将元素添加到无先后次序的集合，+:和:+将元素添加到有先后次序的集合的开头和末尾。++ 一次添加多个元素</li>
+</ul>
+</li>
+</ul>
+<h2 id="模式匹配"><a href="#模式匹配" class="headerlink" title="模式匹配"></a>模式匹配</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">ch match&#123;</span><br><span class="line">case &apos;+&apos; =&gt; sign=1</span><br><span class="line">case &apos;-&apos; =&gt; sign=-1</span><br><span class="line">case _ if ch==1 =&gt; kk //守卫是以任何boolean条件</span><br><span class="line">csse x:Int=&gt;Integer.ParseInt(x) //类型匹配，在匹配类型的时候，必须给出一个变量名，否则，你将会拿对象本身来进行匹配</span><br><span class="line">case _ =&gt; sign=0</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">arry match&#123;</span><br><span class="line">case Array(0) =&gt; &quot;0&quot; //匹配包含0的数组</span><br><span class="line">case Array(x,y) =&gt; x + y //匹配任何包含两个元素的数组</span><br><span class="line">case Array(0,_*) =&gt; &quot;0 ....&quot;//匹配包含任何以0开始的数组</span><br><span class="line">case _ =&gt; &quot;something&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>样例类时一种特殊的类，经过优化被用于模式匹配</li>
+<li><p>copy方法和带名参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val amt=Account(&quot;test&quot;)</span><br><span class="line">val price=amt.copy(&quot;teset1&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sealed 密封类</p>
+</li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/03/29/Spark-共享变量20190524/" class="pre-post btn btn-default" title="Spark 共享变量">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Spark 共享变量</span>
+        </a>
+    
+    
+        <a href="/2017/03/21/Spark函数-subtractByKey,subtract20190524/" class="next-post btn btn-default" title="spark函数-subtractByKey,subtract">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">spark函数-subtractByKey,subtract</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-可变参数列表"><span class="toc-text">1.可变参数列表</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#类"><span class="toc-text">类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文件及正则表达式"><span class="toc-text">文件及正则表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特质"><span class="toc-text">特质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高阶函数"><span class="toc-text">高阶函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模式匹配"><span class="toc-text">模式匹配</span></a>
+        
+    </li></div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

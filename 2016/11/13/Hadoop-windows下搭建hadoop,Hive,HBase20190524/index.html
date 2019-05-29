@@ -1,0 +1,477 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Hadoop-windows下搭建hadoop,Hive,HBase | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Hadoop-windows下搭建hadoop,Hive,HBase">
+            
+	            Hadoop-windows下搭建hadoop,Hive,HBase
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Hadoop" title="Hadoop">
+                        Hadoop
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2016/11/13</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>926</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-搭建Hadoop"><a href="#1-搭建Hadoop" class="headerlink" title="1.搭建Hadoop"></a>1.搭建Hadoop</h2><ul>
+<li>安装JDK1.8并设置环境变量 JAVA_HOME。</li>
+<li>下载hadoop2.7.2 ,解压到D盘，路径为D:\winbigdata\hadoop2.7.2(注：如何不是根目录，不要带空格)</li>
+<li>添加环境变量HADOOP_HOME=D:\winbigdata\hadoop2.7.2\ ,将D:\winbigdata\hadoop2.7.2\bin和D:\winbigdata\hadoop2.7.2\sbin添加到path中。</li>
+<li>下载hadooponwindows，下载地址<code>https://github.com/sardetushar/hadooponwindows</code></li>
+<li>删除hadoop下的etc和bin。将hadooponwindows里的etc和bin拷贝到D:\winbigdata\hadoop2.7.2\下。</li>
+<li><p>修改etc/hadoop/core-site.xml</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">   &lt;property&gt;</span><br><span class="line">       &lt;name&gt;fs.defaultFS&lt;/name&gt;</span><br><span class="line">       &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;</span><br><span class="line">   &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改etc/hadoop/mapred-site.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">   &lt;property&gt;</span><br><span class="line">       &lt;name&gt;mapreduce.framework.name&lt;/name&gt;</span><br><span class="line">       &lt;value&gt;yarn&lt;/value&gt;</span><br><span class="line">   &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改etc/hadoop/hdfs-site.xml,data/namenode,data/datanode自己创建的目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">   &lt;property&gt;</span><br><span class="line">       &lt;name&gt;dfs.replication&lt;/name&gt;</span><br><span class="line">       &lt;value&gt;1&lt;/value&gt;</span><br><span class="line">   &lt;/property&gt;</span><br><span class="line">   &lt;property&gt;</span><br><span class="line">       &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;</span><br><span class="line">       &lt;value&gt;file:/winbigdata/hadoop-2.7.2/data/namenode&lt;/value&gt;</span><br><span class="line">   &lt;/property&gt;</span><br><span class="line">   &lt;property&gt;</span><br><span class="line">       &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;</span><br><span class="line">     &lt;value&gt;file:/winbigdata/hadoop-2.7.2/data/datanode&lt;/value&gt;</span><br><span class="line">   &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改etc\hadoop\yarn-site.xml</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">       &lt;name&gt;yarn.nodemanager.aux-services&lt;/name&gt;</span><br><span class="line">       &lt;value&gt;mapreduce_shuffle&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">       &lt;name&gt;yarn.nodemanager.aux-services.mapreduce.shuffle.class&lt;/name&gt;</span><br><span class="line">       &lt;value&gt;org.apache.hadoop.mapred.ShuffleHandler&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改etc/hadoop/hadoop-env.cmd,修改JAVA_HOME(这里使用<code>PROGRA~1</code>,不要用<code>program files</code>,有空格会报错)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@rem set JAVA_HOME=%JAVA_HOME%</span><br><span class="line">set JAVA_HOME=C:\PROGRA~1\Java\jdk1.8.0_05</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>格式化namenode</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdfs namenode -format</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动Hadoop,sbin目录下执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start-all</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>启动了4个窗口，namenode,datanode,yarn resourcemanager,yarn nodemanager<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 停止Hadoop,sbin下执行</span><br></pre></td></tr></table></figure></p>
+<p>stop-all<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- web页面</span><br></pre></td></tr></table></figure></p>
+<p>Resourcemanager address:<a href="http://localhost:8088/" target="_blank" rel="noopener">http://localhost:8088/</a><br>Namenode address:<a href="http://localhost:50070/" target="_blank" rel="noopener">http://localhost:50070/</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">## 2.安装MYSQL ##</span><br><span class="line">- 下载mysql-5.7.17-winx64.zip，解压到D:\winbigdata，将文件夹重命名为mysql</span><br><span class="line">- 配置环境变量MYSQL_HOME=D:\winbigdata\mysql并将 %MYSQL_HOME%\bin 加到Path中</span><br><span class="line">- 创建my.ini文件，内容如下：</span><br></pre></td></tr></table></figure></p>
+<p>[mysqld]<br>basedir = D:\\winbigdata\\mysql<br>datadir = D:\\winbigdata\\mysql\\data<br>port = 3306<br>server_id = MYSQL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 以管理员身份运行cmd，进入mysql的bin目录。</span><br></pre></td></tr></table></figure></p>
+<p>mysqld  —initialize<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">初始化成功后，会在datadir目录下生成一些文件，其中，xxx.err文件里说明了root账户的临时密码。那行大概长这样：</span><br><span class="line">2017-06-15T01:20:27.235211Z 1 [Note] A temporary password is generated for root@localhost: (r=ol.mQK7kD</span><br><span class="line">即密码是：(r=ol.mQK7kD</span><br><span class="line">- 进入到bin目录注册mysql服务(一定要进入到bin目录，否则启动时会报错，无法找到指定文件)</span><br></pre></td></tr></table></figure></p>
+<p>mysqld -install MySQL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 启动mysql服务</span><br></pre></td></tr></table></figure></p>
+<p>net start MySQL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 修改密码</span><br></pre></td></tr></table></figure></p>
+<p>mysql -uroot -p<br>SET PASSWORD = PASSWORD(‘mysql123’);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">## 2.安装HIVE ##</span><br><span class="line">- 下载Hive，我安装的版本是`apache-hive-2.1.1-bin`。安装路径是`D:\winbigdata\hive-2.1.1`</span><br><span class="line">- 设置环境变量 `HIVE_HOME=D:\winbigdata\hive-2.1.1`，并将`D:\winbigdata\hive-2.1.1\bin`加入到Path中</span><br><span class="line">- 修改hive-site.xm（复制一个hive-default.xml.template，重命名为hive-site.xml）</span><br></pre></td></tr></table></figure></p>
+   <property>
+        <name>javax.jdo.option.ConnectionURL</name>
+        <value>jdbc:mysql://localhost:3306/hive?createDatabaseIfNotExist=true</value>
+        <description>JDBC connect string for a JDBC metastore</description>
+    </property>
+
+<pre><code>&lt;property&gt;
+  &lt;name&gt;javax.jdo.option.ConnectionDriverName&lt;/name&gt;
+  &lt;value&gt;com.mysql.jdbc.Driver&lt;/value&gt;
+  &lt;description&gt;Driver class name for a JDBC metastore&lt;/description&gt;
+&lt;/property&gt;
+
+&lt;property&gt;
+  &lt;name&gt;javax.jdo.option.ConnectionUserName&lt;/name&gt;
+  &lt;value&gt;root&lt;/value&gt;
+  &lt;description&gt;username to use against metastore database&lt;/description&gt;
+&lt;/property&gt;
+
+&lt;property&gt;
+  &lt;name&gt;javax.jdo.option.ConnectionPassword&lt;/name&gt;
+  &lt;value&gt;mysql123&lt;/value&gt;
+  &lt;description&gt;password to use against metastore database&lt;/description&gt;
+&lt;/property&gt;
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">修改类似于 “$&#123;system:” 的配置了。在hive-site.xml中有很多地方引用了这种形式的变量，但是在实际运行时，在windows环境下这个变量存在问题。因此统一修改成</span><br><span class="line"> 相对路径 `/winbigdata/hive-2.1.1/hive_home`.使相关的文件尽量保存在同一个目录下。</span><br></pre></td></tr></table></figure>
+ <property>
+    <name>hive.exec.local.scratchdir</name>    
+    <value>/winbigdata/hive-2.1.1/hive_home/scratch_dir</value>
+    <description>Local scratch space for Hive jobs</description>
+  </property>
+
+  <property>
+    <name>hive.downloaded.resources.dir</name>    
+    <value>/winbigdata/hive-2.1.1/hive_home/resources_dir/${hive.session.id}_resources</value>    
+    <description>Temporary local directory for added resources in the remote file system.</description>
+  </property>
+
+   <property>
+    <name>hive.querylog.location</name>
+    <value>/winbigdata/hive-2.1.1/hive_home/querylog_dir</value>
+    <description>Location of Hive run time structured log file</description>
+  </property>
+
+<p>   <property><br>    <name>hive.server2.logging.operation.log.location</name><br>    <value>/winbigdata/hive-2.1.1/hive_home/operation_dir</value><br>    <description>Top level directory where operation logs are stored if logging functionality is enabled</description>
+  </property><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 修改hive-log4j2.properties  </span><br><span class="line">将hive-log4j2.properties.template这个文件复制，重命名为hive-log4j2.properties.</span><br></pre></td></tr></table></figure></p>
+<p>status = INFO<br>name = HiveLog4j2<br>packages = org.apache.hadoop.hive.ql.log</p>
+<h1 id="list-of-properties"><a href="#list-of-properties" class="headerlink" title="list of properties"></a>list of properties</h1><p>property.hive.log.level = INFO<br>property.hive.root.logger = DRFA<br>property.hive.log.dir = hive_log<br>property.hive.log.file = hive.log<br>property.hive.perflogger.log.level = INFO</p>
+<h1 id="list-of-all-appenders"><a href="#list-of-all-appenders" class="headerlink" title="list of all appenders"></a>list of all appenders</h1><p>appenders = console, DRFA</p>
+<h1 id="console-appender"><a href="#console-appender" class="headerlink" title="console appender"></a>console appender</h1><p>appender.console.type = Console<br>appender.console.name = console<br>appender.console.target = SYSTEM_ERR<br>appender.console.layout.type = PatternLayout<br>appender.console.layout.pattern = %d{ISO8601} %5p [%t] %c{2}: %m%n</p>
+<h1 id="daily-rolling-file-appender"><a href="#daily-rolling-file-appender" class="headerlink" title="daily rolling file appender"></a>daily rolling file appender</h1><p>appender.DRFA.type = RollingRandomAccessFile<br>appender.DRFA.name = DRFA<br>appender.DRFA.fileName = ${hive.log.dir}/${hive.log.file}</p>
+<h1 id="Use-pid-in-the-filePattern-to-append-to-the-filename-if-you-want-separate-log-files-for-different-CLI-session"><a href="#Use-pid-in-the-filePattern-to-append-to-the-filename-if-you-want-separate-log-files-for-different-CLI-session" class="headerlink" title="Use %pid in the filePattern to append @ to the filename if you want separate log files for different CLI session"></a>Use %pid in the filePattern to append <process-id>@<host-name> to the filename if you want separate log files for different CLI session</host-name></process-id></h1><p>appender.DRFA.filePattern = ${hive.log.dir}/${hive.log.file}.%d{yyyy-MM-dd}<br>appender.DRFA.layout.type = PatternLayout<br>appender.DRFA.layout.pattern = %d{ISO8601} %5p [%t] %c{2}: %m%n<br>appender.DRFA.policies.type = Policies<br>appender.DRFA.policies.time.type = TimeBasedTriggeringPolicy<br>appender.DRFA.policies.time.interval = 1<br>appender.DRFA.policies.time.modulate = true<br>appender.DRFA.strategy.type = DefaultRolloverStrategy<br>appender.DRFA.strategy.max = 30</p>
+<h1 id="list-of-all-loggers"><a href="#list-of-all-loggers" class="headerlink" title="list of all loggers"></a>list of all loggers</h1><p>loggers = NIOServerCnxn, ClientCnxnSocketNIO, DataNucleus, Datastore, JPOX, PerfLogger</p>
+<p>logger.NIOServerCnxn.name = org.apache.zookeeper.server.NIOServerCnxn<br>logger.NIOServerCnxn.level = WARN</p>
+<p>logger.ClientCnxnSocketNIO.name = org.apache.zookeeper.ClientCnxnSocketNIO<br>logger.ClientCnxnSocketNIO.level = WARN</p>
+<p>logger.DataNucleus.name = DataNucleus<br>logger.DataNucleus.level = ERROR</p>
+<p>logger.Datastore.name = Datastore<br>logger.Datastore.level = ERROR</p>
+<p>logger.JPOX.name = JPOX<br>logger.JPOX.level = ERROR</p>
+<p>logger.PerfLogger.name = org.apache.hadoop.hive.ql.log.PerfLogger<br>logger.PerfLogger.level = ${hive.perflogger.log.level}</p>
+<h1 id="root-logger"><a href="#root-logger" class="headerlink" title="root logger"></a>root logger</h1><p>rootLogger.level = ${hive.log.level}<br>rootLogger.appenderRefs = root<br>rootLogger.appenderRef.root.ref = ${hive.root.logger}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 将元数据导入到mysql</span><br><span class="line">切换到目录D:\winbigdata\hive-2.1.1\scripts\metastore\upgrade\mysql</span><br></pre></td></tr></table></figure></p>
+<p>mysql -uroot -p<br>mysql&gt;SOURCE D:\winbigdata\hive-2.1.1\scripts\metastore\upgrade\mysql\hive-schema-2.1.0.mysql.sql<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 启动Hadoop</span><br></pre></td></tr></table></figure></p>
+<p>start-all<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 启动hive-启动metastore</span><br></pre></td></tr></table></figure></p>
+<p>hive —service metastore -hiveconf hive.root.logger=DEBUG<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 启动hiveserver</span><br></pre></td></tr></table></figure></p>
+<p>hive —service hiveserver2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 启动客户端</span><br></pre></td></tr></table></figure></p>
+<p>hive —service cli<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 验证</span><br></pre></td></tr></table></figure></p>
+<p>create table test_table(id INT);<br>show tables;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">## 3.搭建HBase ##</span><br><span class="line">- 下载HBase1.2.5,解压到目录D:\winbigdata\hbase-1.2.5</span><br><span class="line">- 修改配置hbase-site.xml</span><br></pre></td></tr></table></figure></p>
+<p>&lt;?xml version=”1.0”?&gt;<br>&lt;?xml-stylesheet type=”text/xsl” href=”configuration.xsl”?&gt;<br>&lt;!—<br>/<em>*
+ </em></p>
+<ul>
+<li>Licensed to the Apache Software Foundation (ASF) under one</li>
+<li>or more contributor license agreements.  See the NOTICE file</li>
+<li>distributed with this work for additional information</li>
+<li>regarding copyright ownership.  The ASF licenses this file</li>
+<li>to you under the Apache License, Version 2.0 (the</li>
+<li>“License”); you may not use this file except in compliance</li>
+<li>with the License.  You may obtain a copy of the License at<br>*</li>
+<li><a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener">http://www.apache.org/licenses/LICENSE-2.0</a><br>*</li>
+<li>Unless required by applicable law or agreed to in writing, software</li>
+<li>distributed under the License is distributed on an “AS IS” BASIS,</li>
+<li>WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</li>
+<li>See the License for the specific language governing permissions and</li>
+<li>limitations under the License.<br>*/<br>—&gt;<br><configuration><br> <property><pre><code>&lt;name&gt;hbase.master&lt;/name&gt;
+&lt;value&gt;localhost:6000&lt;/value&gt;
+</code></pre>&lt;/property&gt;<br><property><pre><code>    &lt;name&gt;hbase.master.maxclockskew&lt;/name&gt;
+    &lt;value&gt;180000&lt;/value&gt;
+</code></pre>&lt;/property&gt;<br><property><pre><code>    &lt;name&gt;hbase.rootdir&lt;/name&gt;
+    &lt;value&gt;hdfs://localhost:9000/hbase&lt;/value&gt;
+</code></pre>&lt;/property&gt;<br><property><pre><code>    &lt;name&gt;hbase.cluster.distributed&lt;/name&gt;
+    &lt;value&gt;false&lt;/value&gt;
+</code></pre>&lt;/property&gt;<br><property><pre><code>    &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;
+    &lt;value&gt;localhost&lt;/value&gt;
+</code></pre>&lt;/property&gt;<br><property><pre><code>    &lt;name&gt;hbase.zookeeper.property.dataDir&lt;/name&gt;
+    &lt;value&gt;/hbase&lt;/value&gt;
+</code></pre>&lt;/property&gt;<br><property><pre><code>    &lt;name&gt;dfs.replication&lt;/name&gt;
+    &lt;value&gt;1&lt;/value&gt;
+</code></pre>&lt;/property&gt;<br>&lt;/configuration&gt;<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- 修改配置hbase-env.cmd</span><br><span class="line">set JAVA_HOME=C:\PROGRA~1\Java\jdk1.8.0_05</span><br><span class="line">- 停止hadoop</span><br></pre></td></tr></table></figure>
+</property></property></property></property></property></property></property></configuration></li>
+</ul>
+<p>stop-all.cmd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 格式化Hadoop命名节点</span><br></pre></td></tr></table></figure></p>
+<p>hdfs namenode -format<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 启动hadoop</span><br></pre></td></tr></table></figure></p>
+<p>start-all.cmd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 启动hbase</span><br></pre></td></tr></table></figure></p>
+<p>start-hbase.cmd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 启动 HBase的rest服务</span><br></pre></td></tr></table></figure></p>
+<p>hbase rest start -p 6000<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">`http://localhost:8085/`验证是否启动成功</span><br><span class="line">- 启动HBase Shell</span><br></pre></td></tr></table></figure></p>
+<p>hbase shell<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 测试验证</span><br></pre></td></tr></table></figure></p>
+<p>```</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2016/11/13/Hadoop2-hdfs-垃圾箱简介20190524/" class="pre-post btn btn-default" title="Hadoop2-hdfs-垃圾箱简介">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Hadoop2-hdfs-垃圾箱简介</span>
+        </a>
+    
+    
+        <a href="/2016/11/11/用Hexo-nexT-GitHub搭建个人博客20190524/" class="next-post btn btn-default" title="用Hexo-nexT-GitHub搭建个人博客">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">用Hexo-nexT-GitHub搭建个人博客</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-搭建Hadoop"><span class="toc-text">1.搭建Hadoop</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#list-of-properties"><span class="toc-text">list of properties</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#list-of-all-appenders"><span class="toc-text">list of all appenders</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#console-appender"><span class="toc-text">console appender</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#daily-rolling-file-appender"><span class="toc-text">daily rolling file appender</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Use-pid-in-the-filePattern-to-append-to-the-filename-if-you-want-separate-log-files-for-different-CLI-session"><span class="toc-text">Use %pid in the filePattern to append @ to the filename if you want separate log files for different CLI session</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#list-of-all-loggers"><span class="toc-text">list of all loggers</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#root-logger"><span class="toc-text">root logger</span></a>
+        
+    </li></div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

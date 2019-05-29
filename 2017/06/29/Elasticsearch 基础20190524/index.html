@@ -1,0 +1,433 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Elasticsearch 基础 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Elasticsearch 基础">
+            
+	            Elasticsearch 基础
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Elasticsearch" title="Elasticsearch">
+                        Elasticsearch
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/06/29</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>698</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-相关概念"><a href="#1-相关概念" class="headerlink" title="1.相关概念"></a>1.相关概念</h2><ul>
+<li>接近实时（NRT）<br>Elasticsearch是一个接近实时的搜索平台。这意味着，从索引一个文档直到这个文档能够被搜索到有一个轻微的延迟（通常是1秒）。</li>
+<li>集群（cluster）<br>一个集群就是由一个或多个节点组织在一起，它们共同持有你整个的数据，并一起提供索引和搜索功能。一个集群由一个唯一的名字标识，这个名字默认就是“elasticsearch”。这个名字是重要的，因为一个节点只能通过指定某个集群的名字，来加入这个集群。在产品环境中显式地设定这个名字是一个好习惯，但是使用默认值来进行测试/开发也是不错的。</li>
+<li>节点（node）<br>一个节点是你集群中的一个服务器，作为集群的一部分，它存储你的数据，参与集群的索引和搜索功能。和集群类似，一个节点也是由一个名字来标识的，默认情况下，这个名字是一个随机的漫威漫画角色的名字，这个名字会在启动的时候赋予节点。这个名字对于管理工作来说挺重要的，因为在这个管理过程中，你会去确定网络中的哪些服务器对应于Elasticsearch集群中的哪些节点。一个节点可以通过配置集群名称的方式来加入一个指定的集群。默认情况下，每个节点都会被安排加入到一个叫做“elasticsearch”的集群中，这意味着，如果你在你的网络中启动了若干个节点，并假定它们能够相互发现彼此，它们将会自动地形成并加入到一个叫做“elasticsearch”的集群中。在一个集群里，只要你想，可以拥有任意多个节点。而且，如果当前你的网络中没有运行任何Elasticsearch节点，这时启动一个节点，会默认创建并加入一个叫做“elasticsearch”的集群。</li>
+<li>索引（index）<br>一个索引就是一个拥有几分相似特征的文档的集合。比如说，你可以有一个客户数据的索引，另一个产品目录的索引，还有一个订单数据的索引。一个索引由一个名字来标识（必须全部是小写字母的），并且当我们要对对应于这个索引中的文档进行索引、搜索、更新和删除的时候，都要使用到这个名字。在一个集群中，如果你想，可以定义任意多的索引。</li>
+<li>类型（type）<br>在一个索引中，你可以定义一种或多种类型。一个类型是你的索引的一个逻辑上的分类/分区，其语义完全由你来定。通常，会为具有一组共同字段的文档定义一个类型。比如说，我们假设你运营一个博客平台并且将你所有的数据存储到一个索引中。在这个索引中，你可以为用户数据定义一个类型，为博客数据定义另一个类型，当然，也可以为评论数据定义另一个类型。</li>
+<li>文档（document）<br>一个文档是一个可被索引的基础信息单元。比如，你可以拥有某一个客户的文档，某一个产品的一个文档，当然，也可以拥有某个订单的一个文档。文档以JSON（Javascript Object Notation）格式来表示，而JSON是一个到处存在的互联网数据交互格式。在一个index/type里面，只要你想，你可以存储任意多的文档。注意，尽管一个文档，物理上存在于一个索引之中，文档必须被索引/赋予一个索引的type。</li>
+<li><p>分片和复制（shards &amp; replicas）<br>一个索引可以存储超出单个结点硬件限制的大量数据。比如，一个具有10亿文档的索引占据1TB的磁盘空间，而任一节点都没有这样大的磁盘空间；或者单个节点处理搜索请求，响应太慢。为了解决这个问题，Elasticsearch提供了将索引划分成多份的能力，这些份就叫做分片。当你创建一个索引的时候，你可以指定你想要的分片的数量。每个分片本身也是一个功能完善并且独立的“索引”，这个“索引”可以被放置到集群中的任何节点上。分片之所以重要，主要有两方面的原因</p>
+<pre><code>      - 允许你水平分割/扩展你的内容容量
+      - 允许你在分片（潜在地，位于多个节点上）之上进行分布式的、并行的操作，进而提高性能/吞吐量
+</code></pre><p>  至于一个分片怎样分布，它的文档怎样聚合回搜索请求，是完全由Elasticsearch管理的，对于作为用户的你来说，这些都是透明的。在一个网络/云的环境里，失败随时都可能发生，在某个分片/节点不知怎么的就处于离线状态，或者由于任何原因消失了，这种情况下，有一个故障转移机制是非常有用并且是强烈推荐的。为此目的，Elasticsearch允许你创建分片的一份或多份拷贝，这些拷贝叫做复制分片，或者直接叫复制。复制之所以重要，有两个主要原因：</p>
+<pre><code>      - 在分片/节点失败的情况下，提供了高可用性。因为这个原因，注意到复制分片从不与原/主要（original/primary）分片置于同一节点上是非常重要的。
+      - 扩展你的搜索量/吞吐量，因为搜索可以在所有的复制上并行运行
+</code></pre><p>  总之，每个索引可以被分成多个分片。一个索引也可以被复制0次（意思是没有复制）或多次。一旦复制了，每个索引就有了主分片（作为复制源的原来的分片）和复制分片（主分片的拷贝）之别。分片和复制的数量可以在索引创建的时候指定。在索引创建之后，你可以在任何时候动态地改变复制的数量，但是你事后不能改变分片的数量。默认情况下，Elasticsearch中的每个索引被分片5个主分片和1个复制，这意味着，如果你的集群中至少有两个节点，你的索引将会有5个主分片和另外5个复制分片（1个完全拷贝），这样的话每个索引总共就有10个分片。</p>
+<a id="more"></a>
+<h2 id="2-基本操作"><a href="#2-基本操作" class="headerlink" title="2.基本操作"></a>2.基本操作</h2></li>
+<li><p>elasticsearch 命令方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -&lt;REST Verb&gt; &lt;Node&gt;:&lt;Port&gt;/&lt;Index&gt;/&lt;Type&gt;/&lt;ID&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>要检查集群健康</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 bin]$ curl &apos;hadoop01:9200/_cat/health?v&apos;</span><br><span class="line">epoch      timestamp cluster    status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent</span><br><span class="line">1498747113 10:38:33  es-cluster green</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>当我们询问集群状态的时候，我们要么得到绿色、黄色或红色。绿色代表一切正常（集群功能齐全），黄色意味着所有的数据都是可用的，但是某些复制没有被分配（集群功能齐全），红色则代表因为某些原因，某些数据不可用。注意，即使是集群状态是红色的，集群仍然是部分可用的（它仍然会利用可用的分片来响应搜索请求），但是可能你需要尽快修复它，因为你有丢失的数据。</p>
+<ul>
+<li><p>集群中的节点列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 bin]$ curl &apos;hadoop01:9200/_cat/nodes?v&apos;</span><br><span class="line">ip            heap.percent ram.percent cpu load_1m load_5m load_15m node.role master name</span><br><span class="line">192.168.1.231            3          94   0    0.00    0.00     0.00 mdi       *      es01</span><br><span class="line">192.168.1.232            3          94   0    0.01    0.01     0.00 mdi       -      es02</span><br><span class="line">192.168.1.233            3          92   0    0.00    0.00     0.00 mdi       -      es03</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列出所有的索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 bin]$ curl &apos;hadoop01:9200/_cat/indices?v&apos;</span><br><span class="line">health status index    uuid                   pri rep docs.count docs.deleted store.size pri.store.size</span><br><span class="line">green  open   customer 2J6OutOFS9OpLlTFISH7Tw   5   1          0            0      1.2kb           650b</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建一个索引现在让我们创建一个叫做“customer”的索引，然后再列出所有的索引：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -XPUT &apos;hadoop01:9200/customer</span><br><span class="line">[yangql@hadoop01 bin]$ curl &apos;hadoop01:9200/_cat/indices?v&apos;</span><br><span class="line">health status index    uuid                   pri rep docs.count docs.deleted store.size pri.store.size</span><br><span class="line">green  open   customer 2J6OutOFS9OpLlTFISH7Tw   5   1          0            0      1.2kb           650b</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>我们现在有一个叫做customer的索引，并且它有5个主分片和1份复制（都是默认值），其中包含0个文档。</p>
+<ul>
+<li>创建一个文档<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 bin]$  curl -XPUT &apos;hadoop01:9200/customer/external/1?pretty&apos; -d &apos;</span><br><span class="line">&gt;         &#123;</span><br><span class="line">&gt;           &quot;name&quot;: &quot;John Doe&quot;</span><br><span class="line">&gt;         &#125;&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">  &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">  &quot;_id&quot; : &quot;1&quot;,</span><br><span class="line">  &quot;_version&quot; : 1,</span><br><span class="line">  &quot;result&quot; : &quot;created&quot;,</span><br><span class="line">  &quot;_shards&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 2,</span><br><span class="line">    &quot;successful&quot; : 2,</span><br><span class="line">    &quot;failed&quot; : 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;created&quot; : true</span><br><span class="line">&#125;</span><br><span class="line">[yangql@hadoop01 bin]$</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>external”类型,文档的ID是1,<font color="red">Elasticsearch在你想将文档索引到某个索引的时候，并不强制要求这个索引被显式地创建。在前面这个例子中，如果customer索引不存在，Elasticsearch将会自动地创建这个索引。</font></p>
+<ul>
+<li><p>查询一个文档</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 bin]$ curl -XGET &apos;hadoop01:9200/customer/external/1?pretty&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">  &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">  &quot;_id&quot; : &quot;1&quot;,</span><br><span class="line">  &quot;_version&quot; : 1,</span><br><span class="line">  &quot;found&quot; : true,</span><br><span class="line">  &quot;_source&quot; : &#123;</span><br><span class="line">    &quot;name&quot; : &quot;John Doe&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 bin]$ curl -XDELETE &apos;hadoop01:9200/customer?pretty&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;acknowledged&quot; : true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>替换文档</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 bin]$ curl -XPUT &apos;hadoop01:9200/customer/external/1?pretty&apos; -d &apos;</span><br><span class="line">&gt;             &#123;</span><br><span class="line">&gt;               &quot;name&quot;: &quot;John Doe&quot;</span><br><span class="line">&gt;             &#125;&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">  &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">  &quot;_id&quot; : &quot;1&quot;,</span><br><span class="line">  &quot;_version&quot; : 1,</span><br><span class="line">  &quot;result&quot; : &quot;created&quot;,</span><br><span class="line">  &quot;_shards&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 2,</span><br><span class="line">    &quot;successful&quot; : 2,</span><br><span class="line">    &quot;failed&quot; : 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;created&quot; : true</span><br><span class="line">&#125;</span><br><span class="line">[yangql@hadoop01 bin]$ curl -XPUT &apos;hadoop01:9200/customer/external/1?pretty&apos; -d &apos;</span><br><span class="line">&gt;             &#123;</span><br><span class="line">&gt;               &quot;name&quot;: &quot;Jane Doe&quot;</span><br><span class="line">&gt;             &#125;&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">  &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">  &quot;_id&quot; : &quot;1&quot;,</span><br><span class="line">  &quot;_version&quot; : 2,</span><br><span class="line">  &quot;result&quot; : &quot;updated&quot;,</span><br><span class="line">  &quot;_shards&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 2,</span><br><span class="line">    &quot;successful&quot; : 2,</span><br><span class="line">    &quot;failed&quot; : 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;created&quot; : false</span><br><span class="line">&#125;</span><br><span class="line">[yangql@hadoop01 bin]$</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>以上的命令将ID为1的文档的name字段的值从“John Doe”改成了“Jane Doe”。如果我们使用一个不同的ID，一个新的文档将会被索引，当前已经在索引中的文档不会受到影响。</p>
+<ul>
+<li><p>无ID创建document<br>在创建document的时候，ID部分是可选的。如果不指定，Elasticsearch将产生一个随机的ID来索引这个文档。Elasticsearch生成的ID会作为索引API调用的一部分被返回。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 bin]$ curl -XPOST &apos;hadoop01:9200/customer/external?pretty&apos; -d &apos;</span><br><span class="line">&gt;             &#123;</span><br><span class="line">&gt;               &quot;name&quot;: &quot;Jane Doe&quot;</span><br><span class="line">&gt;             &#125;&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">  &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">  &quot;_id&quot; : &quot;AVz0W-I9v5C-xxEQKDDx&quot;,</span><br><span class="line">  &quot;_version&quot; : 1,</span><br><span class="line">  &quot;result&quot; : &quot;created&quot;,</span><br><span class="line">  &quot;_shards&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 2,</span><br><span class="line">    &quot;successful&quot; : 2,</span><br><span class="line">    &quot;failed&quot; : 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;created&quot; : true</span><br><span class="line">&#125;</span><br><span class="line">[yangql@hadoop01 bin]$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新文档<br>除了可以索引、替换文档之外，我们也可以更新一个文档。但要注意，Elasticsearch底层并不支持原地更新。在我们想要做一次更新的时候，Elasticsearch先删除旧文档，然后在索引一个更新过的新文档。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 bin]$  curl -XPOST &apos;hadoop01:9200/customer/external/1/_update?pretty&apos; -d &apos;</span><br><span class="line">&gt;         &#123;</span><br><span class="line">&gt;           &quot;doc&quot;: &#123; &quot;name&quot;: &quot;Jane Doe&quot; &#125;</span><br><span class="line">&gt;         &#125;&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">  &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">  &quot;_id&quot; : &quot;1&quot;,</span><br><span class="line">  &quot;_version&quot; : 2,</span><br><span class="line">  &quot;result&quot; : &quot;noop&quot;,</span><br><span class="line">  &quot;_shards&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 0,</span><br><span class="line">    &quot;successful&quot; : 0,</span><br><span class="line">    &quot;failed&quot; : 0</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">下面的例子展示了怎样将我们ID为1的文档的name字段改成“Jane Doe”的同时，给它加上age字段：</span><br><span class="line">[yangql@hadoop01 bin]$ curl -XPOST &apos;hadoop01:9200/customer/external/1/_update?pretty&apos; -d &apos;</span><br><span class="line">&gt;         &#123;</span><br><span class="line">&gt;           &quot;doc&quot;: &#123; &quot;name&quot;: &quot;Jane Doe&quot;, &quot;age&quot;: 20 &#125;</span><br><span class="line">&gt;         &#125;&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">  &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">  &quot;_id&quot; : &quot;1&quot;,</span><br><span class="line">  &quot;_version&quot; : 3,</span><br><span class="line">  &quot;result&quot; : &quot;updated&quot;,</span><br><span class="line">  &quot;_shards&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 2,</span><br><span class="line">    &quot;successful&quot; : 2,</span><br><span class="line">    &quot;failed&quot; : 0</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">更新也可以通过使用简单的脚本来进行。这个例子使用一个脚本将age加5</span><br><span class="line">[yangql@hadoop01 bin]$ curl -XPOST &apos;hadoop01:9200/customer/external/1/_update?pretty&apos; -d &apos;</span><br><span class="line">&gt;         &#123;</span><br><span class="line">&gt;           &quot;script&quot; : &quot;ctx._source.age += 5&quot;</span><br><span class="line">&gt;         &#125;&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">  &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">  &quot;_id&quot; : &quot;1&quot;,</span><br><span class="line">  &quot;_version&quot; : 4,</span><br><span class="line">  &quot;result&quot; : &quot;updated&quot;,</span><br><span class="line">  &quot;_shards&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 2,</span><br><span class="line">    &quot;successful&quot; : 2,</span><br><span class="line">    &quot;failed&quot; : 0</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除文档</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> curl -XDELETE &apos;hadoop01:9200/customer/external/2?pretty&apos;</span><br><span class="line"> 一次删除符合某个查询条件的多个文档</span><br><span class="line"> [yangql@hadoop01 bin]$ curl -XDELETE &apos;hadoop01:9200/customer/external/_query?pretty&apos; -d &apos;</span><br><span class="line">&gt;         &#123;</span><br><span class="line">&gt;           &quot;query&quot;: &#123; &quot;match&quot;: &#123; &quot;name&quot;: &quot;John&quot; &#125; &#125;</span><br><span class="line">&gt;         &#125;&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;found&quot; : false,</span><br><span class="line">  &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">  &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">  &quot;_id&quot; : &quot;_query&quot;,</span><br><span class="line">  &quot;_version&quot; : 1,</span><br><span class="line">  &quot;result&quot; : &quot;not_found&quot;,</span><br><span class="line">  &quot;_shards&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 2,</span><br><span class="line">    &quot;successful&quot; : 2,</span><br><span class="line">    &quot;failed&quot; : 0</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="3-批处理"><a href="#3-批处理" class="headerlink" title="3.批处理"></a>3.批处理</h2><p> bulk API按顺序执行这些动作。如果其中一个动作因为某些原因失败了，将会继续处理它后面的动作。当bulk API返回时，它将提供每个动作的状态（按照同样的顺序），所以你能够看到某个动作成功与否。</p>
+<ul>
+<li><p>批量插入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 bin]$ curl -XPOST &apos;hadoop01:9200/customer/external/_bulk?pretty&apos; -d &apos;</span><br><span class="line">&gt;         &#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;1&quot;&#125;&#125;</span><br><span class="line">&gt;         &#123;&quot;name&quot;: &quot;John Doe&quot; &#125;</span><br><span class="line">&gt;         &#123;&quot;index&quot;:&#123;&quot;_id&quot;:&quot;2&quot;&#125;&#125;</span><br><span class="line">&gt;         &#123;&quot;name&quot;: &quot;Jane Doe&quot; &#125;</span><br><span class="line">&gt;         &apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;took&quot; : 636,</span><br><span class="line">  &quot;errors&quot; : false,</span><br><span class="line">  &quot;items&quot; : [</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;index&quot; : &#123;</span><br><span class="line">        &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">        &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">        &quot;_id&quot; : &quot;1&quot;,</span><br><span class="line">        &quot;_version&quot; : 5,</span><br><span class="line">        &quot;result&quot; : &quot;updated&quot;,</span><br><span class="line">        &quot;_shards&quot; : &#123;</span><br><span class="line">          &quot;total&quot; : 2,</span><br><span class="line">          &quot;successful&quot; : 2,</span><br><span class="line">          &quot;failed&quot; : 0</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;created&quot; : false,</span><br><span class="line">        &quot;status&quot; : 200</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      &quot;index&quot; : &#123;</span><br><span class="line">        &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">        &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">        &quot;_id&quot; : &quot;2&quot;,</span><br><span class="line">        &quot;_version&quot; : 1,</span><br><span class="line">        &quot;result&quot; : &quot;created&quot;,</span><br><span class="line">        &quot;_shards&quot; : &#123;</span><br><span class="line">          &quot;total&quot; : 2,</span><br><span class="line">          &quot;successful&quot; : 2,</span><br><span class="line">          &quot;failed&quot; : 0</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;created&quot; : true,</span><br><span class="line">        &quot;status&quot; : 201</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -XPOST &apos;hadoop01:9200/customer/external/_bulk?pretty&apos; -d &apos;</span><br><span class="line">			 &#123;&quot;update&quot;:&#123;&quot;_id&quot;:&quot;1&quot;&#125;&#125;</span><br><span class="line">			 &#123;&quot;doc&quot;: &#123; &quot;name&quot;: &quot;John Doe becomes Jane Doe&quot; &#125; &#125;</span><br><span class="line">			 &#123;&quot;delete&quot;:&#123;&quot;_id&quot;:&quot;2&quot;&#125;&#125;</span><br><span class="line">			 &apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="4-查询"><a href="#4-查询" class="headerlink" title="4.查询"></a>4.查询</h2><p>Elasticsearch提供一种JSON风格的特定领域语言，利用它你可以执行查询。这杯称为查询DSL<br>我们在customer索引中搜索（_search端点），并且q=*参数指示Elasticsearch去匹配这个索引中所有的文档。pretty参数，和以前一样，仅仅是告诉Elasticsearch返回美观的JSON结果</p>
+<pre><code>      - took —— Elasticsearch执行这个搜索的耗时，以毫秒为单位
+      - timed_out —— 指明这个搜索是否超时
+      - \_shards —— 指出多少个分片被搜索了，同时也指出了成功/失败的被搜索的shards的数量
+      - hits —— 搜索结果
+      - hits.total —— 能够匹配我们查询标准的文档的总数目
+      - hits.hits —— 真正的搜索结果数据（默认只显示前10个文档）
+      - \_score和max_score —— 现在先忽略这些字段
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 bin]$ curl &apos;hadoop01:9200/customer/_search?q=*&amp;pretty&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;took&quot; : 2370,</span><br><span class="line">  &quot;timed_out&quot; : false,</span><br><span class="line">  &quot;_shards&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 5,</span><br><span class="line">    &quot;successful&quot; : 5,</span><br><span class="line">    &quot;failed&quot; : 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;hits&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 3,</span><br><span class="line">    &quot;max_score&quot; : 1.0,</span><br><span class="line">    &quot;hits&quot; : [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">        &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">        &quot;_id&quot; : &quot;AVz0W-I9v5C-xxEQKDDx&quot;,</span><br><span class="line">        &quot;_score&quot; : 1.0,</span><br><span class="line">        &quot;_source&quot; : &#123;</span><br><span class="line">          &quot;name&quot; : &quot;Jane Doe&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">        &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">        &quot;_id&quot; : &quot;2&quot;,</span><br><span class="line">        &quot;_score&quot; : 1.0,</span><br><span class="line">        &quot;_source&quot; : &#123;</span><br><span class="line">          &quot;name&quot; : &quot;Jane Doe&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">        &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">        &quot;_id&quot; : &quot;1&quot;,</span><br><span class="line">        &quot;_score&quot; : 1.0,</span><br><span class="line">        &quot;_source&quot; : &#123;</span><br><span class="line">          &quot;name&quot; : &quot;John Doe&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">请求方法体</span><br><span class="line">[yangql@hadoop01 bin]$  curl -XPOST &apos;hadoop01:9200/customer/_search?pretty&apos; -d &apos;</span><br><span class="line">&gt;             &#123;</span><br><span class="line">&gt;               &quot;query&quot;: &#123; &quot;match_all&quot;: &#123;&#125; &#125;</span><br><span class="line">&gt;             &#125;&apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;took&quot; : 3,</span><br><span class="line">  &quot;timed_out&quot; : false,</span><br><span class="line">  &quot;_shards&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 5,</span><br><span class="line">    &quot;successful&quot; : 5,</span><br><span class="line">    &quot;failed&quot; : 0</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;hits&quot; : &#123;</span><br><span class="line">    &quot;total&quot; : 3,</span><br><span class="line">    &quot;max_score&quot; : 1.0,</span><br><span class="line">    &quot;hits&quot; : [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">        &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">        &quot;_id&quot; : &quot;AVz0W-I9v5C-xxEQKDDx&quot;,</span><br><span class="line">        &quot;_score&quot; : 1.0,</span><br><span class="line">        &quot;_source&quot; : &#123;</span><br><span class="line">          &quot;name&quot; : &quot;Jane Doe&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">        &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">        &quot;_id&quot; : &quot;2&quot;,</span><br><span class="line">        &quot;_score&quot; : 1.0,</span><br><span class="line">        &quot;_source&quot; : &#123;</span><br><span class="line">          &quot;name&quot; : &quot;Jane Doe&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;_index&quot; : &quot;customer&quot;,</span><br><span class="line">        &quot;_type&quot; : &quot;external&quot;,</span><br><span class="line">        &quot;_id&quot; : &quot;1&quot;,</span><br><span class="line">        &quot;_score&quot; : 1.0,</span><br><span class="line">        &quot;_source&quot; : &#123;</span><br><span class="line">          &quot;name&quot; : &quot;John Doe&quot;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查询所有<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">          &quot;query&quot;: &#123; &quot;match_all&quot;: &#123;&#125; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>分解以上的这个查询，其中的query部分告诉我查询的定义，match_all部分就是我们想要运行的查询的类型。match_all查询，就是简单地查询一个指定索引下的所有的文档。</p>
+<p>除了这个query参数之外，我们也可以通过传递其它的参数来影响搜索结果。比如，下面做了一次match_all并只返回第一个文档：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -XPOST &apos;localhost:9200/bank/_search?pretty&apos; -d &apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123; &quot;match_all&quot;: &#123;&#125; &#125;,</span><br><span class="line">  &quot;size&quot;: 1</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure></p>
+<p>注意，如果没有指定size的值，那么它默认就是10。</p>
+<p>下面的例子，做了一次match_all并且返回第11到第20个文档：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">curl -XPOST &apos;localhost:9200/bank/_search?pretty&apos; -d &apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123; &quot;match_all&quot;: &#123;&#125; &#125;,</span><br><span class="line">  &quot;from&quot;: 10,</span><br><span class="line">  &quot;size&quot;: 10</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure></p>
+<p>其中的from参数（0-based）从哪个文档开始，size参数指明从from参数开始，要返回多少个文档。这个特性对于搜索结果分页来说非常有帮助。注意，如果不指定from的值，它默认就是0。<br>下面这个例子做了一次match_all并且以账户余额降序排序，最后返前十个文档：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -XPOST &apos;localhost:9200/bank/_search?pretty&apos; -d &apos;</span><br><span class="line">&#123;</span><br><span class="line">  &quot;query&quot;: &#123; &quot;match_all&quot;: &#123;&#125; &#125;,</span><br><span class="line">  &quot;sort&quot;: &#123; &quot;balance&quot;: &#123; &quot;order&quot;: &quot;desc&quot; &#125; &#125;</span><br><span class="line">&#125;&apos;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>指定字段查询<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">curl -XPOST &apos;localhost:9200/bank/_search?pretty&apos; -d &apos;</span><br><span class="line">       &#123;</span><br><span class="line">         &quot;query&quot;: &#123; &quot;match_all&quot;: &#123;&#125; &#125;,</span><br><span class="line">         &quot;_source&quot;: [&quot;account_number&quot;, &quot;balance&quot;]</span><br><span class="line">       &#125;&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注意到上面的例子仅仅是简化了_source字段。它仍将会返回一个叫做_source的字段，但是仅仅包含account_number和balance来年改革字段。</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/06/29/Elasticsearch 集群安装20190524/" class="pre-post btn btn-default" title="Elasticsearch 集群安装">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Elasticsearch 集群安装</span>
+        </a>
+    
+    
+        <a href="/2017/06/26/Hbase-phoenix安装20190524/" class="next-post btn btn-default" title="Hbase-phoenix安装">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Hbase-phoenix安装</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-相关概念"><span class="toc-text">1.相关概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-基本操作"><span class="toc-text">2.基本操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-批处理"><span class="toc-text">3.批处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-查询"><span class="toc-text">4.查询</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

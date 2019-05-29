@@ -1,0 +1,366 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Spark-zip相关算子 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Spark-zip相关算子">
+            
+	            Spark-zip相关算子
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Spark" title="Spark">
+                        Spark
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/03/29</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>790</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="zip-算子"><a href="#zip-算子" class="headerlink" title="zip 算子"></a>zip 算子</h2><p>zip函数用于将两个RDD组合成key/value形式的RDD，这里默认两个RDD的数量(partitions)以及元素数量都相同，否则将抛出异常<code>java.lang.IllegalArgumentException: Can&#39;t zip RDDs with unequal numbers of partitions:</code><br>函数定义：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def zip[U: ClassTag](other: RDD[U]): RDD[(T, U)]</span><br></pre></td></tr></table></figure></p>
+<p>实例代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">val conf = new SparkConf()</span><br><span class="line">.setMaster(&quot;local&quot;)</span><br><span class="line">.setAppName(&quot;ZipTest&quot;)</span><br><span class="line">val sc = new SparkContext(conf)</span><br><span class="line">val rdd1=sc.makeRDD(1 to 5,2)</span><br><span class="line">val rdd2=sc.makeRDD(Seq(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;),2)</span><br><span class="line">rdd1.zip(rdd2).foreach(print)</span><br><span class="line">//output</span><br><span class="line">//(1,A)(2,B)(3,C)(4,D)(5,E)</span><br><span class="line">rdd2.zip(rdd1).foreach(print)</span><br><span class="line">//output</span><br><span class="line">//(A,1)(B,2)(C,3)(D,4)(E,5)</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h2 id="zipPartitions-算子"><a href="#zipPartitions-算子" class="headerlink" title="zipPartitions 算子"></a>zipPartitions 算子</h2><p>zipPartitions函数将多个RDD按照partition组合成为新的RDD，该函数需要组合的RDD具有相同的分区数，但对于每个分区内的元素数量没有要求。根据参数的个数可以分为三类，参数preservesPartitioning的作用：是否保留父RDD的partitioner分区信息。映射方法f参数N个RDD的迭代器。</p>
+<ul>
+<li>参数是一个RDD：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def zipPartitions[B: ClassTag, V: ClassTag](rdd2: RDD[B], preservesPartitioning: Boolean)</span><br><span class="line">def zipPartitions[B: ClassTag, V: ClassTag](rdd2: RDD[B])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>RDD分区元素分布：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">val rdd1=sc.makeRDD(1 to 5,2)</span><br><span class="line">val rdd2=sc.makeRDD(Seq(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;),2)</span><br><span class="line">val rdd1=sc.makeRDD(1 to 5,2)</span><br><span class="line">//rdd1两个分区中元素分布：</span><br><span class="line">   val rdd1ite=rdd1.mapPartitionsWithIndex((x,iter)=&gt;&#123;</span><br><span class="line">     var result=List[String]()</span><br><span class="line">     while(iter.hasNext)&#123;</span><br><span class="line">       result ::= (&quot;part_&quot;+x+&quot;|&quot;+iter.next())</span><br><span class="line">     &#125;</span><br><span class="line">     result.iterator</span><br><span class="line">   &#125;).collect()</span><br><span class="line">//output:part_0|2,part_0|1,part_1|5,part_1|4,part_1|3</span><br></pre></td></tr></table></figure></p>
+<p>rdd1.zipPartitions元素分布:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">rdd1.zipPartitions(rdd2)&#123;</span><br><span class="line">  (rdd1Iter,rdd2Iter)=&gt;&#123;</span><br><span class="line">     var result = List[String]()</span><br><span class="line">     while(rdd1Iter.hasNext &amp;&amp; rdd2Iter.hasNext)&#123;</span><br><span class="line">        result::=(rdd1Iter.next() + &quot;_&quot; + rdd2Iter.next())</span><br><span class="line">      &#125;</span><br><span class="line">    result.iterator</span><br><span class="line">  &#125;</span><br><span class="line">&#125;.collect().foreach(println)</span><br><span class="line">//output</span><br><span class="line">//2_B</span><br><span class="line">//1_A</span><br><span class="line">//5_E</span><br><span class="line">//4_D</span><br><span class="line">//3_C</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>参数是两个RDD：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def zipPartitions[B: ClassTag, C: ClassTag, V: ClassTag](rdd2: RDD[B], rdd3: RDD[C], preservesPartitioning: Boolean)  </span><br><span class="line">def zipPartitions[B: ClassTag, C: ClassTag, V: ClassTag](rdd2: RDD[B], rdd3: RDD[C])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>实例代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">val rdd1=sc.makeRDD(1 to 5,2)</span><br><span class="line">val rdd2=sc.makeRDD(Seq(&quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;,&quot;E&quot;),2)</span><br><span class="line">val rdd3=sc.makeRDD(1 to 10,2)</span><br><span class="line">rdd1.zipPartitions(rdd2,rdd3)(</span><br><span class="line">    (iter1,iter2,iter3)=&gt;&#123;</span><br><span class="line">      var result=List[String]()</span><br><span class="line">      while(iter1.hasNext &amp;&amp; iter2.hasNext &amp;&amp; iter3.hasNext)&#123;</span><br><span class="line">        result ::= iter1.next() + &quot;_&quot; + iter2.next() + &quot;_&quot; +iter3.next()</span><br><span class="line">      &#125;</span><br><span class="line">      result.iterator</span><br><span class="line">    &#125;    </span><br><span class="line">    ).collect().foreach(println)</span><br><span class="line">//output</span><br><span class="line">2_B_2</span><br><span class="line">1_A_1</span><br><span class="line">5_E_8</span><br><span class="line">4_D_7</span><br><span class="line">3_C_6</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>参数是三个RDD：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def zipPartitions[B: ClassTag, C: ClassTag, D: ClassTag, V: ClassTag](rdd2: RDD[B], rdd3: RDD[C], rdd4: RDD[D], preservesPartitioning: Boolean)</span><br><span class="line">def zipPartitions[B: ClassTag, C: ClassTag, D: ClassTag, V: ClassTag](rdd2: RDD[B], rdd3: RDD[C], rdd4: RDD[D])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="zipWithIndex"><a href="#zipWithIndex" class="headerlink" title="zipWithIndex"></a>zipWithIndex</h2><p>该函数将RDD中的元素和这个元素在RDD中的ID（索引号）组合成键/值对。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def zipWithIndex(): RDD[(T, Long)]</span><br></pre></td></tr></table></figure></p>
+<p>代码示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">val rdd1=sc.makeRDD(1 to 5,2)</span><br><span class="line">rdd1.zipWithIndex().collect().foreach(println)</span><br><span class="line">//output</span><br><span class="line">(1,0)</span><br><span class="line">(2,1)</span><br><span class="line">(3,2)</span><br><span class="line">(4,3)</span><br><span class="line">(5,4)</span><br></pre></td></tr></table></figure></p>
+<h2 id="zipWithUniqueId"><a href="#zipWithUniqueId" class="headerlink" title="zipWithUniqueId"></a>zipWithUniqueId</h2><p>该函数将RDD中元素和一个唯一ID组合成键/值对，该唯一ID生成算法如下：</p>
+<ul>
+<li>每个分区中第一个元素的唯一ID值为：该分区索引号，</li>
+<li>每个分区中第N个元素的唯一ID值为：(前一个元素的唯一ID值) + (该RDD总的分区数)<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def zipWithUniqueId(): RDD[(T, Long)]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>代码示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">val rdd1=sc.makeRDD(1 to 5,2)</span><br><span class="line">rdd1.zipWithUniqueId().collect().foreach(println)</span><br><span class="line">//output</span><br><span class="line">(1,0)</span><br><span class="line">(2,2)</span><br><span class="line">(3,1)</span><br><span class="line">(4,3)</span><br><span class="line">(5,5)</span><br></pre></td></tr></table></figure></p>
+<p>rdd1总分区数为2,第一个分区第一个元素ID为0，第二个分区第一个元素ID为1,第一个分区第二个元素ID为0+2=2，第一个分区第三个元素ID为2+2=4,第二个分区第二个元素ID为1+2=3，第二个分区第三个元素ID为3+2=5.</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/03/29/Scala的Symbol类型20190524/" class="pre-post btn btn-default" title="Scala的Symbol类型">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Scala的Symbol类型</span>
+        </a>
+    
+    
+        <a href="/2017/03/29/Scala跳出循环的3中方法20190524/" class="next-post btn btn-default" title="Scala跳出循环的3中方法">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Scala跳出循环的3中方法</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#zip-算子"><span class="toc-text">zip 算子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zipPartitions-算子"><span class="toc-text">zipPartitions 算子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zipWithIndex"><span class="toc-text">zipWithIndex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zipWithUniqueId"><span class="toc-text">zipWithUniqueId</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

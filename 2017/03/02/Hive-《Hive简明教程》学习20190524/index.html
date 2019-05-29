@@ -1,0 +1,549 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Hive-《Hive简明教程》学习 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Hive-《Hive简明教程》学习">
+            
+	            Hive-《Hive简明教程》学习
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Hive" title="Hive">
+                        Hive
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/03/02</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>817</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-Hive介绍"><a href="#1-Hive介绍" class="headerlink" title="1.Hive介绍"></a>1.Hive介绍</h2><p>Hive是Facebook为了解决海量日志数据的分析而开发的。是一种用SQL来协助读写、管理存储在分布式存储系统上的大数据集的数据仓库软件，主要有以下几个特点:</p>
+<ul>
+<li>通过类SQL来分析大数据，避免了写MapReduce来分析数据，这样使得数据分析更容易。</li>
+<li>数据是存储在HDFS上的，Hive本身并不存储数据</li>
+<li>Hive将数据映射成数据库和一张张表，库和表的元数据一般存储在关系数据库中。</li>
+<li>能存储很大的数据集，并对数据的完整性，格式要求不严格。</li>
+<li>不适用与实时计算和响应，使用于离线分析。<br>注：后续搭建HUE平台<a id="more"></a>
+<h2 id="2-Hive基本数据类型"><a href="#2-Hive基本数据类型" class="headerlink" title="2.Hive基本数据类型"></a>2.Hive基本数据类型</h2>Hive支持大多数的数据类型：</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">长度</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TinyInt</td>
+<td style="text-align:left">1字节的有符号整数</td>
+<td style="text-align:left">-128~127</td>
+</tr>
+<tr>
+<td style="text-align:left">SmallINt</td>
+<td style="text-align:left">2字节的有符号整数</td>
+<td style="text-align:left">-32768~32767</td>
+</tr>
+<tr>
+<td style="text-align:left">Int</td>
+<td style="text-align:left">4字节的有符号整数</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">BigInt</td>
+<td style="text-align:left">8字节的有符号整数</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">布尔类型</td>
+<td style="text-align:left">true,false</td>
+</tr>
+<tr>
+<td style="text-align:left">Float</td>
+<td style="text-align:left">单精度</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Double</td>
+<td style="text-align:left">双进度</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">字符串</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Timestamp</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Binary</td>
+<td style="text-align:left">字节数组</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Date</td>
+<td style="text-align:left">日期</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="3-Hive-DDL-数据定义"><a href="#3-Hive-DDL-数据定义" class="headerlink" title="3.Hive DDL 数据定义"></a>3.Hive DDL 数据定义</h2><h3 id="3-1-创建数据库"><a href="#3-1-创建数据库" class="headerlink" title="3.1.创建数据库"></a>3.1.创建数据库</h3><p>创建一个数据库就是在HDFS上创建一个目录，数据库类似命名空间来组织表，在大量Hive表的情况下，避免表名冲突，默认数据库是default<br>创建数据库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database if not exists dealer_db;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-2-查看数据库定义"><a href="#3-2-查看数据库定义" class="headerlink" title="3.2.查看数据库定义"></a>3.2.查看数据库定义</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hive&gt; desc database dealer_db;</span><br><span class="line">OK</span><br><span class="line">dealer_db		hdfs://hadoop01:9000/user/hive/warehouse/dealer_db.dyangql	USER</span><br><span class="line">Time taken: 0.69 seconds, Fetched: 1 row(s)</span><br><span class="line">hive&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3-3-查看数据库列表"><a href="#3-3-查看数据库列表" class="headerlink" title="3.3.查看数据库列表"></a>3.3.查看数据库列表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">hive&gt; show databases;</span><br><span class="line">OK</span><br><span class="line">dealer_db</span><br><span class="line">default</span><br><span class="line">hello</span><br><span class="line">pactera</span><br><span class="line">Time taken: 0.05 seconds, Fetched: 4 row(s)</span><br><span class="line">hive&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3-4-删除数据库"><a href="#3-4-删除数据库" class="headerlink" title="3.4.删除数据库"></a>3.4.删除数据库</h3><p>删除数据库时，如果库中存在表，是不能删除的，要先删除所有表，再删除数据库。添加上参数 <code>cascase</code>后，就可以先自动删除表，再删除数据库，删除数据库后，HDFS上数据库对应的目录就被删除了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop database test;</span><br><span class="line">drop database test cascade;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-5-切换数据库"><a href="#3-5-切换数据库" class="headerlink" title="3.5.切换数据库"></a>3.5.切换数据库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use dealer_db;</span><br></pre></td></tr></table></figure>
+<h3 id="3-6-创建普通表"><a href="#3-6-创建普通表" class="headerlink" title="3.6.创建普通表"></a>3.6.创建普通表</h3><p>row format delimited fields terminated by ‘\t’,指定列之间的分隔符，stored as textfile指定文件的存储格式为textfile，创建表的集中方式：</p>
+<ul>
+<li>create table</li>
+<li>create table as select :根据查询结果创建表，并将查询结果数据插入到信件的表中。</li>
+<li>create table like table_name :克隆表，只复制table_name的表结构。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">create table if not exists dealerinfo(</span><br><span class="line">dealerid int,</span><br><span class="line">dealername string,</span><br><span class="line">cityid int,</span><br><span class="line">createtime date</span><br><span class="line">)</span><br><span class="line">row format delimited</span><br><span class="line">fields terminated by &apos;\t&apos;</span><br><span class="line">stored as textfile</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-7-创建分区表"><a href="#3-7-创建分区表" class="headerlink" title="3.7.创建分区表"></a>3.7.创建分区表</h3><p>Hive查询一般是扫描整个目录，但有时我们关心的数据只是集中在某一部分数据上，比如我们查询某一天的数据时，可以使用分区表来优化，一天一个分区，Hive只扫描指定天分区的数据。<br>普通表和分区表的区别在于，一个Hive表在HDFS上有一个对应的目录来存储数据，普通表的数据直接存储在这个目录下，而分区表数据存储时，是再划分子目录来存储的。一个分区一个子目录。主要的作用是用来查询优化性能。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">create table dealer_log(</span><br><span class="line">companyid int comment &apos;commpany id&apos;,</span><br><span class="line">userid int comment &apos;user id&apos;,</span><br><span class="line">invisttime string comment &apos;invist time&apos;  </span><br><span class="line">)</span><br><span class="line">partitioned by (dt string)</span><br><span class="line">row format delimited</span><br><span class="line">fields terminated by &apos;\t&apos;</span><br><span class="line">stored as textfile</span><br></pre></td></tr></table></figure></p>
+<p>在上面列子中，这个日志表是以dt字段分区，dt是个虚拟字段，dt下并未存储数据，而是用来分区的，实际数据存储时，dt字段一样的值存入同一个子目录中。所以对于分区表，尽量添加分区字段来过滤筛选。</p>
+<h3 id="3-8-创建桶表"><a href="#3-8-创建桶表" class="headerlink" title="3.8.创建桶表"></a>3.8.创建桶表</h3><p>桶表也是一种用于优化查询而设计的表，创建普通表时，指定桶的个数，分桶的依据字段，hive就会自动将数据分桶存储，查询时只需要遍历一个桶里的数据，或者遍历部分桶，提高查询效率。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">create table dealer_leads(</span><br><span class="line">leads_id string,</span><br><span class="line">dealer_id string,</span><br><span class="line">user_id string,</span><br><span class="line">user_phone string,</span><br><span class="line">create_time string</span><br><span class="line">)</span><br><span class="line">clustered by(dealer_id) sorted by(leads_id) into 10 Buckets</span><br><span class="line">row format delimited</span><br><span class="line">fields terminated by &apos;\t&apos;</span><br><span class="line">stored as textfile</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>clusterd by 是指根据dealer_id进行hash后mo模除分桶个数，根据得到的结果，确定这行数据分入到那个桶中，这样的分发，可以确保相同的dealer_id的数据放入到同一个桶中，而dealer_id的数据，大部分根据dealer_id查询，这样大部分情况下只需要查询一个桶中的数据就行了。</li>
+<li>sorted by是指根据桶中的那个字段进行排序，排序的好处，就是join操作的时候能获得很高的效率。</li>
+<li>into 10 Buckets 是指一共分多少桶</li>
+<li>在HDFS上存储时，一个桶存入一个文件中，这样根据dealer_id查询时，可以快速确定数据存在与那个桶中，遍历一个桶可以提高查询速度。  </li>
+</ul>
+<h3 id="3-9-查看表"><a href="#3-9-查看表" class="headerlink" title="3.9.查看表"></a>3.9.查看表</h3><ul>
+<li><p>查看库中所有表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show tables ;</span><br><span class="line">show tables &apos;*info&apos;;//可以用正则表达式筛选</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看表的详情</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">desc dealer_log;</span><br><span class="line">desc formatted dealer_log;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-10-修改表"><a href="#3-10-修改表" class="headerlink" title="3.10.修改表"></a>3.10.修改表</h3><p>修改表包括修改表名，添加字段，修改字段。</p>
+<ul>
+<li><p>修改表名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table dealerinfo rename to dealer_info;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加字段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table dealer_info add columns(provinceid int);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改字段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter table dealer_info change dealerid dealer_id int;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-11-删除表"><a href="#3-11-删除表" class="headerlink" title="3.11.删除表"></a>3.11.删除表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table if exists test;</span><br></pre></td></tr></table></figure>
+<h2 id="4-Hive-DML数据管理"><a href="#4-Hive-DML数据管理" class="headerlink" title="4.Hive DML数据管理"></a>4.Hive DML数据管理</h2><h3 id="4-1-将数据加载到普通表"><a href="#4-1-将数据加载到普通表" class="headerlink" title="4.1.将数据加载到普通表"></a>4.1.将数据加载到普通表</h3><p>可以将本地数据文件批量加载到Hive表中，要求文本中的格式要与Hive表的定义一致，包括：字段个数，顺序，列分隔符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">load data local inpath &apos;/home/yangql/user_tab_comments.txt&apos; overwrite into table user_tab_comments</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>local 关键字表示源数据文件在本地，源文件可以在HDFS上，如果在HDFS上，则去掉local，inpath后面的路径类似：hdfs://namenode:9000/user/datapath</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hive&gt; load data  inpath &apos;/input/user_tab_comments.txt&apos; overwrite into table user_tab_comments;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>overwrite表示如果hive表中有数据，就会覆盖掉原有的数据，如果省略掉overwrite,默认是追加数据。  </p>
+</li>
+</ul>
+<h3 id="4-2-将数据加载到分区表"><a href="#4-2-将数据加载到分区表" class="headerlink" title="4.2.将数据加载到分区表"></a>4.2.将数据加载到分区表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">load data inpath &apos;hdfs://hadoop01:9000/input/yangql/dealer_log.txt&apos; overwrite into table dealer_log partition(dt=&apos;2017-03-03&apos;)</span><br></pre></td></tr></table></figure>
+<h3 id="4-3-将数据加载到分桶表"><a href="#4-3-将数据加载到分桶表" class="headerlink" title="4.3.将数据加载到分桶表"></a>4.3.将数据加载到分桶表</h3><ul>
+<li><p>先创建普通临时表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">create table dealer_leads_tmp(</span><br><span class="line">  leads_id string,</span><br><span class="line">  dealer_id string,</span><br><span class="line">  user_id string,</span><br><span class="line">  user_phone string,</span><br><span class="line">  create_time string</span><br><span class="line">  )</span><br><span class="line">  row format delimited</span><br><span class="line">  fields terminated by &apos;\t&apos;</span><br><span class="line">  stored as textfile;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>载入临时表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">load data local inpath &apos;/home/yangql/dealer_leads.txt&apos; overwrite into table dealer_leads_tmp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>导入分桶表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set hive.enforce.bucketing = true;</span><br><span class="line">insert overwrite table dealer_leads select * from dealer_leads_tmp;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="4-4-数据导出"><a href="#4-4-数据导出" class="headerlink" title="4.4.数据导出"></a>4.4.数据导出</h3><ul>
+<li><p>导出数据，将Hive表中的数据导出到本地文件中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert overwrite local directory &apos;/home/yangql/dealer_leads-20170302.txt&apos; select * from dealer_leads;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>导出到HDFS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert overwrite  directory &apos;/input/yangql/dealer_leads-20170302.txt&apos; select * from dealer_leads;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="4-5-插入数据"><a href="#4-5-插入数据" class="headerlink" title="4.5.插入数据"></a>4.5.插入数据</h3><ul>
+<li><p>inset select(overwrite:覆盖，去掉后表示追加数据)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert overwrite table_name select * from table_name;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入分区表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert overwrite table dealer_log partition(dt=&apos;2016-10-21&apos;) select * from dealer_leads_tmp;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>一次遍历，多次插入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">from dealer_log</span><br><span class="line">insert overwrite table log1 partition(dt=&apos;2017-03-04&apos;) select companyid,userid,invisttime</span><br><span class="line">insert overwrite table log2 partition(dt=&apos;2017-03-04&apos;) select companyid,userid,invisttime;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>复制表<br>复制表可以将表的结构和数据复制并创建为一个新表，复制过程中，可以对数据进行筛选，列可以进行删减。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table dealer_logbak</span><br><span class="line">row format delimited</span><br><span class="line">fields terminated by &apos;\t&apos;</span><br><span class="line">stored as textfile</span><br><span class="line">as</span><br><span class="line">select * from dealer_log</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>克隆表(只有表结构，不含具体数据)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table dealer_logbak01 like dealer_log;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>备份表（备份表是将表的元数据和数据都导出到HDFS）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export table dealer_log to &apos;/input/yangql/dealer_log_bak.export&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>还原表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import table dealer_log_0302 from &apos;/input/yangql/dealer_log_bak.export&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="5-HiveQL-数据查询语法"><a href="#5-HiveQL-数据查询语法" class="headerlink" title="5.HiveQL 数据查询语法"></a>5.HiveQL 数据查询语法</h2><p>数据查询很多跟关系数据库一样，这里只列举部分：</p>
+<ul>
+<li><p>限制查询条数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from table_name limit 10;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>RLike 正则表达式匹配</p>
+</li>
+<li>Hive对子查询的支持有限，只允许在select from 后面出现。</li>
+<li>Hive join 连接只能支持等值连接（on a.id=b.id），不支持不等值连接(on a.id!=b.id)。支持inner join ,left join ,right join ,full join</li>
+<li>连接谓词中不支持 or</li>
+<li>left semi-join(Hive sql 中不存在exists)，左半开连接，但是select后面的列只能是左边的列，不能有右边的列。</li>
+<li>排序，order by 。order by这样操作，肯定是Map后汇总到一个reduce上执行，如果数据量打大，会造成reduce执行过程相当长，所以，Hive中尽量不用Order by，除非能确认数据量很小。</li>
+<li>sort by：sort by是在每个reduce中进行排序，是一个局部排序，可以保证每个reduce中是进行排序好的。但从全局来看不一定是排序的。</li>
+<li>distribute by 和sort by：distribute by是指定map输出结果怎样划分后分配到各个reduce上去。然后再指定sort by。这种也不能做到全局排序，只能保证排序字段值相同的放在一起，并且在reduce局部上是排序好的。distribute by 必须在sort by 之前。</li>
+<li>cluster by：如果distribute by和sort by的字段是同一个，那可以用cluster by来替换。</li>
+<li>自定义函数：Java编写，继承UDF类并实现evaluate()</li>
+</ul>
+<h2 id="7-hive-架构"><a href="#7-hive-架构" class="headerlink" title="7.hive-架构"></a>7.hive-架构</h2><p><img src="/2017/03/02/Hive-《Hive简明教程》学习20190524/Hive-《Hive简明教程》学习/hive-架构.png" alt="image"></p>
+<p>(1) Hive 的核心是驱动引擎：</p>
+<ul>
+<li>解释器：将Hive SQL 转化为语法树（AST）</li>
+<li>编译器：将语法树编译为逻辑执行计划</li>
+<li>优化器：将逻辑执行计划进行优化</li>
+<li>执行器：调用底层的运行框架执行逻辑执行计划     </li>
+</ul>
+<p>(2) Hive 的底层存储<br>Hive的数据是存储在HDFS上的，Hive中的库和表可以看作是对HDFS上的数据的一个映射，Hive运行在Hadoop集群上。<br>(3) Hive 程序的执行过程<br>Hive中的执行器，是将最终要执行的MapReduce程序放在Yarn上以一系列的方式去执行。<br>(4) Hive的元数据一般是存储在Mysql这种关系数据库上的。Hive和Mysql通过metaStore服务交互。</p>
+<h2 id="8-Hive-SQL-优化"><a href="#8-Hive-SQL-优化" class="headerlink" title="8.Hive SQL 优化"></a>8.Hive SQL 优化</h2><ul>
+<li>利用分区表优化</li>
+<li>利用桶表优化</li>
+<li>join优化  </li>
+</ul>
+<p>(1)优先过滤后再join，最大限度的减少参与Join的数据量。<br>(2)小表JOIN大表的原则，应该遵守小表JOIN大表的原则，原因是Join操作的reduce阶段，位于Join左边的表的内荣会被加载近内存，将条目少的放在左边，可以减少OOM发生的几率。JOIN中执行顺序是从左到右生成Job。<br>(3)Hive中，当多个表进行Join时，如果join on 条件相同，那么他们会合并为一个Mapreduce，所以利用这个特性，可以将相同的join on的放入一个job来节省执行时间。<br>(4)启用mapjoin，mapjoin是将join双方比较小的表直接分发到各个map进程的内存中。在map进程中进行map操作，这样就省掉了reduce步骤，提高了速度。<br>(5)桶表mapjoin<br>(6)group by 数据倾斜优化：Group By 很容易导致数据倾斜问题，因为实际业务中，通常是数据集中在某些点上，这也符合常<br>见的 2/8 原则，这样会造成对数据分组后，某一些分组上数据量非常大，而其他的分组上数据量<br>很小，而在 mapreduce 程序中，同一个分组的数据会分配到同一个 reduce 操作上去， 导致某一<br>些 reduce 压力很大，其他的 reduce 压力很小，这就是数据倾斜， 整个 job 执行时间取决于那个<br>执行最慢的那个 reduce。解决这个问题的方法是配置一个参数： <code>set hive.groupby.skewindata=true。</code><br>当选项设定为 true，生成的查询计划会有两个 MR Job。第一个 MR Job 中， Map 的输出结果会<br>随机分布到 Reduce 中，每个 Reduce 做部分聚合操作，并输出结果，这样处理的结果是相同的<br>Group By Key 有可能被分发到不同的 Reduce 中，从而达到负载均衡的目的；第二个 MR Job<br>再根据预处理的数据结果按照 Group By Key 分布到 Reduce 中（这个过程可以保证相同的<br>GroupBy Key 被分布到同一个 Reduce 中），最后完成最终的聚合操作。<br>(7)order by优化： order by 只能是在一个 reduce 进程中进行的，所以如果对一个大数据集进行 order by,会<br>导致一个 reduce 进程中处理的数据相当大， 造成查询执行超级缓慢。 在要有进行 order by 全局<br>排序的需求时， 用以下几个措施优化：(1) 在最终结果上进行 order by，不要在中间的大数据集上进行排序。 如果最终结果较少， 可以<br>在一个 reduce 上进行排序时，那么就在最后的结果集上进行 order by。(2) 如果需求是取排序后前 N 条数据， 那么可以使用 distribute by 和 sort by 在各个 reduce 上进行排<br>序后取前 N 条， 然后再对各个 reduce 的结果集合并后在一个 reduce 中全局排序， 再取前 N 条， 因为参与<br>全局排序的 Order By 的数据量最多有 reduce 个数*N<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select a.leads_id,a.user_name from</span><br><span class="line">(</span><br><span class="line">select leads_id,user_name from dealer_leads</span><br><span class="line">distribute by length(user_name) sort by length(user_name) desc limit 10</span><br><span class="line">) a order by length(a.user_name) desc limit 10;</span><br></pre></td></tr></table></figure></p>
+<p>(8)Group By Map 端聚合<br>并不是所有的聚合操作都需要在 Reduce 端完成，很多聚合操作都可以先在 Map 端进行部分聚合，最后在 Reduce 端得出最终结果。</p>
+<pre><code>hive.map.aggr = true 是否在 Map 端进行聚合，默认为 True。
+hive.groupby.mapaggr.checkinterval = 100000 在 Map 端进行聚合操作的条目数目
+</code></pre><p>(9)一次读取多次插入<br>(10)Join 字段显示类型转换<br>(11)使用 orc、 parquet 等列式存储格式<br>创建表时，尽量使用 orc、 parquet 这些列式存储格式， 因为列式存储的表， 每一列的数据在物<br>理上是存储在一起的， Hive 查询时会只遍历需要列数据， 大大减少处理的数据量</p>
+<h2 id="9-Hive文件格式"><a href="#9-Hive文件格式" class="headerlink" title="9.Hive文件格式"></a>9.Hive文件格式</h2><p>Hive 中的文件格式常见的有： textfile 文件格式、 sequencefile 二进制序列化文件格式、 rcfile、<br>orc、 parquet。 hive 表的文件格式一般是在创建表时用 stored as 语句声明，其中 textfile 和 sequencefile 是以行存储数据的， rcfile、 orc、 parquet 是列式存储的。</p>
+<h3 id="9-1-TextFile-格式"><a href="#9-1-TextFile-格式" class="headerlink" title="9.1.TextFile 格式"></a>9.1.TextFile 格式</h3><p>TextFile 是 Hive 的默认文件格式， 数据不做压缩， 磁盘开销比较大， 数据解析时开销也比较<br>大。 从本地文件向 Hive load 数据只能用 textfile 文件格式。</p>
+<h3 id="9-2-SequenceFile-格式"><a href="#9-2-SequenceFile-格式" class="headerlink" title="9.2.SequenceFile 格式"></a>9.2.SequenceFile 格式</h3><p>SequenceFile 是 Hadoop API 提供的一种二进制文件支持， 其具有使用方便、 可分割、 可压缩的<br>特点。</p>
+<h3 id="9-3-Rcfile-格式"><a href="#9-3-Rcfile-格式" class="headerlink" title="9.3.Rcfile 格式"></a>9.3.Rcfile 格式</h3><p>Rcfile 是一种行列存储结合的存储方式， 首先将数据按行分块， 保证同一个记录在一个块上， 避<br>免读取一行记录需要读取多个块的情况， 然后块数据列式存储，这样有利于数据压缩和列存取。</p>
+<h3 id="9-4-Orc-格式"><a href="#9-4-Orc-格式" class="headerlink" title="9.4.Orc 格式"></a>9.4.Orc 格式</h3><p>Orc 格式是 Rcfile 格式的升级版， 性能有很大的提升， 并且数据可以压缩存储， 比 textfile 文<br>件压缩比可以达到 70%，同时读取性能也非常高，推荐使用 orc 文件格式创建表。</p>
+<h3 id="9-5。Parquet-格式"><a href="#9-5。Parquet-格式" class="headerlink" title="9.5。Parquet 格式"></a>9.5。Parquet 格式</h3><p>Parquet 是一种适合多种计算框架的文件格式， Parquet 是语言无关的，并且不与任何一种数据处<br>理框架绑定在一起，适配多种语言和组件，能够与 parquet 配合的组件有：<br>查询引擎： Hive、 Impala、 Pig、 Presto、 Drill、 Tajo、 HAWQ、 IBM Big SQL。<br>计算框架： MapReduce、 Spark、 Cascading、 Crunch、 Scalding、 Kite<br>所以如果一套数据要多种引擎使用， Parquet 是最好的选择。</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/03/03/Scala集合20190524/" class="pre-post btn btn-default" title="Scala集合">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Scala集合</span>
+        </a>
+    
+    
+        <a href="/2017/02/28/Hive数据库创建、表创建、加载数据20190524/" class="next-post btn btn-default" title="Hive数据库创建、表创建、加载数据">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Hive数据库创建、表创建、加载数据</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Hive介绍"><span class="toc-text">1.Hive介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Hive基本数据类型"><span class="toc-text">2.Hive基本数据类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Hive-DDL-数据定义"><span class="toc-text">3.Hive DDL 数据定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-创建数据库"><span class="toc-text">3.1.创建数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-查看数据库定义"><span class="toc-text">3.2.查看数据库定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-查看数据库列表"><span class="toc-text">3.3.查看数据库列表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-删除数据库"><span class="toc-text">3.4.删除数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-切换数据库"><span class="toc-text">3.5.切换数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6-创建普通表"><span class="toc-text">3.6.创建普通表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-创建分区表"><span class="toc-text">3.7.创建分区表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-创建桶表"><span class="toc-text">3.8.创建桶表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-9-查看表"><span class="toc-text">3.9.查看表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-10-修改表"><span class="toc-text">3.10.修改表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-11-删除表"><span class="toc-text">3.11.删除表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Hive-DML数据管理"><span class="toc-text">4.Hive DML数据管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-将数据加载到普通表"><span class="toc-text">4.1.将数据加载到普通表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-将数据加载到分区表"><span class="toc-text">4.2.将数据加载到分区表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-将数据加载到分桶表"><span class="toc-text">4.3.将数据加载到分桶表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-数据导出"><span class="toc-text">4.4.数据导出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-插入数据"><span class="toc-text">4.5.插入数据</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-HiveQL-数据查询语法"><span class="toc-text">5.HiveQL 数据查询语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-hive-架构"><span class="toc-text">7.hive-架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-Hive-SQL-优化"><span class="toc-text">8.Hive SQL 优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-Hive文件格式"><span class="toc-text">9.Hive文件格式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#9-1-TextFile-格式"><span class="toc-text">9.1.TextFile 格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-2-SequenceFile-格式"><span class="toc-text">9.2.SequenceFile 格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-3-Rcfile-格式"><span class="toc-text">9.3.Rcfile 格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-4-Orc-格式"><span class="toc-text">9.4.Orc 格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-5。Parquet-格式"><span class="toc-text">9.5。Parquet 格式</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

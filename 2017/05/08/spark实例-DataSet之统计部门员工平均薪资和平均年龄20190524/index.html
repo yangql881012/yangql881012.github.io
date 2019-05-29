@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>spark实例-DataSet之统计部门员工平均薪资和平均年龄 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="spark实例-DataSet之统计部门员工平均薪资和平均年龄">
+            
+	            spark实例-DataSet之统计部门员工平均薪资和平均年龄
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Spark" title="Spark">
+                        Spark
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/05/08</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>750</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><p>计算部门的平均薪资和年龄  </p>
+<ul>
+<li>只统计年龄在20岁以上的员工</li>
+<li>根据部门名称和员工性别为粒度来进行统计</li>
+<li>统计出每个部门分性别的平均薪资和年龄<a id="more"></a>
+<h2 id="关键技术点"><a href="#关键技术点" class="headerlink" title="关键技术点"></a>关键技术点</h2></li>
+<li>导入隐式转化<code>import spark.implicits._</code></li>
+<li>导入spark.sql.fucntions<code>import org.apache.spark.sql.functions._</code></li>
+<li>两个表的字段的连接条件，需要使用三个等号<code>$&quot;depId&quot; === $&quot;id&quot;</code></li>
+<li>groupBy聚合时，指定表及相应字段<code>groupBy(department(&quot;name&quot;), employee(&quot;gender&quot;))</code></li>
+<li>agg聚合函数<code>agg(avg(employee(&quot;salary&quot;)), avg(employee(&quot;age&quot;)))</code></li>
+<li>dataframe == dataset[Row],dataframe的类型是Row，所以是untyped类型，弱类型,dataset的类型通常是我们自定义的case class，所以是typed类型，强类型</li>
+<li>dataset开发，与rdd开发有很多的共同点。dataset采用encoder序列化</li>
+</ul>
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line">package com.spark.dataset</span><br><span class="line"></span><br><span class="line">import org.apache.spark.sql.SparkSession</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 计算部门的平均薪资和年龄</span><br><span class="line"> *</span><br><span class="line"> * 需求：</span><br><span class="line"> * 		1、只统计年龄在20岁以上的员工</span><br><span class="line"> * 		2、根据部门名称和员工性别为粒度来进行统计</span><br><span class="line"> * 		3、统计出每个部门分性别的平均薪资和年龄</span><br><span class="line"> *</span><br><span class="line"> */</span><br><span class="line">object DepartmentAvgSalaryAndAgeStat extends App&#123;</span><br><span class="line">  val spark=SparkSession</span><br><span class="line">  .builder()</span><br><span class="line">  .appName(&quot;DepartmentAvgSalaryAndAgeStat&quot;)</span><br><span class="line">  .master(&quot;local&quot;)</span><br><span class="line">  .config(&quot;spark.sql.warehouse.dir&quot;,&quot;E:\\worksplace\\spark\\spark-warehouse&quot;)</span><br><span class="line">  .getOrCreate()</span><br><span class="line">  //导入隐式转换</span><br><span class="line">  import spark.implicits._</span><br><span class="line">  //spark sql functions</span><br><span class="line">  import org.apache.spark.sql.functions._</span><br><span class="line">  /**</span><br><span class="line">+---+--------------------+</span><br><span class="line">| id|                name|</span><br><span class="line">+---+--------------------+</span><br><span class="line">|  1|Technical Department|</span><br><span class="line">|  2|Financial Department|</span><br><span class="line">|  3|       HR Department|</span><br><span class="line">+---+--------------------+</span><br><span class="line">   */</span><br><span class="line">  val department=spark.read.json(&quot;E:\\worksplace\\spark\\src\\main\\resources\\department.json&quot;)</span><br><span class="line">/**</span><br><span class="line">+---+-----+------+------+------+</span><br><span class="line">|age|depId|gender|  name|salary|</span><br><span class="line">+---+-----+------+------+------+</span><br><span class="line">| 25|    1|  male|   Leo| 20000|</span><br><span class="line">| 30|    2|female| Marry| 25000|</span><br><span class="line">| 35|    1|  male|  Jack| 15000|</span><br><span class="line">| 42|    3|  male|   Tom| 18000|</span><br><span class="line">| 21|    3|female|Kattie| 21000|</span><br><span class="line">| 30|    2|female|   Jen| 28000|</span><br><span class="line">| 19|    2|female|   Jen|  8000|</span><br><span class="line">+---+-----+------+------+------+  </span><br><span class="line"> */</span><br><span class="line">  val employee=spark.read.json(&quot;E:\\worksplace\\spark\\src\\main\\resources\\employee.json&quot;)</span><br><span class="line">  //department.show()</span><br><span class="line">  //employee.show()</span><br><span class="line">  //1.过滤20岁以上的员工</span><br><span class="line">  val filtedEmployee=employee.filter(&quot;age&gt;20&quot;)</span><br><span class="line">  //filtedEmployee.show()</span><br><span class="line">/**</span><br><span class="line"> +---+-----+------+------+------+---+--------------------+</span><br><span class="line">|age|depId|gender|  name|salary| id|                name|</span><br><span class="line">+---+-----+------+------+------+---+--------------------+</span><br><span class="line">| 25|    1|  male|   Leo| 20000|  1|Technical Department|</span><br><span class="line">| 30|    2|female| Marry| 25000|  2|Financial Department|</span><br><span class="line">| 35|    1|  male|  Jack| 15000|  1|Technical Department|</span><br><span class="line">| 42|    3|  male|   Tom| 18000|  3|       HR Department|</span><br><span class="line">| 21|    3|female|Kattie| 21000|  3|       HR Department|</span><br><span class="line">| 30|    2|female|   Jen| 28000|  2|Financial Department|</span><br><span class="line">+---+-----+------+------+------+---+--------------------+</span><br><span class="line"> */</span><br><span class="line">  // 注意：untyped join，两个表的字段的连接条件，需要使用三个等号</span><br><span class="line">  val joined=filtedEmployee.join(department, $&quot;depId&quot; === $&quot;id&quot;)</span><br><span class="line">  val result=employee</span><br><span class="line">  // 先对employee进行过滤，只统计20岁以上的员工</span><br><span class="line">  .filter(&quot;age&gt;20&quot;)</span><br><span class="line">    // 需要跟department数据进行join，然后才能根据部门名称和员工性别进行聚合</span><br><span class="line">    // 注意：untyped join，两个表的字段的连接条件，需要使用三个等号</span><br><span class="line">  .join(department, $&quot;depId&quot; === $&quot;id&quot;)</span><br><span class="line">   // 根据部门名称和员工性别进行分组</span><br><span class="line">  .groupBy(department(&quot;name&quot;), employee(&quot;gender&quot;))</span><br><span class="line">   // 最后执行聚合函数</span><br><span class="line">  .agg(avg(employee(&quot;salary&quot;)), avg(employee(&quot;age&quot;)))</span><br><span class="line">  // 执行action操作，将结果显示出来</span><br><span class="line">/**</span><br><span class="line">+--------------------+------+-----------+--------+</span><br><span class="line">|                name|gender|avg(salary)|avg(age)|</span><br><span class="line">+--------------------+------+-----------+--------+</span><br><span class="line">|       HR Department|female|    21000.0|    21.0|</span><br><span class="line">|Technical Department|  male|    17500.0|    30.0|</span><br><span class="line">|Financial Department|female|    26500.0|    30.0|</span><br><span class="line">|       HR Department|  male|    18000.0|    42.0|</span><br><span class="line">+--------------------+------+-----------+--------+</span><br><span class="line"> */</span><br><span class="line">  result.show()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/05/09/Spark-DataSet学习20190524/" class="pre-post btn btn-default" title="Spark-DataSet学习">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Spark-DataSet学习</span>
+        </a>
+    
+    
+        <a href="/2017/05/07/Spark实例-通过HDFS文件实时统计20190524/" class="next-post btn btn-default" title="Spark实例-通过HDFS文件实时统计">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Spark实例-通过HDFS文件实时统计</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#需求分析"><span class="toc-text">需求分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关键技术点"><span class="toc-text">关键技术点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码示例"><span class="toc-text">代码示例</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

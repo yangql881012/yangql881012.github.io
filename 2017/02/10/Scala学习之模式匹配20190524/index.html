@@ -1,0 +1,407 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Scala学习之模式匹配 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Scala学习之模式匹配">
+            
+	            Scala学习之模式匹配
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Scala" title="Scala">
+                        Scala
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/02/10</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>838</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>1.样本类：添加了case的类便是样本类。这种修饰符可以让Scala编译器自动为这个类添加一些语法上的便捷设定。如下：<br>2.添加与类名一致的工厂方法。也就是说，可以写成Var(“x”)来构造Var对象。<br>3.样本类参数列表中的所有参数隐式获得了val前缀，因此它被当作字段维护。<br>4.编译器为这个类添加了方法toString,hashCode和equals等方法。<br>5..match对应Java里的switch，但是写在选择器表达式之后。即： 选择器 match {备选项}。<br>6.一个模式匹配包含了一系列备选项，每个都开始于关键字case。每个备选项都包含了一个模式及一到多个表达式。箭头符号 =&gt; 隔开了模式和表达式。<br>7.match表达式通过以代码编写的先后次序尝试每个模式来完成计算。类似于UnOp(“-“ , UnOp(“-“ , e))这种形式的，是构造器模式匹配。<br>8.Scala的备选项表达式永远不会“掉到”下一个case；<br>9.如果没有模式匹配，MatchError异常会被抛出。这意味着必须始终确信所有的情况都考虑到了，或者至少添加一个默认情况什么都不做。如 case _ =&gt;<br>10.通配模式：case _ =&gt; 。表示默认的全匹配备选项。通配模式还可以用来忽略对象中不关心的部分。如：case BinOp(_,_,_) =&gt; XXX，则表示不关心二元操作符的元素是什么，只是检查是否为二元操作符<br>11.常量模式 ：仅匹配自身。任何字面量都可以用作常量。包括String类型。另外，任何的val或单例对象也可以被用作常量。如，单例对象Nil是只匹配空列表的模式。<br>12.变量模式 ：变量模式类似于通配符，可以匹配任何对象。不同点在于，Scala把变量绑定在匹配的对象上。之后就可以使用这个变量操作对象。<br><a id="more"></a></p>
+<pre><code>class DataFramwork
+//class class must have arguments
+case class ComputationFramework(name:String,popular:Boolean) extends DataFramwork
+case class SparkFramework(name:String,popular:Boolean) extends DataFramwork
+
+object HelloPatternMatch {
+  def main(args: Array[String]): Unit = {
+    //getSary(&quot;Hadoop&quot;)
+    getSary(&quot;Test&quot;, 6)
+    getMatchType(Array(3))
+    getCollectionsType(Array(&quot;Spark&quot;))  
+    getCollectionsType(Array(&quot;Scala&quot;))
+    getCollectionsType(Array(&quot;Scala&quot;,&quot;Java&quot;))
+
+    getBigDataType(ComputationFramework(&quot;Mapreduce&quot;,true))
+    getBigDataType(SparkFramework(&quot;Spark&quot;,true))
+
+    getValue(&quot;Java&quot;,Map(&quot;Java&quot;-&gt;&quot;The best&quot;,&quot;Scala&quot;-&gt;&quot;The second&quot;,&quot;Spark&quot;-&gt;&quot;The most&quot;))
+
+  }
+  //模式匹配
+  def getSary(name:String,age:Int){
+    name match{
+      case &quot;Spark&quot; =&gt; println(&quot;Spark&quot;)
+      case &quot;Scala&quot; =&gt; println(&quot;Scala&quot;)
+      case _ if name == &quot;Hadoop&quot;  =&gt; println(&quot;Hadoop&quot;)
+      //将传入参数name值传给变量_name
+      case _name if age&gt;5 =&gt; println(_name + &quot; age is &quot; + 5 )
+      case _ =&gt; println(&quot;others&quot;)
+    }
+  }
+
+  //模式匹配 匹配数据类型
+  def getMatchType(msg:Any){
+    msg match{
+      case i:Int =&gt; println(&quot;Integer&quot;)
+      case s:String =&gt; println(&quot;String&quot;)
+      case d:Double =&gt; println(&quot;Double&quot;)
+      //只能匹配Array不能具体匹配内容
+      case array:Array[Int] =&gt; println(&quot;Array&quot;)
+      case  _ =&gt; println(&quot;Unknow&quot;)
+    }
+  }
+  //匹配集合中具体的值
+  def getCollectionsType(msg:Array[String]){
+    msg match{
+      case Array(&quot;Scala&quot;) =&gt; println(&quot;one element&quot;)
+      case Array(&quot;Scala&quot;,&quot;Java&quot;) =&gt; println(&quot;two elements&quot;)
+      case Array(&quot;Spark&quot;,_*) =&gt; println(&quot;many elements&quot;)
+      case _ =&gt; println(&quot;unknow&quot;)
+    }
+  }
+  //匹配模式类
+  def getBigDataType(data:DataFramwork){
+    data match{
+      case ComputationFramework(name,popular) =&gt; println(&quot;ComputationFramwork name: &quot; + name + &quot; popular :&quot; + popular)
+      case SparkFramework(name,popular) =&gt; println(&quot;SparkFramework name: &quot; + name + &quot; popular :&quot; + popular)
+      case _ =&gt; println(&quot;Unkown class&quot;)
+    }
+  }
+
+  //值匹配
+  def getValue(key:String,context: Map[String,String]){
+    context.get(key) match{
+      case Some(value) =&gt; println(value)
+      case None =&gt; println(&quot;Not Found&quot;)
+    }
+  }
+}
+</code></pre>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/02/10/Scala学习之集合函数式编程20190524/" class="pre-post btn btn-default" title="Scala学习之集合函数式编程">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Scala学习之集合函数式编程</span>
+        </a>
+    
+    
+        <a href="/2017/02/09/Scala基础学习-函数式编程20190524/" class="next-post btn btn-default" title="Scala基础学习-函数式编程">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Scala基础学习-函数式编程</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <p>暂无目录</p>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

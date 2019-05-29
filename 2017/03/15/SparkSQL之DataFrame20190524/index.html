@@ -1,0 +1,451 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>SparkSQL之DataFrame | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="SparkSQL之DataFrame">
+            
+	            SparkSQL之DataFrame
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Spark" title="Spark">
+                        Spark
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/03/15</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>804</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-DataFrame相关概念"><a href="#1-DataFrame相关概念" class="headerlink" title="1.DataFrame相关概念"></a>1.DataFrame相关概念</h2><ul>
+<li>Spark SQL是Spark中一个处理结构化数据的模块。它提供了被称为DataFrames的编程抽象，并能作为一个分布式的SQL查询引擎</li>
+<li>DataFrame是一个由命名列组成的分布式数据集。它从概念上讲相当于关系数据库里的一张表，或R/Python里的数据框架，但内部有很多优化。</li>
+<li>DataFrame能通过广泛的数据源构建，比如：结构化数据文件，Hive数据表，外部数据库或已有的RDDs。</li>
+<li>使用SQLContext对象，应用程序能从已有RDD、从Hive数据表或从其它数据源创建DataFrame<a id="more"></a>
+<h2 id="2-DataFrame方法"><a href="#2-DataFrame方法" class="headerlink" title="2.DataFrame方法"></a>2.DataFrame方法</h2></li>
+<li>入口：val sc =  new SparkContext(conf)</li>
+<li><p>show：展示数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.show()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>show(numRows: Int) ：显示numRows条</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.show(2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>show(truncate: Boolean) ：是否最多只显示20个字符，默认为true。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.show(false)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>show(numRows: Int, truncate: Boolean) ：综合前面的显示记录条数，以及对过长字符串的显示格式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.show(2,false)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>collect：获取所有数据到数组，collect方法会将所有数据都获取到，并返回一个Array对象。</p>
+</li>
+<li>collectAsList：获取所有数据到List</li>
+<li><p>describe(cols: String*)：获取指定字段的统计信息，这个方法可以动态的传入一个或多个String类型的字段名，结果仍然为DataFrame对象，用于统计数值类型字段的统计值，比如count, mean, stddev, min, max等。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">df.describe(&quot;name&quot;,&quot;age&quot;).show(false)</span><br><span class="line">+-------+---------------------------------+------------------+</span><br><span class="line">|summary|name                             |age               |</span><br><span class="line">+-------+---------------------------------+------------------+</span><br><span class="line">|count  |3                                |2                 |</span><br><span class="line">|mean   |null                             |24.5              |</span><br><span class="line">|stddev |null                             |7.7781745930520225|</span><br><span class="line">|min    |Andy                             |19                |</span><br><span class="line">|max    |Michaeabcdefghijklmnopqrstuvwxyxz|30                |</span><br><span class="line">+-------+---------------------------------+------------------+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>first:获取第一行记录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">println(df.first())</span><br><span class="line">[null,Michaeabcdefghijklmnopqrstuvwxyxz]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>head:获取第一行记录，head(n: Int)获取前n行记录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df.head(2).foreach(println)</span><br><span class="line">[null,Michaeabcdefghijklmnopqrstuvwxyxz]</span><br><span class="line">[30,Andy]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>take(n: Int):获取前n行数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df.take(2).foreach(println)</span><br><span class="line">[null,Michaeabcdefghijklmnopqrstuvwxyxz]</span><br><span class="line">[30,Andy]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>takeAsList(n: Int):获取前n行数据，并以List的形式展现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">println(df.takeAsList(2))</span><br><span class="line">[[null,Michaeabcdefghijklmnopqrstuvwxyxz], [30,Andy]]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>where(conditionExpr: String)：SQL语言中where关键字后的条件传入筛选条件表达式，可以用and和or</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">df.where(&quot;name=&apos;Andy&apos;&quot;).show(false)</span><br><span class="line">+---+----+</span><br><span class="line">|age|name|</span><br><span class="line">+---+----+</span><br><span class="line">|30 |Andy|</span><br><span class="line">+---+----+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>filter：根据字段进行筛选</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">df.filter(&quot;name=&apos;Andy&apos;&quot;).show(false)</span><br><span class="line">+---+----+</span><br><span class="line">|age|name|</span><br><span class="line">+---+----+</span><br><span class="line">|30 |Andy|</span><br><span class="line">+---+----+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>select：获取指定字段值,根据传入的String类型字段名，获取指定字段的值，以DataFrame类型返回</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">df.select(&quot;name&quot;,&quot;age&quot;).show(false)</span><br><span class="line">+---------------------------------+----+</span><br><span class="line">|name                             |age |</span><br><span class="line">+---------------------------------+----+</span><br><span class="line">|Michaeabcdefghijklmnopqrstuvwxyxz|null|</span><br><span class="line">|Andy                             |30  |</span><br><span class="line">|Justin                           |19  |</span><br><span class="line">+---------------------------------+----+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>selectExpr：可以对指定字段进行特殊处理 ,可以直接对指定字段调用UDF函数，或者指定别名等。传入String类型参数，得到DataFrame对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">df.selectExpr(&quot;name&quot;,&quot;age as ageN&quot;,&quot;round(age)&quot;).show(false)</span><br><span class="line">+---------------------------------+----+-------------+</span><br><span class="line">|name                             |ageN|round(age, 0)|</span><br><span class="line">+---------------------------------+----+-------------+</span><br><span class="line">|Michaeabcdefghijklmnopqrstuvwxyxz|null|null         |</span><br><span class="line">|Andy                             |30  |30           |</span><br><span class="line">|Justin                           |19  |19           |</span><br><span class="line">+---------------------------------+----+-------------+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>col：获取指定字段</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">println(df.col(&quot;name&quot;))</span><br><span class="line">name</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>apply：获取指定字段 只能获取一个字段，返回对象为Column类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">println(df.apply(&quot;name&quot;))</span><br><span class="line">name</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>drop：去除指定字段，保留其他字段 ,返回一个新的DataFrame对象，其中不包含去除的字段，一次只能去除一个字段。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">df.drop(&quot;name&quot;).show(false)</span><br><span class="line">+----+</span><br><span class="line">|age |</span><br><span class="line">+----+</span><br><span class="line">|null|</span><br><span class="line">|30  |</span><br><span class="line">|19  |</span><br><span class="line">+----+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>limit:limit方法获取指定DataFrame的前n行记录，得到一个新的DataFrame对象。和take与head不同的是，limit方法不是Action操作<br>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> df.limit(2).show()</span><br><span class="line"> +----+--------------------+</span><br><span class="line">| age|                name|</span><br><span class="line">+----+--------------------+</span><br><span class="line">|null|Michaeabcdefghijk...|</span><br><span class="line">|  30|                Andy|</span><br><span class="line">+----+--------------------+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>orderBy和sort：按指定字段排序，默认为升序,加个-表示降序排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">df.orderBy(df.col(&quot;age&quot;)).show(false)</span><br><span class="line">+----+---------------------------------+</span><br><span class="line">|age |name                             |</span><br><span class="line">+----+---------------------------------+</span><br><span class="line">|null|Michaeabcdefghijklmnopqrstuvwxyxz|</span><br><span class="line">|19  |Justin                           |</span><br><span class="line">|30  |Andy                             |</span><br><span class="line">+----+---------------------------------+</span><br><span class="line">df.orderBy(- df.col(&quot;age&quot;)).show(false)</span><br><span class="line">+----+---------------------------------+</span><br><span class="line">|age |name                             |</span><br><span class="line">+----+---------------------------------+</span><br><span class="line">|null|Michaeabcdefghijklmnopqrstuvwxyxz|</span><br><span class="line">|30  |Andy                             |</span><br><span class="line">|19  |Justin                           |</span><br><span class="line">+----+---------------------------------+</span><br><span class="line">df.orderBy(df.col(&quot;age&quot;).desc).show(false)</span><br><span class="line">+----+---------------------------------+</span><br><span class="line">|age |name                             |</span><br><span class="line">+----+---------------------------------+</span><br><span class="line">|30  |Andy                             |</span><br><span class="line">|19  |Justin                           |</span><br><span class="line">|null|Michaeabcdefghijklmnopqrstuvwxyxz|</span><br><span class="line">+----+---------------------------------+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sortWithinPartitions :和上面的sort方法功能类似，区别在于sortWithinPartitions方法返回的是按Partition排好序的DataFrame对象。</p>
+</li>
+<li><p>group by:根据字段进行group by操作 ,groupBy方法有两种调用方式，可以传入String类型的字段名，也可传入Column类型的对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.groupBy(&quot;name&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>cube和rollup：group by的扩展</p>
+</li>
+<li><p>GroupedData对象 :该方法得到的是GroupedData类型对象，在GroupedData的API中提供了group by之后的操作,max(colNames: String<em>)方法，获取分组中指定字段或者所有的数字类型字段的最大值，只能作用于数字型字段。min(colNames: String</em>)方法，获取分组中指定字段或者所有的数字类型字段的最小值，只能作用于数字型字段。mean(colNames: String<em>)方法，获取分组中指定字段或者所有的数字类型字段的平均值，只能作用于数字型字段。sum(colNames: String</em>)方法，获取分组中指定字段或者所有的数字类型字段的和值，只能作用于数字型字段。count()方法，获取分组中的元素个数</p>
+</li>
+<li><p>distinct：返回一个不包含重复记录的DataFrame ,与dropDuplicates()方法不传入指定字段时的结果相同。</p>
+</li>
+<li><p>dropDuplicates：根据指定字段去重 ，类似于select distinct a, b操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df.distinct().show(false)</span><br><span class="line">df.dropDuplicates().show(false)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>聚合：聚合操作调用的是agg方法，该方法有多种调用方式。一般与groupBy方法配合使用。如：对id字段求最大值，对c4字段求和。</p>
+</li>
+<li><p>unionALL：对两个DataFrame进行组合类似于SQL中的UNION ALL操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">df.union(df1).show(false)</span><br><span class="line">+----+---------------------------------+</span><br><span class="line">|age |name                             |</span><br><span class="line">+----+---------------------------------+</span><br><span class="line">|null|Michaeabcdefghijklmnopqrstuvwxyxz|</span><br><span class="line">|30  |Andy                             |</span><br><span class="line">|19  |Justin                           |</span><br><span class="line">|19  |Justin                           |</span><br><span class="line">|null|Michaeabcdefghijklmnopqrstuvwxyxz|</span><br><span class="line">|30  |Andy                             |</span><br><span class="line">|19  |Justin                           |</span><br><span class="line">|19  |Justin                           |</span><br><span class="line">+----+---------------------------------+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>join(笛卡尔积):DF1.join(DF2)</p>
+</li>
+<li><p>join(using一个字段形式 ):下面这种join类似于a join b using column1的形式，需要两个DataFrame中有相同的一个列名，</p>
+</li>
+<li><p>join(using多个字段形式):除了上面这种using一个字段的情况外，还可以using多个字段，如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">df.join(df1).show(false)</span><br><span class="line">df.join(df1,&quot;name&quot;).show(false)</span><br><span class="line">+---------------------------------+----+----+</span><br><span class="line">|name                             |age |age |</span><br><span class="line">+---------------------------------+----+----+</span><br><span class="line">|Michaeabcdefghijklmnopqrstuvwxyxz|null|null|</span><br><span class="line">|Andy                             |30  |30  |</span><br><span class="line">|Justin                           |19  |19  |</span><br><span class="line">|Justin                           |19  |19  |</span><br><span class="line">|Justin                           |19  |19  |</span><br><span class="line">|Justin                           |19  |19  |</span><br><span class="line">+---------------------------------+----+----+</span><br><span class="line">df.join(df1,Seq(&quot;name&quot;,&quot;age&quot;)).show(false)</span><br><span class="line">+------+---+</span><br><span class="line">|name  |age|</span><br><span class="line">+------+---+</span><br><span class="line">|Andy  |30 |</span><br><span class="line">|Justin|19 |</span><br><span class="line">|Justin|19 |</span><br><span class="line">|Justin|19 |</span><br><span class="line">|Justin|19 |</span><br><span class="line">+------+---+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指定join类型 :两个DataFrame的join操作有inner, outer, left_outer, right_outer, leftsemi类型。在上面的using多个字段的join情况下，可以写第三个String类型参数，指定join的类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">df.join(df1,Seq(&quot;name&quot;,&quot;age&quot;),&quot;inner&quot;).show(false)</span><br><span class="line">+------+---+</span><br><span class="line">|name  |age|</span><br><span class="line">+------+---+</span><br><span class="line">|Andy  |30 |</span><br><span class="line">|Justin|19 |</span><br><span class="line">|Justin|19 |</span><br><span class="line">|Justin|19 |</span><br><span class="line">|Justin|19 |</span><br><span class="line">+------+---+</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用Column类型来join:如果不用using模式，灵活指定join字段的话，可以使用如下形式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DF1.join(DF2 , DF1(&quot;id&quot; ) === DF2( &quot;t1_id&quot;))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在指定join字段同时指定join类型:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DF1.join(DF2 , DF1(&quot;id&quot; ) === DF2( &quot;t1_id&quot;), &quot;inner&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>stat:获取指定字段统计信息,stat方法可以用于计算指定字段或指定字段之间的统计信息，比如方差，协方差等。这个方法返回一个DataFramesStatFunctions类型对象。<br>下面代码演示根据c4字段，统计该字段值出现频率在30%以上的内容。在jdbcDF中字段c1的内容为”a, b, a, c, d, b”。其中a和b出现的频率为2 / 6，大于0.3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DF.stat.freqItems(Seq (&quot;c1&quot;) , 0.3).show()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>intersect:计算出两个DataFrame中相同的记录，</p>
+</li>
+<li>except:获取一个DataFrame中有另一个DataFrame中没有的记录</li>
+<li><p>withColumnRenamed:重命名DataFrame中的指定字段名 ,如果指定的字段名不存在，不进行任何操作</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DF.withColumnRenamed( &quot;id&quot; , &quot;idx&quot; )</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>withColumn:whtiColumn(colName: String , col: Column)方法根据指定colName往DataFrame中新增一列，如果colName已存在，则会覆盖当前列。</p>
+</li>
+<li>explode:行转列,有时候需要根据某个字段内容进行分割，然后生成多行，这时可以使用explode方法 ,下面代码中，根据c3字段中的空格将字段内容进行分割，分割的内容存储在新的字段c3_中，如下所示<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DF.explode( &quot;c3&quot; , &quot;c3_&quot; )&#123;time: String =&gt; time.split( &quot; &quot; )&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="3-实例代码"><a href="#3-实例代码" class="headerlink" title="3.实例代码"></a>3.实例代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">package com.spark.sql</span><br><span class="line"></span><br><span class="line">import org.apache.spark.SparkConf</span><br><span class="line">import org.apache.spark.SparkContext</span><br><span class="line">import org.apache.spark.sql.SQLContext</span><br><span class="line">/**</span><br><span class="line">  * 创建dataframe</span><br><span class="line">  */</span><br><span class="line">object DataFrameCreate extends App&#123;</span><br><span class="line">  val conf = new SparkConf()</span><br><span class="line">    .setMaster(&quot;local&quot;)</span><br><span class="line">    .setAppName(&quot;DataFrameCreate&quot;)</span><br><span class="line">  //create a sc</span><br><span class="line">  val sc =  new SparkContext(conf)</span><br><span class="line">  //create sqlcontext</span><br><span class="line">  val sqlContext=new SQLContext(sc)</span><br><span class="line">  //create a dataframe</span><br><span class="line">  val fileName=&quot;E:\\spark\\src\\main\\resources\\people.json&quot;</span><br><span class="line">  val df = sqlContext.read.json(fileName)</span><br><span class="line">  val df1 = sqlContext.read.json(fileName)</span><br><span class="line">  //print all the record ,including the head</span><br><span class="line">  /*df.show()</span><br><span class="line">  //print the schema info</span><br><span class="line">  df.printSchema()</span><br><span class="line">  //print name</span><br><span class="line">  df.select(&quot;name&quot;, &quot;age&quot;).show()</span><br><span class="line">  //print age &gt;20</span><br><span class="line">  df.filter(df.col(&quot;age&quot;)&gt;20).show</span><br><span class="line">  //print name and age +1</span><br><span class="line">  df.select(df.col(&quot;name&quot;), df.col(&quot;age&quot;)+1).show()</span><br><span class="line">  //group by age,and count</span><br><span class="line">  df.groupBy(&quot;age&quot;).count().show()*/</span><br><span class="line">  //df.show()</span><br><span class="line">  //df.show(2,false)</span><br><span class="line">  //df.show(false)</span><br><span class="line">  //df.describe(&quot;name&quot;,&quot;age&quot;).show(false)</span><br><span class="line">  //println(df.first())</span><br><span class="line">  //df.head(2).foreach(println)</span><br><span class="line">  //println(df.takeAsList(2))</span><br><span class="line">  //df.where(&quot;name=&apos;Andy&apos;&quot;).show(false)</span><br><span class="line">  //df.filter(&quot;name=&apos;Andy&apos;&quot;).show(false)</span><br><span class="line">  //df.select(&quot;name&quot;,&quot;age&quot;).show(false)</span><br><span class="line">  //df.selectExpr(&quot;name&quot;,&quot;age as ageN&quot;,&quot;round(age)&quot;).show(false)</span><br><span class="line">  //println(df.col(&quot;name&quot;))</span><br><span class="line">  //println(df.apply(&quot;name&quot;))</span><br><span class="line">  //df.drop(&quot;name&quot;).show(false)</span><br><span class="line">  //df.limit(2).show()</span><br><span class="line">  //df.orderBy(df.col(&quot;age&quot;)).show(false)</span><br><span class="line">  //df.orderBy(- df.col(&quot;age&quot;)).show(false)</span><br><span class="line">  //df.orderBy(df.col(&quot;age&quot;).desc).show(false)</span><br><span class="line"> // println(df.groupBy(&quot;name&quot;))</span><br><span class="line">  //df.distinct().show(false)</span><br><span class="line">  //df.dropDuplicates().show(false)</span><br><span class="line">  //df.union(df1).show(false)</span><br><span class="line">  //df.join(df1).show(false)</span><br><span class="line">  //df.join(df1,&quot;name&quot;).show(false)</span><br><span class="line">  df.join(df1,Seq(&quot;name&quot;,&quot;age&quot;),&quot;inner&quot;).show(false)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/03/17/Spark SQL性能优化20190524/" class="pre-post btn btn-default" title="Spark SQL性能优化">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Spark SQL性能优化</span>
+        </a>
+    
+    
+        <a href="/2017/03/11/Mysql-ZIP包安装20190524/" class="next-post btn btn-default" title="MySQL-ZIP包安装">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">MySQL-ZIP包安装</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-DataFrame相关概念"><span class="toc-text">1.DataFrame相关概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-DataFrame方法"><span class="toc-text">2.DataFrame方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-实例代码"><span class="toc-text">3.实例代码</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

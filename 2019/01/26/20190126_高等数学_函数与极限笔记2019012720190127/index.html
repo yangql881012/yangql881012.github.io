@@ -1,0 +1,407 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>高等数学_函数与极限笔记 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="高等数学_函数与极限笔记">
+            
+	            高等数学_函数与极限笔记
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/数据分析">
+            数据分析
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/高等数学" title="高等数学">
+                        高等数学
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/01/26</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-函数概念"><a href="#1-函数概念" class="headerlink" title="1. 函数概念"></a>1. 函数概念</h2><p>设数集 $D \subset R$ , 如果对 D 中每个数 x ，变量y 按照一定法则在 R 中有唯一确定的数值与之对应，<br>则称 y 是 x 的函数,记为</p>
+<blockquote>
+<p>y = f(x), $x \subset D$    </p>
+</blockquote>
+<p>其中 x 称为自变量, y 称为因变量, D 称为定义域，记作$D_f$ ,即 $D_f$ = D,函数值 f(x) 的全体所构成的集合称为函数 f 的值域,$R_f$或f(D),即</p>
+<blockquote>
+<p>$R_f$ = f(D) = {y|y=f(x),$x \subset D$}</p>
+</blockquote>
+<h2 id="2-函数的特性"><a href="#2-函数的特性" class="headerlink" title="2.函数的特性"></a>2.函数的特性</h2><ol>
+<li>函数的有界性<blockquote>
+<p>设函数 f(x) 的定义域为 D ，数集 $X \subset D$,如果存在数 K1，使得对任一 $x \subset X$ ，都有 $f (x) \leq K_1$,则称函数 f (x) 在 X 上有上界，而 K1 称为函数 f (x)在 X 上的一个上界.如果存在数 K2 ，使得对任一$X \subset D$ ，都有 $f (x) \geq K_2$, ，则称函数 f (x) 在 X 上有下界，而 K2 称为函数f (x)在 X 上的一个下界.如果存在正数 M ，使得对任一 $X \subset D$ ，都有 $|f (x)| \leq M $ ，则称函数 f (x) 在 X 上有界如果这样的 M 不存在，则称函数 f (x)在 X 上无界．<br>y=sinx在($ -\infty , +\infty $)有界<br>y=tanx在{$- \frac{\pi}{2} , \frac{\pi}{2}$}无界<br><img src="/2019/01/26/20190126_高等数学_函数与极限笔记2019012720190127/20190126_高等数学_函数与极限笔记/20190126_高等数学_函数与极限笔记1-74318c9d.png" alt=""><br><img src="/2019/01/26/20190126_高等数学_函数与极限笔记2019012720190127/assets/20190126_高等数学_函数与极限笔记-3b6c607f.md" alt=""></p>
+</blockquote>
+</li>
+<li><p>函数的单调性</p>
+<blockquote>
+<p>设函数 f(x)的定义域为 D ，区间 $I \subset D $ ，如果对于区间 I 内的任意两点 x1及 x2，当 $x_1 \leq x_2 $时，恒有 $f(x_1) &lt; f(x_2)$ ，则称函数 f(x)在区间 I 内是单调增加的；<br>如果对于区间 I 内的任意两点 $x_1及 x_2 $，当 $x_1 &lt; x_2  $ 时，<br>恒有 $ f(x_1) &gt;f(x_2) $,则称函数 f x   在区间 I 内是单调减少的.<br>单调增加或单调减少的函数统称为单调函数</p>
+</blockquote>
+</li>
+<li><p>函数的奇偶性</p>
+<blockquote>
+<p>设函数 f(x) 的定义域 D 关于原点对称，如果对于任一 $x \subset D$  ，<br>f( -x ) = -f( x )<br>恒成立，则称 f(x) 为奇函数；<br>如 果 对 于 任 一 $x \subset D$  ，<br>f( x ) = f( -x )<br>恒成立，则称 f( x ) 为偶函数.</p>
+<font color="red">注：奇函数关于原点对称，偶函数关于Y轴对称</font></blockquote>
+</li>
+<li>函数的周期性<blockquote>
+<p>设函数 f( x )的定义域为 D ，如果存在一个正数T ，使得对于任一 $x  \subset D $ 有 $x + T \subset D $ ，且<br>f (x + T) = f ( x ) 恒成立，<br>则称 f ( x )为周期函数， T 称为函数f ( x ) 的周期．</p>
+</blockquote>
+</li>
+</ol>
+<font color="red">
+&emsp;1. 通常我们说的周期函数的周期是指最小正周期.  
+比如，函数 sin x ， cos x 都是以 2π 为周期的周期函数，     
+函数 tan x 是以 π 为周期的周期函数.
+<br>
+&emsp; 2. 并非所有函数都有最小正周期．
+</font>
+
+<h2 id="3-数列的极限"><a href="#3-数列的极限" class="headerlink" title="3. 数列的极限"></a>3. 数列的极限</h2><ol>
+<li><p>数列的定义</p>
+<blockquote>
+<p>如果按照某一法则，对每个正整数 n ，对应着一个确定的实数 $x_n$ ，这些实数 $x_n$按照下标 n从小到大排列得到的一个序列</p>
+<script type="math/tex; mode=display">x_1,x_2,x_3,... x_n ...</script><p>就叫做数列，简记为${x_n}$．数列中的每一个数叫做数列的项，第 n 项 ${x_n}$称之为数列的一般项或通项.</p>
+</blockquote>
+</li>
+<li><p>极限的定义</p>
+<blockquote>
+<p>设{$x_n$} 为一数列，如果存在常数 a ，对于任意给定的正数 $\epsilon$ ，总存在着一个正整数 N ，使得对于n &gt; N  时的一切 n ，不等式 |$ x_n -a $| &lt; $\epsilon$ 均成立，则称常数 a 是数列 {$x_n$}的极限，或者称数列{$x_n$} 收敛于 a记作 <script type="math/tex">\displaystyle \lim_{n \to \infty} x_n = a 或者 x_n \rightarrow a (n \rightarrow \infty)</script><br>如果上述 a 不存在，则称数列{$x_n$}没有极限，或者说数列{$x_n$}是发散的，也说$\displaystyle \lim_{n \to \infty} x_n $不存在.</p>
+</blockquote>
+</li>
+<li><p>收敛数列的性质</p>
+<ol>
+<li>极限的唯一性，如果数列是收敛的，那么它的极限值唯一</li>
+<li>收敛数列的有界性,如果数列收敛，那么数列一定有界（如果数列无界，那么数列发散，数列有界未必收敛）</li>
+<li>收敛数列的保号性,极限值与函数值具有一致保号性</li>
+<li>如果数列{$x_n$} 收敛于 a ，则它的任一子数列也收敛，且其极限也为 a .若数列{$x_n$} 的某个子列发散或某两个子列收敛于两个不同的极限，则该数列{$x_n$}必发散.</li>
+</ol>
+</li>
+</ol>
+<h2 id="4-函数的极限"><a href="#4-函数的极限" class="headerlink" title="4. 函数的极限"></a>4. 函数的极限</h2><ol>
+<li><p>函数极限的定义</p>
+<blockquote>
+<p>设函数 f(x)在点 $x_0$ 的某一去心邻域内,有定义，如果存在常数 A ，$\forall      \varepsilon &gt;0  , \exist \delta&gt;0 $,当 0&lt;|$x-x_0$| &lt; $ \delta $时，有$|f(x)-A| &lt; \varepsilon $,那么常数 A 称为函数 f(x) 当 $x \rightarrow x_0 $时的极限，记作:</p>
+<script type="math/tex; mode=display">\lim_{n \to x_0} f(x) =A  或者 f(x) \rightarrow A (当x \rightarrow x_0)</script></blockquote>
+</li>
+<li><p>$x \rightarrow x_0 $时函数 f(x) 有没有极限与f(x)在$x=x_0$处是否有定义无关</p>
+</li>
+<li>右极限和左极限统称为单侧极限</li>
+<li>如果$f(x_0^+) 、f(x_0^-) $中有一个不存在，或两个虽存在但不相等， 则<br><script type="math/tex">\lim_{x \to x_0} f(x)</script>不存在。</li>
+<li>函数极限的性质<ol>
+<li>函数极限的唯一性</li>
+<li>函数极限的局部有界性</li>
+<li>函数极限的局部保号性</li>
+</ol>
+</li>
+</ol>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/01/26/20190126_高等数学_初等函数2019012620190126/" class="pre-post btn btn-default" title="高等数学_初等函数">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">高等数学_初等函数</span>
+        </a>
+    
+    
+        <a href="/2019/01/26/assets20190520/20190126_高等数学_函数与极限笔记-3b6c607f/" class="next-post btn btn-default" title="高等数学_函数与极限笔记">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">高等数学_函数与极限笔记</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-函数概念"><span class="toc-text">1. 函数概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-函数的特性"><span class="toc-text">2.函数的特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-数列的极限"><span class="toc-text">3. 数列的极限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-函数的极限"><span class="toc-text">4. 函数的极限</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

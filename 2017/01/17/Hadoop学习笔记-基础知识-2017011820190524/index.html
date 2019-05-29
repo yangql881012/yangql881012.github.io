@@ -1,0 +1,373 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Hadoop学习笔记-基础知识-20170118 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Hadoop学习笔记-基础知识-20170118">
+            
+	            Hadoop学习笔记-基础知识-20170118
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Hadoop" title="Hadoop">
+                        Hadoop
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/01/17</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>862</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-Hadoop历史"><a href="#1-Hadoop历史" class="headerlink" title="1.Hadoop历史"></a>1.Hadoop历史</h2><p>Hadoop最早起源于Nutch，，Nutch是一个开源的搜索引擎,由Doug Cutting在2002年的时候开发完成，原本Nutch的目标是为了构建一个大型的搜索引擎，涵盖网页爬取、索引、查询等一些功能，但随着网页爬取的数量不断增加，此时对于存储和索引就形成了比较严重的瓶颈问题。此时，Google发表了三篇论文:GFS，MapReduce,BigTable，这三篇论文堪称大数据领域的开篇巨作，也由此拉开了至今为止都非常火热的大数据应用。<br><a id="more"></a><br>2003年google首先发表了GFS（Google File System），<br>这篇文章描述了Google网页爬取相关数据的存储架构，在随后的2004年又发表了分布式计算框架的论文MapReduce（分布式计算框架的核心思想）。基于这三篇论文，Doug Cutting 带领的Nutch团队自己动手开发了一套存储架构叫Nutch Distributed File System(NDFS)和分布式计算框架MapReduce，2006年时，由于这两个项目不仅可以应用于搜索领域，所以Nutch团队将这两个项目从Nutch中移出Nutch，成为Lucene的一个子项目，此时，这个子项目被命名为Hadoop，同时NDFS被更名为HDFS（Hadoop Distributed File System）。与此同时，Doug Cutting加入Yahoo!，组建了一个团队专门开发Hadoop，在2006年的2月，Apache Hadoop项目正式启动使得HDFS和MapReduce独立发展，2年之后，也就是2008年，Hadoop成为了Apache的顶级项目。</p>
+<h2 id="2-Hadoop架构变化"><a href="#2-Hadoop架构变化" class="headerlink" title="2.Hadoop架构变化"></a>2.Hadoop架构变化</h2><p>Hadoop的版本更迭非常快，从0.x到1.x再到现在的2.7.3，主要经历了比较重大的2个MapReduce（后续简称为MR）架构，分别成为MRv1和MRv2。<br>第一个是在Hadoop 2.x之前的版本MR v1，此时的MR主要有2个服务进程：JobTracker和TaskTracker，Hadoop集群的资源调度和作业调度都是由JobTracker来控制的，这就造成了JobTracker这个服务进程以及运行JobTracker节点的压力过大，容易造成单点故障等问题。<br>从Hadoop 2.x之后，也就是MR v2开始之后，整个架构对于资源调度和作业调度进行了分离，将原来由JobTracker负责的资源调度和管理分成对于每一个作业运行所需资源的资源协调器来负责，这个资源协调器被称为YARN（Yet Another Resource Negotiator），对于整个集群来说，将资源调度和作业调度分开，也更为合理。在YARN中，由RM负责资源的协调和调度，而运行于从节点上的NM则负责对应Task所需资源的申请和该节点资源使用情况的汇报。</p>
+<h2 id="3-主要模块"><a href="#3-主要模块" class="headerlink" title="3.主要模块"></a>3.主要模块</h2><ul>
+<li>Hadoop Common，支持Hadoop其他模块的通用工具</li>
+<li>HDFS，Hadoop的分布式文件系统，提供了高吞吐量的数据访问</li>
+<li>YARN，作业调度和资源管理的一个框架</li>
+<li>MapReduce，基于YARN的大数据分布式计算框架<h2 id="4-Hadoop相关概念"><a href="#4-Hadoop相关概念" class="headerlink" title="4.Hadoop相关概念"></a>4.Hadoop相关概念</h2></li>
+<li>Master：主节点，运行着NameNode、ResourceManager服务进程</li>
+<li>Slave：从节点，运行着DataNode、NodeManager服务进程</li>
+<li>NameNode： NameNode运行于主节点之上，就是被称为Master的节点，负责记录各个数据块的存储空间（NameSpace），与DataNode进行通信，获取其状态信息，并根据决策算法将数据分发到某些节点。</li>
+<li>DataNode：DataNode运行于从节点之上，也就是被称为Slave的节点，负责实际数据的存储，与NameNode进行通信，将其所在节点的存储状态汇报给NameNode，以供其决策。</li>
+<li>HDFS集群：一个HDFS集群包含一个单独的Master节点和多个Slave节点，由一台Master服务器所架设的NameNode，称之为单NameNode集群，两台Master服务器架设成的NameNode，称之为双NameNode集群。</li>
+<li>单机模式：服务进程运行在一个台机器上，并且文件系统也直接采用本地文件系统，没有分布式文件系统，而是直接读写本地文件，无论是在存储上，还是在计算时，都是由单机完成。所以严格意义上来讲，这样的Hadoop运行模式不能称之为集群，而且单机模式主要用于实验。</li>
+<li>伪分布式模式：伪分布式模式由一台机器实现的，它通过一个机器上不同的Java进程来模拟分布式中不同节点上的服务进程，这种情况下将文件系统设置成分布式的文件系统，这样即使是一台机器，也可以看成是逻辑上的分布式。</li>
+<li>分布式模式：伪分布式当中运行的一些服务进程放到另外的一些机器上去运行，例如我们把DataNode和NodeManager放到多个从节点（从服务器）上去运行。就实现了一个真正的分布式模式的Hadoop集群。<h2 id="5-Yarn框架"><a href="#5-Yarn框架" class="headerlink" title="5.Yarn框架"></a>5.Yarn框架</h2><h3 id="5-1-MRv1-与-MRv2-比较"><a href="#5-1-MRv1-与-MRv2-比较" class="headerlink" title="5.1 MRv1 与 MRv2 比较"></a>5.1 MRv1 与 MRv2 比较</h3></li>
+<li>MRv1：编程模型：Map阶段和Reduce阶段，数据处理引擎：MapTask和ReduceTask，运行时环境：JobTracker（资源管理和作业控制）和TaskTracker（接受JobTracker命令并具体执行）</li>
+<li>MRv2：<br>编程模型、数据处理引擎，与MRv1是一样的<br>唯一不同的是运行时环境。<br>MRv2是运行于YARN之上的MapReduce计算框架。<br>YARN（资源管理与调度）和ApplicationMaster（作业控制）。<br>YARN<br>支持多种计算框架的资源管理器。<h3 id="5-2-MRv1局限性"><a href="#5-2-MRv1局限性" class="headerlink" title="5.2 MRv1局限性"></a>5.2 MRv1局限性</h3></li>
+<li>可扩展性差，同时具备资源管理和作业控制两个功能，集群中的瓶颈。</li>
+<li>可靠性差，主从架构（Master/Slave架构），其中的主节点存在单点故障，一旦主节点出现问题，将导致集群不可用。</li>
+<li>资源利用率低，MRv1采用Slot资源分配模式，粗粒度的资源划分单位，通常任务不会用完一个槽的对应资源，且其他任务也无法使用这些空闲资源。</li>
+<li>无法支持多种计算框架<h3 id="5-3-YARN-优势"><a href="#5-3-YARN-优势" class="headerlink" title="5.3 YARN 优势"></a>5.3 YARN 优势</h3></li>
+<li>资源利用率高，</li>
+<li>运维成为降低</li>
+<li>数据共享<h3 id="5-4-YARN的基本组成结构"><a href="#5-4-YARN的基本组成结构" class="headerlink" title="5.4 YARN的基本组成结构"></a>5.4 YARN的基本组成结构</h3></li>
+<li>ResourceManager：全局的资源管理器，负责整个集群的资源管理、分配与调度。</li>
+<li>Scheduler（调度器），纯调度器，默认下是Fair Scheduler</li>
+<li>NodeManager：对每一个slave上的资源和任务做管理 ，定时的向ResourceManager汇报HearBeat（资源的使用情况和Container的运行状态），接受来自ApplicationMaster的启动/停止的请求</li>
+<li>Container：资源分配单位（MRv1中Slot），动态分配。</li>
+<li>ApplicationMaster：每个APP都会包含一个 ApplicationMaster,ApplicationMaster 的功能包括：<br>1） 向ResourceManager申请资源（用Container资源抽象）<br>2） 将任务做进一步的分配<br>3） 与NodeManager通信启动/停止任务<br>4） 跟踪每一个Task的运行状态（包括Failed后的操作）<h3 id="5-5-YARN的通信协议"><a href="#5-5-YARN的通信协议" class="headerlink" title="5.5 YARN的通信协议"></a>5.5 YARN的通信协议</h3></li>
+<li>Client与RM通信的协议，作业的提交、应用程序的状态等。</li>
+<li>AM与RM通信协议，向RM注册AM，申请资源。</li>
+<li>AM与NM通信协议，启动/停止Container。</li>
+<li>RM与NM通信协议,汇报slave节点的资源信息包括Container的状态（运行状况）<h3 id="5-6-YARN的工作流程"><a href="#5-6-YARN的工作流程" class="headerlink" title="5.6 YARN的工作流程"></a>5.6 YARN的工作流程</h3></li>
+<li>短作业，作业运行几秒、几分、几小时或几天……会正常结束的作业；</li>
+<li>长作业，如无意外，永远不停止的作业（服务部署）<br>向YARN提交一个作业（或应用程序）：YARN的运行过程:<br><img src="/2017/01/17/Hadoop学习笔记-基础知识-2017011820190524/Hadoop学习笔记-基础知识-20170118/流程图.png" alt="image"><br>1，客户向YARN提交Application<br>2，RM为这个应用程序分配一个Container（某个NM上），RM要求该NM在分配的Container上启动应用程序的ApplicationMaster（AM）<br>3，AM向RM注册自己<br>4，AM向RM申请资源<br>5，与RM分配资源的NM通信，要求其启动Task<br>6，NM设置好运行环境之后启动任务<br>7，各Task向AM汇报进度和状态<br>8，程序运行完毕，AM向RM注销并关闭自己。</li>
+</ul>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/01/18/Sqoop安装20190524/" class="pre-post btn btn-default" title="Sqoop安装">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Sqoop安装</span>
+        </a>
+    
+    
+        <a href="/2017/01/13/2017年计划20190524/" class="next-post btn btn-default" title="2017年计划">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">2017年计划</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Hadoop历史"><span class="toc-text">1.Hadoop历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Hadoop架构变化"><span class="toc-text">2.Hadoop架构变化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-主要模块"><span class="toc-text">3.主要模块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Hadoop相关概念"><span class="toc-text">4.Hadoop相关概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-Yarn框架"><span class="toc-text">5.Yarn框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-MRv1-与-MRv2-比较"><span class="toc-text">5.1 MRv1 与 MRv2 比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-MRv1局限性"><span class="toc-text">5.2 MRv1局限性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-YARN-优势"><span class="toc-text">5.3 YARN 优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-4-YARN的基本组成结构"><span class="toc-text">5.4 YARN的基本组成结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-5-YARN的通信协议"><span class="toc-text">5.5 YARN的通信协议</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-6-YARN的工作流程"><span class="toc-text">5.6 YARN的工作流程</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

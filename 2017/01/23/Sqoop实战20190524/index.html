@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>sqoop实战 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="sqoop实战">
+            
+	            sqoop实战
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Sqoop" title="Sqoop">
+                        Sqoop
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/01/23</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>856</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>sqoop连接mysql数据库，讲数据库表中数据导出到HDFS。<br><a id="more"></a></p>
+<h2 id="1-MySQL数据库准备"><a href="#1-MySQL数据库准备" class="headerlink" title="1. MySQL数据库准备"></a>1. MySQL数据库准备</h2><p> （1）创建数据库<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"> [yangql@hadoop01 ~]$ mysql -u root -p</span><br><span class="line">Enter password:</span><br><span class="line">Welcome to the MySQL monitor.  Commands end with ; or \g.</span><br><span class="line">Your MySQL connection id is 2</span><br><span class="line">Server version: 5.1.73 Source distribution</span><br><span class="line"></span><br><span class="line">Copyright (c) 2000, 2013, Oracle and/or its affiliates. All rights reserved.</span><br><span class="line"></span><br><span class="line">Oracle is a registered trademark of Oracle Corporation and/or its</span><br><span class="line">affiliates. Other names may be trademarks of their respective</span><br><span class="line">owners.</span><br><span class="line"></span><br><span class="line">Type &apos;help;&apos; or &apos;\h&apos; for help. Type &apos;\c&apos; to clear the current input statement.</span><br><span class="line"></span><br><span class="line">mysql&gt; CREATE DATABASE yangql DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;</span><br><span class="line">ERROR 1007 (HY000): Can&apos;t create database &apos;yangql&apos;; database exists</span><br><span class="line">mysql&gt; CREATE DATABASE yangql01 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;</span><br><span class="line">Query OK, 1 row affected (0.02 sec)</span><br><span class="line"></span><br><span class="line">mysql&gt;</span><br></pre></td></tr></table></figure></p>
+<p> （2）创建表<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> CREATE TABLE `persinfo` (</span><br><span class="line">  `id` int(4) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  `name` char(20) NOT NULL,</span><br><span class="line">  `sex` int(4) NOT NULL DEFAULT &apos;0&apos;,</span><br><span class="line">  `last_ts` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
+<p> （3）插入数据<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `persinfo` VALUES (1, &apos;fsafsaf&apos;, 1, &apos;2017-1-21 02:46:24&apos;);</span><br><span class="line">INSERT INTO `persinfo` VALUES (2, &apos;111&apos;, 0, &apos;2017-1-19 10:27:15&apos;);</span><br><span class="line">INSERT INTO `persinfo` VALUES (3, &apos;Tom&apos;, 0, &apos;2017-1-19 10:27:15&apos;);</span><br><span class="line">INSERT INTO `persinfo` VALUES (4, &apos;Tom&apos;, 0, &apos;2017-1-19 10:27:15&apos;);</span><br><span class="line">INSERT INTO `persinfo` VALUES (5, &apos;Tom&apos;, 0, &apos;2017-1-19 10:27:15&apos;);</span><br><span class="line">INSERT INTO `persinfo` VALUES (6, &apos;Tom&apos;, 0, &apos;2017-1-19 10:27:15&apos;);</span><br><span class="line">INSERT INTO `persinfo` VALUES (7, &apos;Tom&apos;, 0, &apos;2017-1-19 10:27:15&apos;);</span><br><span class="line">INSERT INTO `persinfo` VALUES (8, &apos;Tom&apos;, 0, &apos;2017-1-19 10:27:15&apos;);</span><br><span class="line">INSERT INTO `persinfo` VALUES (9, &apos;mark&apos;, 0, &apos;2017-1-19 10:27:15&apos;);</span><br><span class="line">INSERT INTO `persinfo` VALUES (10, &apos;safada&apos;, 0, &apos;2017-1-19 10:27:15&apos;);</span><br><span class="line">INSERT INTO `persinfo` VALUES (11, &apos;fsafdsa&apos;, 0, &apos;2017-1-19 10:27:15&apos;);</span><br><span class="line">INSERT INTO `persinfo` VALUES (12, &apos;44&apos;, 0, &apos;2017-1-19 10:27:15&apos;);</span><br><span class="line">INSERT INTO `persinfo` VALUES (13, &apos;fsfffff&apos;, 0, &apos;2017-1-20 10:35:44&apos;);</span><br><span class="line">INSERT INTO `persinfo` VALUES (14, &apos;4444&apos;, 1, &apos;2017-1-22 02:46:08&apos;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-导入"><a href="#2-导入" class="headerlink" title="2 导入"></a>2 导入</h2><p> （1）通用参数<br>—connect，数据库连接字符串<br>—username，数据库访问用户名<br>—password ，指定数据库连接密码（明文）<br>—P 交互式的指定数据库密码<br>—password-file，使用密码文件制定数据库密码<br>（2）导入控制参数——选择部分数据导入<br>—query，要导入的数据用SQL查询控制<br>示例：<br><figure class="highlight plain"><figcaption><span>import --connect jdbc:mysql://hadoop01:3306/yangql --username root --password root --query "select * from persinfo where id<</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">--table:指定要导入的数据表     --where:指定导入时的条件 &quot;id&lt;=5&quot;    </span><br><span class="line">–-columns:指定要导入的字段名 例如id,name  </span><br><span class="line">（3）目的目录（HDFS）</span><br><span class="line">--warehouse-dir:指定导入到HDFS中的目录  </span><br><span class="line">（4）分隔符</span><br><span class="line">--fields-terminated-by:例– fields-terminated-by &apos;|&apos;，默认情况下用&apos;,&apos;进行字段分隔</span><br><span class="line">--lines-terminated-by,行分隔符</span><br><span class="line">--escaped-by，转义字符  </span><br><span class="line">（5）控制导入并行度</span><br><span class="line">--m或--num-mappers [INT]:控制导入时MR作业的Map任务数量，后接一个整数值，用来表示MR的并行度。在进行并行导入的时候，Sqoop会使用split-by进行负载切分（按照表的PK进行切分），首先获取切分字段Max和Min值，再根据Max和Min值去进行切分，举例：id [1,1000]，Sqoop会直接使用4个Map任务&quot;select * from persinfo where id &gt;=min and id &lt;=max，(1,250),(250,500),(500,750),(750,1000)。如果非常不幸，你的ID或切分字段不是均匀分布的话，会导致任务的不平衡。注明：Sqoop目前不能使用多个字段作为切分字段。  </span><br><span class="line">（6）类型映射(导入到Hive时使用)</span><br><span class="line">--map-column-hive， id=String,value=Int  </span><br><span class="line">## 3 导入实例 ##</span><br><span class="line">（1）查看对应库、表情况</span><br></pre></td></tr></table></figure></p>
+<p>sqoop list-databases —connect jdbc:mysql://hadoop01:3306 —username root —password root<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">sqoop list-tables --connect jdbc:mysql://hadoop01:3306/yangql --username root --password root</span><br><span class="line">```  </span><br><span class="line">（2）导入表</span><br></pre></td></tr></table></figure></p>
+<p>sqoop import —connect jdbc:mysql://hadoop01:3306/yangql —username root —password root —table persinfo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">注:</span><br><span class="line">- &lt;font color=&quot;red&quot;&gt;目录不能已存在&lt;/font&gt;</span><br><span class="line">- &lt;font color=&quot;red&quot;&gt;没指定-m或splite-by时，表必须有PK&lt;/font&gt;  </span><br><span class="line"></span><br><span class="line">（3）指定导入目录</span><br></pre></td></tr></table></figure></p>
+<p>sqoop import —connect jdbc:mysql://hadoop01:3306/yangql —username root —password root —table persinfo —warehouse-dir /input<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（4）控制并行度</span><br></pre></td></tr></table></figure></p>
+<p>sqoop import —connect jdbc:mysql://hadoop01:3306/yangql —username root —password root —table persinfo -m 2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（5）控制字段分隔符</span><br></pre></td></tr></table></figure></p>
+<p>sqoop import —connect jdbc:mysql://hadoop01:3306/yangql —username root —password root —table persinfo -m 2 –fields-terminated-by “|”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">（6）导入部分数据  </span><br><span class="line">仅导入id&lt;=5的数据</span><br><span class="line">--query，必须使用--target-dir指定导入目录，且删除--table参数</span><br></pre></td></tr></table></figure></p>
+<p>sqoop import —connect jdbc:mysql://hadoop01:3306/yangql —username root —password root —query “select * from persinfo where id&lt;=5 and $CONDITIONS” -m 1 —target-dir /user/yangql/persinfo<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--where，直接用--where指定条件，用引号引起来</span><br></pre></td></tr></table></figure></p>
+<p>sqoop import —connect jdbc:mysql://hadoop01:3306/yangql —username root —password root —table persinfo —where “id&lt;=5” -m 1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">--columns，指定导入字段名</span><br><span class="line">仅导入id,name</span><br></pre></td></tr></table></figure></p>
+<p>sqoop import —connect jdbc:mysql://hadoop01:3306/yangql —username root —password root —table persinfo —columns id,name -m 1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">（7）使用文件进行导入</span><br><span class="line"></span><br><span class="line">注意：文件中的参数与指定值必须每个一行</span><br><span class="line">写入参数文件sqoop.im，内容如下：</span><br></pre></td></tr></table></figure></p>
+<p>import<br>—connect<br>jdbc:mysql://hadoop01:3306/yangql<br>—username<br>root<br>—password<br>root<br>—table<br>persinfo<br>—columns<br>id,name<br>-m<br>1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">执行sqoop：</span><br></pre></td></tr></table></figure></p>
+<p>sqoop —options-file sqoop.im<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## 4 导出控制参数 ##  </span><br><span class="line">--columns: id,name</span><br><span class="line">注意：没有被包含在--columns后面（例如sex）的这些列名或字段要么具备默认值，要么就允许插入空值，数据库会拒绝接受sqoop导出的数据，导致Sqoop作业失败  </span><br><span class="line">--export-dir:导出目录，在执行导出的时候，必须指定这个参数，同时需要具备--table或--call参数两者之一，--table是指的导出数据库当中对应的表，--call是指的某个存储过程  </span><br><span class="line">--input-null-string、--input-null-non-string:这两参数是可选，如果没有指定第一个参数，对于字符串类型的列来说，“NULL”这个字符串就回被翻译成空值，如果没有使用第二个参数，无论是“NULL”字符串还是说空字符串也好，对于非字符串类型的字段来说，这两个类型的空串都会被翻译成空值      导出实例:</span><br></pre></td></tr></table></figure></p>
+<p>sqoop export —connect jdbc:mysql://hadoop01:3306/yangql —username root —password root —table persinfo —export-dir /user/yangql/persinfo/<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">## 5 更新导出 ##</span><br><span class="line">- --update-key:更新标识，即根据某个字段进行更新，例如id，可以指定多个更新标识的，用逗号分隔   </span><br><span class="line">- --updatemod:有两种模式，一种是updateonly（默认模式），仅仅更新已存在的数据记录，不会插入新纪录，另一种模式是allowinsert，允许插入新纪录  </span><br><span class="line">- Sqoop的Export工具，对应两种语句，一种是Insert语句，如果表当中存在PK约束，且表中已包含数据，此时，导出报错。此时需要用到—-update-key和--updatemod  </span><br><span class="line">- 如果指定了update-key，那么Sqoop就会修改在数据表中已存在的数据，此时的每一个更行数据记录都会变成一个Update语句，用这个语句去更新目标表中已存在的数据，这是根据--update-key所指定的这个列进行更新的。Update set name=&apos;tom&apos; where id = 1。</span><br><span class="line">- 若update-key所指定的字段不是PK字段，若同时updatemod使用updateonly模式时，就仅进行更新，若updatemod使用allowinsert模式，那么实质上就是一个insert操作</span><br><span class="line">- 若update-key所指定的字段是PK字段，同时updatemod是allowinsert时，实质上是一个insert &amp; update的操作，若updatemod是updateonly时，实质仅为update操作</span><br></pre></td></tr></table></figure></p>
+<h1 id="updateonly-example"><a href="#updateonly-example" class="headerlink" title="updateonly example"></a>updateonly example</h1><p>sqoop export —connect jdbc:mysql://hadoop01:3306/yangql —username root —password root —table persinfo —export-dir /user/yangql/persinfo/ —update-key class_id —update-mode updateonly</p>
+<h1 id="allowinsert-example"><a href="#allowinsert-example" class="headerlink" title="allowinsert example"></a>allowinsert example</h1><p>sqoop export —connect jdbc:mysql://hadoop01:3306/yangql —username root —password root —table persinfo —export-dir /user/yangql/persinfo/ —update-key class_id —update-mode allowinsert<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">## 6 增量导入 ##</span><br><span class="line">（1）核心参数  </span><br><span class="line">--check-column:用来指定一些列，这些列在导入时用来检查做决定数据是否要被作为增量数据，在一般关系型数据库中，都存在类似Last_Mod_TM的字段或主键。注意：这些被检查的列的类型不能是任意字符类型，例如Char，VARCHAR…（即字符类型不能作为增量标识字段）   </span><br><span class="line">--incremental:用来指定增量导入的模式（Mode），append和lastmodified</span><br><span class="line">--last-value:指定上一次导入中检查列指定字段最大值  </span><br><span class="line"></span><br><span class="line">(2)增量模式（Mode）</span><br><span class="line">append:在导入的新数据ID值是连续时采用，对数据进行附加   </span><br><span class="line">lastmodified:在源表中有数据更新的时候使用，检查列就必须是一个时间戳或日期类型的字段，更新完之后，last-value会被设置为执行增量导入时的当前系统时间</span><br><span class="line">- Append:加不加--last-value的区别在于：数据是否冗余，如果不加，则会导入源表中的所有数据导致数据冗余。</span><br><span class="line">- Lastmodified:当使用--incremental lastmodified模式进行导入且导入目录已存在时，需要使用–-merge-key或–-append</span><br><span class="line">导入&gt;=last-value的值。</span><br><span class="line"></span><br><span class="line">（3）示例</span><br></pre></td></tr></table></figure></p>
+<p>sqoop import —connect jdbc:mysql://hadoop01:3306/yangql —table persinfo —username root —password root —check-column last_mod_ts —incremental lastmodified —last-value “2017-01-03 22:39:43” —merge-key id -m 1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">## 7 sqoop作业 ##</span><br><span class="line">（1）创建作业</span><br></pre></td></tr></table></figure></p>
+<p>sqoop job —create job1 \<br>—import \<br>—connect jdbc:mysql://hadoop01:3306/yangql \<br>—username root \<br>—table root —m 1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（2）验证作业</span><br></pre></td></tr></table></figure></p>
+<p>yangql@hadoop01 ~]$ sqoop job —list<br>Warning: /home/yangql/app/sqoop-1.4.6/../hbase does not exist! HBase imports will fail.<br>Please set $HBASE_HOME to the root of your HBase installation.<br>Warning: /home/yangql/app/sqoop-1.4.6/../hcatalog does not exist! HCatalog jobs will fail.<br>Please set $HCAT_HOME to the root of your HCatalog installation.<br>Warning: /home/yangql/app/sqoop-1.4.6/../accumulo does not exist! Accumulo imports will fail.<br>Please set $ACCUMULO_HOME to the root of your Accumulo installation.<br>Warning: /home/yangql/app/sqoop-1.4.6/../zookeeper does not exist! Accumulo imports will fail.<br>Please set $ZOOKEEPER_HOME to the root of your Zookeeper installation.<br>17/01/23 02:25:54 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6<br>Available jobs:<br>  job1<br>[yangql@hadoop01 ~]$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（3）检查作业</span><br></pre></td></tr></table></figure></p>
+<p>[yangql@hadoop01 ~]$ sqoop job —show job1<br>Warning: /home/yangql/app/sqoop-1.4.6/../hbase does not exist! HBase imports will fail.<br>Please set $HBASE_HOME to the root of your HBase installation.<br>Warning: /home/yangql/app/sqoop-1.4.6/../hcatalog does not exist! HCatalog jobs will fail.<br>Please set $HCAT_HOME to the root of your HCatalog installation.<br>Warning: /home/yangql/app/sqoop-1.4.6/../accumulo does not exist! Accumulo imports will fail.<br>Please set $ACCUMULO_HOME to the root of your Accumulo installation.<br>Warning: /home/yangql/app/sqoop-1.4.6/../zookeeper does not exist! Accumulo imports will fail.<br>Please set $ZOOKEEPER_HOME to the root of your Zookeeper installation.<br>17/01/23 02:26:48 INFO sqoop.Sqoop: Running Sqoop version: 1.4.6<br>Enter password:<br>Job: job1<br>Tool: import</p>
+<h2 id="Options"><a href="#Options" class="headerlink" title="Options:"></a>Options:</h2><p>verbose = false<br>incremental.last.value = 2017-01-21 04:13:42.0<br>db.connect.string = jdbc:mysql://hadoop01:3306/yangql<br>codegen.output.delimiters.escape = 0<br>codegen.output.delimiters.enclose.required = false<br>codegen.input.delimiters.field = 0<br>hbase.create.table = false<br>db.require.password = true<br>hdfs.append.dir = true<br>db.table = persinfo<br>codegen.input.delimiters.escape = 0<br>import.fetch.size = null<br>accumulo.create.table = false<br>codegen.input.delimiters.enclose.required = false<br>db.username = root<br>reset.onemapper = false<br>codegen.output.delimiters.record = 10<br>import.max.inline.lob.size = 16777216<br>hbase.bulk.load.enabled = false<br>hcatalog.create.table = false<br>db.clear.staging.table = false<br>incremental.col = last_ts<br>codegen.input.delimiters.record = 0<br>enable.compression = false<br>hive.overwrite.table = false<br>hive.import = false<br>codegen.input.delimiters.enclose = 0<br>accumulo.batch.size = 10240000<br>hive.drop.delims = false<br>codegen.output.delimiters.enclose = 0<br>hdfs.delete-target.dir = false<br>codegen.output.dir = .<br>codegen.auto.compile.dir = true<br>relaxed.isolation = false<br>mapreduce.num.mappers = 1<br>accumulo.max.latency = 5000<br>import.direct.split.size = 0<br>codegen.output.delimiters.field = 44<br>export.new.update = UpdateOnly<br>incremental.mode = DateLastModified<br>hdfs.file.format = TextFile<br>codegen.compile.dir = /tmp/sqoop-yangql/compile/15610058cdad963093623efd00897f90<br>direct.import = true<br>hdfs.target.dir = /input/yangql<br>hive.fail.table.exists = false<br>db.batch = false<br>[yangql@hadoop01 ~]$<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">（4）执行作业</span><br></pre></td></tr></table></figure></p>
+<p>sqoop job —exec job1<br>```</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/02/02/Scala学习之Map and Tuple20190524/" class="pre-post btn btn-default" title="Scala学习之Map and Tuple">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Scala学习之Map and Tuple</span>
+        </a>
+    
+    
+        <a href="/2017/01/19/Linux下Mysql安装20190524/" class="next-post btn btn-default" title="Linux下MySQL安装">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Linux下MySQL安装</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-MySQL数据库准备"><span class="toc-text">1. MySQL数据库准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-导入"><span class="toc-text">2 导入</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#updateonly-example"><span class="toc-text">updateonly example</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#allowinsert-example"><span class="toc-text">allowinsert example</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Options"><span class="toc-text">Options:</span></a></li></ol>
+        
+    </li></div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

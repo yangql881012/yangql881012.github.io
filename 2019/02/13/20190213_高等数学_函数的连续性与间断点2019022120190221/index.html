@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>高等数学_函数的连续性与间断点 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="高等数学_函数的连续性与间断点">
+            
+	            高等数学_函数的连续性与间断点
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/数据分析">
+            数据分析
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/高等数学" title="高等数学">
+                        高等数学
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/02/13</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-函数的连续性"><a href="#1-函数的连续性" class="headerlink" title="1. 函数的连续性"></a>1. 函数的连续性</h2><blockquote>
+<p>定义：设函数 y =f (x)在点 $x_0$的某个邻域内有定义，如果</p>
+<script type="math/tex; mode=display">\lim_{\Delta x \to 0} \Delta y =  \lim_{\Delta x \to 0}[f(x_0+\Delta x)-f(x_0)] =0</script><p>则称函数y=f(x)在点$x_0$连续</p>
+<p>定义：设函数 y =f (x)在点 $x_0$的某个邻域内有定义，如果</p>
+<script type="math/tex; mode=display">\lim_{x \to x_0} f(x) = f(x_0)</script><p>则称函数y=f(x)在点$x_0$连续</p>
+</blockquote>
+<p>在区间上每一点都连续的函数，叫做在该区间上的连续函数，或者说函数在该区间上连续.如果区间包含端点，那么函数在右端点连续是指左连续，在左端点连续是指右连续。</p>
+<h2 id="2-连续函数的四则运算的连续性"><a href="#2-连续函数的四则运算的连续性" class="headerlink" title="2.连续函数的四则运算的连续性"></a>2.连续函数的四则运算的连续性</h2><blockquote>
+<p>若函数f(x)、g(x)在点 $x_0$ 处连续,则$f(x) \pm g(x)$ , $f(x).g(x)$ , $\frac {f(x)}{g(x)}(g(x)\neq0)$在点 $x_0$ 处连续</p>
+<p>若函数y=f(x)在区间$I_x$上单调增加(或单调减少）且连续,则它的反函数$x=\phi (x)$ 也在对应的区间<script type="math/tex">I_y ={y|y=f(x),x \in I_x}</script>上单调增加（或单调减少）且连续</p>
+<p>一切初等函数在其定义区间内都是连续的。</p>
+</blockquote>
+<h2 id="3-函数的间断点"><a href="#3-函数的间断点" class="headerlink" title="3. 函数的间断点"></a>3. 函数的间断点</h2><p>假设函数 f (x) 在点 $x_0$ 的某去心邻域内有定义,如果函数 f (x) 有下列三种情形之一：<br>（1）在 x= $x_0$ 处没有定义；<br>（2）虽然在 x= $x_0$ 处有定义，但 $\displaystyle\lim_{x \to x_0}f(x)$ 不存在；<br>（3）虽然在 x= $x_0$ 处有定义， $\displaystyle\lim_{x \to x_0}f(x)$ 存在；</p>
+<script type="math/tex; mode=display">\displaystyle\lim_{x \to x_0}f(x) \neq f(x_0)</script><p> 则称函数 f (x) 在点 $x_0$  为不连续；  </p>
+<p> 点  $x_0$ 称为 f (x)  的不连续点，或间断点.  </p>
+<p> 若$f(x_0^+)$ 与 $f(x_0^-)$$存在，称为第一类间断点，否则称为第二类间断点。</p>
+<p> 第一类间断点中 $f(x_0^+) = f(x_0^-)$,则称$x=x_0$为函数f(x)的可去间断点，如果不等则为跳跃间断点</p>
+<h2 id="4-闭区间上连续函数的性质"><a href="#4-闭区间上连续函数的性质" class="headerlink" title="4. 闭区间上连续函数的性质"></a>4. 闭区间上连续函数的性质</h2><p> 如果函数f(x)在开区间 (a,b)内连续，且在左端点 a 右连续,在右端点b左连续,则称函数f(x)在闭区间[a,b]上连续</p>
+<h3 id="4-1-最大值最小值定理与有界性定理"><a href="#4-1-最大值最小值定理与有界性定理" class="headerlink" title="4.1 最大值最小值定理与有界性定理"></a>4.1 最大值最小值定理与有界性定理</h3><p> 设函数f(x)在区间 I 上有定义，如果存在$x_0 \in I$使得对任何$x \in I$,均有</p>
+<script type="math/tex; mode=display">f(x) \leq f(x_0) (f(x) \geq f(x_0))</script><p> 则称f($x_0$)是函数f(x)在区间 I 上的最大值（最小值）,如果一个函数的最大值与最小值相等， 则该函数<br>一定是常数函数.</p>
+<h3 id="4-2-零点定理与介质定理"><a href="#4-2-零点定理与介质定理" class="headerlink" title="4.2 零点定理与介质定理"></a>4.2 零点定理与介质定理</h3><blockquote>
+<p>方程f(x)=0的根称作函数f(x)的零点</p>
+</blockquote>
+<p>零点定理：<br>设函数f(x)在闭区间[a,b]上连续，且f(a).f(b)&lt;0,则至少存在一点$$\xi \in (a,b)$,使得$f(\xi)=0$</p>
+<p>介质定理：<br>设函数f(x)在闭区间[a,b]上连续，则对于 f(a) 与 f(b) 之间的任何一个数C,在开区间(a,b)内至少存在一点<script type="math/tex">\xi</script>,使得$f(\xi)=C$</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/02/20/20190213_高等数学_导数2019022120190221/" class="pre-post btn btn-default" title="高等数学_导数">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">高等数学_导数</span>
+        </a>
+    
+    
+        <a href="/2019/01/27/20190127_高等数学_无穷小的比较2019021520190215/" class="next-post btn btn-default" title="高等数学_无穷小的比较">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">高等数学_无穷小的比较</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-函数的连续性"><span class="toc-text">1. 函数的连续性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-连续函数的四则运算的连续性"><span class="toc-text">2.连续函数的四则运算的连续性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-函数的间断点"><span class="toc-text">3. 函数的间断点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-闭区间上连续函数的性质"><span class="toc-text">4. 闭区间上连续函数的性质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-最大值最小值定理与有界性定理"><span class="toc-text">4.1 最大值最小值定理与有界性定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-零点定理与介质定理"><span class="toc-text">4.2 零点定理与介质定理</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

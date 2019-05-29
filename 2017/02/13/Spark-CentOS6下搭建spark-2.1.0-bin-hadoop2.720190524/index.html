@@ -1,0 +1,389 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Spark-CentOS6下搭建spark-2.1.0-bin-hadoop2.7.md | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Spark-CentOS6下搭建spark-2.1.0-bin-hadoop2.7.md">
+            
+	            Spark-CentOS6下搭建spark-2.1.0-bin-hadoop2.7.md
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Spark" title="Spark">
+                        Spark
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/02/13</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>834</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-环境信息"><a href="#1-环境信息" class="headerlink" title="1.环境信息"></a>1.环境信息</h2><ul>
+<li>hadoop01:192.168.1.231</li>
+<li>hadoop01:192.168.1.232</li>
+<li>hadoop01:192.168.1.233<a id="more"></a>
+<h2 id="2-软件信息"><a href="#2-软件信息" class="headerlink" title="2.软件信息"></a>2.软件信息</h2></li>
+<li>spark-2.1.0-bin-hadoop2.7</li>
+<li>hadoop-2.7.2</li>
+<li>scala-2.12.1</li>
+<li>jdk1.8.0_91  </li>
+</ul>
+<h2 id="3-hadoop2-7-2安装"><a href="#3-hadoop2-7-2安装" class="headerlink" title="3.hadoop2.7.2安装"></a>3.hadoop2.7.2安装</h2><p>参见文档《Hadoop2.5.1完全分布式集群部》<br> </p>
+<h2 id="4-安装JDK1-8"><a href="#4-安装JDK1-8" class="headerlink" title="4.安装JDK1.8"></a>4.安装JDK1.8</h2><ul>
+<li>下载JDK包 jdk-8u91-linux-x64.tar.gz</li>
+<li><p>将jdk-8u91-linux-x64.tar.gz包拷贝到 /opt目录并解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv /home/yangql/jdk-8u91-linux-x64.tar.gz /opt</span><br><span class="line">tar -xvf jdk-8u91-linux-x64.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将JDK环境配置到/etc/profile文件中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/opt/jdk1.8.0_91</span><br><span class="line">export PATH=$PATH:$JAVA_HOME/bin</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>source /etc/profile生效配置</p>
+</li>
+<li>检验配置是否正确<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@hadoop01 etc]# java -version</span><br><span class="line">java version &quot;1.8.0_91&quot;</span><br><span class="line">Java(TM) SE Runtime Environment (build 1.8.0_91-b14)</span><br><span class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.91-b14, mixed mode)</span><br><span class="line">[root@hadoop01 etc]#</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="5-安装Scala"><a href="#5-安装Scala" class="headerlink" title="5.安装Scala"></a>5.安装Scala</h2><ul>
+<li>下载安装包 scala-2.12.1.tgz</li>
+<li><p>将scala-2.12.1.tgz包拷贝到/opt目录并解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv /home/yangql/scala-2.12.1.tgz /opt</span><br><span class="line">tar -xvf scala-2.12.1.tgz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将Scala环境配置到/etc/profile文件中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export SCALA_HOME=/opt/scala-2.12.1</span><br><span class="line">export PATH=$PATH:$SCALA_HOME/bin</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>环境验证</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@hadoop01 etc]# scala -version</span><br><span class="line">Scala code runner version 2.12.1 -- Copyright 2002-2016, LAMP/EPFL and Lightbend, Inc.</span><br><span class="line">[root@hadoop01 etc]#</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="6-安装Spark"><a href="#6-安装Spark" class="headerlink" title="6.安装Spark"></a>6.安装Spark</h2><ul>
+<li>下载Spark安装包spark-2.1.0-bin-hadoop2.7.tgz</li>
+<li><p>将spark-2.1.0-bin-hadoop2.7.tgz包拷贝到 /opt中并解压</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mv /home/yangql/spark-2.1.0-bin-hadoop2.7.tgz /opt</span><br><span class="line">tar -xvf spark-2.1.0-bin-hadoop2.7.tgz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件spark-env.sh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cp spark-env.sh.template spark-env.sh</span><br><span class="line">vim spark-env.sh</span><br><span class="line">export SCALA_HOME=/opt/scala-2.12.1</span><br><span class="line">export JAVA_HOME=/opt/jdk1.8.0_91</span><br><span class="line">export SPARK_MASTER_IP=hadoop01</span><br><span class="line">export SPARK_WORKER_MEMORY=512m</span><br><span class="line">export HADOOP_CONF_DIR=/home/yangql/app/hadoop-2.7.2/etc/hadoop</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件slaves  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cp slaves.template slaves</span><br><span class="line">vim slaves</span><br><span class="line">hadoop02</span><br><span class="line">hadoop03</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="7-scp到其它节点"><a href="#7-scp到其它节点" class="headerlink" title="7.scp到其它节点"></a>7.scp到其它节点</h2><p>将在hadoop01上安装的jdk，scala，spark，hadoop等scp到节点hadoop02,hadoop03,如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">scp /opt/jdk1.8.0_91 root@hadoop02:/opt</span><br><span class="line">scp /opt/jdk1.8.0_91 root@hadoop03:/opt</span><br><span class="line">scp /etc/profile root@hadoop02:/etc</span><br><span class="line">scp /etc/profile root@hadoop03:/etc</span><br><span class="line">scp /opt/scala-2.12.1 root@hadoop02:/opt</span><br><span class="line">scp /opt/scala-2.12.1 root@hadoop03:/opt</span><br><span class="line">scp /home/yangql/app/spark-2.1.0-bin-hadoop2.7 yangql@hadoop02:/home/yangql/app</span><br><span class="line">scp /home/yangql/app/spark-2.1.0-bin-hadoop2.7 yangql@hadoop03:/home/yangql/app</span><br></pre></td></tr></table></figure></p>
+<h2 id="8-启动并验证"><a href="#8-启动并验证" class="headerlink" title="8.启动并验证"></a>8.启动并验证</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sh /home/yangql/app/hadoop-2.7.2/sbin/start-all.sh</span><br><span class="line">sh /home/yangql/app/spark-2.1.0-bin-hadoop2.7/sbin/start-all.sh</span><br><span class="line">jps</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[yangql@hadoop01 ~]$ jps</span><br><span class="line">2593 ResourceManager</span><br><span class="line">2437 SecondaryNameNode</span><br><span class="line">2679 Master</span><br><span class="line">2247 NameNode</span><br><span class="line">3215 Jps</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">./bin/spark-submit \</span><br><span class="line">  --class org.apache.spark.examples.SparkPi \</span><br><span class="line">  --master spark://hadoop01:7077 \</span><br><span class="line">  --executor-memory 512m \</span><br><span class="line">  /home/yangql/app/spark-2.1.0-bin-hadoop2.7/examples/jars/spark-examples_2.11-2.1.0.jar \</span><br><span class="line">  1000</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/02/15/Spark-第一个Spark程序20190524/" class="pre-post btn btn-default" title="Spark-第一个Spark程序">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Spark-第一个Spark程序</span>
+        </a>
+    
+    
+        <a href="/2017/02/11/Scala学习之偏函数-异常-lazy20190524/" class="next-post btn btn-default" title="Scala学习之偏函数-异常-lazy">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Scala学习之偏函数-异常-lazy</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-环境信息"><span class="toc-text">1.环境信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-软件信息"><span class="toc-text">2.软件信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-hadoop2-7-2安装"><span class="toc-text">3.hadoop2.7.2安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-安装JDK1-8"><span class="toc-text">4.安装JDK1.8</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-安装Scala"><span class="toc-text">5.安装Scala</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-安装Spark"><span class="toc-text">6.安装Spark</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-scp到其它节点"><span class="toc-text">7.scp到其它节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-启动并验证"><span class="toc-text">8.启动并验证</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

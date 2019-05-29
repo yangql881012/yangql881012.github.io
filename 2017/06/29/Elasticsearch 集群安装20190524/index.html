@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Elasticsearch 集群安装 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Elasticsearch 集群安装">
+            
+	            Elasticsearch 集群安装
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Elasticsearch" title="Elasticsearch">
+                        Elasticsearch
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/06/29</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>698</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-下载解压"><a href="#1-下载解压" class="headerlink" title="1.下载解压"></a>1.下载解压</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar xvf elasticsearch-5.4.3.tar.gz</span><br></pre></td></tr></table></figure>
+<h2 id="2-配置-config-elasticsearch-yml"><a href="#2-配置-config-elasticsearch-yml" class="headerlink" title="2.配置 /config/elasticsearch.yml"></a>2.配置 /config/elasticsearch.yml</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">cluster.name: es-cluster</span><br><span class="line">node.name: es01</span><br><span class="line">path.data: /home/yangql/es/data</span><br><span class="line">path.logs: /home/yangql/es/logs</span><br><span class="line">bootstrap.memory_lock: false</span><br><span class="line">bootstrap.system_call_filter: false</span><br><span class="line">network.host: hadoop01</span><br><span class="line">http.port: 9200</span><br><span class="line">discovery.zen.ping.unicast.hosts: [&quot;hadoop01&quot;, &quot;hadoop02&quot;,&quot;hadoop03&quot;]</span><br></pre></td></tr></table></figure>
+<p>查看集群<br><a href="http://192.168.1.231:9200/_cluster/stats?pretty" target="_blank" rel="noopener">http://192.168.1.231:9200/_cluster/stats?pretty</a><br><a id="more"></a></p>
+<h2 id="3-错误解决"><a href="#3-错误解决" class="headerlink" title="3.错误解决"></a>3.错误解决</h2><h3 id="3-1-unable-to-install-syscall-filter"><a href="#3-1-unable-to-install-syscall-filter" class="headerlink" title="3.1 unable to install syscall filter"></a>3.1 unable to install syscall filter</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[2017-06-29T08:27:42,584][WARN ][o.e.b.JNANatives         ] unable to install syscall filter:</span><br><span class="line">java.lang.UnsupportedOperationException: seccomp unavailable: requires kernel 3.5+ with CONFIG_SECCOMP and CONFIG_SECCOMP_FILTER compiled in</span><br><span class="line">	at org.elasticsearch.bootstrap.SystemCallFilter.linuxImpl(SystemCallFilter.java:350) ~[elasticsearch-5.4.3.jar:5.4.3]</span><br><span class="line">	at org.elasticsearch.bootstrap.SystemCallFilter.init(SystemCallFilter.java:638) ~[elasticsearch-5.4.3.jar:5.4.3]</span><br><span class="line">	at org.elasticsearch.bootstrap.JNANatives.tryInstallSystemCallFilter(JNANatives.java:215) [elasticsearch-5.4.3.jar:5.4.3]</span><br><span class="line">	at org.elasticsearch.bootstrap.Natives.tryInstallSystemCallFilter(Natives.java:99) [elasticsearch-5.4.3.jar:5.4.3]</span><br><span class="line">	at org.elasticsearch.bootstrap.Bootstrap.initializeNatives(Bootstrap.java:111) [elasticsearch-5.4.3.jar:5.4.3]</span><br><span class="line">	at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:194) [elasticsearch-5.4.3.jar:5.4.3]</span><br><span class="line">	at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:350) [elasticsearch-5.4.3.jar:5.4.3]</span><br><span class="line">	at org.elasticsearch.bootstrap.Elasticsearch.init(Elasticsearch.java:123) [elasticsearch-5.4.3.jar:5.4.3]</span><br><span class="line">	at org.elasticsearch.bootstrap.Elasticsearch.execute(Elasticsearch.java:114) [elasticsearch-5.4.3.jar:5.4.3]</span><br><span class="line">	at org.elasticsearch.cli.EnvironmentAwareCommand.execute(EnvironmentAwareCommand.java:67) [elasticsearch-5.4.3.jar:5.4.3]</span><br><span class="line">	at org.elasticsearch.cli.Command.mainWithoutErrorHandling(Command.java:122) [elasticsearch-5.4.3.jar:5.4.3]</span><br><span class="line">	at org.elasticsearch.cli.Command.main(Command.java:88) [elasticsearch-5.4.3.jar:5.4.3]</span><br><span class="line">	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:91) [elasticsearch-5.4.3.jar:5.4.3]</span><br><span class="line">	at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:84) [elasticsearch-5.4.3.jar:5.4.3]</span><br></pre></td></tr></table></figure>
+<p>原因：报了一大串错误，大家不必惊慌，其实只是一个警告，主要是因为你Linux版本过低造成的。<br>解决方案：<br>1、重新安装新版本的Linux系统<br>2、警告不影响使用，可以忽略</p>
+<h3 id="3-2-启动-elasticsearch-如出现异常-can-not-run-elasticsearch-as-root"><a href="#3-2-启动-elasticsearch-如出现异常-can-not-run-elasticsearch-as-root" class="headerlink" title="3.2 启动 elasticsearch 如出现异常  can not run elasticsearch as root"></a>3.2 启动 elasticsearch 如出现异常  can not run elasticsearch as root</h3><p>解决方法：创建ES 账户，修改文件夹 文件 所属用户 组</p>
+<h3 id="3-3-启动异常：ERROR-bootstrap-checks-failed"><a href="#3-3-启动异常：ERROR-bootstrap-checks-failed" class="headerlink" title="3.3 启动异常：ERROR: bootstrap checks failed"></a>3.3 启动异常：ERROR: bootstrap checks failed</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">system call filters failed to install; check the logs and fix your configuration or disable system call filters at your own risk</span><br></pre></td></tr></table></figure>
+<p>问题原因：因为Centos6不支持SecComp，而ES5.2.1默认bootstrap.system_call_filter为true进行检测，所以导致检测失败，失败后直接导致ES不能启动。详<br>解决方法：在elasticsearch.yml中配置bootstrap.system_call_filter为false，注意要在Memory下面:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bootstrap.memory_lock: false</span><br><span class="line">bootstrap.system_call_filter: false</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-4-启动后，如果只有本地可以访问，尝试修改配置文件-elasticsearch-yml"><a href="#3-4-启动后，如果只有本地可以访问，尝试修改配置文件-elasticsearch-yml" class="headerlink" title="3.4 启动后，如果只有本地可以访问，尝试修改配置文件 elasticsearch.yml"></a>3.4 启动后，如果只有本地可以访问，尝试修改配置文件 elasticsearch.yml</h3><p>中network.host(注意配置文件格式不是以 # 开头的要空一格， ： 后要空一格)<br>为 network.host: 0.0.0.0<br>默认端口是 9200<br>注意：关闭防火墙 或者开放9200端口</p>
+<h3 id="3-5-ERROR-bootstrap-checks-failed"><a href="#3-5-ERROR-bootstrap-checks-failed" class="headerlink" title="3.5 ERROR: bootstrap checks failed"></a>3.5 ERROR: bootstrap checks failed</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">max file descriptors [4096] for elasticsearch process likely too low, increase to at least [65536]</span><br><span class="line">max number of threads [1024] for user [lishang] likely too low, increase to at least [2048]</span><br></pre></td></tr></table></figure>
+<p>解决方法：切换到root用户，编辑limits.conf 添加类似如下内容<br>vi /etc/security/limits.conf<br>添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* soft nofile 65536</span><br><span class="line">* hard nofile 131072</span><br><span class="line">* soft nproc 2048</span><br><span class="line">* hard nproc 4096</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-6max-number-of-threads-1024-for-user-lish-likely-too-low-increase-to-at-least-2048"><a href="#3-6max-number-of-threads-1024-for-user-lish-likely-too-low-increase-to-at-least-2048" class="headerlink" title="3.6max number of threads [1024] for user [lish] likely too low, increase to at least [2048]"></a>3.6max number of threads [1024] for user [lish] likely too low, increase to at least [2048]</h3><p>解决：切换到root用户，进入limits.d目录下修改配置文件。<br>vi /etc/security/limits.d/90-nproc.conf<br>修改如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* soft nproc 1024</span><br></pre></td></tr></table></figure></p>
+<h1 id="修改为"><a href="#修改为" class="headerlink" title="修改为"></a>修改为</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* soft nproc 2048</span><br></pre></td></tr></table></figure>
+<h3 id="3-7-max-virtual-memory-areas-vm-max-map-count-65530-likely-too-low-increase-to-at-least-262144"><a href="#3-7-max-virtual-memory-areas-vm-max-map-count-65530-likely-too-low-increase-to-at-least-262144" class="headerlink" title="3.7 max virtual memory areas vm.max_map_count [65530] likely too low, increase to at least [262144]"></a>3.7 max virtual memory areas vm.max_map_count [65530] likely too low, increase to at least [262144]</h3><p>解决：切换到root用户修改配置sysctl.conf<br>vi /etc/sysctl.conf</p>
+<p>添加下面配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vm.max_map_count=655360</span><br></pre></td></tr></table></figure></p>
+<p>并执行命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p</span><br></pre></td></tr></table></figure></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/07/15/大数据场景学习之Hive与关系数据库(一)20190524/" class="pre-post btn btn-default" title="大数据场景学习之Hive与关系数据库(一)">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">大数据场景学习之Hive与关系数据库(一)</span>
+        </a>
+    
+    
+        <a href="/2017/06/29/Elasticsearch 基础20190524/" class="next-post btn btn-default" title="Elasticsearch 基础">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Elasticsearch 基础</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-下载解压"><span class="toc-text">1.下载解压</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-配置-config-elasticsearch-yml"><span class="toc-text">2.配置 /config/elasticsearch.yml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-错误解决"><span class="toc-text">3.错误解决</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-unable-to-install-syscall-filter"><span class="toc-text">3.1 unable to install syscall filter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-启动-elasticsearch-如出现异常-can-not-run-elasticsearch-as-root"><span class="toc-text">3.2 启动 elasticsearch 如出现异常  can not run elasticsearch as root</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-启动异常：ERROR-bootstrap-checks-failed"><span class="toc-text">3.3 启动异常：ERROR: bootstrap checks failed</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-启动后，如果只有本地可以访问，尝试修改配置文件-elasticsearch-yml"><span class="toc-text">3.4 启动后，如果只有本地可以访问，尝试修改配置文件 elasticsearch.yml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-5-ERROR-bootstrap-checks-failed"><span class="toc-text">3.5 ERROR: bootstrap checks failed</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-6max-number-of-threads-1024-for-user-lish-likely-too-low-increase-to-at-least-2048"><span class="toc-text">3.6max number of threads [1024] for user [lish] likely too low, increase to at least [2048]</span></a></li></ol></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#修改为"><span class="toc-text">修改为</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-max-virtual-memory-areas-vm-max-map-count-65530-likely-too-low-increase-to-at-least-262144"><span class="toc-text">3.7 max virtual memory areas vm.max_map_count [65530] likely too low, increase to at least [262144]</span></a></li></ol></li>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

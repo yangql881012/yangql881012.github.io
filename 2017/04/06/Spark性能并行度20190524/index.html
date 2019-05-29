@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>Spark性能并行度 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Spark性能并行度">
+            
+	            Spark性能并行度
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Spark" title="Spark">
+                        Spark
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2017/04/06</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>782</strong>天之前发表。
+            </p>
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-Spark的并行度"><a href="#1-Spark的并行度" class="headerlink" title="1. Spark的并行度"></a>1. Spark的并行度</h2><p>spark作业中，各个stage的task的数量，代表了spark作业在各个阶段stage的并行度！当分配完所能分配的最大资源了，然后对应资源去调节程序的并行度，如果并行度没有与资源相匹配，那么导致你分配下去的资源都浪费掉了。同时并行运行，还可以让每个task要处理的数量变少。合理设置并行度，可以充分利用集群资源，减少个task处理数据量，而增加性能加快运行速度。<br><a id="more"></a></p>
+<h2 id="2-如何去提高并行度"><a href="#2-如何去提高并行度" class="headerlink" title="2. 如何去提高并行度"></a>2. 如何去提高并行度</h2><h3 id="2-1-设置task数量"><a href="#2-1-设置task数量" class="headerlink" title="2.1 设置task数量"></a>2.1 设置task数量</h3><p>将task数量设置成与Application总cpu core 数量相同（理想情况，150个core，分配150 task）官方推荐，task数量，设置成Application总cpu core数量的2~3倍（150个cpu core，设置task数量为300~500）与理想情况不同的是：有些task会运行快一点，比如50s就完了，有些task可能会慢一点，要一分半才运行完，所以如果你的task数量，刚好设置的跟cpu core数量相同，也可能会导致资源的浪费，比如150 task，10个先运行完了，剩余140个还在运行，但是这个时候，就有10个cpu core空闲出来了，导致浪费。如果设置2~3倍，那么一个task运行完以后，另外一个task马上补上来，尽量让cpu core不要空闲。</p>
+<h3 id="2-2-设置Application的并行度"><a href="#2-2-设置Application的并行度" class="headerlink" title="2.2 设置Application的并行度"></a>2.2 设置Application的并行度</h3><p>参数<code>spark.defalut.parallelism</code>默认是没有值的，如果设置了值，是在shuffle的过程才会起作用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">new SparkConf().set(&quot;spark.defalut.parallelism&quot;,&quot;10&quot;)</span><br><span class="line">val rdd2 = rdd1.reduceByKey(_+_)</span><br></pre></td></tr></table></figure></p>
+<p>//rdd2的分区数就是10，rdd1的分区数不受这个参数的影响</p>
+<h3 id="2-3-增加block"><a href="#2-3-增加block" class="headerlink" title="2.3 增加block"></a>2.3 增加block</h3><p>读取的数据在HDFS上时，增加block数，默认情况下split与block是一对一的，而split又与RDD中的partition对应，所以增加了block数，也就提高了并行度。</p>
+<h3 id="2-4-重新设置-partition"><a href="#2-4-重新设置-partition" class="headerlink" title="2.4 重新设置 partition"></a>2.4 重新设置 partition</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RDD.repartition</span><br></pre></td></tr></table></figure>
+<p>给RDD重新设置partition的数量</p>
+<h3 id="2-5-指定partition"><a href="#2-5-指定partition" class="headerlink" title="2.5 指定partition"></a>2.5 指定partition</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val rdd2 = rdd1.reduceByKey(_+_,10)  </span><br><span class="line">val rdd3 = rdd2.map.filter.reduceByKey(_+_)</span><br></pre></td></tr></table></figure>
+<p>reduceByKey的算子指定partition的数量</p>
+<h3 id="2-6-增加父RDD数量"><a href="#2-6-增加父RDD数量" class="headerlink" title="2.6 增加父RDD数量"></a>2.6 增加父RDD数量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val rdd3 = rdd1.join（rdd2）</span><br></pre></td></tr></table></figure>
+<p>rdd3里面partiiton的数量是由父RDD中最多的partition数量来决定，因此使用join算子的时候，增加父RDD中partition的数量</p>
+<h3 id="2-7-shuffle过程中partitions的数量"><a href="#2-7-shuffle过程中partitions的数量" class="headerlink" title="2.7 shuffle过程中partitions的数量"></a>2.7 shuffle过程中partitions的数量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spark.sql.shuffle.partitions</span><br></pre></td></tr></table></figure>
+<p>//spark sql中shuffle过程中partitions的数量</p>
+<h2 id="3-例子"><a href="#3-例子" class="headerlink" title="3. 例子"></a>3. 例子</h2><p>现在已经在spark-submit 脚本里面，给我们的spark作业分配了足够多的资源，比如50个executor ，每个executor 有10G内存，每个executor有3个cpu core 。 基本已经达到了集群或者yarn队列的资源上限。task没有设置，或者设置的很少，比如就设置了，100个task 。 50个executor ，每个executor 有3个core ，也就是说<br>Application 任何一个stage运行的时候，都有总数150个cpu core ，可以并行运行。但是，你现在只有100个task ，平均分配一下，每个executor 分配到2个task，ok，那么同时在运行的task，只有100个task，每个executor 只会并行运行 2个task。 每个executor 剩下的一个cpu core 就浪费掉了！你的资源，虽然分配充足了，但是问题是， 并行度没有与资源相匹配，导致你分配下去的资源都浪费掉了。合理的并行度的设置，应该要设置的足够大，大到可以完全合理的利用你的集群资源； 比如上面的例子，总共集群有150个cpu core ，可以并行运行150个task。那么你就应该将你的Application 的并行度，至少设置成150个，才能完全有效的利用你的集群资源，让150个task ，并行执行，而且task增加到150个以后，即可以同时并行运行，还可以让每个task要处理的数量变少； 比如总共 150G 的数据要处理， 如果是100个task ，每个task 要计算1.5G的数据。 现在增加到150个task，每个task只要处理1G数据。</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2017/04/10/Spark 工作原理及RDD20190524/" class="pre-post btn btn-default" title="Spark 工作原理及RDD">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">Spark 工作原理及RDD</span>
+        </a>
+    
+    
+        <a href="/2017/04/05/Spark性能调优之资源20190524/" class="next-post btn btn-default" title="Spark性能调优之资源">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">Spark性能调优之资源</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Spark的并行度"><span class="toc-text">1. Spark的并行度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-如何去提高并行度"><span class="toc-text">2. 如何去提高并行度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-设置task数量"><span class="toc-text">2.1 设置task数量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-设置Application的并行度"><span class="toc-text">2.2 设置Application的并行度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-增加block"><span class="toc-text">2.3 增加block</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-重新设置-partition"><span class="toc-text">2.4 重新设置 partition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-5-指定partition"><span class="toc-text">2.5 指定partition</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-6-增加父RDD数量"><span class="toc-text">2.6 增加父RDD数量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-7-shuffle过程中partitions的数量"><span class="toc-text">2.7 shuffle过程中partitions的数量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-例子"><span class="toc-text">3. 例子</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>

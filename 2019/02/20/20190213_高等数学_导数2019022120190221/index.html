@@ -1,0 +1,396 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="不圆的石头">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <link rel="dns-prefetch" href="http://qioinglong.top">
+    <!--SEO-->
+
+
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+    <!--Title-->
+
+
+<title>高等数学_导数 | 不圆的石头</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="不圆的石头">
+         <!--   <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block"> -->
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://qioinglong.top">不圆的石头</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>首页</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/金融业务/"><i class="fa "></i>金融业务</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/数据分析/"><i class="fa "></i>数据分析</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/读书/"><i class="fa "></i>读书</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/技术/"><i class="fa "></i>技术</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="高等数学_导数">
+            
+	            高等数学_导数
+            
+        </h1>
+        <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/数据分析">
+            数据分析
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/高等数学" title="高等数学">
+                        高等数学
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/02/20</span>
+        </span>
+        
+    
+</div>
+
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="1-导数的定义"><a href="#1-导数的定义" class="headerlink" title="1. 导数的定义"></a>1. 导数的定义</h2><p>设函数y=f(x)在点$x_0$的某个邻域内有定义，当自变量 x在$x_0$处取得增量 $\Delta x$ ($x_0$ + $\Delta x$ 仍在该邻域内)时，因变量 y 相应地取得增量</p>
+<script type="math/tex; mode=display">\Delta y=f(x_0 + \Delta x) - f(x_0)</script><p>若 $\displaystyle \lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$ 存在，则称函数 y =f(x) 在点 $x_0$处可导<br>并称该极限为y=f(x)在点 $x_0$ 处的导数,记为 $f’(x_0)$,</p>
+<script type="math/tex; mode=display">f'(x_0)=\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x} =\lim_{\Delta x \to 0} \frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}</script><script type="math/tex; mode=display">y'|_{x=x_0},\frac{dy}{dx}|_{x=x_0}或\frac{df(x)}{dx}|_{x=x_0}</script><p>函数在点$x_0$处可导(具有导数和导数存在)</p>
+<ol>
+<li>左导数与右导数统称为单侧导数.</li>
+<li>函数 f ( x ) 在点 x0 处可导的充分必要条件是左导数 $f’_-(x_0)$ 和右导数 $f’_+(x_0)$ 都存在且相等</li>
+<li>如果函数 f  (x ) 在开区间(a,b)内可导, $f’_+(a)$ $f’_-(b)$ 都存在，那么就称 f  (x )在闭区间[a,b]内可导</li>
+<li>过切点 A 且与切线垂直的直线叫做曲线y=f(x)在点 A 处的法线</li>
+<li>切线方程<script type="math/tex; mode=display">y-y_0=f'(x_0)(x-x_0)</script></li>
+<li>法线方程<script type="math/tex; mode=display">y-y_0=-\frac{1}{f'(x_0)}(x-x_0) (且f'(x_0) \neq 0)</script></li>
+<li>如果y=f(x)在点 x0 处的导数为无穷大,这时y=f(x)的割线以垂直于 x 轴的直线 x =x0 为极限位置,即y=f(x)在点 A 处具有垂直于 x 轴的切线 x=x0,其法线方程为y=y0</li>
+<li>若y=f(x)在点x0处可导，则f(x)在点x0处连续</li>
+<li>若y=f(x)在点x0处连续，但f(x)在点x0处不一定可导</li>
+</ol>
+<h2 id="2-函数的和、差、积、商的求导法测"><a href="#2-函数的和、差、积、商的求导法测" class="headerlink" title="2. 函数的和、差、积、商的求导法测"></a>2. 函数的和、差、积、商的求导法测</h2><p>如果函数u=u(x)和v=v(x)都在点x可导，那么他们的和、差、积、商（除分母为0的点外）都在店x可导，且：</p>
+<ol>
+<li>$(u \pm v)’ = u’ \pm v’$</li>
+<li>$(uv)’=u’v+uv’$</li>
+<li>$(\frac{u}{v})’=\frac{u’v-uv’}{v^2}(v(x) \neq 0)$</li>
+</ol>
+<h2 id="3-反函数的求导法则"><a href="#3-反函数的求导法则" class="headerlink" title="3.反函数的求导法则"></a>3.反函数的求导法则</h2><p>设函数 $x=f(y)$ 在区间 $I_y$ 内单调、 可导,且 $f’(y) \neq 0$ ,则其反函数 $y=f^{-1}(x)$ 在区间 $I_x={x|x=f(y), y \in I_y}$ 内也可导，且：</p>
+<script type="math/tex; mode=display">[f^{-1}(x)]'=\frac{1}{f'(y)} 或 \frac{dy}{dx}=\frac{1}{\frac{dx}{dy}}</script><p>反函数的导数是直接函数导数的倒数</p>
+<h2 id="4-复合函数的求导法则"><a href="#4-复合函数的求导法则" class="headerlink" title="4. 复合函数的求导法则"></a>4. 复合函数的求导法则</h2><p>设 $u=g(x)$ 在点x可导，而 $y=f(u)$ 在点 $u=g(x)$ 可导，那么复合函数 $y=f[g(x)]$ 在点x可导，且:</p>
+<script type="math/tex; mode=display">\frac{dy}{dx}=f'(u).g'(x)或\frac{dy}{dx}=\frac{dy}{du}.\frac{du}{dx}</script><h2 id="5-导数实例"><a href="#5-导数实例" class="headerlink" title="5. 导数实例　"></a>5. 导数实例　</h2><ol>
+<li>$(C)’=0$</li>
+<li>$(x^u)’=ux^{u-1}$</li>
+<li>$(a^x)’=a^xlna$</li>
+<li>$(e^x)’=e^x$</li>
+<li>$(log_ax)’=\frac{1}{xlna}$</li>
+<li>$(lnx)’=\frac{1}{x}$</li>
+<li>$(sinx)’=cosx$</li>
+<li>$(cosx)’=-sinx$</li>
+<li>$[cu(x)]’=cu’(x)$</li>
+<li>$(tanx)’=sec^2x$</li>
+<li>$(cotx)’=-\frac{1}{sin^2x}=-csc^2x$</li>
+<li>$(secx)’=secxtanx$</li>
+<li>$(cscx)’=-cscxcotx$</li>
+<li>$(arcsinx)’=\frac{1}{\sqrt{1-x^2}}$</li>
+<li>$(arccosx)’=-\frac{1}{\sqrt{1-x^2}}$</li>
+<li>$(arctanx)’=\frac{1}{1+x^2}$</li>
+<li>$(arccotx)’=-\frac{1}{1+x^2}$</li>
+</ol>
+<h2 id="6-高阶导数"><a href="#6-高阶导数" class="headerlink" title="6. 高阶导数"></a>6. 高阶导数</h2><p>一般地,函数 $y=f(x)$ 的导数 $y’=f’(x)$ 仍然是x的函数，我们把 $y’=f’(x)$ 的导数叫做函数   $y=f(x)$ 的二阶导数，记作 $y’’或\frac{d^2y}{dx^2}$</p>
+<script type="math/tex; mode=display">y''=(y')' 或 \frac{d^2y}{dx^2}=\frac{d}{dx}(\frac{dy}{dx})</script><p>把y=f(x)的导数f’(x)叫做函数y=f(x)的一阶导数，y’’二阶导数…二阶及二阶以上的导数均称为高阶导数，函数y=f(x)具有n阶导数，也称为函数f(x)为n阶可导。</p>
+<ol>
+<li>$(e^x)^{(n)}=e^x$</li>
+<li>$(cosx)^{(n)}=cos(x+\frac{n\pi}{2})$</li>
+<li>$(sinx)^{(n)}=sin(x+\frac{n\pi}{2})$</li>
+<li>$(x^u)^{(n)}=u(u-1)(u-2)…(u-n+1)x^{u-n}$</li>
+<li>$(x^n)^{(n)}=n!$</li>
+<li>$(x^n)^{(n+1)}=0$</li>
+<li>$(\frac{1}{x+a})^{n}=\frac{(-1)^nn!}{(x+a)^{n+1}}$</li>
+<li>$[ln(x+b)]^{(n)}=(\frac{1}{x+b})^{(n-1)}$</li>
+</ol>
+<p>如果函数u=u(x)和v=v(x)都在点 x具有 n阶导数，那么它们的和、差也在点 x具有 n阶导数，且</p>
+<script type="math/tex; mode=display">(u\pm v)^{(n)} = u^{(n)} \pm v^{(n)}</script><h2 id="7-莱布尼兹公式"><a href="#7-莱布尼兹公式" class="headerlink" title="7. 莱布尼兹公式"></a>7. 莱布尼兹公式</h2><p>若f(x)、g(x)具有n阶导数，则</p>
+<script type="math/tex; mode=display">[f(x).g(x)]^{(n)} = f^{(n)}g+C_n^1f^{(n-1)}g'+...C_n^kf^{(n-k)}g^{(k)}+...fg^{(n)}</script><p>其中 $C_n^k=\frac{n(n-1)…(n-k+1)}{k!}$</p>
+<h2 id="8-隐函数的导数"><a href="#8-隐函数的导数" class="headerlink" title="8. 隐函数的导数"></a>8. 隐函数的导数</h2><p>如果变量x和y满足一个方程F(x,y)=0,在一定条件下，当 x 取某区间的任一值时，相应地总有满足此方程的唯一的 y 值存在，那么就说方程F(x,y)=0在该区间内确定了一个隐函数,把一个隐函数化成显函数，叫做隐函数的显化。<br>隐函数导数的方法：<br>一般地，方程F(x,y)=0确定y=f(x),取得F[x,y(x)]=0;在F[x,y(x)]=0两边对x求导即得隐函数的导数.<br>对数求导法：对数求导法就是先在 y = f(x) 的两边取对数，然后求出 y 的导数.</p>
+<h2 id="9-由参数方程所确定的函数的导数"><a href="#9-由参数方程所确定的函数的导数" class="headerlink" title="9. 由参数方程所确定的函数的导数"></a>9. 由参数方程所确定的函数的导数</h2><p>一般地，若参数方程</p>
+<script type="math/tex; mode=display">\begin{cases}
+x=\phi(t) \\
+y=\psi(t)
+\end{cases}</script><p>确定 y 与 x 的函数关系，则称此函数关系所表达的函数为由参数方程所确定的函数。<br>求导方法：</p>
+<script type="math/tex; mode=display">\frac{dy}{dx}=\frac{dy}{dt}.\frac{dt}{dx}=\frac{dy}{dt}\frac{1}{\frac{dx}{dt}}=\frac{\psi'(t)}{\phi'(t)}</script>
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/02/21/20190213_高等数学_微分2019022220190222/" class="pre-post btn btn-default" title="高等数学_微分">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs">高等数学_微分</span>
+        </a>
+    
+    
+        <a href="/2019/02/13/20190213_高等数学_函数的连续性与间断点2019022120190221/" class="next-post btn btn-default" title="高等数学_函数的连续性与间断点">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">高等数学_函数的连续性与间断点</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'kuH6vv7OvJtqnW8MALiD7bCT-gzGzoHsz',
+            appKey: 'vYla34T6SnCwnMeGoMzh8VDn',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: false,
+            avatar: 'null',
+            meta: 'nick'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: 'zh-CN'.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">文章目录</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-导数的定义"><span class="toc-text">1. 导数的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-函数的和、差、积、商的求导法测"><span class="toc-text">2. 函数的和、差、积、商的求导法测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-反函数的求导法则"><span class="toc-text">3.反函数的求导法则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-复合函数的求导法则"><span class="toc-text">4. 复合函数的求导法则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-导数实例"><span class="toc-text">5. 导数实例　</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-高阶导数"><span class="toc-text">6. 高阶导数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-莱布尼兹公式"><span class="toc-text">7. 莱布尼兹公式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-隐函数的导数"><span class="toc-text">8. 隐函数的导数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-由参数方程所确定的函数的导数"><span class="toc-text">9. 由参数方程所确定的函数的导数</span></a></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;2016 -  2019 
+                <!-- <span><a href='https://coding.net/pages'>Hosted by CODING Pages</a></span> -->
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</body>
+</html>
