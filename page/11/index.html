@@ -166,6 +166,67 @@
     <div class="post-content">
         <div class="post-head home-post-head">
             <h1 class="post-title">
+                <a href="/2017/02/10/Scala学习之模式匹配20190524/">Scala学习之模式匹配</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2017年02月10日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                1.样本类：添加了case的类便是样本类。这种修饰符可以让Scala编译器自动为这个类添加一些语法上的便捷设定。如下：2.添加与类名一致的工厂方法。也就是说，可以写成Var(“x”)来构造Var对象。3.样本类参数列表中的所有参数隐式获得了val前缀，因此它被当作字段维护。4.编译器为这个类添加了方法toString,hashCode和equals等方法。5..match对应Java里的switch，但是写在选择器表达式之后。即： 选择器 match {备选项}。6.一个模式匹配包含了一系列备选项，每个都开始于关键字case。每个备选项都包含了一个模式及一到多个表达式。箭头符号 =&amp;gt; 隔开了模式和表达式。7.match表达式通过以代码编写的先后次序尝试每个模式来完成计算。类似于UnOp(“-“ , UnOp(“-“ , e))这种形式的，是构造器模式匹配。8.Scala的备选项表达式永远不会“掉到”下一个case；9.如果没有模式匹配，MatchError异常会被抛出。这意味着必须始终确信所有的情况都考虑到了，或者至少添加一个默认情况什么都不做。如 case _ =&amp;gt;10.通配模式：case _ =&amp;gt; 。表示默认的全匹配备选项。通配模式还可以用来忽略对象中不关心的部分。如：case BinOp(_,_,_) =&amp;gt; XXX，则表示不关心二元操作符的元素是什么，只是检查是否为二元操作符11.常量模式 ：仅匹配自身。任何字面量都可以用作常量。包括String类型。另外，任何的val或单例对象也可以被用作常量。如，单例对象Nil是只匹配空列表的模式。12.变量模式 ：变量模式类似于通配符，可以匹配任何对象。不同点在于，Scala把变量绑定在匹配的对象上。之后就可以使用这个变量操作对象。…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Scala" title="Scala">
+                        Scala
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/2017/02/10/Scala学习之模式匹配20190524/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
                 <a href="/2017/02/09/Scala基础学习-函数式编程20190524/">Scala基础学习-函数式编程</a>
             </h1>
             <div class="post-meta">  &bull;
@@ -725,72 +786,6 @@
 </article>
 
 
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2017/01/09/RedHat5.4-64bit编译安装hadoop2.5.120190524/">hadoop-RedHat5.4-64bit编译安装hadoop2.5.1.md</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2017年01月09日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                1 环境
-系统：redhat 5.4
-软件: jdk 1.7,hadoop- 2.5.1- src.tar.gz,Maven 3.1.1,protobuf2.5.0
-IP:192.168.1.231
-主机名：hadoop01
-需要连接互联网(重要)…
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/技术">
-            技术
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/Hadoop" title="Hadoop">
-                        Hadoop
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
-</div>
-
-            </div>
-
-            <div class="post-permalink">
-                <a href="/2017/01/09/RedHat5.4-64bit编译安装hadoop2.5.120190524/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
 
 
     <nav class="pagination" role="navigation">
@@ -874,7 +869,7 @@ IP:192.168.1.231
         
     <div class="widget">
         <h3 class="title">分类</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/"><i class="fa" aria-hidden="true">技术</i></a><span class="category-list-count">93</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据分析/"><i class="fa" aria-hidden="true">数据分析</i></a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/"><i class="fa" aria-hidden="true">读书</i></a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/金融业务/"><i class="fa" aria-hidden="true">金融业务</i></a><span class="category-list-count">4</span></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/"><i class="fa" aria-hidden="true">技术</i></a><span class="category-list-count">93</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据分析/"><i class="fa" aria-hidden="true">数据分析</i></a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link current" href="/categories/读书/"><i class="fa" aria-hidden="true">读书</i></a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/金融业务/"><i class="fa" aria-hidden="true">金融业务</i></a><span class="category-list-count">5</span></li></ul>
     </div>
 
 
@@ -882,7 +877,7 @@ IP:192.168.1.231
         
     <div class="widget">
         <h3 class="title">归档</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/"><i class="fa" aria-hidden="true">2019年05月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/"><i class="fa" aria-hidden="true">2019年02月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/"><i class="fa" aria-hidden="true">2019年01月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">2018年07月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/"><i class="fa" aria-hidden="true">2017年10月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/"><i class="fa" aria-hidden="true">2017年09月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/"><i class="fa" aria-hidden="true">2017年07月</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/"><i class="fa" aria-hidden="true">2017年06月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/"><i class="fa" aria-hidden="true">2017年05月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/"><i class="fa" aria-hidden="true">2017年04月</i></a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">2017年03月</i></a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">2017年02月</i></a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">2017年01月</i></a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/"><i class="fa" aria-hidden="true">2016年12月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/"><i class="fa" aria-hidden="true">2016年11月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/"><i class="fa" aria-hidden="true">2015年05月</i></a><span class="archive-list-count">1</span></li></ul>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/"><i class="fa" aria-hidden="true">2019年05月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/"><i class="fa" aria-hidden="true">2019年02月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/"><i class="fa" aria-hidden="true">2019年01月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">2018年07月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/"><i class="fa" aria-hidden="true">2017年10月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/"><i class="fa" aria-hidden="true">2017年09月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/"><i class="fa" aria-hidden="true">2017年07月</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/"><i class="fa" aria-hidden="true">2017年06月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/"><i class="fa" aria-hidden="true">2017年05月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/"><i class="fa" aria-hidden="true">2017年04月</i></a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">2017年03月</i></a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">2017年02月</i></a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">2017年01月</i></a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/"><i class="fa" aria-hidden="true">2016年12月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/"><i class="fa" aria-hidden="true">2016年11月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/"><i class="fa" aria-hidden="true">2015年05月</i></a><span class="archive-list-count">1</span></li></ul>
     </div>
 
 
@@ -904,7 +899,7 @@ IP:192.168.1.231
     <h3 class="title">标签云</h3>
     <div class="content tag-cloud">
         
-            <a href="/tags/Elasticsearch/" style="font-size: 11.11px;">Elasticsearch</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Hadoop/" style="font-size: 14.44px;">Hadoop</a> <a href="/tags/Hbase/" style="font-size: 12.22px;">Hbase</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/HistoryServer/" style="font-size: 10px;">HistoryServer</a> <a href="/tags/Hive/" style="font-size: 17.78px;">Hive</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/Phoenix/" style="font-size: 10px;">Phoenix</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/Scala/" style="font-size: 18.89px;">Scala</a> <a href="/tags/Spark/" style="font-size: 20px;">Spark</a> <a href="/tags/Sqoop/" style="font-size: 11.11px;">Sqoop</a> <a href="/tags/VMare/" style="font-size: 10px;">VMare</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/个人管理/" style="font-size: 15.56px;">个人管理</a> <a href="/tags/大数据场景学习/" style="font-size: 12.22px;">大数据场景学习</a> <a href="/tags/数据仓库/" style="font-size: 11.11px;">数据仓库</a> <a href="/tags/数据分析/" style="font-size: 10px;">数据分析</a> <a href="/tags/月结月策/" style="font-size: 11.11px;">月结月策</a> <a href="/tags/计划与实现/" style="font-size: 10px;">计划与实现</a> <a href="/tags/读书笔记/" style="font-size: 12.22px;">读书笔记</a> <a href="/tags/银行/" style="font-size: 10px;">银行</a> <a href="/tags/银行业务/" style="font-size: 12.22px;">银行业务</a> <a href="/tags/高等数学/" style="font-size: 16.67px;">高等数学</a>
+            <a href="/tags/Elasticsearch/" style="font-size: 11.11px;">Elasticsearch</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Hadoop/" style="font-size: 14.44px;">Hadoop</a> <a href="/tags/Hbase/" style="font-size: 12.22px;">Hbase</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/HistoryServer/" style="font-size: 10px;">HistoryServer</a> <a href="/tags/Hive/" style="font-size: 17.78px;">Hive</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/Phoenix/" style="font-size: 10px;">Phoenix</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/Scala/" style="font-size: 18.89px;">Scala</a> <a href="/tags/Spark/" style="font-size: 20px;">Spark</a> <a href="/tags/Sqoop/" style="font-size: 11.11px;">Sqoop</a> <a href="/tags/VMare/" style="font-size: 10px;">VMare</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/个人管理/" style="font-size: 15.56px;">个人管理</a> <a href="/tags/大数据场景学习/" style="font-size: 12.22px;">大数据场景学习</a> <a href="/tags/数据仓库/" style="font-size: 11.11px;">数据仓库</a> <a href="/tags/数据分析/" style="font-size: 10px;">数据分析</a> <a href="/tags/月结月策/" style="font-size: 11.11px;">月结月策</a> <a href="/tags/计划与实现/" style="font-size: 10px;">计划与实现</a> <a href="/tags/读书笔记/" style="font-size: 12.22px;">读书笔记</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/银行/" style="font-size: 10px;">银行</a> <a href="/tags/银行业务/" style="font-size: 12.22px;">银行业务</a> <a href="/tags/高等数学/" style="font-size: 16.67px;">高等数学</a>
         
     </div>
   </div>
@@ -928,6 +923,13 @@ IP:192.168.1.231
 	<i class="fa fa-chevron-up"></i>
 </a>
 
+
+  <script src="https://unpkg.com/mermaid@8.0.0/dist/mermaid.min.js"></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
 
     <div class="copyright">
     <div class="container">
