@@ -163,6 +163,77 @@
 
 <article class="post">
     
+        <div class="post-media">
+            <a href="/2017/02/25/Hive安装20190524/">
+                <img class="img-ajax" src="/img/loading.gif" data-src="/2017/02/25/Hive安装20190524/Hive安装/多用户模式2.png" alt="Hive安装">
+            </a>
+        </div>
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/2017/02/25/Hive安装20190524/">Hive安装</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2017年02月25日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                1.Hive介绍
+在Hadoop生态圈中属于数据仓库的角色。Hive能够管理Hadoop中的数据，同时可以查询Hadoop中的数据。它提供了一系列的工具，可以用来进行数据提取转化加载（ETL），这是一种可以存储、查询和分析存储在Hadoop中的大规模数据的机制。
+Hive定义了简单的类SQL查询语言，称为HQL ，它允许熟悉SQL的用户查询数据。同时，这个语言也允许熟悉MapReduce开发者的开发自定义的mapper和reducer来处理内建的mapper和reducer无法完成的复杂的分析工作。
+本质上讲，Hive是一个SQL解析引擎。Hive可以把SQL查询转换为MapReduce中的job然后在Hadoop执行。Hive有一套映射工具，可以把SQL转换为MapReduce中的job，可以把SQL中的表、字段转换为HDFS中的文件(夹)以及文件中的列。这套映射工具称之为metastore，一般存放在derby、mysql中。
+Hive的表其实就是HDFS的目录，按表名把文件夹分开。如果是分区表，则分区值是子文件夹，可以直接在M/R的Job里使用这些数据。…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Hive" title="Hive">
+                        Hive
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/2017/02/25/Hive安装20190524/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
     <div class="post-content">
         <div class="post-head home-post-head">
             <h1 class="post-title">
@@ -288,6 +359,73 @@ Spark运行在yarn或者mesos之上，通过spark的history server仍然可以�
 <article class="post">
     
         <div class="post-media">
+            <a href="/2017/02/16/Spark-Yarn-cluster与Yarn-client20190524/">
+                <img class="img-ajax" src="/img/loading.gif" data-src="/2017/02/16/Spark-Yarn-cluster与Yarn-client20190524/Spark-Yarn-cluster与Yarn-client/SPARK-client.png" alt="Spark-Yarn-cluster与Yarn-client">
+            </a>
+        </div>
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/2017/02/16/Spark-Yarn-cluster与Yarn-client20190524/">Spark-Yarn-cluster与Yarn-client</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2017年02月16日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                在Spark中，有Yarn-Client和Yarn-Cluster两种模式可以运行在Yarn上，通常情况下Yarn-cluster适用于生产环境，而Yarn-Cluster更适用于交互，调试模式，以下是它们的区别…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Spark" title="Spark">
+                        Spark
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/2017/02/16/Spark-Yarn-cluster与Yarn-client20190524/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+        <div class="post-media">
             <a href="/2017/02/16/Spark-Zookeeper实现HA20190524/">
                 <img class="img-ajax" src="/img/loading.gif" data-src="/2017/02/16/Spark-Zookeeper实现HA20190524/Spark-Zookeeper实现HA/spark-HA.jpg" alt="Spark-Zookeeper实现HA">
             </a>
@@ -347,73 +485,6 @@ Spark运行在yarn或者mesos之上，通过spark的history server仍然可以�
 
             <div class="post-permalink">
                 <a href="/2017/02/16/Spark-Zookeeper实现HA20190524/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
-<article class="post">
-    
-        <div class="post-media">
-            <a href="/2017/02/16/Spark-Yarn-cluster与Yarn-client20190524/">
-                <img class="img-ajax" src="/img/loading.gif" data-src="/2017/02/16/Spark-Yarn-cluster与Yarn-client20190524/Spark-Yarn-cluster与Yarn-client/SPARK-CLUSTER.png" alt="Spark-Yarn-cluster与Yarn-client">
-            </a>
-        </div>
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2017/02/16/Spark-Yarn-cluster与Yarn-client20190524/">Spark-Yarn-cluster与Yarn-client</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2017年02月16日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                在Spark中，有Yarn-Client和Yarn-Cluster两种模式可以运行在Yarn上，通常情况下Yarn-cluster适用于生产环境，而Yarn-Cluster更适用于交互，调试模式，以下是它们的区别…
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/技术">
-            技术
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/Spark" title="Spark">
-                        Spark
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
-</div>
-
-            </div>
-
-            <div class="post-permalink">
-                <a href="/2017/02/16/Spark-Yarn-cluster与Yarn-client20190524/" class="btn btn-default">阅读全文</a>
             </div>
         </footer>
     
@@ -729,75 +800,11 @@ Scala中使用关键字lazy来定义惰性变量，实现延迟加载(懒加载)
 </article>
 
 
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2017/02/10/Scala学习之集合函数式编程20190524/">Scala学习之集合函数式编程</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2017年02月10日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                1.在scala中，Iterable是公共的方法       ，Iterable要求继承者实现一些公共的方法。2.Array是一个非常基础的数据结构，不属于scala集合体系。3.集合分为可变与不可变之分，不可变的集合在scala.collection.immutable保中，可变集合在scala.collection.mutable中4.List是元素的列表集合，是不可变的。5.List中head是第一个元素，tail是指剩下元素的集合的集合6.操作符”::”把List和其它的元素进行组拼来构建新的List7.如果集合中没有元素，返回Nil8.LinkedList是元素可变的列表9.Set是元素不可重复的，且元素是无序的。HashSet元素不可变，也不保证顺序。SortedSet会排序10.map与flatMap的区别：Spark 中 map函数会对每一条输入进行指定的操作，然后为每一条输入返回一个对象；而flatMap函数则是两个操作的集合——正是“先映射后扁平化”：
-
-操作1：同map函数一样：对每一条输入进行指定的操作，然后为每一条输入返回一个对象
-操作2：最后将所有对象合并为一个对象11.只有一个原始时，可以用”_“占位符替代，简化函数编程。如：.reduce(_ +_); //reduce((x,y) =&amp;gt; x + y)…
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/技术">
-            技术
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/Scala" title="Scala">
-                        Scala
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
-</div>
-
-            </div>
-
-            <div class="post-permalink">
-                <a href="/2017/02/10/Scala学习之集合函数式编程20190524/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
 
 
     <nav class="pagination" role="navigation">
         <div id="page-nav">
-            <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
+            <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
         </div>
     </nav>
 
@@ -876,7 +883,7 @@ Scala中使用关键字lazy来定义惰性变量，实现延迟加载(懒加载)
         
     <div class="widget">
         <h3 class="title">分类</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/"><i class="fa" aria-hidden="true">技术</i></a><span class="category-list-count">93</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据分析/"><i class="fa" aria-hidden="true">数据分析</i></a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link current" href="/categories/读书/"><i class="fa" aria-hidden="true">读书</i></a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/金融业务/"><i class="fa" aria-hidden="true">金融业务</i></a><span class="category-list-count">5</span></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/"><i class="fa" aria-hidden="true">技术</i></a><span class="category-list-count">93</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据分析/"><i class="fa" aria-hidden="true">数据分析</i></a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/"><i class="fa" aria-hidden="true">读书</i></a><span class="category-list-count">12</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/金融业务/"><i class="fa" aria-hidden="true">金融业务</i></a><span class="category-list-count">5</span></li></ul>
     </div>
 
 
@@ -884,7 +891,7 @@ Scala中使用关键字lazy来定义惰性变量，实现延迟加载(懒加载)
         
     <div class="widget">
         <h3 class="title">归档</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/"><i class="fa" aria-hidden="true">2019年05月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/"><i class="fa" aria-hidden="true">2019年02月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/"><i class="fa" aria-hidden="true">2019年01月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">2018年07月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/"><i class="fa" aria-hidden="true">2017年10月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/"><i class="fa" aria-hidden="true">2017年09月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/"><i class="fa" aria-hidden="true">2017年07月</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/"><i class="fa" aria-hidden="true">2017年06月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/"><i class="fa" aria-hidden="true">2017年05月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/"><i class="fa" aria-hidden="true">2017年04月</i></a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">2017年03月</i></a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">2017年02月</i></a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">2017年01月</i></a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/"><i class="fa" aria-hidden="true">2016年12月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/"><i class="fa" aria-hidden="true">2016年11月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/"><i class="fa" aria-hidden="true">2015年05月</i></a><span class="archive-list-count">1</span></li></ul>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/"><i class="fa" aria-hidden="true">2019年06月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/"><i class="fa" aria-hidden="true">2019年05月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/"><i class="fa" aria-hidden="true">2019年02月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/"><i class="fa" aria-hidden="true">2019年01月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">2018年07月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/"><i class="fa" aria-hidden="true">2017年10月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/"><i class="fa" aria-hidden="true">2017年09月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/"><i class="fa" aria-hidden="true">2017年07月</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/"><i class="fa" aria-hidden="true">2017年06月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/"><i class="fa" aria-hidden="true">2017年05月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/"><i class="fa" aria-hidden="true">2017年04月</i></a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">2017年03月</i></a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">2017年02月</i></a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">2017年01月</i></a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/"><i class="fa" aria-hidden="true">2016年12月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/"><i class="fa" aria-hidden="true">2016年11月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/"><i class="fa" aria-hidden="true">2015年05月</i></a><span class="archive-list-count">1</span></li></ul>
     </div>
 
 
