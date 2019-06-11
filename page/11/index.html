@@ -166,6 +166,67 @@
     <div class="post-content">
         <div class="post-head home-post-head">
             <h1 class="post-title">
+                <a href="/2017/02/10/Scala学习之泛型-上边界-下边界20190524/">Scala学习之泛型-上边界-下边界</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2017年02月10日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                1.Scala的类，函数，方法都可以是泛型2.上边界 “&amp;lt;:”表达了泛型的类型必须是某种类型或者其子类，是对类型的限定3.下边界 “&amp;gt;:”表达了泛型的类型必须是某种类型或者其父类，是对类型的限定4.View bound:把类型转换为目标类型，是上边界和下边界的加强版本 T &amp;lt;% ,这个代码所表达的T必须是writable类型的，但是T没有直接继承Writable接口，此时需要通过“implicit”的方式来实现这个功能。implicit def dog2Person(dog:Dog)=new Person(dog.name)5.T：ClassTag：这也是一种类型转换系统，只是在编译时类型信息不够，需要借助JVM的runtime来通过运行时获得完整的类型信息。6.逆变协变：-T +T7.covariant 协变:使你能够使用比原始指定的类型的子类,当我们定义一个协变类型 List[A+] 时，List[Child]可以是List[Parent]的子类型。8.Contravariance 逆变:使你能够使用比原始指定的类型的父类。当我们定义一个逆变类型 List[-A] 时，List[Child]可以是List[Parent]的父类型。9.context bound,T:Ordering这种语法必须能够变成Ordering T格式10.Invariance 不变。你只能使用原始指定的类型，不能协变和逆变…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Scala" title="Scala">
+                        Scala
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/2017/02/10/Scala学习之泛型-上边界-下边界20190524/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
                 <a href="/2017/02/10/Scala学习之集合函数式编程20190524/">Scala学习之集合函数式编程</a>
             </h1>
             <div class="post-meta">  &bull;
@@ -535,6 +596,67 @@
     <div class="post-content">
         <div class="post-head home-post-head">
             <h1 class="post-title">
+                <a href="/2017/01/19/Linux下Mysql安装20190524/">Linux下MySQL安装</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2017年01月19日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                1.MySQL相关介绍MySQL是一个关系型数据库管理系统，由瑞典MySQL AB公司开发，目前属于Oracle公司。MySQL是一种关联数据库管理系统，关联数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性。MySQL的SQL语言是用于访问数据库的最常用标准化语言。MySQL软件采用了双授权政策，它分为社区版和商业版，由于其体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，一般中小型网站的开发都选择MySQL作为网站数据库。在Linux上安装mysql数据库，我们可以去其官网上下载mysql数据库的rpm包，http://dev.mysql.com/downloads/mysql/5.6.html#downloads。…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/MySQL" title="MySQL">
+                        MySQL
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/2017/01/19/Linux下Mysql安装20190524/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
                 <a href="/2017/01/19/Linux下mysql-5.7.9-linux-glibc2.5-x86_64.tar.gz安装20190524/">Linux下mysql-5.7.9-linux-glibc2.5-x86_64.tar.gz安装</a>
             </h1>
             <div class="post-meta">  &bull;
@@ -597,67 +719,6 @@
     <div class="post-content">
         <div class="post-head home-post-head">
             <h1 class="post-title">
-                <a href="/2017/01/19/Linux下Mysql安装20190524/">Linux下MySQL安装</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2017年01月19日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                1.MySQL相关介绍MySQL是一个关系型数据库管理系统，由瑞典MySQL AB公司开发，目前属于Oracle公司。MySQL是一种关联数据库管理系统，关联数据库将数据保存在不同的表中，而不是将所有数据放在一个大仓库内，这样就增加了速度并提高了灵活性。MySQL的SQL语言是用于访问数据库的最常用标准化语言。MySQL软件采用了双授权政策，它分为社区版和商业版，由于其体积小、速度快、总体拥有成本低，尤其是开放源码这一特点，一般中小型网站的开发都选择MySQL作为网站数据库。在Linux上安装mysql数据库，我们可以去其官网上下载mysql数据库的rpm包，http://dev.mysql.com/downloads/mysql/5.6.html#downloads。…
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/技术">
-            技术
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/MySQL" title="MySQL">
-                        MySQL
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
-</div>
-
-            </div>
-
-            <div class="post-permalink">
-                <a href="/2017/01/19/Linux下Mysql安装20190524/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
                 <a href="/2017/01/18/Sqoop安装20190524/">Sqoop安装</a>
             </h1>
             <div class="post-meta">  &bull;
@@ -708,73 +769,6 @@
 
             <div class="post-permalink">
                 <a href="/2017/01/18/Sqoop安装20190524/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
-<article class="post">
-    
-        <div class="post-media">
-            <a href="/2017/01/17/Hadoop学习笔记-基础知识-2017011820190524/">
-                <img class="img-ajax" src="/img/loading.gif" data-src="/2017/01/17/Hadoop学习笔记-基础知识-2017011820190524/Hadoop学习笔记-基础知识-20170118/流程图.png" alt="Hadoop学习笔记-基础知识-20170118">
-            </a>
-        </div>
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2017/01/17/Hadoop学习笔记-基础知识-2017011820190524/">Hadoop学习笔记-基础知识-20170118</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2017年01月17日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                1.Hadoop历史Hadoop最早起源于Nutch，，Nutch是一个开源的搜索引擎,由Doug Cutting在2002年的时候开发完成，原本Nutch的目标是为了构建一个大型的搜索引擎，涵盖网页爬取、索引、查询等一些功能，但随着网页爬取的数量不断增加，此时对于存储和索引就形成了比较严重的瓶颈问题。此时，Google发表了三篇论文:GFS，MapReduce,BigTable，这三篇论文堪称大数据领域的开篇巨作，也由此拉开了至今为止都非常火热的大数据应用。…
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/技术">
-            技术
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/Hadoop" title="Hadoop">
-                        Hadoop
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
-</div>
-
-            </div>
-
-            <div class="post-permalink">
-                <a href="/2017/01/17/Hadoop学习笔记-基础知识-2017011820190524/" class="btn btn-default">阅读全文</a>
             </div>
         </footer>
     
@@ -864,7 +858,7 @@
         
     <div class="widget">
         <h3 class="title">分类</h3>
-        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/"><i class="fa" aria-hidden="true">技术</i></a><span class="category-list-count">93</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据分析/"><i class="fa" aria-hidden="true">数据分析</i></a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/"><i class="fa" aria-hidden="true">读书</i></a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/金融业务/"><i class="fa" aria-hidden="true">金融业务</i></a><span class="category-list-count">5</span></li></ul>
+        <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/"><i class="fa" aria-hidden="true">技术</i></a><span class="category-list-count">93</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/数据分析/"><i class="fa" aria-hidden="true">数据分析</i></a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/读书/"><i class="fa" aria-hidden="true">读书</i></a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/金融业务/"><i class="fa" aria-hidden="true">金融业务</i></a><span class="category-list-count">6</span></li></ul>
     </div>
 
 
@@ -872,7 +866,7 @@
         
     <div class="widget">
         <h3 class="title">归档</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/"><i class="fa" aria-hidden="true">2019年06月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/"><i class="fa" aria-hidden="true">2019年05月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/"><i class="fa" aria-hidden="true">2019年02月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/"><i class="fa" aria-hidden="true">2019年01月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">2018年07月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/"><i class="fa" aria-hidden="true">2017年10月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/"><i class="fa" aria-hidden="true">2017年09月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/"><i class="fa" aria-hidden="true">2017年07月</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/"><i class="fa" aria-hidden="true">2017年06月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/"><i class="fa" aria-hidden="true">2017年05月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/"><i class="fa" aria-hidden="true">2017年04月</i></a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">2017年03月</i></a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">2017年02月</i></a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">2017年01月</i></a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/"><i class="fa" aria-hidden="true">2016年12月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/"><i class="fa" aria-hidden="true">2016年11月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/"><i class="fa" aria-hidden="true">2015年05月</i></a><span class="archive-list-count">1</span></li></ul>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/"><i class="fa" aria-hidden="true">2019年06月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/"><i class="fa" aria-hidden="true">2019年05月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/"><i class="fa" aria-hidden="true">2019年02月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/"><i class="fa" aria-hidden="true">2019年01月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">2018年07月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/"><i class="fa" aria-hidden="true">2017年10月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/"><i class="fa" aria-hidden="true">2017年09月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/"><i class="fa" aria-hidden="true">2017年07月</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/"><i class="fa" aria-hidden="true">2017年06月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/"><i class="fa" aria-hidden="true">2017年05月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/"><i class="fa" aria-hidden="true">2017年04月</i></a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">2017年03月</i></a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">2017年02月</i></a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">2017年01月</i></a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/"><i class="fa" aria-hidden="true">2016年12月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/"><i class="fa" aria-hidden="true">2016年11月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/"><i class="fa" aria-hidden="true">2015年05月</i></a><span class="archive-list-count">1</span></li></ul>
     </div>
 
 
@@ -894,7 +888,7 @@
     <h3 class="title">标签云</h3>
     <div class="content tag-cloud">
         
-            <a href="/tags/Elasticsearch/" style="font-size: 11.11px;">Elasticsearch</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Hadoop/" style="font-size: 14.44px;">Hadoop</a> <a href="/tags/Hbase/" style="font-size: 12.22px;">Hbase</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/HistoryServer/" style="font-size: 10px;">HistoryServer</a> <a href="/tags/Hive/" style="font-size: 17.78px;">Hive</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/Phoenix/" style="font-size: 10px;">Phoenix</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/Scala/" style="font-size: 18.89px;">Scala</a> <a href="/tags/Spark/" style="font-size: 20px;">Spark</a> <a href="/tags/Sqoop/" style="font-size: 11.11px;">Sqoop</a> <a href="/tags/VMare/" style="font-size: 10px;">VMare</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/个人管理/" style="font-size: 15.56px;">个人管理</a> <a href="/tags/大数据场景学习/" style="font-size: 12.22px;">大数据场景学习</a> <a href="/tags/数据仓库/" style="font-size: 11.11px;">数据仓库</a> <a href="/tags/数据分析/" style="font-size: 10px;">数据分析</a> <a href="/tags/月结月策/" style="font-size: 11.11px;">月结月策</a> <a href="/tags/计划与实现/" style="font-size: 10px;">计划与实现</a> <a href="/tags/计划清单/" style="font-size: 10px;">计划清单</a> <a href="/tags/读书笔记/" style="font-size: 12.22px;">读书笔记</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/银行/" style="font-size: 10px;">银行</a> <a href="/tags/银行业务/" style="font-size: 12.22px;">银行业务</a> <a href="/tags/高等数学/" style="font-size: 16.67px;">高等数学</a>
+            <a href="/tags/Elasticsearch/" style="font-size: 11.11px;">Elasticsearch</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Hadoop/" style="font-size: 14.44px;">Hadoop</a> <a href="/tags/Hbase/" style="font-size: 12.22px;">Hbase</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/HistoryServer/" style="font-size: 10px;">HistoryServer</a> <a href="/tags/Hive/" style="font-size: 17.78px;">Hive</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/Phoenix/" style="font-size: 10px;">Phoenix</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/Scala/" style="font-size: 18.89px;">Scala</a> <a href="/tags/Spark/" style="font-size: 20px;">Spark</a> <a href="/tags/Sqoop/" style="font-size: 11.11px;">Sqoop</a> <a href="/tags/VMare/" style="font-size: 10px;">VMare</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/个人管理/" style="font-size: 15.56px;">个人管理</a> <a href="/tags/大数据场景学习/" style="font-size: 12.22px;">大数据场景学习</a> <a href="/tags/数据仓库/" style="font-size: 11.11px;">数据仓库</a> <a href="/tags/数据分析/" style="font-size: 10px;">数据分析</a> <a href="/tags/月结月策/" style="font-size: 11.11px;">月结月策</a> <a href="/tags/计划与实现/" style="font-size: 10px;">计划与实现</a> <a href="/tags/计划清单/" style="font-size: 10px;">计划清单</a> <a href="/tags/读书笔记/" style="font-size: 12.22px;">读书笔记</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/银行/" style="font-size: 11.11px;">银行</a> <a href="/tags/银行业务/" style="font-size: 12.22px;">银行业务</a> <a href="/tags/高等数学/" style="font-size: 16.67px;">高等数学</a>
         
     </div>
   </div>
