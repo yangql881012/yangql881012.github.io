@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>分类: 技术 | 不圆的石头</title>
+<title>标签: 计划清单 | 不圆的石头</title>
 
 
     <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
@@ -151,7 +151,8 @@
                 <main class="col-md-8 main-content ">
                     <h3>
     
-        技术
+        计划清单
+    
     
 </h3>
 
@@ -160,229 +161,34 @@
         <div class="post-content">
             <div class="post-head home-post-head">
                 <h1 class="post-title">
-                    <a href="/2017/04/03/Spark琐碎记录20190524/">Spark琐碎记录</a>
+                    <a href="/2019/06/01/计划-2019年06月计划/">2019年06月计划</a>
                 </h1>
                 <div class="post-meta">  &bull;
                     <time class="post-date" datetime="" title="">
-                        2017年04月03日
+                        2019年06月01日
                     </time>
                 </div>
             </div>
             <p class="brief">
                 
-                    本文主要针对Spark一些特性记录，随时保持更新…
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2017/04/03/Spark二次排序20190524/">Spark二次排序</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2017年04月03日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    Spark sortByKey只针对单个字段，如果要对多个字段进行排序，就只能自己单独实现一个排序类。关键点：
+                    1.上月总结05月没有计划，一团乱
+2.本月计划2.1.专业学习
+完成线性代数课本学习
+法询金融-小白金融学课程
+可可英语背单词-完成到第15关
 
-继承Ordered[T]接口
-继承Serializable
-实现compare方法
-使用时需要实例化定义的排序类实现三个字段A,B,C排序，先按照A排序，如果A相同，再以B排序，B相同，以C排序。代码如下：…
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2017/04/01/SparkSQL之DataSet20190524/">SparkSQL之DataSet</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2017年04月01日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    DataSet介绍DataSet是一个分布式数据集，从Spark 1.6开始引入，它集合了RDD API中的很多优点（强类型，lambda表达式），以及SparkSQL的优点（优化后的执行引擎）。DataSet可以通过JVM object来创建，然后通过transformation类的算子来进行操作。从Spark2.0后，SparkSQL的统一入口修改为SparkSession，SQLContext和HiveContext未来会被放弃掉。通过以下代码来创建SparkSession…
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2017/04/01/SparkSQL之根据不同数据来源创建DataFrame20190524/">SparkSQL之根据不同数据来源创建DataFrame</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2017年04月01日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    1. 介绍本文主要介绍根据不同数据来源创建DataFrame，主要有JDBC数据源，Hive数据源，JSON数据源，Parquet数据源。…
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2017/03/31/SparkSQL RDD转换DataFrame方法20190524/">SparkSQL RDD转换DataFrame方法</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2017年03月31日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    DataFrame可以创建临时视图，DataFrame相当于关系数据库上的一个表，我们可以利用DataFrame的这个特性，使用SQL语句进行一系列的操作。将SparkRDD转化为DataFram主要有两种方式。第一：通过反射的方式将RDD转换为DataFrame，第二：通过编程的方式将RDD转换为DataFrame…
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2017/03/30/Scala柯里化20190524/">柯里化</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2017年03月30日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    概念柯里化(Currying)指的是将原来接受两个参数的函数变成新的接受一个参数的函数的过程。新的函数返回一个以原有第二个参数为参数的函数。定义一个函数1def add(x:Int,y:Int)=x+y
-调用时：add(1,2)将函数变形为：1def add(x:Int)(y:Int) = x + y
-调用时：add(1)(2)以上的过程就是柯里化…
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2017/03/29/Scala的Symbol类型20190524/">Scala的Symbol类型</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2017年03月29日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    相比较于String类型，Symbol类型有两个比较明显的特点:节省内存和快速比较
-String的internString类内部维护一个字符串池(strings pool)，当调用String的intern()方法时，如果字符串池中已经存在该字符串，则直接返回池中字符串引用，如果不存在，则将该字符串添加到池中，并返回该字符串对象的引用。执行过intern()方法的字符串，我们就说这个字符串被拘禁了(interned)。默认情况下，代码中的字符串字面量和字符串常量值都是被拘禁的，例如：1234String s1 = &amp;quot;abc&amp;quot;;String s2 =new String(&amp;quot;abc&amp;quot;);//返回trueSystem.out.println(s1 == s2.intern());
-同值字符串的intern()方法返回的引用都相同，例如：1234567String s2 = new String(&amp;quot;abc&amp;quot;);String s3 = new String(&amp;quot;abc&amp;quot;);//返回trueSystem.out.println(s2.intern() == s3.intern());//返回falseSystem.out.println(s2 == s3);…
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2017/03/29/Spark-zip相关算子20190524/">Spark-zip相关算子</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2017年03月29日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    zip 算子zip函数用于将两个RDD组合成key/value形式的RDD，这里默认两个RDD的数量(partitions)以及元素数量都相同，否则将抛出异常java.lang.IllegalArgumentException: Can&amp;#39;t zip RDDs with unequal numbers of partitions:函数定义：1def zip[U: ClassTag](other: RDD[U]): RDD[(T, U)]
-实例代码：123456789101112val conf = new SparkConf().setMaster(&amp;quot;local&amp;quot;).setAppName(&amp;quot;ZipTest&amp;quot;)val sc = new SparkContext(conf)val rdd1=sc.makeRDD(1 to 5,2)val rdd2=sc.makeRDD(Seq(&amp;quot;A&amp;quot;,&amp;quot;B&amp;quot;,&amp;quot;C&amp;quot;,&amp;quot;D&amp;quot;,&amp;quot;E&amp;quot;),2)rdd1.zip(rdd2).foreach(print)//output//(1,A)(2,B)(3,C)(4,D)(5,E)rdd2.zip(rdd1).foreach(print)//output//(A,1)(B,2)(C,3)(D,4)(E,5)…
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2017/03/29/Scala跳出循环的3中方法20190524/">Scala跳出循环的3中方法</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2017年03月29日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    Java里经常会用到continue和break，Scala里并没有这俩个语法。介绍三种跳出循环的方式,使用boolean变量、使用return、使用Breaks对象的break方法…
-                
-            </p>
-        </div>
-    </article>
- 
-    <article class="post">
-        
-        <div class="post-content">
-            <div class="post-head home-post-head">
-                <h1 class="post-title">
-                    <a href="/2017/03/29/Spark-共享变量20190524/">Spark 共享变量</a>
-                </h1>
-                <div class="post-meta">  &bull;
-                    <time class="post-date" datetime="" title="">
-                        2017年03月29日
-                    </time>
-                </div>
-            </div>
-            <p class="brief">
-                
-                    共享变量概念默认情况下，如果在一个算子中使用到了一个外部变量，那么这个变量值会被拷贝到每个task任务中。此时每个task都只能操作自己的那份变量副本。如果多个task想要共享变量，这种情况是做不到的。Spark为此提供了两种共享变量，一种是BroadCast Variable(广播变量)，另一种是Accumulator（累加变量）。BroadCast会将使用到的变量，仅仅为每个节点拷贝一份，而不是为每个task拷贝一个副本，这样做的好处是优化性能，减少网络传输以及内存消耗。SparkContext.broadCast()方法创建广播变量。用value()方法读取值。Accumulator则可以让多个task共同操作一个变量，变量可以进行累加操作…
-                
-            </p>
-        </div>
-    </article>
- 
+2.2.阅读
+外婆的道歉信
+嫌疑人X的献身
 
-
-    <nav class="pagination" role="navigation">
-        <div id="page-nav">
-            <a class="extend prev" rel="prev" href="/categories/技术/page/4/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/categories/技术/">1</a><span class="space">&hellip;</span><a class="page-number" href="/categories/技术/page/3/">3</a><a class="page-number" href="/categories/技术/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/categories/技术/page/6/">6</a><a class="page-number" href="/categories/技术/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/categories/技术/page/10/">10</a><a class="extend next" rel="next" href="/categories/技术/page/6/"><i class="fa fa-angle-right"></i></a>
+2.3.锻炼
+3次步行回家
+每天步行5公...
+                
+            </p>
         </div>
-    </nav>
-
+    </article>
+ 
 
 
 
