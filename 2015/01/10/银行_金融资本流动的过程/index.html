@@ -27,7 +27,7 @@
     <!--Title-->
 
 
-<title>银行业务 | 不圆的石头</title>
+<title>金融资本的流动过程 | 不圆的石头</title>
 
 
     <link rel="alternate" href="/atom.xml" title="不圆的石头" type="application/atom+xml">
@@ -152,9 +152,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="银行业务">
+        <h1 id="金融资本的流动过程">
             
-	            银行业务
+	            金融资本的流动过程
             
         </h1>
         <div class="post-meta">
@@ -174,8 +174,8 @@
         <span class="tags-meta">
             
                 
-                    <a href="/tags/银行业务" title="银行业务">
-                        银行业务
+                    <a href="/tags/金融" title="金融">
+                        金融
                     </a>
                 
             
@@ -187,7 +187,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/01/18</span>
+            <span class="date-meta">2015/01/10</span>
         </span>
         
     
@@ -195,10 +195,53 @@
 
             
             
+            <p class="fa fa-exclamation-triangle warning">
+                本文于<strong>1613</strong>天之前发表。
+            </p>
+        
     </div>
     
     <div class="post-body post-content">
-        <p>银行业务</p>
+        <h2 id="1-金融中介"><a href="#1-金融中介" class="headerlink" title="1.金融中介"></a>1.金融中介</h2><p>在金融活动中，主要有三类金融中介，信用中介，资本中介，服务中介</p>
+<h3 id="1-1-信用中介"><a href="#1-1-信用中介" class="headerlink" title="1.1.信用中介"></a>1.1.信用中介</h3><pre class="mermaid">   graph LR
+   出借人 -->|闲余资金/债权1| 商业银行贷款人
+   商业银行贷款人 -->|贷款/债权2| 借款人</pre>
+   1. 资本流通：商业银行调剂货币资本的存款和借款
+   2. 利息：资金的出借人（食利者）获得固定的利息
+   3. 信用：流通中的商业银行使用了自身的信用，存款本息的兑付是刚性的
+   4. 利息差：商业银行使用信用(担保本息)得到风险补偿。
+   5. 商业银行集中管理存款（资金流入）和贷款（资金流出）
+      6. 在信用中介中，债权1与债权2不能等价传递
+
+### 1.2.资本中介 ###
+
+资本中介主要是二级市场金融工具的流通。
+<pre class="mermaid">   graph LR
+   投资人 --> 券商
+   券商 --> 二级市场</pre>
+
+<ol>
+<li>投资人通过券商进入二级市场，买卖股票，债权</li>
+<li>券商主要有经纪业务（证券经纪服务、融资融券）和投行业务（证券承销和保荐）</li>
+</ol>
+<h3 id="1-3-服务中介"><a href="#1-3-服务中介" class="headerlink" title="1.3.服务中介"></a>1.3.服务中介</h3><p><pre class="mermaid">   graph LR
+   资金 --> 资产管理
+   资产管理 --> 资产</pre></p>
+<ol>
+<li>资产管理帮资产找资金，帮资金找资产</li>
+<li>资管范围：银行理财，信托计划，券商资管，保险资管，期货资管，基金子公司，私募资金</li>
+</ol>
+<h2 id="2-资金的成本与收益"><a href="#2-资金的成本与收益" class="headerlink" title="2.资金的成本与收益"></a>2.资金的成本与收益</h2><p>资金的成本是需要资金的借款人愿意支付的“使用成本”，叫做利息（也叫做占用一笔资金所要支付的代价），利息又分为单利和复利两种类型。</p>
+<h3 id="2-1-单利"><a href="#2-1-单利" class="headerlink" title="2.1.单利"></a>2.1.单利</h3><p>单利是指一笔资金无论存期多长，只有本金计取利息，而以前各期利息在下一个利息周期内不计算利息的计息方法。单利利息的计算公式为：</p>
+<script type="math/tex; mode=display">利息（I）=本金（P）×利率（i）×计息期数（n）</script><p>单利终值的计算</p>
+<script type="math/tex; mode=display">F=P+P×i×n =P×(1+i×n)</script><p>单利现值的计算公式为：</p>
+<script type="math/tex; mode=display">P=F-I=F-P×i×t=F/(1+i×n)</script><h3 id="2-2-复利"><a href="#2-2-复利" class="headerlink" title="2.2.复利"></a>2.2.复利</h3><p>复利是指一笔资金除本金产生利息外，在下一个计息周期内，以前各计息周期内产生的利息也计算利息的计息方法。<br>复利的计算是对本金及其产生的利息一并计算，也就是利上有利。复利计算的特点是：把上期末的本利和作为下一期的本金，在计算时每一期本金的数额是不同的。复利的计算公式是： </p>
+<script type="math/tex; mode=display">S = p(1+i)^n</script><h3 id="2-3-资金的收益"><a href="#2-3-资金的收益" class="headerlink" title="2.3.资金的收益"></a>2.3.资金的收益</h3><p>资金的收益就是利息差，如果存款利息大于贷款利息，那么银行需要自己补贴利息，这样就会发生亏损，在我国，除了一些政策性银行为了支持某些行业和产业的发展，一般来说银行都以盈利为目的，一般不会发生亏损。</p>
+<h2 id="3-金融活动中的风险"><a href="#3-金融活动中的风险" class="headerlink" title="3.金融活动中的风险"></a>3.金融活动中的风险</h2><p>金融活动中常见的风险有信用风险，市场风险，流动性风险，操作风险等。</p>
+<h3 id="3-1-信用风险"><a href="#3-1-信用风险" class="headerlink" title="3.1. 信用风险"></a>3.1. 信用风险</h3><p>信用风险又称为交易对方风险或履约风险，指交易对方不履行到期债务的风险。由于结算方式的不同，场内衍生交易和场外衍生交易各自所涉的信用风险也有所不同。</p>
+<h3 id="3-2-市场风险"><a href="#3-2-市场风险" class="headerlink" title="3.2. 市场风险"></a>3.2. 市场风险</h3><p>市场风险是指由于基础资产市场价格的不利变动或者急剧波动而导致衍生工具价格或者价值变动的风险。基础资产的市场价格变动包括市场利率、汇率、股票、债券行情的变动。</p>
+<h3 id="3-3-流动性风险"><a href="#3-3-流动性风险" class="headerlink" title="3.3. 流动性风险"></a>3.3. 流动性风险</h3><p>流动性风险指商业银行虽然有清偿能力，但无法及时获得充足资金或无法以合理成本及时获得充足资金以应对资产增长或支付到期债务的风险。</p>
+<h3 id="3-4-操作风险"><a href="#3-4-操作风险" class="headerlink" title="3.4. 操作风险"></a>3.4. 操作风险</h3><p>操作风险是指由于信息系统或内部控制缺陷导致意外损失的风险。引起操作风险的原因包括: 人为错误、电脑系统故障、工作程序和内部控制不当。</p>
 
     </div>
     
@@ -216,15 +259,15 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/01/19/20190119_曾国藩家书读书笔记-120190524/" class="pre-post btn btn-default" title="曾国藩家书读书笔记-1">
+        <a href="/2016/11/11/用Hexo-nexT-GitHub搭建个人博客20190524/" class="pre-post btn btn-default" title="用Hexo-nexT-GitHub搭建个人博客">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-            <span class="hidden-xs">曾国藩家书读书笔记-1</span>
+            <span class="hidden-xs">用Hexo-nexT-GitHub搭建个人博客</span>
         </a>
     
     
-        <a href="/2019/01/09/20190119_2019年需要完成的事情20190524/" class="next-post btn btn-default" title="2019年需要完成的事情">
+        <a href="/2015/01/04/银行_银行资本管理/" class="next-post btn btn-default" title="银行资本管理">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">2019年需要完成的事情</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs">银行资本管理</span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -267,7 +310,7 @@
     <div class="widget">
         <h3 class="title">文章目录</h3>
         
-            <p>暂无目录</p>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-金融中介"><span class="toc-text">1.金融中介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-信用中介"><span class="toc-text">1.1.信用中介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-服务中介"><span class="toc-text">1.3.服务中介</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-资金的成本与收益"><span class="toc-text">2.资金的成本与收益</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-单利"><span class="toc-text">2.1.单利</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-复利"><span class="toc-text">2.2.复利</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-资金的收益"><span class="toc-text">2.3.资金的收益</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-金融活动中的风险"><span class="toc-text">3.金融活动中的风险</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-信用风险"><span class="toc-text">3.1. 信用风险</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-市场风险"><span class="toc-text">3.2. 市场风险</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-流动性风险"><span class="toc-text">3.3. 流动性风险</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-操作风险"><span class="toc-text">3.4. 操作风险</span></a></li></ol></li></ol>
         
     </div>
 </aside>

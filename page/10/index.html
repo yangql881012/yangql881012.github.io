@@ -164,262 +164,6 @@
 <article class="post">
     
         <div class="post-media">
-            <a href="/2017/02/25/Hive安装20190524/">
-                <img class="img-ajax" src="/img/loading.gif" data-src="/2017/02/25/Hive安装20190524/Hive安装/多用户模式2.png" alt="Hive安装">
-            </a>
-        </div>
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2017/02/25/Hive安装20190524/">Hive安装</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2017年02月25日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                1.Hive介绍
-在Hadoop生态圈中属于数据仓库的角色。Hive能够管理Hadoop中的数据，同时可以查询Hadoop中的数据。它提供了一系列的工具，可以用来进行数据提取转化加载（ETL），这是一种可以存储、查询和分析存储在Hadoop中的大规模数据的机制。
-Hive定义了简单的类SQL查询语言，称为HQL ，它允许熟悉SQL的用户查询数据。同时，这个语言也允许熟悉MapReduce开发者的开发自定义的mapper和reducer来处理内建的mapper和reducer无法完成的复杂的分析工作。
-本质上讲，Hive是一个SQL解析引擎。Hive可以把SQL查询转换为MapReduce中的job然后在Hadoop执行。Hive有一套映射工具，可以把SQL转换为MapReduce中的job，可以把SQL中的表、字段转换为HDFS中的文件(夹)以及文件中的列。这套映射工具称之为metastore，一般存放在derby、mysql中。
-Hive的表其实就是HDFS的目录，按表名把文件夹分开。如果是分区表，则分区值是子文件夹，可以直接在M/R的Job里使用这些数据。…
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/技术">
-            技术
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/Hive" title="Hive">
-                        Hive
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
-</div>
-
-            </div>
-
-            <div class="post-permalink">
-                <a href="/2017/02/25/Hive安装20190524/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2017/02/25/Hive权限控制20190524/">Hive权限控制</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2017年02月25日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                目前hive支持简单的权限管理，默认情况下是不开启，这样所有的用户都具有相同的权限，同时也是超级管理员，也就对hive中的所有表都有查看和改动的权利。Hive本身也不提供创建用户组和用户的命令,Hive用户组和用户即Linux用户组和用户，和hadoop一样，本身不提供用户组和用户管理，只做权限控制。…
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/技术">
-            技术
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/Hive" title="Hive">
-                        Hive
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
-</div>
-
-            </div>
-
-            <div class="post-permalink">
-                <a href="/2017/02/25/Hive权限控制20190524/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2017/02/24/Spark-学习笔记-120190524/">Spark-学习笔记-1</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2017年02月24日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                Spark RDD 弹性，缓存，创建RDD的几种方式，Persist持久化，广播  …
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/技术">
-            技术
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/Spark" title="Spark">
-                        Spark
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
-</div>
-
-            </div>
-
-            <div class="post-permalink">
-                <a href="/2017/02/24/Spark-学习笔记-120190524/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
-<article class="post">
-    
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2017/02/17/Spark-配置HistoryServer20190524/">Spark-配置HistoryServer</a>
-            </h1>
-            <div class="post-meta">  &bull;
-                <time class="post-date" datetime="" title="">
-                    2017年02月17日
-                </time>
-            </div>
-        </div>
-        <p class="brief">
-            
-                1.为什么要有HistoryServer以standalone运行模式为例，在运行Spark Application的时候，Spark会提供一个WEBUI列出应用程序的运行时信息；但该WEBUI随着Application的完成(成功/失败)而关闭，也就是说，Spark Application运行完(成功/失败)后，将无法查看Application的历史记录；
-Spark history Server就是为了应对这种情况而产生的，通过配置可以在Application执行的过程中记录下了日志事件信息，那么在Application执行结束后，WEBUI就能重新渲染生成UI界面展现出该Application在执行过程中的运行时信息；
-Spark运行在yarn或者mesos之上，通过spark的history server仍然可以重构出一个已经完成的Application的运行时参数信息（假如Application运行的事件日志信息已经记录下来）；…
-            
-        </p>
-    </div>
-    
-        <footer class="post-footer clearfix">
-            <div class="pull-left tag-list">
-                <div class="post-meta">
-    
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a href="/categories/技术">
-            技术
-        </a>
-    </span>
-    
-
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-                
-                    <a href="/tags/HistoryServer" title="HistoryServer">
-                        HistoryServer
-                    </a>
-                
-            
-        </span>
-    </span>
-    
-
-    
-</div>
-
-            </div>
-
-            <div class="post-permalink">
-                <a href="/2017/02/17/Spark-配置HistoryServer20190524/" class="btn btn-default">阅读全文</a>
-            </div>
-        </footer>
-    
-</article>
-
-
-<article class="post">
-    
-        <div class="post-media">
             <a href="/2017/02/16/Spark-Zookeeper实现HA20190524/">
                 <img class="img-ajax" src="/img/loading.gif" data-src="/2017/02/16/Spark-Zookeeper实现HA20190524/Spark-Zookeeper实现HA/spark-HA.jpg" alt="Spark-Zookeeper实现HA">
             </a>
@@ -800,6 +544,253 @@ Scala中使用关键字lazy来定义惰性变量，实现延迟加载(懒加载)
 </article>
 
 
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/2017/02/10/Scala学习之泛型-上边界-下边界20190524/">Scala学习之泛型-上边界-下边界</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2017年02月10日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                1.Scala的类，函数，方法都可以是泛型2.上边界 “&amp;lt;:”表达了泛型的类型必须是某种类型或者其子类，是对类型的限定3.下边界 “&amp;gt;:”表达了泛型的类型必须是某种类型或者其父类，是对类型的限定4.View bound:把类型转换为目标类型，是上边界和下边界的加强版本 T &amp;lt;% ,这个代码所表达的T必须是writable类型的，但是T没有直接继承Writable接口，此时需要通过“implicit”的方式来实现这个功能。implicit def dog2Person(dog:Dog)=new Person(dog.name)5.T：ClassTag：这也是一种类型转换系统，只是在编译时类型信息不够，需要借助JVM的runtime来通过运行时获得完整的类型信息。6.逆变协变：-T +T7.covariant 协变:使你能够使用比原始指定的类型的子类,当我们定义一个协变类型 List[A+] 时，List[Child]可以是List[Parent]的子类型。8.Contravariance 逆变:使你能够使用比原始指定的类型的父类。当我们定义一个逆变类型 List[-A] 时，List[Child]可以是List[Parent]的父类型。9.context bound,T:Ordering这种语法必须能够变成Ordering T格式10.Invariance 不变。你只能使用原始指定的类型，不能协变和逆变…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Scala" title="Scala">
+                        Scala
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/2017/02/10/Scala学习之泛型-上边界-下边界20190524/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/2017/02/10/Scala学习之集合函数式编程20190524/">Scala学习之集合函数式编程</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2017年02月10日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                1.在scala中，Iterable是公共的方法       ，Iterable要求继承者实现一些公共的方法。2.Array是一个非常基础的数据结构，不属于scala集合体系。3.集合分为可变与不可变之分，不可变的集合在scala.collection.immutable保中，可变集合在scala.collection.mutable中4.List是元素的列表集合，是不可变的。5.List中head是第一个元素，tail是指剩下元素的集合的集合6.操作符”::”把List和其它的元素进行组拼来构建新的List7.如果集合中没有元素，返回Nil8.LinkedList是元素可变的列表9.Set是元素不可重复的，且元素是无序的。HashSet元素不可变，也不保证顺序。SortedSet会排序10.map与flatMap的区别：Spark 中 map函数会对每一条输入进行指定的操作，然后为每一条输入返回一个对象；而flatMap函数则是两个操作的集合——正是“先映射后扁平化”：
+
+操作1：同map函数一样：对每一条输入进行指定的操作，然后为每一条输入返回一个对象
+操作2：最后将所有对象合并为一个对象11.只有一个原始时，可以用”_“占位符替代，简化函数编程。如：.reduce(_ +_); //reduce((x,y) =&amp;gt; x + y)…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Scala" title="Scala">
+                        Scala
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/2017/02/10/Scala学习之集合函数式编程20190524/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/2017/02/10/Scala学习之模式匹配20190524/">Scala学习之模式匹配</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2017年02月10日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                1.样本类：添加了case的类便是样本类。这种修饰符可以让Scala编译器自动为这个类添加一些语法上的便捷设定。如下：2.添加与类名一致的工厂方法。也就是说，可以写成Var(“x”)来构造Var对象。3.样本类参数列表中的所有参数隐式获得了val前缀，因此它被当作字段维护。4.编译器为这个类添加了方法toString,hashCode和equals等方法。5..match对应Java里的switch，但是写在选择器表达式之后。即： 选择器 match {备选项}。6.一个模式匹配包含了一系列备选项，每个都开始于关键字case。每个备选项都包含了一个模式及一到多个表达式。箭头符号 =&amp;gt; 隔开了模式和表达式。7.match表达式通过以代码编写的先后次序尝试每个模式来完成计算。类似于UnOp(“-“ , UnOp(“-“ , e))这种形式的，是构造器模式匹配。8.Scala的备选项表达式永远不会“掉到”下一个case；9.如果没有模式匹配，MatchError异常会被抛出。这意味着必须始终确信所有的情况都考虑到了，或者至少添加一个默认情况什么都不做。如 case _ =&amp;gt;10.通配模式：case _ =&amp;gt; 。表示默认的全匹配备选项。通配模式还可以用来忽略对象中不关心的部分。如：case BinOp(_,_,_) =&amp;gt; XXX，则表示不关心二元操作符的元素是什么，只是检查是否为二元操作符11.常量模式 ：仅匹配自身。任何字面量都可以用作常量。包括String类型。另外，任何的val或单例对象也可以被用作常量。如，单例对象Nil是只匹配空列表的模式。12.变量模式 ：变量模式类似于通配符，可以匹配任何对象。不同点在于，Scala把变量绑定在匹配的对象上。之后就可以使用这个变量操作对象。…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Scala" title="Scala">
+                        Scala
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/2017/02/10/Scala学习之模式匹配20190524/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
+<article class="post">
+    
+    <div class="post-content">
+        <div class="post-head home-post-head">
+            <h1 class="post-title">
+                <a href="/2017/02/09/Scala基础学习-函数式编程20190524/">Scala基础学习-函数式编程</a>
+            </h1>
+            <div class="post-meta">  &bull;
+                <time class="post-date" datetime="" title="">
+                    2017年02月09日
+                </time>
+            </div>
+        </div>
+        <p class="brief">
+            
+                1.函数可以直接赋值给变量2.函数更常用的方式是匿名函数，定义的时候只需要说明输入参数的类型和函数体，如果要使用可以赋值给一个变量(其实是val常量)3.函数可以作为参数直接传递给函数，简化了编程的语法4.函数的返回值也可以是函数,当函数的返回类型是函数时，这个时候就表明了scala的函数实现了闭包5.scala闭包的内幕，scala函数的背后是类和对象，所以scala的参数都作为对象的成员，所以后续可以继续访问。6.Curring，复杂的函数编程中经常用到，可以维护变量在内存中的状态，且可以实现返回函数的链式功能，可以实现非常复杂的算法，…
+            
+        </p>
+    </div>
+    
+        <footer class="post-footer clearfix">
+            <div class="pull-left tag-list">
+                <div class="post-meta">
+    
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a href="/categories/技术">
+            技术
+        </a>
+    </span>
+    
+
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+                
+                    <a href="/tags/Scala" title="Scala">
+                        Scala
+                    </a>
+                
+            
+        </span>
+    </span>
+    
+
+    
+</div>
+
+            </div>
+
+            <div class="post-permalink">
+                <a href="/2017/02/09/Scala基础学习-函数式编程20190524/" class="btn btn-default">阅读全文</a>
+            </div>
+        </footer>
+    
+</article>
+
+
 
 
     <nav class="pagination" role="navigation">
@@ -891,7 +882,7 @@ Scala中使用关键字lazy来定义惰性变量，实现延迟加载(懒加载)
         
     <div class="widget">
         <h3 class="title">归档</h3>
-        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/"><i class="fa" aria-hidden="true">2019年06月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/"><i class="fa" aria-hidden="true">2019年05月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/"><i class="fa" aria-hidden="true">2019年02月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/"><i class="fa" aria-hidden="true">2019年01月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">2018年07月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/"><i class="fa" aria-hidden="true">2017年10月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/"><i class="fa" aria-hidden="true">2017年09月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/"><i class="fa" aria-hidden="true">2017年07月</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/"><i class="fa" aria-hidden="true">2017年06月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/"><i class="fa" aria-hidden="true">2017年05月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/"><i class="fa" aria-hidden="true">2017年04月</i></a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">2017年03月</i></a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">2017年02月</i></a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">2017年01月</i></a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/"><i class="fa" aria-hidden="true">2016年12月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/"><i class="fa" aria-hidden="true">2016年11月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/"><i class="fa" aria-hidden="true">2015年05月</i></a><span class="archive-list-count">1</span></li></ul>
+        <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/"><i class="fa" aria-hidden="true">2019年06月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/"><i class="fa" aria-hidden="true">2019年02月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/"><i class="fa" aria-hidden="true">2019年01月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/"><i class="fa" aria-hidden="true">2018年07月</i></a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/"><i class="fa" aria-hidden="true">2017年10月</i></a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/"><i class="fa" aria-hidden="true">2017年09月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/"><i class="fa" aria-hidden="true">2017年07月</i></a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/"><i class="fa" aria-hidden="true">2017年06月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/"><i class="fa" aria-hidden="true">2017年05月</i></a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/"><i class="fa" aria-hidden="true">2017年04月</i></a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/"><i class="fa" aria-hidden="true">2017年03月</i></a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/"><i class="fa" aria-hidden="true">2017年02月</i></a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/"><i class="fa" aria-hidden="true">2017年01月</i></a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/"><i class="fa" aria-hidden="true">2016年12月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/"><i class="fa" aria-hidden="true">2016年11月</i></a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/"><i class="fa" aria-hidden="true">2015年01月</i></a><span class="archive-list-count">5</span></li></ul>
     </div>
 
 
@@ -913,7 +904,7 @@ Scala中使用关键字lazy来定义惰性变量，实现延迟加载(懒加载)
     <h3 class="title">标签云</h3>
     <div class="content tag-cloud">
         
-            <a href="/tags/Elasticsearch/" style="font-size: 11.11px;">Elasticsearch</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Hadoop/" style="font-size: 14.44px;">Hadoop</a> <a href="/tags/Hbase/" style="font-size: 12.22px;">Hbase</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/HistoryServer/" style="font-size: 10px;">HistoryServer</a> <a href="/tags/Hive/" style="font-size: 17.78px;">Hive</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/Phoenix/" style="font-size: 10px;">Phoenix</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/Scala/" style="font-size: 18.89px;">Scala</a> <a href="/tags/Spark/" style="font-size: 20px;">Spark</a> <a href="/tags/Sqoop/" style="font-size: 11.11px;">Sqoop</a> <a href="/tags/VMare/" style="font-size: 10px;">VMare</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/个人管理/" style="font-size: 15.56px;">个人管理</a> <a href="/tags/大数据场景学习/" style="font-size: 12.22px;">大数据场景学习</a> <a href="/tags/数据仓库/" style="font-size: 11.11px;">数据仓库</a> <a href="/tags/数据分析/" style="font-size: 10px;">数据分析</a> <a href="/tags/月结月策/" style="font-size: 11.11px;">月结月策</a> <a href="/tags/计划与实现/" style="font-size: 10px;">计划与实现</a> <a href="/tags/计划清单/" style="font-size: 10px;">计划清单</a> <a href="/tags/读书笔记/" style="font-size: 12.22px;">读书笔记</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/银行/" style="font-size: 11.11px;">银行</a> <a href="/tags/银行业务/" style="font-size: 12.22px;">银行业务</a> <a href="/tags/高等数学/" style="font-size: 16.67px;">高等数学</a>
+            <a href="/tags/Elasticsearch/" style="font-size: 11.11px;">Elasticsearch</a> <a href="/tags/Flume/" style="font-size: 10px;">Flume</a> <a href="/tags/Hadoop/" style="font-size: 14.44px;">Hadoop</a> <a href="/tags/Hbase/" style="font-size: 12.22px;">Hbase</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/HistoryServer/" style="font-size: 10px;">HistoryServer</a> <a href="/tags/Hive/" style="font-size: 17.78px;">Hive</a> <a href="/tags/Kafka/" style="font-size: 10px;">Kafka</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/MySQL/" style="font-size: 12.22px;">MySQL</a> <a href="/tags/Phoenix/" style="font-size: 10px;">Phoenix</a> <a href="/tags/Python/" style="font-size: 13.33px;">Python</a> <a href="/tags/Scala/" style="font-size: 18.89px;">Scala</a> <a href="/tags/Spark/" style="font-size: 20px;">Spark</a> <a href="/tags/Sqoop/" style="font-size: 11.11px;">Sqoop</a> <a href="/tags/VMare/" style="font-size: 10px;">VMare</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/个人管理/" style="font-size: 15.56px;">个人管理</a> <a href="/tags/大数据场景学习/" style="font-size: 12.22px;">大数据场景学习</a> <a href="/tags/数据仓库/" style="font-size: 11.11px;">数据仓库</a> <a href="/tags/数据分析/" style="font-size: 10px;">数据分析</a> <a href="/tags/月结月策/" style="font-size: 11.11px;">月结月策</a> <a href="/tags/计划与实现/" style="font-size: 10px;">计划与实现</a> <a href="/tags/计划清单/" style="font-size: 10px;">计划清单</a> <a href="/tags/读书笔记/" style="font-size: 12.22px;">读书笔记</a> <a href="/tags/金融/" style="font-size: 10px;">金融</a> <a href="/tags/银行/" style="font-size: 12.22px;">银行</a> <a href="/tags/银行业务/" style="font-size: 11.11px;">银行业务</a> <a href="/tags/高等数学/" style="font-size: 16.67px;">高等数学</a>
         
     </div>
   </div>
